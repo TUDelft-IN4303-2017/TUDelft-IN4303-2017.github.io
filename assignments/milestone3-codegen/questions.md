@@ -1,10 +1,16 @@
-# Milestone 3
+---
+layout: page
+title: "Milestone 3 FAQ"
+excerpt: "Milestone 3 FAQ"
+tags: ["assignment"]
+share: false
+---
 
 #### My menu entries keep disappearing
 
 This is due to a bug in one of the dependencies of Spoofax, which sometimes throws a `NullPointerException`.
 There is no known solution at the time, but for some people upgrading from Eclipse 4.2 to 4.3 decreased the problem occurrences.
-As a workaround, you can restart eclipse with *File->Restart*. 
+As a workaround, you can restart eclipse with *File->Restart*.
 Eclipse should restore all windows etc. and your menu should be complete again.
 
 #### My builder is applied to the unanalysed, non-desugared AST. How can it be applied to the analysed, desugared AST?

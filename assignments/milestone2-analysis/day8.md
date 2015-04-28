@@ -1,13 +1,19 @@
-# Day 8: Type Analysis
+---
+layout: page
+title: "Day 8: Type Analysis"
+excerpt: "Day 8: Type Analysis"
+tags: ["assignment"]
+share: false
+---
 
-In this lab, you define typing rules and constraints for MiniJava. 
+In this lab, you define typing rules and constraints for MiniJava.
 From this definition, you generate an Eclipse editor, that provides type information in hover help and type constraint checking.
 
 ## Overview
 
 ### Objectives
 
-Specify type analysis for MiniJava in NaBL, TS, and Stratego, and generate an Eclipse editor from it. 
+Specify type analysis for MiniJava in NaBL, TS, and Stratego, and generate an Eclipse editor from it.
 The specification should include:
 
 1. Name binding rules for
@@ -21,15 +27,15 @@ The specification should include:
   * object creation,
   * `this` expressions,
   * and method calls.
-4. Custom constraint rules for type errors in 
+4. Custom constraint rules for type errors in
   * expressions,
   * statements and
   * method declarations.
-  
+
 ### Submission
 
-You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub. 
-Your GitHub repository contains a step-by-step procedure how to file such a request. 
+You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
+Your GitHub repository contains a step-by-step procedure how to file such a request.
 This project should contain a `README.md` with a short paragraph explaining the organisation of your NaBL, TS, and Stratego files.
 
 The deadline for submissions is November 26th, 17:59.
@@ -37,7 +43,7 @@ The deadline for submissions is November 26th, 17:59.
 ### Grading
 
 You can earn up to 75 points for the correctness of your type analysis.
-Therefore, we run several test cases against your implementation. 
+Therefore, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
@@ -58,12 +64,12 @@ The total number of points depends on how many test cases you pass in each of th
 * challenge (5 points)
 
 You can earn up to 10 points for your messages in errors and warnings.
-We particular focus on 
- readability, 
- precision, 
+We particular focus on
+ readability,
+ precision,
  and the level of detail in your messages.
 
-Finally, you can earn up to 5 points for the organisation of your NaBL, TS and Stratego files and 
+Finally, you can earn up to 5 points for the organisation of your NaBL, TS and Stratego files and
 up to 10 points for the quality of your code.
 We focus on
   readability in general,
@@ -91,12 +97,12 @@ The overall structure looks like this:
 module types
 
 imports
-  
+
   common/src-gen/signatures/MiniJava-sig
   common/desugar
-     
+
 type rules
-  
+
   ...
 ```
 
@@ -116,7 +122,7 @@ This might include tasks which originated from a different file than the file th
 
 #### Building
 
-Name and type tasks are executed incrementally based on changes made in MiniJava programs. 
+Name and type tasks are executed incrementally based on changes made in MiniJava programs.
 However, tasks do not take changes of your language specification into account.
 If you encounter an unexpected result after changing your naming or typing rules, right click the project containing your example files, and choose `Spoofax -> Reload analysis data`.
 
@@ -124,10 +130,10 @@ If you encounter an unexpected result after changing your naming or typing rules
 
 Hovers offer a quick way to check if type analysis works as expected. When you move your mouse over an expression or definition in a MiniJava editor, you should see its type in a hover text.
 
-Your test cases from the previous lab should enable a more principled way of testing type analysis. 
+Your test cases from the previous lab should enable a more principled way of testing type analysis.
 Tests that expect a class type as a result have to be modified to accept annotations on the name of the class. For example, an expectation `ClassType("A")` needs to be changed to `ClassType("A"{_})`.
 
-When you get unexpected results, you can inspect index entries and 
+When you get unexpected results, you can inspect index entries and
   collected tasks with the *Show analysis*, *Show tasks* and *Show index* builders.
 Probably the most useful builders for you are those which show them only for the current file (also called a partition) or for a selection.
 
@@ -139,7 +145,7 @@ task 1 [2, 3] =
   ->
   [Int()]
 ```
-      
+
 This entry consists of
 
 * an identifier `1`,
@@ -151,7 +157,7 @@ You can navigate the dependencies of tasks to find the reasons for failing tasks
 The following instructions exist:
 
 * `resolve ns n in s* wrt props []` resolves a name `n` of namespace `ns` in scopes `s*`.
-* `choose x <+ y` chooses from alternatives `x` and `y` deterministically. 
+* `choose x <+ y` chooses from alternatives `x` and `y` deterministically.
   If `x` is a term or a task with a result, `x` is chosen.
   Otherwise, `y` is chosen.
 * `concat t1 + t2` combines the results of tasks `t1` and `t2`.
@@ -204,8 +210,8 @@ You should define the following rules:
 2. One rule for `BinExp`.
 3. A rule for each unary and binary operator, which rewrites the operator to a tuple.
    This tuple should consist of the expected types of subexpressions and the type of the operator itself.
-   For example, the following rule states that the operator for `Length` requires a subexpression of type `int[]` and yields an expression of type `int`:   
-``` 
+   For example, the following rule states that the operator for `Length` requires a subexpression of type `int[]` and yields an expression of type `int`:
+```
 LengthOp(): (IntArray(), Int())
 ```
 
@@ -216,7 +222,7 @@ The signatures for desugared expressions are missing from the intial project, so
 ```
 signature
   constructors
-   	
+
     BinExp      : BinOp * Exp * Exp -> Exp
     UnExp       : UnOp * Exp -> Exp
     Plus        : BinOp
@@ -249,12 +255,12 @@ Here, `r` should be a reference in an expression `e`.
 #### `this` Expressions
 
 To type `this` expressions, you first need to specify name binding rules for `this`.
-Since `this` is nowhere specified explicitly, 
+Since `this` is nowhere specified explicitly,
   you need to add an implicit definition clause to one of the existing name binding rules.
 An implicit definition clause has the following form:
 
     ...: implicitly defines Namespace name
-    
+
 You might want to reuse an existing namespace or define a new one for `this`.
 If you use a new namespace, you need to scope this namespace properly.
 As a name, you should use the constructor for `this`.
@@ -264,7 +270,7 @@ Implicit definitions can also have properties, which allows you to specify the t
 Next, you should specify a rule which resolves `this` to the implicit definition you just added.
 Again, you should use the constructor for `this` as the name in this rule.
 
-Finally, you can define a typing rule which looks up the type of `this`. 
+Finally, you can define a typing rule which looks up the type of `this`.
 You need to make sure that `definition of` is applied to the term matched by the rule, not to a new term `This()`.
 You can achieve this by matching with a variable `v` and a term `e` matching `this`:
 
@@ -277,12 +283,12 @@ Method calls need to be resolved with respect to the type of the callee expressi
 This expression needs to be of a class type and the method call should resolve to a method in the corresponding class.
 Such contextual references are specified in NaBL as follows:
 
-    ...: 
+    ...:
       refers to Namespace1 name1 in Namespace2 name2
       where e has type ty
-      
+
 The `where` clause requires an expression `e` to be of type `ty`.
-`name1` is then resolved in the scope of `name2`. 
+`name1` is then resolved in the scope of `name2`.
 You need to instantiate this pattern for method calls which resolve to methods inside classes.
 You should use a pattern for `ty`, which binds `name2`.
 
@@ -296,13 +302,13 @@ You should have this working, before you continue.
 The current solution works nicely, but also yields a type for method calls with missing arguments, additional arguments, or wrong argument types.
 To avoid this, you need to specify a more sophisticated type at the definition site.
 This type should include the expected types for the parameters and the return type of the method.
-You can construct this sophisticated type either as a tuple of parameter types and return type 
+You can construct this sophisticated type either as a tuple of parameter types and return type
 or define a special constructor for this type.
 Similar to the rule for method calls, you can collect the parameter types in a `where` clause.
 To make this work, you also need to create type rules for parameters:
 
     Param(t, p): ...
-    
+
 Before you continue, you should check if the type associated with the method name carries all the information you need.
 Do not continue, until this is working.
 
@@ -312,7 +318,7 @@ You need to extract the parameter types and the return type for further tasks.
 You can use a pattern for `sophisticated-type` which matches `parameter-types` and `return-type`:
 
     ...: ...
-    where definition of m: sophisticated-type // lookup sophisticated type and 
+    where definition of m: sophisticated-type // lookup sophisticated type and
       and sophisticated-type => ...           // match parameter-types and return-type
       and  ...                                // check actual argument types w.r.t. parameter types
 
@@ -323,7 +329,7 @@ You can specify type constraints directly in TS.
 
 #### Expressions
 
-In the typing rules for expressions, 
+In the typing rules for expressions,
   you check the types of subexpressions against expected types.
 These checks will fail, if an actual type does not match an expected type.
 In TS, you can specify errors and warnings in `else` clauses:
@@ -359,8 +365,8 @@ where e: t
  else error "Yet another meaningful error message should be here" on e
 ```
 
-Note that `-` is not a type specifier: `:-` must be a single token, `: -` is not recognized. 
-        
+Note that `-` is not a type specifier: `:-` must be a single token, `: -` is not recognized.
+
 #### Method Declarations
 
 Finally, you can also specify a constraint which checks the type of a return expression against the declared return type.

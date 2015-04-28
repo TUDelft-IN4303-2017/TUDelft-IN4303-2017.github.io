@@ -1,4 +1,10 @@
-# Day 7: Testing Type Analysis
+---
+layout: page
+title: "Day 7: Testing Type Analysis"
+excerpt: "Day 7: Testing Type Analysis"
+tags: ["assignment"]
+share: false
+---
 
 In this lab, you develop a test suite for type analysis.
 The test suite consists of type projection test cases, resolution test cases and constraint test cases.
@@ -23,8 +29,8 @@ The test suite should provide
 
 ### Submission
 
-You need to submit your test project with a pull request against branch `assignment7` on GitHub. 
-Your GitHub repository contains a step-by-step procedure how to file such a request. 
+You need to submit your test project with a pull request against branch `assignment7` on GitHub.
+Your GitHub repository contains a step-by-step procedure how to file such a request.
 Test files created during this lab should go into a new project `MiniJava-tests-types`.
 This project should contain a `README.md` with a short paragraph explaining the organisation of your test project.
 
@@ -40,7 +46,7 @@ You can earn up to 95 points for the coverage of your test cases.
 ### Early Feedback
 
 We provide early feedback for the effectiveness of your test cases.
-This feedback gives you an indication which parts of the name binding rules might still be uncovered by your tests. 
+This feedback gives you an indication which parts of the name binding rules might still be uncovered by your tests.
 It includes a summary on how many erroneous language definitions you reveal and how many points you earn by detecting them.
 We start sending out early feedback on Monday.
 
@@ -48,18 +54,18 @@ We start sending out early feedback on Monday.
 
 ### Testing Types of Expressions
 
-In test cases for type analysis, 
+In test cases for type analysis,
  you write syntactically correct programs and
- mark expressions with inner square bracket blocks. 
+ mark expressions with inner square bracket blocks.
 You can then specify the expected type of the marked expression in a `run`-`to` clause.
-For example, the following two test cases require an integer literal to be of type `Int()` 
+For example, the following two test cases require an integer literal to be of type `Int()`
 and a variable reference to be of its declared type `Bool()`:
 
     module types
-     
+
     language MiniJava
     start symbol Program
-     
+
     test integer literal type [[
         class Main {
             public static void main (String[] args) {
@@ -67,24 +73,24 @@ and a variable reference to be of its declared type `Bool()`:
             }
         }
     ]] run get-type to Int()
-     
+
     test variable reference type [[
         class Main {
             public static void main (String[] args) {
                 System.out.println(new Foo().run());
             }
         }
-     
+
     class Foo {
         public int run() {
             boolean x;
             int y;
-             
-            if ([[x]]) 
+
+            if ([[x]])
                 y = 1;
             else
                 y = 0;
-             
+
             return y;
         }
     }
@@ -119,7 +125,7 @@ Consider the following test case as an example:
                 System.out.println(new Foo().[[run]]());
             }
         }
-     
+
     class Foo {
         public int [[run]]() {
             return 1;
@@ -128,18 +134,18 @@ Consider the following test case as an example:
     ]] resolve #1 to #2
 
 The type of the callee expression determines the class in which the method declaration can be found.
-In this example, the expression `new Foo()` is of type `ClassType("Foo"{_})` and 
+In this example, the expression `new Foo()` is of type `ClassType("Foo"{_})` and
 the corresponding class `Foo` contains a method declaration for `run()`.
 
-You should come up with test cases for the resolution of method names. 
-Start with simple test cases, but keep in mind that method name resolution is quite complex 
- and that coverage is the main criterion for your grade. 
-It is important to think about forward and backward references, 
- resolution in the presence of homonyms and overriding, 
+You should come up with test cases for the resolution of method names.
+Start with simple test cases, but keep in mind that method name resolution is quite complex
+ and that coverage is the main criterion for your grade.
+It is important to think about forward and backward references,
+ resolution in the presence of homonyms and overriding,
  and the influence of class hierarchies on resolution.
 
 You should also come up with test cases for error checking on method names.
-This should include test cases for errors on duplicate definitions, missing definitions, and method overloading 
+This should include test cases for errors on duplicate definitions, missing definitions, and method overloading
  as well as for notes on method overriding.
 Similar to previous test cases, you can pair up positive (`0 errors`) and negative test cases.
 
@@ -156,7 +162,7 @@ Consider the following test case as an example:
         }
     ]] 1 error
 
-In MiniJava, `System.out.println()` can only print integers. 
+In MiniJava, `System.out.println()` can only print integers.
 Thus, there should be an error on `true`, when we pass it to the print statement.
 Similarly, type errors can occur in other statements, expressions, and method declarations.
 You should come up with test cases for such errors.

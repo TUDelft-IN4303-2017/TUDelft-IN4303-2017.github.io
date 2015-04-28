@@ -1,4 +1,10 @@
-# Day 9: Inheritance and Subtyping
+---
+layout: page
+title: "Day 9: Inheritance and Subtyping"
+excerpt: "Day 9: Inheritance and Subtyping"
+tags: ["assignment"]
+share: false
+---
 
 In this lab, you extend name binding and typing rules for MiniJava in order to support inheritance and subtyping.
 
@@ -9,11 +15,11 @@ In this lab, you extend name binding and typing rules for MiniJava in order to s
 Specify inheritance and subtyping in MiniJava with name binding and type rules in NaBL, TS and Stratego and generate an Eclipse editor from it. The specification should include:
 
 * Name binding rules for inheritance.
-* Typing rules for 
+* Typing rules for
     * `extends` parts of class declarations,
     * class declarations and
     * a subtype relation.
-* Custom constraint rules for 
+* Custom constraint rules for
     * variables hiding inherited fields,
     * fields hiding inherited fields,
     * method overloading,
@@ -23,8 +29,8 @@ Specify inheritance and subtyping in MiniJava with name binding and type rules i
 
 ### Submission
 
-You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub. 
-Your GitHub repository contains a step-by-step procedure how to file such a request. 
+You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
+Your GitHub repository contains a step-by-step procedure how to file such a request.
 This project should contain a `README.md` with a short paragraph explaining the organisation of your NaBL, TS, and Stratego files.
 
 The deadline for submissions is December 3rd, 17:59.
@@ -32,7 +38,7 @@ The deadline for submissions is December 3rd, 17:59.
 ### Grading
 
 You can earn up to 75 points for the correctness of your name and type analysis.
-Therefor, we run several test cases against your implementation. 
+Therefor, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
@@ -45,12 +51,12 @@ The total number of points depends on how many test cases you pass in each of th
     * subtyping in assignments, return expressions, method calls (20 points)
 
 You can earn up to 10 points for your messages in errors and warnings.
-We particular focus on 
- readability, 
- precision, 
+We particular focus on
+ readability,
+ precision,
  and the level of detail in your messages.
 
-Finally, you can earn up to 5 points for the organisation of your NaBL, TS and Stratego files and 
+Finally, you can earn up to 5 points for the organisation of your NaBL, TS and Stratego files and
 up to 10 points for the quality of your code.
 We focus on
   readability in general,
@@ -79,11 +85,11 @@ You can fix this by importing fields and methods from parent classes into their 
 A clause
 
     imports NS1, NS2 from NS name
-    
+
 works like
 
     refers to NS name
-    
+
 but additionally imports declarations of `NS1` and `NS2` from the referred scope into the current scope.
 It only considers declarations which are declared in the referred scope, but not those which are imported into the referred scope.
 `imported` is a keyword for one specific label, not a clause such as `imports`.
@@ -93,7 +99,7 @@ The following clause also imports declarations of `NS1` which are imported into 
 
 ### Subtyping
 
-Your current typing constraints check for type equivalence. 
+Your current typing constraints check for type equivalence.
 However, subtyping is allowed in the following places:
 
 1. In an assignment, the type of the assigned expression needs to be a subtype of the type of the variable.
@@ -143,16 +149,16 @@ This stores a new instance of a relation between `c` and `sc`. TS has a limitati
 You can use the subtype relation in TS in place of equality checks. Checks in the form of
 
 ```
-ty1 == ty2 
+ty1 == ty2
 ```
 
-can be replaced by subtyping checks 
+can be replaced by subtyping checks
 
 ```
 ty1 <name: ty2
 ```
 
-Now you can update any constraints with subtyping checks where needed, and create new constraints to handle subtyping errors. 
+Now you can update any constraints with subtyping checks where needed, and create new constraints to handle subtyping errors.
 
 ### Hiding Variables and Fields
 
@@ -173,26 +179,26 @@ You should report errors on overloading methods and give notes on overriding met
 You can use the following template as a starting point:
 
 ````
-nabl-constraint(|ctx) = 
-    ?Method(retty, mname, _, _, _, _) 
+nabl-constraint(|ctx) =
+    ?Method(retty, mname, _, _, _, _)
   ; local := <...(|ctx)> mname                                   // lookup method declarations in the current class
   ; ...                                                          // report an error if there is more than one method declaration of that name
   ; imported := <...(|ctx)> mname                                // lookup method declarations in ancestor classes
   ; mty      := <type-lookup(|ctx)> mname                        // get the type of the current method
-  ; paramty  := <new-task(|ctx)> Rewrite("parameter-types", mty) // get the parameter types of the current method 
+  ; paramty  := <new-task(|ctx)> Rewrite("parameter-types", mty) // get the parameter types of the current method
   ; ity      := <type-lookup(|ctx)> imported                     // get the type of the inherited method
   ; iretty   := <new-task(|ctx)> Rewrite("return-type", ity)     // get the return type of the inherited method
-  ; iparamty := <new-task(|ctx)> Rewrite("parameter-types", ity) // get the parameter types of the inherited method     
+  ; iparamty := <new-task(|ctx)> Rewrite("parameter-types", ity) // get the parameter types of the inherited method
   ; matchp   := ...                                              // compare parameter types
   ; matchret := ...                                              // compare return types
   ; ...                                                          // report error if current method overloads inherited method
   ; ...                                                          // report error if current methods overrides inherited method with incompatible return type
   ; ...                                                          // report note if current method overrides inherited method correctly
   ; fail
-  
+
   task-rewrite: ("return-type", (_, rt))      -> rt
   task-rewrite: ("parameter-types", (pt*, _)) -> pt*
-  
+
 ````
 The following strategies might be useful:
 
@@ -202,9 +208,9 @@ The following strategies might be useful:
 * `nabl-lookup-lexical-import(|ctx)` looks up a name imported into the current or parent scopes.
 * `type-match(|ctx, ty)` checks if a type matches type `ty`.
 * `relation-create-match(|ctx)` checks for a tuple `("<name:", ty1, ty2)` if `ty1 <name: ty2` holds.
-* `task-create-error-on-triggers(|ctx, triggers, msg)` creates an error message based on a list of triggers. 
-* `task-create-warning-on-triggers(|ctx, triggers, msg)` creates a warning message based on a list of triggers. 
-* `task-create-note-on-triggers(|ctx, triggers, msg)` creates a note based on a list of triggers. 
+* `task-create-error-on-triggers(|ctx, triggers, msg)` creates an error message based on a list of triggers.
+* `task-create-warning-on-triggers(|ctx, triggers, msg)` creates a warning message based on a list of triggers.
+* `task-create-note-on-triggers(|ctx, triggers, msg)` creates a note based on a list of triggers.
 
 You can use the following triggers:
 

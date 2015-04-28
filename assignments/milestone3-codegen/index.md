@@ -1,4 +1,10 @@
-# Milestone 3: Code Generation
+---
+layout: page
+title: "Milestone 3: Code Generation"
+excerpt: "Milestone 3: Code Generation"
+tags: ["assignment"]
+share: false
+---
 
 In this milestone, you extend the MiniJava editor from the previous milestone to a MiniJava compiler, which is able to generate Java class files from MiniJava programs.
 

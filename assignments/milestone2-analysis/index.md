@@ -1,8 +1,14 @@
-# Milestone 2: Semantic Analysis
+---
+layout: page
+title: "Milestone 2: Semantic Analysis"
+excerpt: "Milestone 2: Semantic Analysis"
+tags: ["assignment"]
+share: false
+---
 
 In this milestone, the MiniJava editor from the previous milestone is extended with semantic analyses. The extended editor should be able
 
-* to resolve references in a MiniJava program, 
+* to resolve references in a MiniJava program,
 * to calculate types of MiniJava expressions,
 * to report semantic errors, warnings, and notes, and
 * to provide semantic code completion.
@@ -11,7 +17,7 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 
 ### MiniJava Editor (Milestone 1)
 
-In the last assignment of milestone 1, we provided you with a fresh MiniJava editor project, which already covers the concrete and abstract syntax of MiniJava. 
+In the last assignment of milestone 1, we provided you with a fresh MiniJava editor project, which already covers the concrete and abstract syntax of MiniJava.
 For grading purposes, you are required to continue with this project as a starting point for milestone 2.
 For lab 6 (next week) we will provide you with a fresh MiniJava project again, which covers desugarings.
 
@@ -24,7 +30,7 @@ You should create separate projects for your name analysis test cases and exampl
 3. Choose **Project...** from the list.
 4. Select the **Project** wizard from **General**.
 5. Switch to the **Next** tab.
-6. As **Project name**, use `MiniJava-tests-names`. 
+6. As **Project name**, use `MiniJava-tests-names`.
 7. Press the **Finish** button.
 
 And one for your type analysis test cases and example programs:
@@ -34,17 +40,17 @@ And one for your type analysis test cases and example programs:
 3. Choose **Project...** from the list.
 4. Select the **Project** wizard from **General**.
 5. Switch to the **Next** tab.
-6. As **Project name**, use `MiniJava-tests-types`. 
+6. As **Project name**, use `MiniJava-tests-types`.
 7. Press the **Finish** button.
 
 ## Resources
 
-You can find the *MiniJava Language Reference Manual* in the appendix of the book 
+You can find the *MiniJava Language Reference Manual* in the appendix of the book
 *Modern Compiler Implementation in Java* (2nd edition).
 The relevant pages are available on [Google books](http://books.google.com/books?id=JNs6fWkJZbAC&pg=PA484).
 
 The [MiniJava project](http://www.cambridge.org/us/features/052182060X/)
-by Joao Cangussu, Jens Palsberg and Vidyut Samanta provides some example programs 
+by Joao Cangussu, Jens Palsberg and Vidyut Samanta provides some example programs
 and an HTML version of the reference manual.
 
 The following research papers cover relevant topics of this milestone:
