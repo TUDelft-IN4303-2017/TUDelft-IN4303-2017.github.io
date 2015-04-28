@@ -3,8 +3,10 @@ layout: page
 title: "Milestone 3 FAQ"
 excerpt: "Milestone 3 FAQ"
 tags: ["assignment"]
-share: false
+context: ms3
 ---
+
+{% include _toc.html %}
 
 #### My menu entries keep disappearing
 

@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 8: Type Analysis"
-excerpt: "Day 8: Type Analysis"
+title: "Lab 8: Type Analysis"
+excerpt: "Lab 8: Type Analysis"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this lab, you define typing rules and constraints for MiniJava.
 From this definition, you generate an Eclipse editor, that provides type information in hover help and type constraint checking.

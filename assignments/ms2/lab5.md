@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 5: Testing Name Analysis"
-excerpt: "Day 5: Testing Name Analysis"
+title: "Lab 5: Testing Name Analysis"
+excerpt: "Lab 5: Testing Name Analysis"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this lab, you develop a test suite for name analysis.
 The test suite consists of resolution test cases and constraint test cases.

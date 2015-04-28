@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 10: Simple Code Generation"
-excerpt: "Day 10: Simple Code Generation"
+title: "Lab 10: Simple Code Generation"
+excerpt: "Lab 10: Simple Code Generation"
 tags: ["assignment"]
-share: false
+context: ms3
 ---
+
+{% include _toc.html %}
 
 In this lab, you develop a simple code generator, that generates Java bytecode from simple MiniJava programs, which only print integer constants in their main methods.
 

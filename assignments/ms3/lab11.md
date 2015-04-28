@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 11: More Code Generation"
-excerpt: "Day 11: More Code Generation"
+title: "Lab 11: More Code Generation"
+excerpt: "Lab 11: More Code Generation"
 tags: ["assignment"]
-share: false
+context: ms3
 ---
+
+{% include _toc.html %}
 
 In this lab, you extend your code generator to handle expressions, statements, methods without local parameters, and classes without fields.
 

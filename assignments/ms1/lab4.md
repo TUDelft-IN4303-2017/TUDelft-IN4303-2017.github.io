@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 4: Simple Term Rewriting"
-excerpt: "Day 4: Simple Term Rewriting"
+title: "Lab 4: Simple Term Rewriting"
+excerpt: "Lab 4: Simple Term Rewriting"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 This lab is your first encounter with Stratego.
 You add an outline view and a desugaring transformation to an initial editor provided by us.

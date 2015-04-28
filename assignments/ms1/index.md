@@ -3,8 +3,10 @@ layout: page
 title: "Milestone 1: Syntax Analysis"
 excerpt: "Milestone 1: Syntax Analysis"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 In the first milestone, an initial Spoofax project is extended to a basic MiniJava editor, that is able
 

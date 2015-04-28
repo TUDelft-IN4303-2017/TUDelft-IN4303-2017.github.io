@@ -3,8 +3,10 @@ layout: page
 title: "Milestone 1 FAQ"
 excerpt: "Milestone 1 FAQ"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 # Installation
 

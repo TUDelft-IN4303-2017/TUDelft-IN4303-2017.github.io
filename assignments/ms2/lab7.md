@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 7: Testing Type Analysis"
-excerpt: "Day 7: Testing Type Analysis"
+title: "Lab 7: Testing Type Analysis"
+excerpt: "Lab 7: Testing Type Analysis"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this lab, you develop a test suite for type analysis.
 The test suite consists of type projection test cases, resolution test cases and constraint test cases.

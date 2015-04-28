@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 12: Complete Code Generation"
-excerpt: "Day 12: Complete Code Generation"
+title: "Lab 12: Complete Code Generation"
+excerpt: "Lab 12: Complete Code Generation"
 tags: ["assignment"]
-share: false
+context: ms3
 ---
+
+{% include _toc.html %}
 
 In this lab, you complete your code generator to handle arbitrary MiniJava programs.
 

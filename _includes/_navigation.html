@@ -15,5 +15,14 @@
 				{% endfor %}
 		    </ul>
 		</nav>
+    <nav role="navigation" id="context-nav" class="context-nav">
+      <ul>
+        {% for link in site.data.contextmenu %}
+          {% if link.context == page.context  %}
+			      <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+			    {% endif %}
+			  {% endfor %}
+      </ul>
+    </nav>
 	</div><!-- /.top-navigation -->
 </div><!-- /.navigation-wrapper -->

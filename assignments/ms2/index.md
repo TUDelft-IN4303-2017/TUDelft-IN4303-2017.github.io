@@ -3,8 +3,10 @@ layout: page
 title: "Milestone 2: Semantic Analysis"
 excerpt: "Milestone 2: Semantic Analysis"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this milestone, the MiniJava editor from the previous milestone is extended with semantic analyses. The extended editor should be able
 

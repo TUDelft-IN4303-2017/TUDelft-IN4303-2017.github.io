@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 1: Testing Syntax Analysis"
-excerpt: "Day 1: Testing Syntax Analysis"
+title: "Lab 1: Testing Syntax Analysis"
+excerpt: "Lab 1: Testing Syntax Analysis"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 In this lab, you develop a test suite for syntax analysis.
 The test suite consists of positive and negative test cases.

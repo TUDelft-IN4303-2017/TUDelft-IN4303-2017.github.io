@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 9: Inheritance and Subtyping"
-excerpt: "Day 9: Inheritance and Subtyping"
+title: "Lab 9: Inheritance and Subtyping"
+excerpt: "Lab 9: Inheritance and Subtyping"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this lab, you extend name binding and typing rules for MiniJava in order to support inheritance and subtyping.
 

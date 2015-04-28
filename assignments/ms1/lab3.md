@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 3: Syntactic Editor Services"
-excerpt: "Day 3: Syntactic Editor Services"
+title: "Lab 3: Syntactic Editor Services"
+excerpt: "Lab 3: Syntactic Editor Services"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 In this lab, you add a pretty-printer and syntactic editor services to your MiniJava editor.
 

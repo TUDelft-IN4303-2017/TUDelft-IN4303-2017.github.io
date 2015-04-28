@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 2: Syntax Definition"
-excerpt: "Day 2: Syntax Definition"
+title: "Lab 2: Syntax Definition"
+excerpt: "Lab 2: Syntax Definition"
 tags: ["assignment"]
-share: false
+context: ms1
 ---
+
+{% include _toc.html %}
 
 In this lab, you define the concrete and abstract syntax of MiniJava in Spoofax.
 From this definition, you generate an Eclipse editor, that provides syntax checking, error recovery and syntax highlighting.

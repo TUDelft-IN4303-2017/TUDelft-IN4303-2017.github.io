@@ -1,10 +1,12 @@
 ---
 layout: page
-title: "Day 6: Name Analysis"
-excerpt: "Day 6: Name Analysis"
+title: "Lab 6: Name Analysis"
+excerpt: "Lab 6: Name Analysis"
 tags: ["assignment"]
-share: false
+context: ms2
 ---
+
+{% include _toc.html %}
 
 In this lab, you define name bindings and corresponding constraints for MiniJava.
 From this definition, you generate an Eclipse editor, that provides
