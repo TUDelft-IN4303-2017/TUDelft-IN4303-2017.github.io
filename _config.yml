@@ -1,8 +1,9 @@
 # Site wide configuration
 
-title:            TUDelft IN4303
-locale:           en_US
-url:              http://tudelft-in4303.github.io/
+title: TUDelft IN4303
+locale: en_US
+#url: http://tudelft-in4303.github.io
+url: http://127.0.0.1:4000
 
 
 # Jekyll configuration
@@ -26,35 +27,8 @@ kramdown:
 
 # Site owner
 owner:
-  name: Your Name
-  avatar: bio-photo.jpg
-  bio: "Describe your self."
-  email:
-  disqus-shortname:
-  twitter: #username
-  facebook: #username
-  google:
-    plus: #username
-    analytics:
-    verify:
-    ad-client:
-    ad-slot:
-  bing-verify:
-  github: #username
-  stackoverflow: #http://stackoverflow.com/users/123456/username
-  linkedin: #username
-  xing: #username
-  instagram: #username
-  lastfm: #username
-  tumblr: #username
-  pinterest: #username
-  foursquare: #username
-  steam: #username
-  dribbble: #username
-  youtube: #username
-  soundcloud: #username
-  weibo: #username
-  flickr: #username
+  name: Compiler Construction
+  avatar: https://avatars0.githubusercontent.com/u/8240795?v=3&s=200
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
