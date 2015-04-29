@@ -65,3 +65,18 @@
 - title: "FAQ"
   url: /assignments/ms3/faq.html
   context: ms3
+
+
+# Documentation
+
+- title: "Git"
+  url: /documentation/git.html
+  context: doc
+
+- title: "Spoofax"
+  url: /documentation/spoofax.html
+  context: doc
+
+- title: "Jasmin"
+  url: /documentation/jasmin.html
+  context: doc

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Documentation"
-excerpt: "Documentation"
+title: "Git"
+excerpt: "Git"
 tags: ["documentation"]
 context: doc
 ---

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Documentation"
-excerpt: "Documentation"
+title: "Jasmin"
+excerpt: "Jasmin"
 tags: ["documentation"]
 context: doc
 ---

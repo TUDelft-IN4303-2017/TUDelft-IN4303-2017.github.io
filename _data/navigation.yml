@@ -1,8 +1,5 @@
 # Site navigation links
 
-- title: Documentation
-  url: /documentation/
-
 - title: Milestone 1 - syntax
   url: /assignments/ms1/
 
@@ -11,3 +8,6 @@
 
 - title: Milestone 3 - codegen
   url: /assignments/ms3/
+
+- title: Documentation
+  url: /documentation/
