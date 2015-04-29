@@ -15,14 +15,16 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 * to report semantic errors, warnings, and notes, and
 * to provide semantic code completion.
 
-## Prerequisites
-
-### MiniJava Editor (Milestone 1) and Test Projects
+## Initial Projects
 
 We provide you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
 For grading purposes, you are required to use this project as a starting point for milestone 2.
 
-You also find two new test projects in your GitHub repository. 
+You also find two new test projects in your GitHub repository.
+You need to import these into your Eclipse workspace, following these steps:
+
+...
+
 You should use `MiniJava-tests-names` for assignment 5 and `MiniJava-tests-types` for assignment 7.
 
 ## Resources
