@@ -42,7 +42,7 @@ The deadline for submissions is October 22nd, 17:59.
 You can earn up to 100 points for the coverage of your test cases.
 
 It is important to name tests in a testsuite uniquely. Tests in different test suites can have the same name, but for grading, we need to be able to distinguish tests in the same test suite by their name.
-{: .notice}
+{: .notice .notice-warning}
 
 ### Early Feedback
 
