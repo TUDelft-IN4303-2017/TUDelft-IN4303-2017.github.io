@@ -364,13 +364,13 @@ Typically, they are less guided and require more investigation or higher program
 
 2. In a post-analysis desugaring, replace `VarRef(x)` terms which refer to fields and not to variables with a term `FieldRef(x)`. Implement this with a strategy `post-desugar-all` and extend the analysis rules to
 
-  ```
-  rules // Analysis
-  
-    editor-analyze = analysis-default-editor
-  
-    analysis-single-default-interface =
-      analysis-single-default(desugar-all, post-desugar-all, id|<language>)
-    analysis-multiple-default-interface =
-      analysis-multiple-default(parse-file <+ !(), desugar-all, post-desugar-all, id|<language>, <project-path>)
-  ```
+```
+rules // Analysis
+
+  editor-analyze = analysis-default-editor
+
+  analysis-single-default-interface =
+    analysis-single-default(desugar-all, post-desugar-all, id|<language>)
+  analysis-multiple-default-interface =
+    analysis-multiple-default(parse-file <+ !(), desugar-all, post-desugar-all, id|<language>, <project-path>)
+```
