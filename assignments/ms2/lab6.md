@@ -20,29 +20,29 @@ Specify name analysis for MiniJava in NaBL and Stratego and generate an Eclipse 
 The specification should include:
 
 1. Name binding rules for
-  * class declarations,
-  * class references,
-  * method declarations,
-  * parameter declarations,
-  * field declarations,
-  * variable declarations, and
-  * parameter, field and variable references.
+  * class declarations
+  * class references
+  * field declarations
+  * method declarations
+  * parameter declarations
+  * variable declarations
+  * field, parameter, and variable references
 2. Scoping rules for
-  * class declarations,
-  * method declarations,
-  * parameter declarations,
-  * field declarations and
-  * variable declarations.
+  * class declarations
+  * method declarations
+  * parameter declarations
+  * field declarations
+  * variable declarations
 3. Typing rules for
-  * main class declarations,
-  * parameter declarations, and
-  * field declarations,
-  * variable declarations.
+  * main class declarations
+  * field declarations
+  * parameter declarations
+  * variable declarations
 4. Custom constraint rules for
-  * duplicate definitions of classes, parameters, fields, and variables,
-  * unresolved references to classes, parameters, fields, and variables,
-  * variable declarations which hide local field declarations and
-  * references to the main class.
+  * duplicate definitions of classes, fields, parameters, and variables
+  * unresolved references to classes, fields, parameters, and variables
+  * variable declarations which hide local field declarations
+  * references to the main class
 
 ### Submission
 
