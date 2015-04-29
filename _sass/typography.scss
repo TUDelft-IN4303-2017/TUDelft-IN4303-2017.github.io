@@ -188,4 +188,8 @@ pre {
 	@include font-rem(12);
 	line-height: 1.5;
 	overflow-x: auto;
+	background-color: #efefef;
+  padding: 1em;
+  @include rounded(5px);
+  border : 1px solid #ddd;
 }
