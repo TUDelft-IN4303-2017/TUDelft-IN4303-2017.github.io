@@ -79,32 +79,9 @@ We particular focus on
 
 ## Detailed Instructions
 
-### Spoofax Update
-
-This lab requires you to update Spoofax to the latest version.
-
-1. Choose *Check for Updates* from the *Help* menu.
-2. Wait for updates to be found.
-3. Install the updates to Spoofax.
-4. Restart Eclipse
-
 ### Initial Editor Project
 
-We provide you with an initial MiniJava project in the branch `assignment6`.
-Make sure you have this branch in your fork as well, before you start working on this assignment.
-
-1. Import the project into your workspace:
-    1. right-click into the Package Explorer
-    2. select **Import...** from the context menu
-    3. choose **General/Existing Projects into Workspace** from the list
-    4. select the MiniJava project
-    5. press the **Finish** button
-2. Build the project:
-    1. select the project folder
-    2. select **Build Project** from the **Project** menu
-    3. the console will report success or failure
-
-This project contains the desugarings implementation `common/desugar.ctree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `common/desugar`.
+The initial editor project from the last assignment contains the desugarings implementation `common/desugar.ctree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `common/desugar`.
 
 ### Name Binding
 
