@@ -100,7 +100,7 @@ class Foo {
 
 You can use `setup` headers and footers to avoid repeating parts in similar test cases.
 
-When using get-type on objects the expected ClassType constructor also requires annotations.
+When using get-type on objects the expected `ClassType` constructor also requires annotations.
 These annotations should be added to the constructor using a wild card as done below.
 
 ```
@@ -174,4 +174,7 @@ In MiniJava, `System.out.println()` can only print integers.
 Thus, there should be an error on `true`, when we pass it to the print statement.
 Similarly, type errors can occur in other statements, expressions, and method declarations.
 You should come up with test cases for such errors.
+Subtyping is a common source for errors not only in programs, but also in language implementations. 
+It is therefore important to have positive and negative typing tests, which involve correct and incorrect subtyping.
+
 Again, keep in mind that coverage is the main criterion for your grade.
