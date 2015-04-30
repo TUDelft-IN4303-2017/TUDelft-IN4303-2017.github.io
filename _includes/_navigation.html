@@ -24,5 +24,14 @@
 			  {% endfor %}
       </ul>
     </nav>
+	<nav role="navigation" id="subcontext-nav" class="subcontext-nav">
+      <ul>
+        {% for link in site.data.subcontextmenu %}
+          {% if link.subcontext == page.subcontext  %}
+			      <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+			    {% endif %}
+			  {% endfor %}
+      </ul>
+    </nav>
 	</div><!-- /.top-navigation -->
 </div><!-- /.navigation-wrapper -->

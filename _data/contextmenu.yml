@@ -1,82 +1,17 @@
-# Milestone 1
+# Assignments
 
-- title: "Lab 1"
-  url: /assignments/ms1/lab1.html
-  context: ms1
-
-- title: "Lab 2"
-  url: /assignments/ms1/lab2.html
-  context: ms1
-
-- title: "Lab 3"
-  url: /assignments/ms1/lab3.html
-  context: ms1
-
-- title: "Lab 4"
-  url: /assignments/ms1/lab4.html
-  context: ms1
-
-- title: "FAQ"
-  url: /assignments/ms1/faq.html
-  context: ms1
-
-
-# Milestone 2
-
-- title: "Lab 5"
-  url: /assignments/ms2/lab5.html
-  context: ms2
-
-- title: "Lab 6"
-  url: /assignments/ms2/lab6.html
-  context: ms2
-
-- title: "Lab 7"
-  url: /assignments/ms2/lab7.html
-  context: ms2
-
-- title: "Lab 8"
-  url: /assignments/ms2/lab8.html
-  context: ms2
-
-- title: "Lab 9"
-  url: /assignments/ms2/lab9.html
-  context: ms2
-
-- title: "FAQ"
-  url: /assignments/ms2/faq.html
-  context: ms2
-
-
-# Milestone 3
-
-- title: "Lab 10"
-  url: /assignments/ms3/lab10.html
-  context: ms3
-
-- title: "Lab 11"
-  url: /assignments/ms3/lab11.html
-  context: ms3
-
-- title: "Lab 12"
-  url: /assignments/ms3/lab12.html
-  context: ms3
-
-- title: "FAQ"
-  url: /assignments/ms3/faq.html
-  context: ms3
-
-
-# Documentation
-
-- title: "Git"
-  url: /documentation/git.html
-  context: doc
-
-- title: "Spoofax"
-  url: /documentation/spoofax.html
-  context: doc
-
-- title: "Jasmin"
-  url: /documentation/jasmin.html
-  context: doc
+- title: syntax analysis
+  url: /assignments/ms1/
+  context: assign
+  
+- title: semantic analysis
+  url: /assignments/ms2/
+  context: assign
+  
+- title: code generation
+  url: /assignments/ms3/
+  context: assign
+  
+- title: documentation
+  url: /documentation/
+  context: assign

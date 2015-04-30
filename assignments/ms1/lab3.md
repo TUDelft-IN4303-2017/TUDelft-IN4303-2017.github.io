@@ -3,7 +3,8 @@ layout: page
 title: "Lab 3: Syntactic Editor Services"
 excerpt: "Lab 3: Syntactic Editor Services"
 tags: ["assignment"]
-context: ms1
+context: assign
+subcontext: ms1
 ---
 
 {% include _toc.html %}

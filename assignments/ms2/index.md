@@ -3,7 +3,8 @@ layout: page
 title: "Milestone 2: Semantic Analysis"
 excerpt: "Milestone 2: Semantic Analysis"
 tags: ["assignment"]
-context: ms2
+context: assign
+subcontext: ms2
 ---
 
 {% include _toc.html %}

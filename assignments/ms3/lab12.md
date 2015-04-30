@@ -3,7 +3,8 @@ layout: page
 title: "Lab 12: Complete Code Generation"
 excerpt: "Lab 12: Complete Code Generation"
 tags: ["assignment"]
-context: ms3
+context: assign
+subcontext: ms3
 ---
 
 {% include _toc.html %}

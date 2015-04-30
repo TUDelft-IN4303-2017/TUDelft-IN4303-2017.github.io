@@ -3,7 +3,8 @@ layout: page
 title: "Lab 4: Simple Term Rewriting"
 excerpt: "Lab 4: Simple Term Rewriting"
 tags: ["assignment"]
-context: ms1
+context: assign
+subcontext: ms1
 ---
 
 {% include _toc.html %}

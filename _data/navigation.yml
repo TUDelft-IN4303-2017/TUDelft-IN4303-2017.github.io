@@ -1,13 +1,25 @@
 # Site navigation links
 
-- title: Milestone 1 - syntax
-  url: /assignments/ms1/
+- title: lectures
+  url: /lectures/
+             
+# Assignments
 
-- title: Milestone 2 - analysis
-  url: /assignments/ms2/
+- title: assignments
+  url: /assignments/
 
-- title: Milestone 3 - codegen
-  url: /assignments/ms3/
+#- title: Milestone 1 - syntax
+#  url: /assignments/ms1/
+#  
+#- title: Milestone 2 - analysis
+#  url: /assignments/ms2/
+#  
+#- title: Milestone 3 - codegen
+#  url: /assignments/ms3/
+#  
+#- title: Documentation
+#  url: /documentation/
+  
+- title: team
+  url: /team/
 
-- title: Documentation
-  url: /documentation/

@@ -3,7 +3,8 @@ layout: page
 title: "Lab 2: Syntax Definition"
 excerpt: "Lab 2: Syntax Definition"
 tags: ["assignment"]
-context: ms1
+context: assign
+subcontext: ms1
 ---
 
 {% include _toc.html %}

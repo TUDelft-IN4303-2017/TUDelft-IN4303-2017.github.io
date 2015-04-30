@@ -17,6 +17,13 @@ body {
 .context-nav {
   padding: 0.5em 0 0 0;
   margin: 0.5em 0 0 0;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.subcontext-nav {
+  padding: 0.5em 0 0 0;
+  margin: 0.5em 0 0 0;
   font-style: italic;
   font-weight: 500;
   text-transform: none;

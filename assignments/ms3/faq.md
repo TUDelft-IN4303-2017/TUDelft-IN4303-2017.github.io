@@ -3,7 +3,8 @@ layout: page
 title: "Milestone 3 FAQ"
 excerpt: "Milestone 3 FAQ"
 tags: ["assignment"]
-context: ms3
+context: assign
+subcontext: ms3
 ---
 
 {% include _toc.html %}

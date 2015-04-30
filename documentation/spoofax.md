@@ -3,7 +3,8 @@ layout: page
 title: "Spoofax"
 excerpt: "Spoofax"
 tags: ["documentation"]
-context: doc
+context: assign
+subcontext: doc
 ---
 
 ## SPT

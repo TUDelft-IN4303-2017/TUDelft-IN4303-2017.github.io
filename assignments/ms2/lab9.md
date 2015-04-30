@@ -3,7 +3,8 @@ layout: page
 title: "Lab 9: Inheritance and Subtyping"
 excerpt: "Lab 9: Inheritance and Subtyping"
 tags: ["assignment"]
-context: ms2
+context: assign
+subcontext: ms2
 ---
 
 {% include _toc.html %}

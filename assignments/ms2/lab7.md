@@ -3,7 +3,8 @@ layout: page
 title: "Lab 7: Testing Type Analysis"
 excerpt: "Lab 7: Testing Type Analysis"
 tags: ["assignment"]
-context: ms2
+context: assign
+subcontext: ms2
 ---
 
 {% include _toc.html %}
