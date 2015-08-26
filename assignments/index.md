@@ -13,7 +13,7 @@ context: assign
 In the practical part of the course, you build an IDE for MiniJava, a small subset of Java.
 We split this task into three milestones of weekly individual assignments:
 
-*. [Milestone 1: Syntax Analysis](ms1)
+* [Milestone 1: Syntax Analysis](ms1)
   * [Testing Syntax Analysis](ms1/lab1.html)
   * [Syntax Definition](ms1/lab2.html)
   * [Syntactic Editor Services](ms1/lab3.html)
