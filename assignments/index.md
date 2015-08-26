@@ -13,21 +13,21 @@ context: assign
 In the practical part of the course, you build an IDE for MiniJava, a small subset of Java.
 We split this task into three milestones of weekly individual assignments:
 
-* [Milestone 1: Syntax Analysis](ms1)
-  1. [Testing Syntax Analysis](ms1/lab1.html)
-  2. [Syntax Definition](ms1/lab2.html)
-  3. [Syntactic Editor Services](ms1/lab3.html)
-  4. [Simple Term Rewriting](ms1/lab4.html)
+*. [Milestone 1: Syntax Analysis](ms1)
+  * [Testing Syntax Analysis](ms1/lab1.html)
+  * [Syntax Definition](ms1/lab2.html)
+  * [Syntactic Editor Services](ms1/lab3.html)
+  * [Simple Term Rewriting](ms1/lab4.html)
 * [Milestone 2: Semantic Analysis](ms2)
-  5. [Testing Name Analysis](ms2/lab5.html)
-  6. [Name Analysis](ms2/lab6.html)
-  7. [Testing Type Analysis](ms2/lab7.html)
-  8. [Basic Type Analysis](ms2/lab8.html)
-  9. [Inheritance and Subtyping](ms2/lab9.html)
+  * [Testing Name Analysis](ms2/lab5.html)
+  * [Name Analysis](ms2/lab6.html)
+  * [Testing Type Analysis](ms2/lab7.html)
+  * [Basic Type Analysis](ms2/lab8.html)
+  * [Inheritance and Subtyping](ms2/lab9.html)
 * [Milestone 3: Code Generation](ms3)
-  10. [Compiling Minimal Programs](ms3/lab10.html)
-  11. [Compiling Expressions and Statements](ms3/lab11.html)
-  12. [Compiling, Fields, Parameters, and Variables](ms3/lab12.html)
+  * [Compiling Minimal Programs](ms3/lab10.html)
+  * [Compiling Expressions and Statements](ms3/lab11.html)
+  * [Compiling, Fields, Parameters, and Variables](ms3/lab12.html)
 
 ## Submission
 
