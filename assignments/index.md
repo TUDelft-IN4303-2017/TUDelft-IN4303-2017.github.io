@@ -13,13 +13,6 @@ context: assign
 In the practical part of the course, you build an IDE for MiniJava, a small subset of Java.
 We split this task into three milestones of weekly individual assignments:
 
-
-1. MiniJava editor (syntax analysis, pretty-printing, code templates, syntax highlighting, outline view)
-2. MiniJava analyser (name analysis, type analysis, constraint checking, code completion)
-3. MiniJava compiler (Java bytecode generation)
-
-All assignments are publicly available on GitHub:
-
 * [Milestone 1: Syntax Analysis](ms1)
   1. [Testing Syntax Analysis](ms1/lab1.html)
   2. [Syntax Definition](ms1/lab2.html)
@@ -36,7 +29,7 @@ All assignments are publicly available on GitHub:
   11. [Compiling Expressions and Statements](ms3/lab11.html)
   12. [Compiling, Fields, Parameters, and Variables](ms3/lab12.html)
 
-## Submitting Assignments
+## Submission
 
 We rely on GitHub for assignment submissions.
 We assign a private GitHub repository to each student and encourage students to commit and push their work frequently.
@@ -53,7 +46,7 @@ We will provide a detailed grading report on final solutions.
 To ensure fairness and equal chances for all students, grading reports will not be published before 5 labs after the submission deadline.
 We do our best to hand out grading reports as quick as possible, but manual grading can be tedious and might result in longer waiting times for some assignments.
 
-## Grading
+## Grades
 
 We grade the first final solution of each of your assignments.
 Grades reflect on correctness, clarity, shown programming skills, and readability of your submission.
@@ -92,7 +85,7 @@ Any violation of these rules will be reported as a suspected case of fraud to th
 If the case is proven, a penalty will be imposed: a minimum of exclusion from the course for the duration of one academic year up to a maximum of a one-year exclusion form all courses at TU Delft.
 For details on the procedure, see Section 2.1.26 in the faculty's Study Guide for MSc Programmes.
 
-## Redoing the Assignments
+## Retry
 
 To ensure fairness and equal chances for all students, you are not allowed to take the same practical assignments in another edition of this course.
 In case you participated in previous editions of the course, please contact the course manager to discuss an individual assignment.
