@@ -21,10 +21,10 @@ We split this task into three milestones of weekly individual assignments:
 All assignments are publicly available on GitHub:
 
 * [Milestone 1: Syntax Analysis](ms1)
-  1. [Testing Syntax Analysis](assignments/ms1/lab1.html) (due to ~~22 September~~ **24 September**)
-  2. [Syntax Definition](assignments/ms1/lab2.html) (due to ~~29 September~~ **01 October**)
-  3. [Syntactic Editor Services](assignments/ms1/lab3.html) (due to 08 October)
-  4. [Simple Term Rewriting](assignments/ms1/lab4.html) (due to 15 October)
+  1. [Testing Syntax Analysis](ms1/lab1.html) (due to ~~22 September~~ **24 September**)
+  2. [Syntax Definition](ms1/lab2.html) (due to ~~29 September~~ **01 October**)
+  3. [Syntactic Editor Services](ms1/lab3.html) (due to 08 October)
+  4. [Simple Term Rewriting](/ms1/lab4.html) (due to 15 October)
 * [Milestone 2: Semantic Analysis](assignments/ms2)
   5. [Testing Name Analysis](assignments/ms2/lab5.html) (due to 22 October)
   6. [Name Analysis](assignments/ms2/lab6.html) (due to 12 November)
