@@ -20,7 +20,7 @@ We split this task into three milestones of weekly individual assignments:
 
 All assignments are publicly available on GitHub:
 
-* [Milestone 1: Syntax Analysis](assignments/ms1)
+* [Milestone 1: Syntax Analysis](ms1)
   1. [Testing Syntax Analysis](assignments/ms1/lab1.html) (due to ~~22 September~~ **24 September**)
   2. [Syntax Definition](assignments/ms1/lab2.html) (due to ~~29 September~~ **01 October**)
   3. [Syntactic Editor Services](assignments/ms1/lab3.html) (due to 08 October)
