@@ -1,5 +1,9 @@
 # Lectures
 
+- title: introduction
+  url: /lectures/introduction/
+  context: lectures
+  
 - title: language specification
   url: /lectures/specification/
   context: lectures
