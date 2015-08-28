@@ -1,3 +1,17 @@
+# Lectures
+
+- title: language specification
+  url: /lectures/specification/
+  context: lectures
+  
+- title: compiler techniques
+  url: /lectures/techniques/
+  context: lectures
+
+- title: compiler generation
+  url: /lectures/generation/
+  context: lectures
+
 # Assignments
 
 - title: syntax analysis
