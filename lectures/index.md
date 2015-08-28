@@ -3,6 +3,7 @@ layout: page
 title: "Lectures"
 excerpt: "Lectures"
 tags: ["lectures"]
+context: lectures
 # image: 
 #    feature: "lecture.jpg"
 #    credit: Delft University of Technology
