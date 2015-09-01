@@ -26,7 +26,7 @@ Finally, we introduce traditional *compiler compilers* and modern *language work
 
 ## Slides
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/9hKNDjA8DRopOX" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/guwac/compiler-construction-introduction-5058359" title="Software Languages" target="_blank">Software Languages</a> </strong> from <strong><a href="//www.slideshare.net/guwac" target="_blank">Guido Wachsmuth</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/9hKNDjA8DRopOX" width="510" height="420" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/guwac/compiler-construction-introduction-5058359" title="Software Languages" target="_blank">Software Languages</a> </strong> from <strong><a href="//www.slideshare.net/guwac" target="_blank">Guido Wachsmuth</a></strong> </div>
 
 ## Further Reading
 
