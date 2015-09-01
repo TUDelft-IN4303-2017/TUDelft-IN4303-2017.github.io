@@ -1,3 +1,15 @@
+# Introduction
+
+- title: software languages
+  url: /lectures/introduction/software-languages.html
+  context: lectures
+  subcontext: introduction
+
+- title: imperative & object-oriented programming languages
+  url: /lectures/introduction/imperative-oo-pl.html
+  context: lectures
+  subcontext: introduction
+
 # Milestone 1
 
 - title: lab 1
