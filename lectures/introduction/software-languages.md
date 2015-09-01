@@ -24,11 +24,11 @@ We then introduce various *language processors* as basic building blocks of comp
 We continue with a comparison of traditional compilers and modern compilers in IDEs. 
 Finally, we introduce traditional *compiler compilers* and modern *language workbenches* as tools to construct compilers.
 
-# Slides
+## Slides
 
-[![View slides on Slideshare](Software Languages.jpg)](https://www.slideshare.net/guwac/compiler-construction-introduction-5058359) 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/9hKNDjA8DRopOX" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/guwac/compiler-construction-introduction-5058359" title="Software Languages" target="_blank">Software Languages</a> </strong> from <strong><a href="//www.slideshare.net/guwac" target="_blank">Guido Wachsmuth</a></strong> </div>
 
-# Further Reading
+## Further Reading
 
 1. Edward Sapir (1921). Introductory: Language Defined. In [Language. An Introduction to the Study of Speech](http://www.gutenberg.org/files/12629/12629-h/12629-h.htm).
 
