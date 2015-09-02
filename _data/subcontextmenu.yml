@@ -10,6 +10,33 @@
   context: lectures
   subcontext: introduction
 
+# Language Specification
+
+- title: Formal Grammars
+  url: /lectures/specification/formal-grammars.html
+  context: lectures
+  subcontext: specification
+
+- title: Syntax Definition
+  url: /lectures/specification/syntax-definition.html
+  context: lectures
+  subcontext: specification
+
+- title: Static Analysis
+  url: /lectures/specification/static-analysis.html
+  context: lectures
+  subcontext: specification
+
+- title: Term Rewriting
+  url: /lectures/specification/term-rewriting.html
+  context: lectures
+  subcontext: specification
+
+- title: Code Generation
+  url: /lectures/specification/code-generation.html
+  context: lectures
+  subcontext: specification
+
 # Milestone 1
 
 - title: lab 1
