@@ -7,5 +7,4 @@ context: lectures
 subcontext: specification
 ---
 
-{% include _toc.html %}
 
