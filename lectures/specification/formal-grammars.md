@@ -21,7 +21,7 @@ We start with a *formal* model of *languages* and investigate *formal grammars* 
 
 
 
-# Further Reading
+## Further Reading
 
 1.  Noam Chomsky (1956). Three models for the description of language. IRE Transactions on Information Theory, 2(3).
 
