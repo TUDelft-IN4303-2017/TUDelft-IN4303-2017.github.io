@@ -54,6 +54,23 @@
   context: lectures
   subcontext: techniques
 
+# Compiler Generation
+
+- title: Lexical Analysis
+  url: /lectures/techniques/lexical-analysis.html
+  context: lectures
+  subcontext: generation
+
+- title: LL Parsing
+  url: /lectures/techniques/LL-parsing.html
+  context: lectures
+  subcontext: generation
+
+- title: LR Parsing
+  url: /lectures/techniques/LR-parsing.html
+  context: lectures
+  subcontext: generation
+
 # Milestone 1
 
 - title: lab 1
