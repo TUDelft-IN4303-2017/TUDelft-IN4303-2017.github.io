@@ -57,17 +57,17 @@
 # Compiler Generation
 
 - title: Lexical Analysis
-  url: /lectures/techniques/lexical-analysis.html
+  url: /lectures/generation/lexical-analysis.html
   context: lectures
   subcontext: generation
 
 - title: LL Parsing
-  url: /lectures/techniques/LL-parsing.html
+  url: /lectures/generation/LL-parsing.html
   context: lectures
   subcontext: generation
 
 - title: LR Parsing
-  url: /lectures/techniques/LR-parsing.html
+  url: /lectures/generation/LR-parsing.html
   context: lectures
   subcontext: generation
 
