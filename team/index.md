@@ -7,15 +7,15 @@ tags: ["team"]
 
 ## Instructors
 
-### Guido Wachsmuth (responsible instructor)
+##### Guido Wachsmuth (responsible instructor)
 
-### Eelco Visser (instructor)
+##### Eelco Visser (instructor)
 
 ## Teaching Assistants
 
-### Luis Eduardo de Souza Amorim (graduate teaching assistant)
+##### Luis Eduardo de Souza Amorim (graduate teaching assistant)
 
-### Gabriël Konat (graduate teaching assistant)
+##### Gabriël Konat (graduate teaching assistant)
 
-### Martijn Dwars (student teaching assistant)
+##### Martijn Dwars (student teaching assistant)
 
