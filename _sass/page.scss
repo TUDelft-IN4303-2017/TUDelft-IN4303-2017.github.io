@@ -336,7 +336,8 @@ $button-size: 1.5rem;
 	font-size: 80%;
 }
 .article-author-side,
-.article-author-bottom {
+.article-author-bottom,
+.article-author {
 	h3 {
 		margin-bottom: 0;
 	}
@@ -426,6 +427,38 @@ $button-size: 1.5rem;
 		margin-right: 10px;
 	}
 	@media #{$large} {
+		h3,
+		.bio-photo,
+		p,
+		.author-social {
+			max-width: 150px;
+		}
+	}
+}
+.article-author {
+	margin-bottom: 1em;
+	@media #{$small} {
+		display: none;
+	}
+	.bio-photo {
+		float: left;
+		margin-right: 25px;
+		max-width: 100px;
+		@include rounded(150px);
+	}
+	.author-social {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	@media #{$large} {
+		h3,
+		.bio-photo,
+		p,
+		.author-social {
+			max-width: 150px;
+		}
+	}
+	@media #{$x-large} {
 		h3,
 		.bio-photo,
 		p,
