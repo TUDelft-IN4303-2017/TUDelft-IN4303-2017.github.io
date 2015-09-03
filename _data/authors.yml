@@ -1,16 +1,16 @@
 # Authors
 
-- guwac:
-    name: Guido Wachsmuth
-    position: responsible instructor
-    email: G.H.Wachsmuth@tudelft.nl
-    avatar: bio-photo-2.jpg
-    twitter: guwac
+guwac:
+  name: Guido Wachsmuth
+  position: responsible instructor
+  email: G.H.Wachsmuth@tudelft.nl
+  avatar: bio-photo-2.jpg
+  twitter: guwac
   
-- guwac:
-    name: Guido Wachsmuth
-    position: responsible instructor
-    email: G.H.Wachsmuth@tudelft.nl
-    avatar: bio-photo-2.jpg
-    twitter: guwac
+eelcovisser:
+  name: Eelco Visser
+  position: instructor
+  email: E.Visser@tudelft.nl
+  avatar: bio-photo-2.jpg
+  twitter: eelcovisser
   
