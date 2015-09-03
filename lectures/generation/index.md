@@ -7,5 +7,5 @@ context: lectures
 subcontext: generation
 ---
 
-{% include _toc.html %}
+In the final topic, we take a closer look on the inside working of compiler components and their generators. In particular, we study parsing algorithms and parser generation.
 
