@@ -7,4 +7,3 @@ context: lectures
 subcontext: techniques
 ---
 
-{% include _toc.html %}
