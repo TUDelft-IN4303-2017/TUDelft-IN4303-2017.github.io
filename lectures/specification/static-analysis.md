@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Syntax Definition"
-excerpt: "Syntax Definition"
+title: "Static Analysis"
+excerpt: "Static Analysis"
 tags: ["lectures"]
 context: lectures
 subcontext: specification
