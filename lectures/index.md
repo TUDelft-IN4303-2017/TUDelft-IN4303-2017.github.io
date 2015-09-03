@@ -14,6 +14,6 @@ Lectures are organised in two introduction lectures and three general topics. Th
 
 The first topic focuses on declarative specification of compiler components as supported by state-of-the-art tools for compiler construction, including lexical syntax, context-free syntax, static semantics, and code generation.
 
-In the second topic, we address techniques for the compilation and runtime environments of imperative and object-oriented languages, including activation records, memory management, register allocation, virtual machines, and garbage collection in detail.
+In the second topic, we address techniques for the compilation and runtime environments of imperative and object-oriented languages, including dataflow analysis, register allocation, virtual machines, and memory management in detail.
 
 In the final topic, we take a closer look on the inside working of compiler components and their generators. In particular, we study parsing algorithms and parser generation.
