@@ -13,7 +13,11 @@ subcontext: techniques
 
 ## Further Reading
 
-1. Oracle. [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html).
+1. Andrew W. Appel and Jens Palsberg (2002). Garbage Collection. In *Modern Compiler Implementation in Java*, 2nd edition. Cambridge University Press.
+    
+    The lecture closely follows the discussion of *mark-and-sweep collection*, *reference counts*, *copying collection*, and *generational collection* in this chapter. This chapter also provides detailed cost analyses and discusses advantages and disadvantages of the different approaches to garbage collection.
+
+2. Oracle. [Java Garbage Collection Basics](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/gc01/index.html).
     
     This tutorial covers the basics of how garbage collection works with the Hotspot JVM.
   It explains mark-and-sweep, mark-and-compact, and generational collection.
