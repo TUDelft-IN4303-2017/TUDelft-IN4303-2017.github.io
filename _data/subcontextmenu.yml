@@ -32,10 +32,27 @@
   context: lectures
   subcontext: specification
 
-- title: Code Generation
-  url: /lectures/specification/code-generation.html
+# Compiler Techniques
+
+- title: Dataflow Analysis
+  url: /lectures/techniques/dataflow-analysis.html
   context: lectures
-  subcontext: specification
+  subcontext: techniques
+
+- title: Register Allocation
+  url: /lectures/techniques/register-allocation.html
+  context: lectures
+  subcontext: techniques
+
+- title: Virtual Machines
+  url: /lectures/techniques/virtual-machines.html
+  context: lectures
+  subcontext: techniques
+
+- title: Garbage Collection
+  url: /lectures/techniques/garbage-collection.html
+  context: lectures
+  subcontext: techniques
 
 # Milestone 1
 
