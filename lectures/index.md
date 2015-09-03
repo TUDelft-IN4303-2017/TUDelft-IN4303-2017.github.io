@@ -17,3 +17,16 @@ The first topic focuses on declarative specification of compiler components as s
 In the second topic, we address techniques for the compilation and runtime environments of imperative and object-oriented languages, including dataflow analysis, register allocation, virtual machines, and memory management in detail.
 
 In the final topic, we take a closer look on the inside working of compiler components and their generators. In particular, we study parsing algorithms and parser generation.
+
+## Schedule 2015/16
+
+* Tue  8 September, 13:45, CT-CZ F:  [Software Languages](introduction/software-languages)
+* Tue  8 September, 15:45, CT-CZ F:  [Formal Grammars](specification/formal-grammars)
+* Wed  9 September, 17:45, EWI Chip: [Syntax Definition](specification/syntax-definition)
+* Wed 16 September, 17:45, EWI Chip: [Semantic Analysis](specification/semantic-analysis)
+* Wed 23 September, 17:45, EWI Chip: [Imperative & Object-Oriented Programming Languages](introduction/imperative-oo-pl)
+* Wed 30 September, 17:45, EWI Chip: [Term Rewriting](specification/term-rewriting) 
+* Wed  7 October,   17:45, EWI Chip: [Dataflow Analysis](techniques/dataflow-analysis)
+* Wed 14 October,   17:45, EWI Chip: [Register Allocation](techniques/register-allocation)
+* Wed 21 October,   17:45, EWI Chip: [Virtual Machines](techniques/virtual-machines)
+
