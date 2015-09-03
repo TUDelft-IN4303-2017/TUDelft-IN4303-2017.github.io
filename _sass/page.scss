@@ -437,9 +437,8 @@ $button-size: 1.5rem;
 }
 .article-author {
 	margin-bottom: 1em;
-	@media #{$small} {
-		display: none;
-	}
+	.h3,
+	.p,
 	.bio-photo {
 		float: left;
 		margin-right: 25px;
@@ -449,22 +448,6 @@ $button-size: 1.5rem;
 	.author-social {
 		display: inline-block;
 		margin-right: 10px;
-	}
-	@media #{$large} {
-		h3,
-		.bio-photo,
-		p,
-		.author-social {
-			max-width: 150px;
-		}
-	}
-	@media #{$x-large} {
-		h3,
-		.bio-photo,
-		p,
-		.author-social {
-			max-width: 150px;
-		}
 	}
 }
 .article-wrap {
