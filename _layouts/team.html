@@ -37,6 +37,7 @@
     <div class="article-wrap">
       {{ content }}
       {% for author in site.data.authors %}
+        <div class="article-author-side">
         <div itemscope itemtype="http://schema.org/Person">
         
         {% if author.avatar contains 'http' %}
@@ -66,6 +67,7 @@
           {% if author.soundcloud %}<a href="http://soundcloud.com/{{ author.soundcloud }}" class="author-social" target="_blank"><i class="fa fa-fw fa-soundcloud"></i> Soundcloud</a>{% endif %}
           {% if author.weibo %}<a href="http://www.weibo.com/{{ author.weibo }}" class="author-social" target="_blank"><i class="fa fa-fw fa-weibo"></i> Weibo</a>{% endif %}
           {% if author.flickr %}<a href="http://www.flickr.com/{{ author.flickr }}" class="author-social" target="_blank"><i class="fa fa-fw fa-flickr"></i> Flickr</a>{% endif %}
+        </div>
         </div>
         
       {% endfor %}
