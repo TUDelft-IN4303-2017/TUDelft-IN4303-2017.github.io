@@ -2,9 +2,9 @@
 
 guwac:
   name: Guido Wachsmuth
-  email: G.H.Wachsmuth@tudelft.nl
   position: responsible instructor
-#  bio: ""
+  email: G.H.Wachsmuth@tudelft.nl
+  bio: 
   avatar: bio-photo-2.jpg
   twitter: guwac
   
