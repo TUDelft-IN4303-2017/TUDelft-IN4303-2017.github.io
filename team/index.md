@@ -7,10 +7,14 @@ tags: ["team"]
 
 ## Instructors
 
-##### Guido Wachsmuth (responsible instructor)
-
 <div itemscope itemtype="http://schema.org/Person">
 <img src="http://tudelft-in4303.github.io/images/bio-photo.jpg" class="bio-photo" alt="Guido Wachsmuth bio photo">
+
+<h3 itemprop="name">Guido Wachsmuth</h3>
+
+<p> </p>
+
+<a href="mailto:G.H.Wachsmuth@tudelft.nl" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
 <a href="http://twitter.com/guwac" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
 </div>
 
