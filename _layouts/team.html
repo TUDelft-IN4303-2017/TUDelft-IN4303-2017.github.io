@@ -49,7 +49,7 @@
           <h3 itemprop="name">{{ author.name }}</h3>
           
           <p>{{ author.position }}</p>
-          {% if author.office %}<i class="author-social"><i class="fa fa-fw fa-user"></i> {{ author.office }}</i>{% endif %}
+          {% if author.office %}<i class="fa fa-fw fa-user"></i> {{ author.office }} {% endif %}
           {% if author.email %}<a href="mailto:{{ author.email }}" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>{% endif %}
           {% if author.twitter %}<a href="http://twitter.com/{{ author.twitter }}" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>{% endif %}
           {% if author.facebook %}<a href="http://facebook.com/{{ author.facebook }}" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>{% endif %}
