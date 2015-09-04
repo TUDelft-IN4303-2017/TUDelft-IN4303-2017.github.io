@@ -9,7 +9,24 @@
   
 - name: Eelco Visser
   position: instructor
+  office: HB 08.270
   email: E.Visser@tudelft.nl
   avatar: bio-photo.jpg
   twitter: eelcovisser
+
+- name: Eduardo de Souza Amorim
+  position: graduate teaching assistant
+  office: HB 08.260
+  email: L.E.DeSouzaAmorim-1@tudelft.nl
+  avatar: bio-photo.jpg
+  
+- name: Gabriël Konat
+  position: graduate teaching assistant
+  office: HB 08.260
+  email: G.D.P.Konat@tudelft.nl
+  avatar: bio-photo.jpg
+
+- name: Martijn Dwars
+  position: student teaching assistant
+  avatar: bio-photo.jpg
   
