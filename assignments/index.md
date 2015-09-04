@@ -58,15 +58,16 @@ To pass the practical part of the course, you need to meet all of the following 
 
 These rules allow you to compensate for lower grades in single assignments, but ensure a minimal quality in all your milestones as well as in your overall practical work.
 
-## Deadlines
+## Deadlines 2015/16
 
-Assignments must be submitted weekly until Monlab, 17:59.
-Each student has 5 late labs to use at his or her discretion.
-Each late lab constitutes a 24-hour extension; you cannot split late labs into smaller increments.
-Once a student runs out of late labs, any late submission is penalised at a rate of 0.1 grading points per lab.
-No submission may be handed in more than 5 labs late.
+In the first quarter, assignments must be submitted weekly until Thursday, 23:59.
+In the second quarter, assignments must be submitted weekly until Friday, 23:59.
+Each student has 5 late days to use at his or her discretion.
+Each late day constitutes a 24-hour extension; you cannot split late labs into smaller increments.
+Once a student runs out of late days, any late submission is penalised at a rate of 0.1 grading points per day.
+No submission may be handed in more than 5 days late.
 
-Please reserve your late labs for legitimate emergencies.
+Please reserve your late days for legitimate emergencies.
 If you think you cannot meet deadlines due to special circumstances, you should contact the academic counsellor.
 Together we will try to find an individual solution for you.
 Remember to contact the academic counsellor as soon as possible, once you become aware of your situation.
@@ -80,7 +81,7 @@ If you do so, then you must **acknowledge** the people with whom you discussed a
 You should not look for assignment solutions elsewhere; but if material is taken from elsewhere, then you must **acknowledge** its source.
 You are not permitted to provide or receive any kind of solutions of assignments.
 This includes partial, incomplete, or erroneous solutions.
-You are also not permitted to provide or receive programming help from people other than the teaching assistants, PhD students associated with this course, or the course manager.
+You are also not permitted to provide or receive programming help from people other than the teaching assistants or instructors of this course.
 Any violation of these rules will be reported as a suspected case of fraud to the Board of Examiners and handled according to the EEMCS Faculty's fraud procedure.
 If the case is proven, a penalty will be imposed: a minimum of exclusion from the course for the duration of one academic year up to a maximum of a one-year exclusion form all courses at TU Delft.
 For details on the procedure, see Section 2.1.26 in the faculty's Study Guide for MSc Programmes.
