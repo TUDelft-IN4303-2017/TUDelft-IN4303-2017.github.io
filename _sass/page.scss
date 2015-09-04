@@ -438,7 +438,9 @@ $button-size: 1.5rem;
 .article-author {
 	margin-bottom: 1em;
 	.h3,
-	.p,
+	.h4{
+		margin-bottom: 0;
+	}
 	.bio-photo {
 		float: left;
 		margin-right: 25px;
