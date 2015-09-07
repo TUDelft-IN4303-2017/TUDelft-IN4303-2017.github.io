@@ -5,8 +5,6 @@ excerpt: "Git"
 tags: ["documentation"]
 context: assign
 subcontext: doc
-image:
-  feature: "https://dgosxlrnzhofi.cloudfront.net/blogs/317/featured_images/what-is-a-bad-culture-fit.png?1438216788"
 ---
 
 # Setup
