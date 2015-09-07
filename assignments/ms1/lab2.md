@@ -28,9 +28,9 @@ The definition should include:
 2. A context-free syntax definition for sorts
   * `Program`,
   * `MainClass`,
-  * `ClassDecl`,
+  * `ClassDecl` (including `FieldDecl`),
   * `VarDecl`,
-  * `MethodDecl`,
+  * `MethodDecl` (including `ParamDecl`),
   * `Type`,
   * `Statement` and
   * `Exp`.
