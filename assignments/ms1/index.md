@@ -22,41 +22,15 @@ In the first milestone, an initial Spoofax project is extended to a basic MiniJa
 
 ### Spoofax Installation
 
-We highly recommend to work with a fresh Eclipse and Spoofax installation.
-Follow the Spoofax [download instructions](http://metaborg.org/wiki/spoofax/download).
-You may also install some additional Eclipse plug-ins to which you are used to, e.g. for version management.
+The recommended way to install Spoofax is to [download a prebuilt package from our build farm](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/).
+Choose a package for your operating system, architecture, and with `-jre` in the name.
+This is a full Eclipse installation with the Spoofax plugin installed, and with a built-in Java 7 environment so that you do not have to install Java.
 
-### Initial Spoofax Project
+Unpack the archive somewhere on your computer, open Eclipse, and choose a location to store your workspace.
+Do not store your workspace in your Git repository!
 
-You should start with a fresh Eclipse workspace and create a new, empty Spoofax project.
-Since we use automated grading tools, it is important to get the following steps right:
-
-1. Start Eclipse.
-2. Select a fresh workspace.
-3. Create a new Spoofax project in your workspace:
-    1. Right-click into the Package Explorer.
-    2. Select **New** from the context menu.
-    3. Choose **Project...** from the list.
-    4. Select the **Spoofax editor project** wizard.
-    5. Switch to the **Next** tab.
-    6. As **Project name**, use `MiniJava`.
-    7. As **Language name**, use `MiniJava`.
-    8. Keep the **Plugin ID and package name** as suggested by the wizard.
-    9. As **File extensions**, use `mjv`.
-    10. Select both checkboxes.
-    11. Press the **Finish** button.
-
-### Initial Test Project
-
-You should create a separate project for your test cases and example programs:
-
-1. Right-click into the Package Explorer.
-2. Select **New** from the context menu.
-3. Choose **Project...** from the list.
-4. Select the **Project** wizard from **General**.
-5. Switch to the **Next** tab.
-6. As **Project name**, use `MiniJava-tests`.
-7. Press the **Finish** button.
+If for some reason the prebuilt package does not work, you can also install Spoofax manually by [following the instructions here](http://metaborg.org/download/).
+You need to use the `http://download.spoofax.org/update/in4303/` update site instead of the one listed in the instructions though!
 
 ## Resources
 
