@@ -51,4 +51,3 @@ Finally, we introduce traditional *compiler compilers* and modern *language work
     
     This paper presents the state of the art of language workbenches as observed in the previous editions of the *Language Workbench Challenge*. In particular, the paper captures the design space of language workbenches in a feature model and shows where in this design space the participants of the 2013 *Language Workbench Challenge* reside.
 
-  
