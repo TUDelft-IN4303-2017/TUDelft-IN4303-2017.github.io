@@ -111,7 +111,7 @@ Finally, you need to extend your code generator to cover parameters, local varia
    See the challenges from last week on how to declare such a property.
 
 2. Store the index `i` of each parameter and local variable on its name by applying `store-var-index(|ctx, i)` to its name.
-   See the [challenges from last week on how to store properties on names](day11.md#variant-1-storing-method-descriptors).
+   See the [challenges from last week on how to store properties on names](lab11.html#variant-1-storing-method-descriptors).
    In order to calculate indices, you need to match the method declaration, not the parameter or variable declarations.
    The following strategies might be useful:
     * `map-with-index(s)` works like `map(s)`, but applies `s` to pairs `(i, e)` where `e` is an element of the list and `i` is the index of this element in the list.
