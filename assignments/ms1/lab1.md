@@ -170,6 +170,7 @@ Come up with positive test cases which specify the expected ASTs.
 
 Think about good constructor names.
 Your ASTs should meet the following requirements:
+
 * Similar things are represented in a similar way, e.g.
     * classes without a parent are represented similarly to classes with a parent,
     * variable references on the left-hand side and on the right-hand side of assignments should be represented the same way,
