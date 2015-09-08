@@ -46,5 +46,8 @@ Finally, we introduce traditional *compiler compilers* and modern *language work
 4.  Lennart C. L. Kats and Eelco Visser (2010). [The Spoofax Language Workbench. Rules for Declarative Specification of Languages and IDEs](http://repository.tudelft.nl/assets/uuid:16e3b60d-a038-4c0c-b879-d9f9433c8477/TUD-SERG-2010-014.pdf). OOPSLA 2010.
     
     This award-winning paper describes the Spoofax Language Workbench. It misses recent additions to Spoofax, but still gives a good summary of its capabilities.
-  
+
+5.   Sebastian Erdweg et al. (2013). [The State of the Art in Language Workbenches. Conclusions from the Language Workbench Challenge](http://homepages.cwi.nl/~storm/publications/lwc13paper.pdf). SLE 2013.
+    
+    This paper presents the state of the art of language workbenches as observed in the previous editions of the *Language Workbench Challenge*. In particular, the paper captures the design space of language workbenches in a feature model and shows where in this design space the participants of the 2013 *Language Workbench Challenge* reside.
   
