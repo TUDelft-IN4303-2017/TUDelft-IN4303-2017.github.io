@@ -7,6 +7,8 @@ context: assign
 subcontext: doc
 ---
 
+{% include _toc.html %}
+
 # Setup
 
 We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments. If you don't already have a GitHub account, [sign up](https://github.com/signup) first!
