@@ -35,10 +35,21 @@ For grading, it is required to comply with these sort names literally. Test case
 3. Disambiguation tests for associativity and precedence in expressions.
 4. Test cases for mandatory and optional whitespace.
 
+### Template
+
+We provide you with a template for this assignment in the `assignment1` branch.
+See the [Git documentation](/documentation/git.html#starting-an-assignment) on how to check out this branch.
+
+The template contains 3 Eclipse projects:
+
+* MiniJava: MiniJava Spoofax project template
+* MiniJava-examples: empty project for your example MiniJava files
+* MiniJava-tests-syntax: empty project for your MiniJava syntax tests
+
 ### Submission
 
 You need to submit your test project with a pull request on GitHub.
-Your GitHub repository contains a `README.md` with a step-by-step procedure how to file such a request. Make sure your solutions are in branch `assignment1`. We expect to find your Spoofax project `MiniJava` and your test project `MiniJava-tests` next to each other in the root of the repository. The test project should contain a `README.md` with
+Your GitHub repository contains a `README.md` with a step-by-step procedure how to file such a request. Make sure your solutions are in branch `assignment1`. We expect to find your Spoofax project `MiniJava` and your test project `MiniJava-tests-syntax` next to each other in the root of the repository. The test project should contain a `README.md` with
 a short paragraph explaining the organisation of your test project. The deadline for submission is ~~September 22~~ **September 24**, 17:59.
 
 ### Grading
@@ -61,6 +72,24 @@ This feedback gives you an indication which parts of the syntax definition might
 It includes a summary on how many erroneous syntax definitions you reveal and how many points you earn by detecting them.
 
 ## Detailed Instructions
+
+### Importing projects into Eclipse
+
+The projects from the template have to be imported into Eclipse:
+
+1. Start Eclipse.
+2. Select your workspace.
+3. Import the projects into your workspace:
+    1. Right-click into the Package Explorer.
+    2. Select Import... from the context menu.
+    3. Choose General -> Existing Projects into Workspace from the list.
+    4. Press next.
+    5. Select the root of your Git repository.
+    6. Select all projects.
+    7. Make sure that Copy projects into workspace is **off**.
+    8. Press finish
+
+If you get an error about `Resource '/.org.eclipse.jdt.core.external.folders' already exists`, you can safely ignore that.
 
 ### Anatomy of a Test Suite
 
