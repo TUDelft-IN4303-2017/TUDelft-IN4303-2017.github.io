@@ -9,16 +9,18 @@ subcontext: doc
 
 {% include _toc.html %}
 
-# Setup
+We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments. 
 
-We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments. If you don't already have a GitHub account, [sign up](https://github.com/signup) first!
+## Setup
+
+If you don't already have a GitHub account, [sign up](https://github.com/signup) first!
 
 Once you have a GitHub account, set up Git on your computer by following [this guide](https://help.github.com/articles/set-up-git/). Be sure to select your operating system at the top of that guide. Also open the `Input` informational box for information on how to use git from the command-line, because we will be using that in this guide.
 
 We will explain the steps needed to work on and submit assignments in this guide. To learn the basics of git, read [git - the simple guide](http://rogerdudler.github.io/git-guide/) and [try out the Git command-line](https://try.github.io/). If you'd like to learn more, [have a look at these resources](https://help.github.com/articles/good-resources-for-learning-git-and-github/).
 
 
-# Structure
+## Repository Structure
 
 Let's look at the repository structure first.
 
@@ -27,7 +29,7 @@ On GitHub, we will create a private git repository for you, which is owned by us
 You create your own private Git repository by making a *fork* of our private repository. This repository will be used by you to work on assignments. You have write access to this repository since you create it. Our repository on GitHub is called *upstream* in git terms, because your repository is a fork of it. Your repository on GitHub is called *origin*. If you'd like to learn more about forking, [read this GitHub guide](https://help.github.com/articles/fork-a-repo/).
 
 
-# Getting started
+## Getting started
 
 First, find your private repository in the [TUDelft-IN4303-2015](https://github.com/orgs/TUDelft-IN4303-2015) organization on GitHub, it should be called `student-id` where `id` is your student id. Remember your id, as it is used later. Go to the repository and press the fork button to fork the repository into your account.
 
@@ -79,10 +81,9 @@ From https://github.com/tudelft-in4303-2015/student-id.git
 
 Your local repository is set up now! Follow the steps below to work on an assignment.
 
+## Workflow
 
-# Workflow
-
-## Starting an assignment
+### Starting an assignment
 
 Every assignment is put into its own branch, named `assignment1`, `assignment2`, etc.
 The correct assignment branch must be checked out in your local Git repository to be able to work on it.
@@ -106,7 +107,7 @@ git push -u origin assignment2
 Now you have the assignment branch checked out in your local repository and can start working.
 
 
-## Saving work
+### Saving work
 
 Whenever you have changes that you'd like to save, such as after getting (a part of) the assignment working, you need to add, commit, and push your changes:
 
@@ -117,7 +118,7 @@ git push
 ```
 
 
-## Submitting an assignment
+### Submitting an assignment
 
 [Pull requests](https://help.github.com/articles/using-pull-requests/) are used to submit an assignment in your *origin* repository to the *upstream* repository.
 
@@ -135,7 +136,7 @@ If all is well, it should display `Able to merge. These branches can be automati
 We will grade your assignment and post the results on the pull requests, so check back later.
 
 
-## Switching to another assignment
+### Switching to another assignment
 
 If you'd like to work on an another assignment, for example to fix things for a new submission, you can just check out the branch for that assignment.
 Be sure to push any changes to your current branch first, then check out the branch for the assignment you wish to switch to:
@@ -144,7 +145,7 @@ Be sure to push any changes to your current branch first, then check out the bra
 git checkout assignment1
 ```
 
-## Pulling in changes from upstream
+### Pulling in changes from upstream
 
 If there's something wrong in the template for an assignment, we fix it in the *upstream* repository, and you have to merge in those changes.
 Use the following commands to merge in changes (use the correct branch!):
@@ -158,14 +159,14 @@ git push
 In most cases, Git will automatically merge in any changes, but sometimes conflicts can occur. See [Resolving a merge conflict](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) on how to resolve conflicts.
 
 
-# Git GUI clients
+## Git GUI clients
 
 This guide uses command-line Git commands, but if you'd rather use a GUI, use [SourceTree](https://www.sourcetreeapp.com/) or [GitHub desktop](https://desktop.github.com/).
 
 
-# Troubleshooting
+## Troubleshooting
 
-## Cannot push, no access/rights
+### Cannot push, no access/rights
 
 This probably means that you're trying to push to the *upstream* repository rather than *origin*. Push to origin using:
 
@@ -173,7 +174,7 @@ This probably means that you're trying to push to the *upstream* repository rath
 git push -u origin
 ```
 
-## Cannot automatically merge pull request
+### Cannot automatically merge pull request
 
 If a pull request cannot be automatically merged, your branch is out of date with the branch on *upstream*.
 Merge in changes from upstream (use the correct branch!):
@@ -184,7 +185,7 @@ git merge upstream/assignment1
 git push
 ```
 
-## Resolving merge conflicts
+### Resolving merge conflicts
 
 See [Resolving a merge conflict](https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/) on how to resolve merge conflicts.
 You can also try a GUI merge tool such as [DiffMerge](https://sourcegear.com/diffmerge/) to resolve merge conflicts.
