@@ -44,15 +44,15 @@ See the [Git documentation](/documentation/git.html#starting-an-assignment) on h
 
 The template contains 3 Eclipse projects:
 
-* MiniJava: MiniJava Spoofax project template
-* MiniJava-examples: empty project for your example MiniJava files
-* MiniJava-tests-syntax: empty project for your MiniJava syntax tests
+* `MiniJava`: the initial Spoofax project for MiniJava,
+* `MiniJava-examples`: an empty project for your example MiniJava programs,
+* `MiniJava-tests-syntax`: an empty project for your MiniJava syntax tests.
 
 ### Submission
 
 You need to submit your test project with a pull request on GitHub.
 Your GitHub repository contains a `README.md` with a step-by-step procedure how to file such a request. Make sure your solutions are in branch `assignment1`. We expect to find your Spoofax project `MiniJava` and your test project `MiniJava-tests-syntax` next to each other in the root of the repository. The test project should contain a `README.md` with
-a short paragraph explaining the organisation of your test project. The deadline for submission is ~~September 22~~ **September 24**, 17:59.
+a short paragraph explaining the organisation of your test project. The deadline for submission is 17 September, 23:59.
 
 ### Grading
 
