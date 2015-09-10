@@ -43,7 +43,7 @@ This feedback typically comes with a tentative grade and points out areas where 
 To submit your solution for grading, you need to submit a *final solution*.
 As the name suggests, you cannot submit another final solution for the same assignment.
 We will provide a detailed grading report on final solutions.
-To ensure fairness and equal chances for all students, grading reports will not be published before 5 labs after the submission deadline.
+To ensure fairness and equal chances for all students, grading reports will not be published before 5 days after the submission deadline.
 We do our best to hand out grading reports as quick as possible, but manual grading can be tedious and might result in longer waiting times for some assignments.
 
 ## Grades
