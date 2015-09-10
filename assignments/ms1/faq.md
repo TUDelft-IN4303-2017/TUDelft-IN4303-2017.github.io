@@ -17,6 +17,12 @@ subcontext: ms1
    called `CYGWIN` with the value `nodosfilewarning`.
 2. Restart eclipse.
 
+# Setup
+
+##### After [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) I receive several errors that have to do with importing and including files. 
+
+Build the project by choosing *Project > Build All* from the menu.
+
 # Testing Syntax Definition
 
 ##### How do I get started?
