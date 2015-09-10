@@ -146,6 +146,7 @@ You can now start writing your own test cases.
 
 Start with the lexical syntax and think about valid and invalid identifiers.
 Try to focus on corner cases such as
+
 * identifiers made of a single character,
 * mixings of letters and digits (Which kinds of mixing are allowed? Which are not?),
 * underscores in identifiers.
