@@ -5,10 +5,6 @@ excerpt: "Team"
 tags: ["team"]
 ---
 
-{% for author in site.data.authors %}
-  {% include _team-member.html %}
-{% endfor %}
-
 ## Contact
 
 Handling questions by e-mail is very inefficient, why we try to avoid it as much as possible. Twitter works pretty well for short questions. Lectures and lab sessions are natural points of contacts with instructors and teaching assistants. We also offer walk-in hours on Wednesday mornings. For longer discussions, we prefer appointments outside our walk-in hours. To make an appointment, please send the responsible instructor an email with
@@ -20,3 +16,10 @@ You will receive an email with
 
 * some tasks for you to prepare the appointment,
 * the date of our appointment, which you are asked to confirm.
+
+## Team Members
+
+{% for author in site.data.authors %}
+  {% include _team-member.html %}
+{% endfor %}
+
