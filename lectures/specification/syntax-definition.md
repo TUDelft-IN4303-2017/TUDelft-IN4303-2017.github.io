@@ -24,7 +24,7 @@ subcontext: specification
     
     This award-winning paper describes the Spoofax Language Workbench. It misses recent additions to Spoofax, but still gives a good summary of its capabilities.
   
-2.  Lennart C. L. Kats, Rob Vermaas, and Eelco Visser (2011). [Integrated Language Definition Testing. Enabling Test-Driven Language Development](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2010-029.pdf). OOPSLA 2011.
+2.  Lennart C. L. Kats, Rob Vermaas, and Eelco Visser (2011). [Integrated Language Definition Testing. Enabling Test-Driven Language Development](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2011-011.pdf). OOPSLA 2011.
     
     This paper describes the Spoofax Testing Language and discusses how to test different language aspects. You can also watch the [conference talk by Lennart](http://www.infoq.com/presentations/Testing-Domain-Specific-Languages).
 
