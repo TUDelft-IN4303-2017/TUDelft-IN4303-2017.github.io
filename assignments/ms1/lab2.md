@@ -48,7 +48,7 @@ You need to submit your MiniJava project with a pull request against branch `ass
   we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
 
 The deadline for submission is September 24, 23:59.
-
+{: .notice .notice-warning}
 
 ### Grading
 
