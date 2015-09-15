@@ -34,16 +34,21 @@ The definition should include:
   * `Type`,
   * `Statement` and
   * `Exp`.
+    
+    For grading, it is required to comply with all sort names literally.
+    {: .notice .notice-warning}
+ 
 3. Constructor names for context-free syntax rules.
 4. Disambiguation rules.
 
-For grading, it is required to comply with all sort names literally.
 
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment2` on GitHub. Your GitHub repository contains a step-by-step procedure how to file such a request. As part of your submission,
   we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
+
 The deadline for submission is September 24, 23:59.
+
 
 ### Grading
 
