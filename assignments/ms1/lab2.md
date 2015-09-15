@@ -91,29 +91,16 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 #### Repository Branch
 
-We created a branch `assignment2` in the student repositories. Make sure to start your work from this branch. You are free to work on your own branches, but should submit with a pull request against `assignment2`. We will give you early feedback only on pull requests against this branch.
+You can use the same project that you work in assignment 1. You can create a new branch for it as long as you submit your solution with a pull request against `assignment2`. We will give you early feedback only on pull requests against this branch.
 
-#### Spoofax Version
+#### .gitignore file in the MiniJava project
 
-To be able to react quickly on problems you discover, we have a special update site for the course. Go to the *Help > Software Updates* menu in Eclipse. Then select "Add...", enter the site name "Spoofax IN4303", and the update site URL:
-
-       http://download.spoofax.org/update/in4303/
-
-Now select Spoofax Core (you may have to reselect the update site you just entered), and follow the steps of the wizard.
-
-Unfortunately, you have to delete your still empty `MiniJava` project and create a new one:
-
-1. Right-click into the Package Explorer.
-2. Select **New** from the context menu.
-3. Choose **Project...** from the list.
-4. Select the **Spoofax editor project** wizard.
-5. Switch to the **Next** tab.
-6. As **Project name**, use `MiniJava`.
-7. As **Language name**, use `MiniJava`.
-8. Keep the **Plugin ID and package name** as suggested by the wizard.
-9. As **File extensions**, use `mjv`.
-10. Select both checkboxes.
-11. Press the **Finish** button.
+In the .gitignore file inside the MiniJava project, you should change the last line to not ignore the `\include\` folder. It should look like:
+	
+	...
+	/include/minijava.jar
+	/include/minijava-java.jar
+	!/include/
 
 ### Agile Software Language Engineering
 
@@ -150,7 +137,7 @@ You can start by creating a new file `syntax/MiniJava.sdf3` in your MiniJava pro
 
 When you save this file, you should get a corresponding file `src-gen/syntax/MiniJava.sdf`.
 You can also split your syntax definition over several modules in `syntax/`.
-Do only import modules that you wrote yourself.
+**Do only import modules that you wrote yourself.**
 
 ### Lexical Syntax
 
