@@ -31,7 +31,10 @@ The test suite should provide
     * `ID` and
     * `INT`.
     
-    For grading, it is required to comply with these sort names literally. Test cases for `FieldDecl` and `ParamDecl` should be covered in the tests for `ClassDecl` and `MethodDecl`, respectively.
+    Test cases for `FieldDecl` and `ParamDecl` should be covered in the tests for `ClassDecl` and `MethodDecl`, respectively.
+    
+    For grading, it is required to comply with these sort names literally. 
+    {: .notice .notice-warning}
 
 2. Abstract syntax tests for valid instances of these sorts.
 3. Disambiguation tests for associativity and precedence in expressions.
@@ -54,7 +57,9 @@ You need to submit your test project with a pull request on GitHub.
 Your GitHub repository contains a `README.md` with a step-by-step procedure how to file such a request. Make sure your solutions are in branch `assignment1`. We expect to find your Spoofax project `MiniJava` and your test project `MiniJava-tests-syntax` next to each other in the root of the repository. The test project should contain a `README.md` with
 a short paragraph explaining the organisation of your test project. 
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
+
 The deadline for submission is 17 September, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
