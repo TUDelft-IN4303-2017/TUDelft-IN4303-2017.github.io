@@ -98,9 +98,9 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 You can use the same project that you work in assignment 1. You can create a new branch for it as long as you submit your solution with a pull request against `assignment2`. We will give you early feedback only on pull requests against this branch.
 
-#### .gitignore file in the MiniJava project
+#### `.gitignore` file in the `MiniJava` project
 
-In the .gitignore file inside the MiniJava project, you should change the last line to not ignore the `\include\` folder. It should look like:
+In the `.gitignore` file inside the `MiniJava` project, you should change the last line to not ignore the `/include/` folder. It should look like:
 	
 	...
 	/include/minijava.jar
