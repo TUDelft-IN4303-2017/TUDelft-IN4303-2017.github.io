@@ -67,7 +67,9 @@ You earn points,
   while passing correct implementations.
 The total number of points depends only on how many kinds of errors you reveal,
   not on the number of test cases that reveal these errors.
-**Note:** It is important to name tests in a testsuite uniquely. Tests in different test suites can have the same name, but for grading, we need to be able to distinguish tests in the same test suite by their name.
+
+It is important to name tests in a testsuite uniquely. Tests in different test suites can have the same name, but for grading, we need to be able to distinguish tests in the same test suite by their name.
+{: .notice .notice-warning}
 
 ### Early Feedback
 
