@@ -64,8 +64,8 @@ The total number of points depends on how many test cases you pass in each of th
   * `INT` (1 point)
   * whitespace (1 point)
   * simple comments (1 point)
-  * block comments (1 point)
-  * nested block comments (10 points)
+  * simple block comments (1 point)
+  * nested block comments (challenge, 10 points)
 * context-free syntax (30 points)
   * `Program` (1 point)
   * `MainClass` (2 points)
@@ -232,6 +232,8 @@ Do not forget to define follow restrictions.
 
 ### Challenge
 
+This lab's challenge is to support nested block comments.
+
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation or higher programming skills.
-This lab's challenge is to support nested block comments.
+{: .notice .notice-success}
