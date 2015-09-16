@@ -34,10 +34,10 @@ The definition should include:
   * `Type`,
   * `Statement` and
   * `Exp`.
-    
+
     For grading, it is required to comply with all sort names literally.
     {: .notice .notice-warning}
- 
+
 3. Constructor names for context-free syntax rules.
 4. Disambiguation rules.
 
@@ -97,22 +97,22 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 ### Preliminaries
 
-#### Repository Branch
+#### Git Repository
 
-We provide you with an initial setup in branch `assignment2`. If you want to keep working with your test cases from the previous assignment, you can merge your previous work into `assignment2`. More information is given in [Starting an assignment](http://tudelft-in4303.github.io/documentation/git.html#starting-an-assignment). You should submit pull requests against the `assignment2` branch.
+You continue with your work from the previous assignment. See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment2` branch from your previous work.
+
+We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment2` in. See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an example program at `MiniJava-examples/program1.mjv`.
 
 #### Committing Derived Artifacts
 
 While you typically do not commit derived artifacts, we require some of these artifacts for grading.
-Thus, you should commit derived artifacts from the `/include/` directory of the `MiniJava` project.
-In the `.gitignore` file inside the `MiniJava` project, you should change the last line to not ignore the `/include/` folder. It should look like:
-	
-	...
-	/include/minijava.jar
-	/include/minijava-java.jar
-	!/include/
-	
-At each build, Spoofax tags the include folder as a derived one. Please check whether the derived artifacts from the `/include/` directory are there when pulling your changes and submitting your pull request. 	
+Thus, you should commit derived artifacts from the `include` directory of the `MiniJava` project.
+Please check whether the derived artifacts are there when pushing your changes and submitting your pull request.
+
+The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the .gitignore file.
+You must disable this behavior in the Eclipse preferences. Go to Team -> Git -> Projects in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
+Check the .gitignore file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with ! are un-ignores, they make sure that the derived artifacts we need will be committed.
+{: .notice .notice-warning}
 
 ### Agile Software Language Engineering
 

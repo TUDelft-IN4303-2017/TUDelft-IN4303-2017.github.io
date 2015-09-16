@@ -9,7 +9,7 @@ subcontext: doc
 
 {% include _toc.html %}
 
-We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments. 
+We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments.
 
 ## Setup
 
@@ -87,8 +87,10 @@ Your local repository is set up now! Follow the steps below to work on an assign
 
 Every assignment is put into its own branch, named `assignment1`, `assignment2`, etc.
 The correct assignment branch must be checked out in your local Git repository to be able to work on it.
+The steps to check out a branch depend on whether we provide you with a template, or if you continue with work from a previous assignment.
 
-Some assignments have templates which we provide to you, these require special steps to check out.
+#### Template
+
 If the assignments asks you to check out a template, which for example `assignment1` does, use the following steps:
 
 ```shell
@@ -97,21 +99,26 @@ git checkout -b assignment1 upstream/assignment1
 git push -u origin assignment1
 ```
 
-If the assignment asks you to continue from the previous assignment, which for example `assignment2` does, use the following steps instead:
+This checks out a fresh branch from the upstream repository. It does not contain any of your previous work.
 
+#### Continue from previous assignment
+
+If the assignment asks you to continue from the previous assignment, which for example `assignment3` does, use the following steps instead:
+
+```shell
+git checkout -b assignment3
+git push -u origin assignment3
 ```
-git checkout -b assignment2
-git push -u origin assignment2
-```
+
+The new `assignment3` branch will be in an identical state to the `assignment2` branch, but changes will only be comitted to the `assignment3` branch, leaving the `assignment2` branch as is.
 
 Now you have the assignment branch checked out in your local repository and can start working.
-
 
 ### Saving work
 
 Whenever you have changes that you'd like to save, such as after getting (a part of) the assignment working, you need to add, commit, and push your changes:
 
-```
+```shell
 git add --all
 git commit -m "Message describing your changes"
 git push

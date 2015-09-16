@@ -30,32 +30,21 @@ The test suite should provide
     * `Exp`,
     * `ID` and
     * `INT`.
-    
+
     Test cases for `FieldDecl` and `ParamDecl` should be covered in the tests for `ClassDecl` and `MethodDecl`, respectively.
-    
-    For grading, it is required to comply with these sort names literally. 
+
+    For grading, it is required to comply with these sort names literally.
     {: .notice .notice-warning}
 
 2. Abstract syntax tests for valid instances of these sorts.
 3. Disambiguation tests for associativity and precedence in expressions.
 4. Test cases for mandatory and optional whitespace.
 
-### Template
-
-We provide you with a template for this assignment in the `assignment1` branch.
-See the [Git documentation](/documentation/git.html#starting-an-assignment) on how to check out this branch.
-
-The template contains 3 Eclipse projects:
-
-* `MiniJava`: the initial Spoofax project for MiniJava,
-* `MiniJava-examples`: an empty project for your example MiniJava programs,
-* `MiniJava-tests-syntax`: an empty project for your MiniJava syntax tests.
-
 ### Submission
 
 You need to submit your test project with a pull request on GitHub.
 Your GitHub repository contains a `README.md` with a step-by-step procedure how to file such a request. Make sure your solutions are in branch `assignment1`. We expect to find your Spoofax project `MiniJava` and your test project `MiniJava-tests-syntax` next to each other in the root of the repository. The test project should contain a `README.md` with
-a short paragraph explaining the organisation of your test project. 
+a short paragraph explaining the organisation of your test project.
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 
 The deadline for submission is 17 September, 23:59.
@@ -67,7 +56,7 @@ You can earn up to 5 points for the organisation of your test project.
 We take its structure, file names, test names, and your explanation into account.
 You can earn up to 95 points for the effectiveness of your test cases.
 Therefor, we run your test cases against 184 correct and erroneous syntax definitions of MiniJava.
-There are two kinds of erroneous syntax definitions. 
+There are two kinds of erroneous syntax definitions.
 Syntax definitions, which are too *liberal*, accept invalid language constructs.
 Syntax definitions, which are too *restrictive*, do not accept valid language constructs.
 You earn points,
@@ -83,13 +72,26 @@ It is important to name tests in a testsuite uniquely. Tests in different test s
 
 We provide early feedback for the validity and effectiveness of your test cases.
 A test case is *valid*, if it passes on correct syntax definitions.
-A test is *effective*, if it reveals an erroneous syntax definition. 
+A test is *effective*, if it reveals an erroneous syntax definition.
 The feedback lists for different language constructs how well you discover liberal and restrictive syntax definitions.
 It also includes a summary on how many valid tests you provide, how many erroneous syntax definitions you reveal with these tests, and how many points you earn by detecting them.
 
 ## Detailed Instructions
 
-### Importing projects into Eclipse
+### Preliminaries
+
+#### Git Repository
+
+We provide you with a template for this assignment in the `assignment1` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+
+The template contains 3 Eclipse projects:
+
+* `MiniJava`: the initial Spoofax project for MiniJava,
+* `MiniJava-examples`: an empty project for your example MiniJava programs,
+* `MiniJava-tests-syntax`: an empty project for your MiniJava syntax tests.
+
+#### Importing projects into Eclipse
 
 The projects from the template have to be imported into Eclipse:
 
