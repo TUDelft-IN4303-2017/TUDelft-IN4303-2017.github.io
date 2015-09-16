@@ -100,7 +100,7 @@ You can use the same project that you work in assignment 1. More information is 
 
 #### Committing Derived Artifacts
 
-While you ypically do not commit derived artifacts, we require some of these artifacts for grading.
+While you typically do not commit derived artifacts, we require some of these artifacts for grading.
 Thus, you should commit derived artifacts from the `/include/` directory of the `MiniJava` project.
 In the `.gitignore` file inside the `MiniJava` project, you should change the last line to not ignore the `/include/` folder. It should look like:
 	
@@ -108,6 +108,8 @@ In the `.gitignore` file inside the `MiniJava` project, you should change the la
 	/include/minijava.jar
 	/include/minijava-java.jar
 	!/include/
+	
+At each build, Spoofax tags the include folder as a derived one. Please check whether the derived artifacts from the `/include/` directory are there when pulling your changes and submitting your pull request. 	
 
 ### Agile Software Language Engineering
 
