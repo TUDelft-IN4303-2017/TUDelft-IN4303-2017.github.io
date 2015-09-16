@@ -112,9 +112,9 @@ While you typically do not commit derived artifacts, we require some of these ar
 Thus, you should commit derived artifacts from the `include` directory of the `MiniJava` project.
 Please check whether the derived artifacts are there when pushing your changes and submitting your pull request.
 
-The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the `.gitignore` file.
+The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the .gitignore file.
 You must disable this behavior in the Eclipse preferences. Go to *Team -> Git -> Projects* in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
-Check the `.gitignore` file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with `!` are un-ignores, they make sure that the derived artifacts we need will be committed.
+Check the .gitignore file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with ! are un-ignores, they make sure that the derived artifacts we need will be committed.
 {: .notice .notice-warning}
 
 ### Agile Software Language Engineering
