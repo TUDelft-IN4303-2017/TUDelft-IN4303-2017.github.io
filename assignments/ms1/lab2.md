@@ -96,7 +96,7 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 #### Repository Branch
 
-You can use the same project that you work in assignment 1. You can create a new branch for it as long as you submit your solution with a pull request against `assignment2`. We will give you early feedback only on pull requests against this branch.
+You can use the same project that you work in assignment 1. More information is given in [Starting an assignment](http://tudelft-in4303.github.io/documentation/git.html#starting-an-assignment). You should submit pull requests against the `assignment2` branch.
 
 #### Committing Derived Artifacts
 
