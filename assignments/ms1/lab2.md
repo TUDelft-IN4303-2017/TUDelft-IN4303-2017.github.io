@@ -232,8 +232,8 @@ Do not forget to define follow restrictions.
 
 ### Challenge
 
-This lab's challenge is to support nested block comments.
-
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation or higher programming skills.
 {: .notice .notice-success}
+
+This lab's challenge is to support nested block comments.
