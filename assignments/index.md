@@ -58,6 +58,13 @@ To pass the practical part of the course, you need to meet all of the following 
 
 These rules allow you to compensate for lower grades in single assignments, but ensure a minimal quality in all your milestones as well as in your overall practical work.
 
+## Early Feedback
+
+For some of the assignments, early feedback will be given through automated grading.
+Reports typically include a tentative grade.
+Be aware that reports might be delayed due to submissions by other students, server problems, etc. 
+We do not give early feedback on the day of a deadline, since this will not be early at all.
+
 ## Deadlines 2015/16
 
 In the first quarter, assignments must be submitted weekly until Thursday, 23:59.
