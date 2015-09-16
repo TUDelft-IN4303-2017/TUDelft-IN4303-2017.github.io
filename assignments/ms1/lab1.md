@@ -66,10 +66,13 @@ The deadline for submission is 17 September, 23:59.
 You can earn up to 5 points for the organisation of your test project.
 We take its structure, file names, test names, and your explanation into account.
 You can earn up to 95 points for the effectiveness of your test cases.
-Therefor, we run your test cases against 184 correct and erroneous implementations of MiniJava.
+Therefor, we run your test cases against 184 correct and erroneous syntax definitions of MiniJava.
+There are two kinds of erroneous syntax definitions. 
+Syntax definitions, which are too *liberal*, accept invalid language constructs.
+Syntax definitions, which are too *restrictive*, do not accept valid language constructs.
 You earn points,
-  when your test cases reveal certain kinds of errors in erroneous implementations
-  while passing correct implementations.
+  when your test cases reveal certain kinds of errors in erroneous syntax definitions
+  while passing correct syntax definitions.
 The total number of points depends only on how many kinds of errors you reveal,
   not on the number of test cases that reveal these errors.
 
@@ -78,9 +81,11 @@ It is important to name tests in a testsuite uniquely. Tests in different test s
 
 ### Early Feedback
 
-We provide early feedback for the effectiveness of your test cases.
-This feedback gives you an indication which parts of the syntax definition might still be uncovered by your tests.
-It includes a summary on how many erroneous syntax definitions you reveal and how many points you earn by detecting them.
+We provide early feedback for the validity and effectiveness of your test cases.
+A test case is *valid*, if it passes on correct syntax definitions.
+A test is *effective*, if it reveals an erroneous syntax definition. 
+The feedback lists for different language constructs how well you discover liberal and restrictive syntax definitions.
+It also includes a summary on how many valid tests you provide, how many erroneous syntax definitions you reveal with these tests, and how many points you earn by detecting them.
 
 ## Detailed Instructions
 
