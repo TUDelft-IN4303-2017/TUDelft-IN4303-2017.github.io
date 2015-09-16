@@ -46,23 +46,26 @@ The definition should include:
 
 You need to submit your MiniJava project with a pull request against branch `assignment2` on GitHub. Your GitHub repository contains a step-by-step procedure how to file such a request. As part of your submission,
   we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
+To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
+Finally, to help the manual grading progress, we ask you to paste the content of `MiniJava/include/MiniJava.str` into WebLab.
 
 The deadline for submission is September 24, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
 
-You can earn up to 80 points for your concrete syntax definition.
+You can earn up to 75 points for your concrete syntax definition.
 Therefor, we run 333 test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
-* lexical syntax (20 points)
-  * `ID` (6 points)
+* lexical syntax (15 points)
+  * `ID` (1 point)
   * `INT` (1 point)
-  * whitespace (3 points)
-  * simple comments (5 points)
-  * complex comments, including nested block comments (5 points)
+  * whitespace (1 point)
+  * simple comments (1 point)
+  * block comments (1 point)
+  * nested block comments (10 points)
 * context-free syntax (30 points)
   * `Program` (1 point)
   * `MainClass` (2 points)
@@ -77,7 +80,7 @@ The total number of points depends on how many test cases you pass in each of th
   * precedence (20 points)
 
 You can earn up to 20 points for your abstract syntax definition.
-Therefor, we generate an abstract syntax tree for an example program.
+Therefor, we run a few test cases against your implementation and generate an abstract syntax tree for the example program `MiniJava-examples/program1.mjv`.
 We inspect your syntax definition and the generated AST manually.
 We particular focus on
  meaningful constructor names,
@@ -96,7 +99,7 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 #### Repository Branch
 
-You can use the same project that you work in assignment 1. More information is given in [Starting an assignment](http://tudelft-in4303.github.io/documentation/git.html#starting-an-assignment). You should submit pull requests against the `assignment2` branch.
+We provide you with an initial setup in branch `assignment2`. If you want to keep working with your test cases from the previous assignment, you can merge your previous work into `assignment2`. More information is given in [Starting an assignment](http://tudelft-in4303.github.io/documentation/git.html#starting-an-assignment). You should submit pull requests against the `assignment2` branch.
 
 #### Committing Derived Artifacts
 
