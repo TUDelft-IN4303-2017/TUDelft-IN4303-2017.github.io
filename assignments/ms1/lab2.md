@@ -54,6 +54,7 @@ The deadline for submission is September 24, 23:59.
 
 ### Grading
 
+You can earn up to 5 points for the organisation of your test project. We take its structure, file names, test names, and your explanation into account.
 You can earn up to 75 points for your concrete syntax definition.
 Therefor, we run 333 test cases against your implementation.
 You earn points, when your implementation passes test cases.
@@ -99,9 +100,11 @@ It includes a summary on how many tests you pass and how many points you earn by
 
 #### Git Repository
 
-You continue with your work from the previous assignment. See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment2` branch from your previous work.
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment2` branch from your previous work.
 
-We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment2` in. See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an example program at `MiniJava-examples/program1.mjv`.
+We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment2`.
+See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an example program at `MiniJava-examples/program1.mjv`.
 
 #### Committing Derived Artifacts
 
@@ -109,9 +112,9 @@ While you typically do not commit derived artifacts, we require some of these ar
 Thus, you should commit derived artifacts from the `include` directory of the `MiniJava` project.
 Please check whether the derived artifacts are there when pushing your changes and submitting your pull request.
 
-The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the .gitignore file.
-You must disable this behavior in the Eclipse preferences. Go to Team -> Git -> Projects in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
-Check the .gitignore file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with ! are un-ignores, they make sure that the derived artifacts we need will be committed.
+The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the `.gitignore` file.
+You must disable this behavior in the Eclipse preferences. Go to *Team -> Git -> Projects* in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
+Check the `.gitignore` file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with `!` are un-ignores, they make sure that the derived artifacts we need will be committed.
 {: .notice .notice-warning}
 
 ### Agile Software Language Engineering
@@ -141,15 +144,9 @@ This is because Spoofax editors support syntactic error recovery.
 ### SDF3
 
 You should define your syntax in [SDF3](http://metaborg.org/sdf3/).
-You can start by creating a new file `syntax/MiniJava.sdf3` in your MiniJava project:
-
-    module MiniJava
-
-    context-free start-symbols
-
+You can start by opening the file `syntax/MiniJava.sdf3` in your MiniJava project.
 When you save this file, you should get a corresponding file `src-gen/syntax/MiniJava.sdf`.
 You can also split your syntax definition over several modules in `syntax/`.
-**Do only import modules that you wrote yourself.**
 
 ### Lexical Syntax
 
