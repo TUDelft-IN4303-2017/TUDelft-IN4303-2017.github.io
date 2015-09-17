@@ -165,13 +165,25 @@ This module provides syntax definitions for common lexical sorts such as identif
 Start with the context-free syntax of the language.
 Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
 
+##### Testing
+
+When you define your syntax definition bottom-up, you start with sorts such as `Type` and `VarDecl`.
+This allows you to run your tests frequently and check your progress.
+
+Once you build your project, Spoofax will run all the tests in your test project automatically.
+When you have many tests, Spoofax might not be able to handle them. If you experience delays, you can
+
+* split tests into more files,
+* comment out bigger tests, or
+* close the test project.
+
 ##### Templates
 
 We recommend to use templates for your context-free syntax definition, since this will give you a head start for the next lab.
 
 In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
 
-When you decide to use templates, you need to make sure that templates are correctly tokenised.
+When you use templates, you need to make sure that templates are correctly tokenised.
 Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
 Check the SDF3 documentation for details.
 
@@ -212,42 +224,51 @@ context-free priorities
 
 #### Lexical Syntax
 
-Start with the lexical syntax definition including identifiers, integer, and simple layout.
+Continue with the lexical syntax definition including identifiers, integer, and simple layout.
+The `Common` module in `syntax/Common.sdf3` provides already definitions, but these do not comply with MiniJava.
+You can either fix these definitions in `Common`, or define and import your own module and use `Common` only for inspiration.
+
 First, define lexical syntax rules:
 
-    lexical syntax
+```
+lexical syntax
 
-      ID     = ...
-      INT    = ...
-      LAYOUT = ...
-
+  ID     = ...
+  INT    = ...
+  LAYOUT = ...
+```
 
 Second, define follow restrictions to ensure longest matches:
 
-    lexical restrictions
+```
+lexical restrictions
 
-      ID -/- ...
-      INT -/- ...
+  ID -/- ...
+  INT -/- ...
 
-    context-free restrictions
+context-free restrictions
 
-     LAYOUT? -/- ...
+ LAYOUT? -/- ...
+```
 
 Finally, use rejection rules to rule out reserved words.
 
-    lexical syntax
+```
+lexical syntax
 
-      ID = ... {reject}
+  ID = ... {reject}
+```
 
 In your tests, you declare `ID` and `INT` as start symbols for those tests. To get those tests running, you also need to define those as start symbols in your grammar:
 
-    context-free start-symbols
+```
+context-free start-symbols
 
-      ID INT
+  ID INT
+```
 
 You now can run your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience long running times for your tests, this is most likely caused by an erroneous definition of `LAYOUT`.
-
-##### Comments
+{: .notice .notice-danger}
 
 Finally, you should add lexical syntax rules for comments to your syntax definition.
 Start with single line comments.
