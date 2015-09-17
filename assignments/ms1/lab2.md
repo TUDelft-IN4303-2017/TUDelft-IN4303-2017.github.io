@@ -172,17 +172,11 @@ Use the context-free grammar in the *MiniJava Language Reference Manual* as a re
 When you define your syntax definition bottom-up, you start with sorts such as `Type` and `VarDecl`.
 This allows you to run your tests frequently and check your progress.
 
-##### Templates
-
 We recommend to use templates for your context-free syntax definition, since this will give you a head start for the next lab.
-
-In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
-
 When you use templates, you need to make sure that templates are correctly tokenised.
 Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
 Check the SDF3 documentation for details.
-
-##### Disambiguation
+In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
 
 You need disambiguation constructs to disambiguate your syntax definition.
 You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
