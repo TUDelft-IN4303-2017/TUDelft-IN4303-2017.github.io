@@ -146,7 +146,62 @@ This is because Spoofax editors support syntactic error recovery.
 You should define your syntax in [SDF3](http://metaborg.org/sdf3/).
 You can start by opening the file `syntax/MiniJava.sdf3` in your MiniJava project.
 When you save this file, you should get a corresponding file `src-gen/syntax/MiniJava.sdf`.
-You can also split your syntax definition over several modules in `syntax/`.
+You can also split your syntax definition over several modules in `syntax/` and import modules into module `MiniJava`.
+
+
+```
+module MiniJava
+
+imports
+  
+  Common
+```
+
+The module already imports a module `Common`, which you can find in any initial Spoofax editor project.
+This module provides syntax definitions for common lexical sorts such as identifiers, integers, strings, and whitespace, including single line and block comments.
+
+### Context-free Syntax
+
+Start with the context-free syntax of the language.
+Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
+We recommend to use templates for your context-free syntax definition,
+ since this will give you a head start for the next lab.
+
+In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
+{: .notice .notice-info}
+ 
+You need disambiguation constructs to disambiguate your syntax definition.
+You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
+These attributes are added to the end of a rule:
+
+```
+context-free syntax
+
+  Exp.Constr1 = ... {left}
+```
+
+You can specify precedence in a `context-free priorities` section.
+In this section, you order groups of rules:
+
+```
+context-free priorities
+
+  {
+    Exp.Constr1
+    Exp.Constr2
+  } > { ... } > ...
+```
+
+You can also define the associativity of a group:
+
+```
+context-free priorities
+
+  { left:
+    Exp.Constr1
+    Exp.Constr2
+  } > { ... } > ...
+```
 
 ### Lexical Syntax
 
@@ -184,41 +239,6 @@ In your tests, you declare `ID` and `INT` as start symbols for those tests. To g
       ID INT
 
 You now can run your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience long running times for your tests, this is most likely caused by an erroneous definition of `LAYOUT`.
-
-### Context-free Syntax
-
-Continue with the context-free syntax of the language.
-Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
-We recommend to use templates for your context-free syntax definition,
- since this will give you a head start for the next lab.
-In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
-
-You need disambiguation constructs to disambiguate your syntax definition.
-You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
-These attributes are added to the end of a rule:
-
-    context-free syntax
-
-      Exp.Constr1 = ... {left}
-
-You can specify precedence in a `context-free priorities` section.
-In this section, you order groups of rules:
-
-    context-free priorities
-
-      {
-        Exp.Constr1
-        Exp.Constr2
-      } > { ... } > ...
-
-You can also define the associativity of a group:
-
-    context-free priorities
-
-      { left:
-        Exp.Constr1
-        Exp.Constr2
-      } > { ... } > ...
 
 ### Comments
 
