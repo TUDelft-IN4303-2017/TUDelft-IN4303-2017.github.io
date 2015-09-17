@@ -126,6 +126,10 @@ In each step, you focus on a single aspect,
 After each step, you can check your progress by building the project and running your test cases.
 This requires you to declare the same start symbols in your syntax definition as in your test suites.
 
+Once you build your project, Spoofax will run all the tests in your test project automatically.
+When you have many tests, Spoofax might not be able to handle them. If you experience delays, you can split tests into more files, comment out bigger tests, or close the test project.
+{: .notice .notice-warning}
+
 You can also test the generated editor in the same Eclipse instance.
 This requires you to specify the start symbol that is used by the editor
   in the main editor description `editor/MiniJava.main.esv`.
@@ -165,17 +169,8 @@ This module provides syntax definitions for common lexical sorts such as identif
 Start with the context-free syntax of the language.
 Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
 
-##### Testing
-
 When you define your syntax definition bottom-up, you start with sorts such as `Type` and `VarDecl`.
 This allows you to run your tests frequently and check your progress.
-
-Once you build your project, Spoofax will run all the tests in your test project automatically.
-When you have many tests, Spoofax might not be able to handle them. If you experience delays, you can
-
-* split tests into more files,
-* comment out bigger tests, or
-* close the test project.
 
 ##### Templates
 
