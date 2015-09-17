@@ -141,7 +141,7 @@ This is because Spoofax editors support syntactic error recovery.
 
 ![Menu entry to inspect the abstract syntax of a program fragment.](http://strategoxt.org/pub/Spoofax/Features/show-abstract-syntax.png  "Menu entry to inspect the abstract syntax of a program fragment.")
 
-### SDF3
+### Syntax Definition
 
 You should define your syntax in [SDF3](http://metaborg.org/sdf3/).
 You can start by opening the file `syntax/MiniJava.sdf3` in your MiniJava project.
@@ -160,12 +160,12 @@ imports
 The module already imports a module `Common`, which you can find in any initial Spoofax editor project.
 This module provides syntax definitions for common lexical sorts such as identifiers, integers, strings, and whitespace, including single line and block comments.
 
-### Context-free Syntax
+#### Context-free Syntax
 
 Start with the context-free syntax of the language.
 Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
 
-#### Templates
+##### Templates
 
 We recommend to use templates for your context-free syntax definition, since this will give you a head start for the next lab.
 
@@ -175,7 +175,7 @@ When you decide to use templates, you need to make sure that templates are corre
 Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
 Check the SDF3 documentation for details.
 
-#### Disambiguation
+##### Disambiguation
 
 You need disambiguation constructs to disambiguate your syntax definition.
 You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
@@ -210,7 +210,7 @@ context-free priorities
   } > { ... } > ...
 ```
 
-### Lexical Syntax
+#### Lexical Syntax
 
 Start with the lexical syntax definition including identifiers, integer, and simple layout.
 First, define lexical syntax rules:
@@ -247,7 +247,7 @@ In your tests, you declare `ID` and `INT` as start symbols for those tests. To g
 
 You now can run your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience long running times for your tests, this is most likely caused by an erroneous definition of `LAYOUT`.
 
-### Comments
+##### Comments
 
 Finally, you should add lexical syntax rules for comments to your syntax definition.
 Start with single line comments.
