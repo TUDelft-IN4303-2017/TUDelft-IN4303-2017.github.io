@@ -164,12 +164,19 @@ This module provides syntax definitions for common lexical sorts such as identif
 
 Start with the context-free syntax of the language.
 Use the context-free grammar in the *MiniJava Language Reference Manual* as a reference.
-We recommend to use templates for your context-free syntax definition,
- since this will give you a head start for the next lab.
+
+#### Templates
+
+We recommend to use templates for your context-free syntax definition, since this will give you a head start for the next lab.
 
 In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
-{: .notice .notice-info}
- 
+
+When you decide to use templates, you need to make sure that templates are correctly tokenised.
+Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
+Check the SDF3 documentation for details.
+
+#### Disambiguation
+
 You need disambiguation constructs to disambiguate your syntax definition.
 You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
 These attributes are added to the end of a rule:
