@@ -54,7 +54,7 @@ The deadline for submission is September 24, 23:59.
 
 ### Grading
 
-You can earn up to 5 points for the organisation of your test project. We take its structure, file names, test names, and your explanation into account.
+You can earn up to 5 points for the organisation of your syntax definition. We take its structure, module names, and your explanation into account.
 You can earn up to 75 points for your concrete syntax definition.
 Therefor, we run 333 test cases against your implementation.
 You earn points, when your implementation passes test cases.
