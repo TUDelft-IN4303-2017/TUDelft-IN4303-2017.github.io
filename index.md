@@ -37,3 +37,10 @@ In the [practical work](assignments), students construct a compiler for a small 
 ## Textbook
 
 * Andrew W. Appel, Jens Palsberg: *Modern Compiler Implementation in Java*, 2nd edition. Cambridge University Press, 2002.
+
+## Support
+
+The Git repositories of this course are supported by a discount from [GitHub Education](https://education.github.com).
+
+Early feedback and automated grading of student submissions is supported by an [AWS in Education](https://aws.amazon.com/education/) Grant award from Amazon.
+
