@@ -15,4 +15,4 @@ We host documentation for Spoofax and its meta-languages at (metaborg.org)[http:
 * (The NaBL Name Binding Language)[http://metaborg.org/nabl/]
 * (The TS Type Specification Language)[http://metaborg.org/ts/]
 * (The Stratego Transformation Language)[http://metaborg.org/stratego/]
-* 
+
