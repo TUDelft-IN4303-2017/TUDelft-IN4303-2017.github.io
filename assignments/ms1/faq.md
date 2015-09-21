@@ -71,12 +71,12 @@ If you get errors while you think you shouldn't, open all `.sdf3` files and run 
 
 ##### Why do my disambiguation tests fail?
 
-Disambiguation tests (i.e. tests of the form `test abc [[x]] parse to y`) compare the AST that is generated for `x` to `y`. If they differ, the test fails. Use the *Show AST* option in the editor's *Transform* menu to view the AST; this may give you clue as to what is going wrong. A common mistake is to introduce a constructor when parsing a parenthesized expression. This can be solved by using the `bracket` attribute.
+Disambiguation tests (i.e. tests of the form `test name [[...]] parse to [[..]]`) compare the ASTs for both test fragments. If these ASTs differ, the test fails. Use the *Show AST* option in the editor's *Transform* menu to view the AST; this may give you clue as to what is going wrong. A common mistake is to introduce a constructor when parsing a parenthesized expression. This can be solved by using the `bracket` attribute.
 
 ##### Why does the `bracket` attribute has no effect?
 
 You probably used a constructor name together with the `bracket` attribute.
-This is a mistake.
+As the SDF3 editor indicates, this is a mistake.
 
 ##### Why are my `context-free priorities` not translated into SDF2?
 
