@@ -69,6 +69,10 @@ and `c` should be declared as
 
 If you get errors while you think you shouldn't, open all `.sdf3` files and run *Generate SDF (concrete, for selection)* from the *Transform* button. If this does not result in a corresponding `.sdf` file, something is wrong in your `.sdf3` file.
 
+##### Why do my disambiguation tests fail?
+
+Disambiguation tests (i.e. tests of the form `test abc [[x]] parse to y`) compare the AST that is generated for `x` to `y`. If they differ, the test fails. Use the *Show AST* option in the editor's *Transform* menu to view the AST; this may give you clue as to what is going wrong. A common mistake is to introduce a constructor when parsing a parenthesized expression. This can be solved by using the `bracket` attribute.
+
 ##### Why does the `bracket` attribute has no effect?
 
 You probably used a constructor name together with the `bracket` attribute.
