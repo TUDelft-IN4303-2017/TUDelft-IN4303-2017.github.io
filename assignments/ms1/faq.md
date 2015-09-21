@@ -19,9 +19,9 @@ subcontext: ms1
 
 # Setup
 
-##### After [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) I receive several errors that have to do with importing and including files. 
+##### After importing the projects into Eclipse I receive several errors that have to do with importing and including files. 
 
-Build the project by choosing *Project > Build All* from the menu.
+If you get errors after [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) you should build the project by choosing *Project > Build All* from the menu.
 
 # Testing Syntax Definition
 
