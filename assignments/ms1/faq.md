@@ -19,9 +19,9 @@ subcontext: ms1
 
 # Setup
 
-##### After [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) I receive several errors that have to do with importing and including files. 
+##### After importing the projects into Eclipse I receive several errors that have to do with importing and including files. 
 
-Build the project by choosing *Project > Build All* from the menu.
+If you get errors after [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) you should build the project by choosing *Project > Build All* from the menu.
 
 # Testing Syntax Definition
 
@@ -68,6 +68,10 @@ and `c` should be declared as
     module subdir/c
 
 If you get errors while you think you shouldn't, open all `.sdf3` files and run *Generate SDF (concrete, for selection)* from the *Transform* button. If this does not result in a corresponding `.sdf` file, something is wrong in your `.sdf3` file.
+
+##### Why do my disambiguation tests fail?
+
+Disambiguation tests (i.e. tests of the form `test abc [[x]] parse to y`) compare the AST that is generated for `x` to `y`. If they differ, the test fails. Use the *Show AST* option in the editor's *Transform* menu to view the AST; this may give you clue as to what is going wrong. A common mistake is to introduce a constructor when parsing a parenthesized expression. This can be solved by using the `bracket` attribute.
 
 ##### Why does the `bracket` attribute has no effect?
 
