@@ -16,7 +16,7 @@ In this lab, you add a pretty-printer and syntactic editor services to your Mini
 ### Objectives
 
 1. Extend generated folding rules with hand-written rules.
-You should include only structures, where folding is reasonable.
+You should include only structures where folding is reasonable.
 2. Integrate generated pretty-printing rules and completion templates into your MiniJava editor.
 Improve your syntax definition to support
   * textual labels in these templates,
@@ -30,7 +30,9 @@ Improve your syntax definition to support
 You need to submit your MiniJava project with a pull request against branch `assignment3` on GitHub.
 Your GitHub repository contains a step-by-step procedure how to file such a request.
 As part of your submission, we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
-The deadline for submission is October 8, 17:59.
+
+The deadline for submission is October 1, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
@@ -76,6 +78,7 @@ For each file `<name>.sdf3`, there are generated files
 * `completions/<name>-esv.esv`: completion templates derived from SDF3 templates.
 * `pp/<name>-pp.str`: pretty-printing strategies derived from SDF3 templates.
 * `signatures/<name>-sig.str`: signatures derived from SDF3 templates.
+* `check/<name>-chk.str`: checks for correctness of abstract syntax trees.
 
 You can find more generated files in `editor` and `include` folders:
 
@@ -195,7 +198,10 @@ There is already a menu entry named `Format` that uses the strategy `pp-debug` i
     ...
 
 The strategies from `include/MiniJava-parenthesize` obey the priority rules of your syntax definition.
-__You might need to import the generated__ `src-gen/pp/*-pp.str` __files here if your start symbols are not defined in the main SDF3 module__.
+
+You might need to import the generated `src-gen/pp/*-pp.str` files here if your start symbols are not defined in the main SDF3 module.
+{: .notice .notice-warning}
+
 
 In order to test the pretty-print builder, you need to build your project.
 Create or open a `.mjv` test file with a valid program, press the down-facing arrow on the right of the `Syntax` button and choose `Format`.
