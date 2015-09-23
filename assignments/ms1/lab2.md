@@ -114,7 +114,7 @@ Please check whether the derived artifacts are there when pushing your changes a
 
 The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the .gitignore file.
 You must disable this behavior in the Eclipse preferences. Go to *Team -> Git -> Projects* in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
-Check the .gitignore file to make sure that the Git plugin did not add any entries for the include directory. Entries that start with ! are un-ignores, they make sure that the derived artifacts we need will be committed.
+Check the MiniJava/.gitignore file and remove the /include/ entry, if it is there. Eclipse hides files starting with ., so you need to open the .gitignore file some other way.
 {: .notice .notice-warning}
 
 ### Agile Software Language Engineering
@@ -157,7 +157,7 @@ You can also split your syntax definition over several modules in `syntax/` and 
 module MiniJava
 
 imports
-  
+
   Common
 ```
 
