@@ -148,11 +148,12 @@ Placeholder expressions are indicated by angular brackets.
 The editor automatically moves the cursor to these expressions once the user selects a completion proposal,
 allowing the expressions to be filled in as the user continues typing.
 
+Presentational editor services such as code completion, code folding, and syntax highlighting are defined
+in `.esv` files in the `editor` folder.
 Spoofax generates completion templates from `templates` sections in your syntax definition.
 You can find these templates in `src-gen/completions/<name>-esv.esv` files.
 Until now, these completion templates are not integrated into your editor.
 You can change this, by importing the generated `src-gen/completions/MiniJava-esv.esv` file into `editor/MiniJava-Completions.esv`.
-For a successfull build, it is important to avoid any cyclic import in your syntax definition.
 After building your project, you can test completion in a MiniJava editor by pressing `Ctrl + Space`.
 
 You should improve your syntax definition in order to get readable completion templates.
@@ -165,8 +166,6 @@ Read the [SDF3 documentation](http://metaborg.org/sdf3/) on templates and placeh
 
 ### Folding Rules
 
-Presentational editor services such as code folding and syntax highlighting are defined
-in `.esv` files in the `editor` folder.
 When you build your editor and open a MiniJava file, you can see that the editor provides already some folding points.
 These points are syntax-dependent and are specified by folding rules in `editor/MiniJava-Folding.generated.esv`.
 All editor services follow the same basic structure:
