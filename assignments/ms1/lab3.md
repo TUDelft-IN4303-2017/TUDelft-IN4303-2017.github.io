@@ -40,9 +40,6 @@ You can further earn up to 70 points for your improved syntax templates.
 We will focus on readability of pretty-printed code and completion suggestions and
 on consistent indentations.
 
-We also run your altered syntax definition against the tests from the previous assignment.
-If you score less points than with your submission for the previous assignment, we deduce 5 points from the current assignment.
-
 You can earn up to 20 points for hand-written completion templates.
 
 Finally, you can earn up to 10 points for your folding patterns.
