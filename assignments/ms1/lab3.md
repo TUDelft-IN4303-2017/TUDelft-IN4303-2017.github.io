@@ -15,15 +15,15 @@ In this lab, you add a pretty-printer and syntactic editor services to your Mini
 
 ### Objectives
 
-1. Extend generated folding rules with hand-written rules.
-You should include only structures where folding is reasonable.
-2. Integrate generated pretty-printing rules and completion templates into your MiniJava editor.
+1. Integrate generated pretty-printing rules and completion templates into your MiniJava editor.
 Improve your syntax definition to support
   * textual labels in these templates,
   * hiding optional placeholders,
   * multi-line templates and
   * consistent indentation.
-3. Extend your editor with additional, hand-written completion templates.
+2. Extend your editor with additional, hand-written completion templates.
+3. Extend generated folding rules with hand-written rules.
+You should include only structures where folding is reasonable.
 
 ### Submission
 
@@ -36,15 +36,18 @@ The deadline for submission is October 1, 23:59.
 
 ### Grading
 
-You can earn up to 10 points for your folding patterns.
-We will take the overall editor experience into account and
-we will deduct points for too many (and by this unusable) folding options.
-
 You can further earn up to 70 points for your improved syntax templates.
 We will focus on readability of pretty-printed code and completion suggestions and
 on consistent indentations.
 
-Finally, you can earn up to 20 points for hand-written completion templates.
+We also run your altered syntax definition against the tests from the previous assignment.
+If you score less points than with your submission for the previous assignment, we deduce 5 points from the current assignment.
+
+You can earn up to 20 points for hand-written completion templates.
+
+Finally, you can earn up to 10 points for your folding patterns.
+We will take the overall editor experience into account and
+we will deduct points for too many (and by this unusable) folding options.
 
 ### Early Feedback
 
@@ -103,49 +106,39 @@ Before you start with the actual assignment, you should make sure that
         Sort.Constructor = [...]
 
 3. your start symbol in `editor/MiniJava.main.esv` is set to `Program` or `Start` so that your editor accepts only complete MiniJava programs.
-4. your Spoofax is up-to-date.
 
-### Folding Rules
+### Pretty-Printing
 
-Presentational editor services such as code folding and syntax highlighting are defined
-in `.esv` files in the `editor` folder.
-When you build your editor and open a MiniJava file, you can see that the editor provides already some folding points.
-These points are syntax-dependent and are specified by folding rules in `editor/MiniJava-Folding.generated.esv`.
-All editor services follow the same basic structure:
-they have a derived file (`EntityLang-Folding.generated.esv`)
-and a custom definition file (`EntityLang-Folding.esv`).
-The first file is automatically generated from your syntax definition, each time the project is built.
-You can use the second file to customize the editor.
+Spoofax generates pretty-printing rules from your syntax definition.
+You can find these rules in `src-gen/pp/<name>-pp.str`.
 
-Folding rules indicate which syntactic constructs can be folded, and take one of the following forms:
+In order to test the pretty-print builder, you need to build your project.
+Your MiniJava editor provides a menu entry named `Format` that uses these generated rules to pretty-print a MiniJava file.
+Create or open a `.mjv` test file with a valid program, press the down-facing arrow on the right of the `Syntax` button and choose `Format`.
+This will apply `Format` to the current file and show the result in a new editor.
 
-    <Sort>.<Constructor>
-    <Sort>._
-    _.<Constructor>
+If your start symbols are not defined in the main SDF3 module, you might need to import the generated `src-gen/pp/*-pp.str` files into `trans/pp.str`.
+{: .notice .notice-warning}
 
-The `(folded)` annotation can be used for constructs that should be folded automatically:
+Typically, the pretty-printed code lacks proper indentation and line breaks.
+You can fix this by improving your templates in the syntax definition.
+The pretty-printer follows the indentation and line breaks from the syntax definition.
 
-    _.Imports (folded)
+You should improve your syntax definition in order to get readable code with a consistent indentation.
+You might read on [indent styles](http://en.wikipedia.org/wiki/Indent_style) for some inspiration.
 
-Spoofax uses heuristics to automatically derive folding rules,
- based on the logical nesting structure in the syntax of the language.
-Currently, it derives folding rules from productions rules with a lexical identifier and child elements.
-While not perfect, the heuristics provide a good starting point for a new folding definition.
-Any undesired definitions in the generated file can be disabled
- by using the `(disabled)` annotation in a custom rule:
-
-    Definition._ (disabled)
-
-You should now specify additional custom folding rules.
-It is important, to include only those structures, where folding is reasonable.
+Make sure that your altered syntax definition is still correct and can be used to parse MiniJava programs.
+{: .notice .notice-warning}
 
 ### Completion Templates
 
 Syntactic content completion provides users with completion suggestions based purely on static, syntactic templates.
 For example
 
-    completion template Statement : "while(true) {}" =
-      "while(" <true:Exp> ") " <{}:Statement> (blank)  
+```
+completion template Statement : "while(true) {}" =
+  "while(" <true:Exp> ") " <{}:Statement> (blank)  
+```
 
 is a syntactic completion template for `while` loops.
 Such templates are composed of static strings and placeholder expressions.
@@ -162,29 +155,51 @@ You can change this, by importing the generated `src-gen/completions/MiniJava-es
 For a successfull build, it is important to avoid any cyclic import in your syntax definition.
 After building your project, you can test completion in a MiniJava editor by pressing `Ctrl + Space`.
 
-Typically, your completion templates lack proper indentation and line breaks.
-You can fix this by improving your templates in the syntax definition.
-The completion templates follow the indentation and line breaks from the syntax definition.
+You should improve your syntax definition in order to get readable completion templates.
+Finally, you should specify few additional completion templates manually.
+This might involve larger code patterns or useful variants of the generated templates.
+
 You can hide particular placeholders from completion templates with a `hide` option or
 change a placeholder label with a `text="label"` option.
 Read the [SDF3 documentation](http://metaborg.org/sdf3/) on templates and placeholders for more information.
 
-You should improve your syntax definition in order to get readable completion templates with a consistent indentation.
-You might read on [indent styles](http://en.wikipedia.org/wiki/Indent_style) for some inspiration.
-Finally, you should specify few additional completion templates manually.
-This might involve larger code patterns or useful variants of the generated templates.
+### Folding Rules
 
-### Pretty-Printing
+Presentational editor services such as code folding and syntax highlighting are defined
+in `.esv` files in the `editor` folder.
+When you build your editor and open a MiniJava file, you can see that the editor provides already some folding points.
+These points are syntax-dependent and are specified by folding rules in `editor/MiniJava-Folding.generated.esv`.
+All editor services follow the same basic structure:
+they have a derived file (`MiniJava-Folding.generated.esv`)
+and a custom definition file (`MiniJava-Folding.esv`).
+The first file is automatically generated from your syntax definition, each time the project is built.
+You can use the second file to customize the editor.
 
-Spoofax also generates pretty-printing rules from your syntax definition.
-You can find these rules in `src-gen/pp/<name>-pp.str`.
+Folding rules indicate which syntactic constructs can be folded, and take one of the following forms:
 
-There is already a menu entry named `Format` that uses the strategy `pp-debug` in the `trans/pp.str` file to pretty-print a MiniJava file. 
+```
+<Sort>.<Constructor>
+<Sort>._
+_.<Constructor>
+```
 
-You might need to import the generated `src-gen/pp/*-pp.str` files here if your start symbols are not defined in the main SDF3 module.
-{: .notice .notice-warning}
+The `(folded)` annotation can be used for constructs that should be folded automatically:
 
+```
+_.Imports (folded)
+```
 
-In order to test the pretty-print builder, you need to build your project.
-Create or open a `.mjv` test file with a valid program, press the down-facing arrow on the right of the `Syntax` button and choose `Format`.
-This will apply `Format` to the current file and show the result in a new editor.
+Spoofax uses heuristics to automatically derive folding rules,
+ based on the logical nesting structure in the syntax of the language.
+Currently, it derives folding rules from productions rules with a lexical identifier and child elements.
+While not perfect, the heuristics provide a good starting point for a new folding definition.
+Any undesired definitions in the generated file can be disabled
+ by using the `(disabled)` annotation in a custom rule:
+
+```
+Definition._ (disabled)
+```
+
+You should now specify additional custom folding rules.
+It is important, to include only those structures, where folding is reasonable.
+
