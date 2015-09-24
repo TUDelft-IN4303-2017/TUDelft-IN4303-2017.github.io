@@ -52,6 +52,16 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 
 ## Detailed Instructions
 
+### Prelimenaries
+
+#### Git Repository
+
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment3` branch from your previous work.
+
+We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment3`.
+See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an improved pretty-printing strategy in `MiniJava/trans/pp.str` which parenthesises expressions according to your priorities.
+
 ### Anatomy of a Spoofax Project
 
 Until now, you mainly worked on files in the `syntax` folder of your project.
