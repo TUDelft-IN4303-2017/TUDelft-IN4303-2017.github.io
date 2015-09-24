@@ -179,25 +179,7 @@ This might involve larger code patterns or useful variants of the generated temp
 Spoofax also generates pretty-printing rules from your syntax definition.
 You can find these rules in `src-gen/pp/<name>-pp.str`.
 
-There is already a menu entry named `Format` that uses the strategy `pp-debug` in the `trans/pp.str` file to pretty-print a MiniJava file. However, to add parentheses to your MiniJava program following the priority rules from your syntax definition, it is important that you add the `include/MiniJava-parenthesize` to the imports and also change the strategy `pp-MiniJava-string` to apply the parenthesize strategies to your ast.
-
-
-    module pp
-
-    imports
-      ...
-      include/MiniJava-parenthesize
-      ...
-
-    pp-MiniJava-string =
-      parenthesize-MiniJava
-    ; prettyprint-SDF-start-symbols
-    ; !V([], <id>)
-    ; box2text-string(|120)
-
-    ...
-
-The strategies from `include/MiniJava-parenthesize` obey the priority rules of your syntax definition.
+There is already a menu entry named `Format` that uses the strategy `pp-debug` in the `trans/pp.str` file to pretty-print a MiniJava file. 
 
 You might need to import the generated `src-gen/pp/*-pp.str` files here if your start symbols are not defined in the main SDF3 module.
 {: .notice .notice-warning}
