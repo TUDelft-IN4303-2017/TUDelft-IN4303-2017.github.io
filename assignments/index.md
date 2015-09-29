@@ -50,6 +50,7 @@ We do our best to hand out grading reports as quick as possible, but manual grad
 Early feedback and most parts of final grading are automated and supported by an AWS in Education Grant award.
 Each pull request triggers the launch of an Amazon EC2 instance which runs automated feedback and grading for your solution.
 Be aware that feedback might be delayed due to submissions by other students, instance limits, server problems, etc. 
+
 ## Grades
 
 We grade the first final solution of each of your assignments.
