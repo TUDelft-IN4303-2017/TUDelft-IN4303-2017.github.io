@@ -62,6 +62,20 @@ See the [Git documentation](/documentation/git.html#continue-from-previous-assig
 We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment3`.
 See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an improved pretty-printing strategy in `MiniJava/trans/pp.str` which parenthesises expressions according to your priorities.
 
+#### Syntax Definition
+
+Before you start with the actual assignment, you should make sure that
+
+1. your syntax definition provides all start symbols needed by your test cases,
+2. your context-free syntax is specified in templates of the form
+
+        Sort             = <...>
+        Sort.Constructor = <...>
+        Sort             = [...]
+        Sort.Constructor = [...]
+
+3. your start symbol in `editor/MiniJava.main.esv` is set to `Program` or `Start` so that your editor accepts only complete MiniJava programs.
+
 ### Anatomy of a Spoofax Project
 
 Until now, you mainly worked on files in the `syntax` folder of your project.
@@ -99,20 +113,6 @@ You can find more generated files in `editor` and `include` folders:
 * `include/MiniJava.str`: the signature for ASTs of your language.
 * `include/MiniJava-parenthesize.str`: strategies to add parentheses to an AST according to the priorities of your language.
 * `include/minijava.ctree` and/or `include/minijava.jar`: compiled Stratego code of your language.
-
-### Preliminaries
-
-Before you start with the actual assignment, you should make sure that
-
-1. your syntax definition provides all start symbols needed by your test cases,
-2. your context-free syntax is specified in templates of the form
-
-        Sort             = <...>
-        Sort.Constructor = <...>
-        Sort             = [...]
-        Sort.Constructor = [...]
-
-3. your start symbol in `editor/MiniJava.main.esv` is set to `Program` or `Start` so that your editor accepts only complete MiniJava programs.
 
 ### Pretty-Printing
 
