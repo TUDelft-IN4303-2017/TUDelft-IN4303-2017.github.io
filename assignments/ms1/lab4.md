@@ -69,17 +69,18 @@ We provide you with an initial MiniJava project in the branch `assignment4`.
 This project is a common starting point for all of you.
 It includes:
 
-* a parse table `common/Minimal.tbl` which passes all syntax tests,
-* a corresponding signature `common/src-gen/signatures/MiniJava-sig.str`,
-* a pretty-printing definition `common/src-gen/pp/MiniJava-pp.str`, and a
-* content-completion definition `common/src-gen/completions/MiniJava-esv.esv`.
+* a parse table `reference/Minimal.tbl` which passes all syntax tests,
+* a corresponding signature `reference/src-gen/signatures/MiniJava-sig.str`,
+* a pretty-printing definition `reference/src-gen/pp/MiniJava-pp.str`, and a
+* a content-completion definition `reference/src-gen/completions/MiniJava-esv.esv` (errors in the completion files can be ignored).
+* stratego rules `reference/src-gen/check/MiniJava-chk` to check whether an AST in MiniJava is valid.
 
 #### Signature
 
 Signatures declare sorts and constructors for terms.
 In Spoofax, terms are used to represent abstract syntax trees.
 The corresponding signature is generated from the constructors in a syntax definition.
-You can find a signature for MiniJava in `common/src-gen/signatures/MiniJava-sig.str`.
+You can find a signature for MiniJava in `reference/src-gen/signatures/MiniJava-sig.str`.
 It was generated from a syntax definition, which itself is not included in the initial project.
 If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/`.
 
@@ -206,10 +207,12 @@ Typically, they are less guided and require more investigation or higher program
 
 1. Provide the file name as the root node label.
 See `lib/runtime/editor/origins/` for a suitable strategy.
-2. Outline the main method as a subnode of the main class.
-You need to replace this strategy
 
-        outline = custom-label-outline(to-outline-label, to-outline-node)
+2. Outline the main method as a subnode of the main class.
+You need to change this strategy in the `minijava.str file`:
+
+        outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
+    
     Visit `lib/runtime/editor/outline-library` for inspiration.
 
 ### Desugaring
