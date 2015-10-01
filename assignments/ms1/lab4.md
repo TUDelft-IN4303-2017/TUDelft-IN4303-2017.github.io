@@ -14,17 +14,6 @@ You add an outline view and a desugaring transformation to an initial editor pro
 
 ## Overview
 
-### Initial Editor Project
-
-For this lab and the following milestone 2, we provide you with an initial editor project.
-This project is a common starting point for all of you.
-It includes:
-
-* a parse table `common/Minimal.tbl` which passes all syntax tests,
-* a corresponding signature `common/src-gen/signatures/MiniJava-sig.str`,
-* a pretty-printing definition `common/src-gen/pp/MiniJava-pp.str`, and a
-* content-completion definition `common/src-gen/completions/MiniJava-esv.esv`.
-
 ### Objectives
 
 1. Specify rewrite rules `to-outline-label` which map AST nodes to labels in an outline view. You should include:
@@ -45,7 +34,6 @@ For grading, it is required to comply with all constructor names, rule names, an
 
 You need to submit your MiniJava project with a pull request against branch `assignment4` on GitHub.
 Your GitHub repository contains a step-by-step procedure how to file such a request.
-As part of your submission, we ask you to provide a short paragraph explaining some choices you made in your implementation in `MiniJava/README.md`.
 
 The deadline for submission is October 8, 23:59.
 {: .notice .notice-warning}
@@ -68,21 +56,21 @@ You can earn up to 60 points for your desugarings:
 
 ## Detailed Instructions
 
-### Initial Editor Project
+### Preliminaries
+
+#### GitHub Repository
+
+#### Initial Editor Project
 
 We provide you with an initial MiniJava project in the branch `assignment4`.
 Make sure you have this branch in your fork as well, before you start working on this assignment.
+This initial project is a common starting point for all of you.
+It includes:
 
-1. Import the project into your workspace:
-    1. right-click into the Package Explorer
-    2. select **Import...** from the context menu
-    3. choose **General/Existing Projects into Workspace** from the list
-    4. select the MiniJava project
-    5. press the **Finish** button
-2. Build the project:
-    1. select the project folder
-    2. select **Build Project** from the **Project** menu
-    3. the console will report success or failure
+* a parse table `common/Minimal.tbl` which passes all syntax tests,
+* a corresponding signature `common/src-gen/signatures/MiniJava-sig.str`,
+* a pretty-printing definition `common/src-gen/pp/MiniJava-pp.str`, and a
+* content-completion definition `common/src-gen/completions/MiniJava-esv.esv`.
 
 #### Signature
 
@@ -91,7 +79,7 @@ In Spoofax, terms are used to represent abstract syntax trees.
 The corresponding signature is generated from the constructors in a syntax definition.
 You can find a signature for MiniJava in `common/src-gen/signatures/MiniJava-sig.str`.
 It was generated from a syntax definition, which itself is not included in the initial project.
-If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/*`.
+If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/`.
 
 ### Outline View
 
