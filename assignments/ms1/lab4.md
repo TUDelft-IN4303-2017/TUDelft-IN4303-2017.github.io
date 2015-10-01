@@ -38,14 +38,17 @@ It includes:
   * octal numbers into decimal numbers.
 3. Integrate `desugar` into a strategy `desugar-all` which desugars subtrees in an AST.
 
-For grading, it is required to comply with all rule and strategy names literally.
+For grading, it is required to comply with all constructor names, rule names, and strategy names literally.
+{: .notice .notice-warning}
 
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment4` on GitHub.
 Your GitHub repository contains a step-by-step procedure how to file such a request.
 As part of your submission, we ask you to provide a short paragraph explaining some choices you made in your implementation in `MiniJava/README.md`.
-The deadline for submission is October 15, 17:59.
+
+The deadline for submission is October 8, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
