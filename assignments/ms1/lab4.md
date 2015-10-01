@@ -60,11 +60,13 @@ You can earn up to 60 points for your desugarings:
 
 #### GitHub Repository
 
+We provide you with a template for this assignment in the `assignment4` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+
 #### Initial Editor Project
 
 We provide you with an initial MiniJava project in the branch `assignment4`.
-Make sure you have this branch in your fork as well, before you start working on this assignment.
-This initial project is a common starting point for all of you.
+This project is a common starting point for all of you.
 It includes:
 
 * a parse table `common/Minimal.tbl` which passes all syntax tests,
