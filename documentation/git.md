@@ -168,18 +168,69 @@ In most cases, Git will automatically merge in any changes, but sometimes confli
 
 ## Git GUI clients
 
-This guide uses command-line Git commands, but if you'd rather use a GUI, use [SourceTree](https://www.sourcetreeapp.com/) or [GitHub desktop](https://desktop.github.com/).
+This guide uses command-line Git commands, but if you'd rather use a GUI, use [SourceTree](https://www.sourcetreeapp.com/).
 
 
 ## Troubleshooting
 
-### Cannot push, no access/rights
+### Cannot push
 
-This probably means that you're trying to push to the *upstream* repository rather than *origin*. Push to origin using:
+#### No access/rights
+
+When Git complains about not being able to push because you do not have access or rights to the repository, this probably means that you're trying to push to the *upstream* repository rather than *origin*. Push to origin using:
 
 ```shell
 git push -u origin
 ```
+
+#### No upstream branch
+
+When trying to push without an upstream branch (note: an upstream branch is something different than the upstream repository!) being set, git will complain:
+
+```shell
+git push
+fatal: The current branch assignment3 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin assignment3
+```
+
+Git will tell you which command to run to set the upstream branch, just execute that. In this case:
+
+```shell
+git push --set-upstream origin assignment3
+```
+
+#### Out of date branch
+
+You cannot push changes to a remote when that remote has changes that you haven't yet pulled, you'll get an error like:
+
+```shell
+git push
+To ...
+ ! [rejected]        assignment3 -> assignment3 (non-fast-forward)
+error: failed to push some refs to '...'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+First pull changes with `git pull` and then push your changes.
+
+### Cannot pull
+
+#### Local changes
+
+When you have changes in your local repository that you have not committed yet, and you try to pull, Git may complain about your changes being overwritten.
+First add and commit your changes locally with:
+
+```shell
+git add --all
+git commit -m "Message describing your changes"
+```
+
+and then pull changes with `git pull`.
 
 ### Cannot automatically merge pull request
 
