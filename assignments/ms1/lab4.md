@@ -219,7 +219,7 @@ You need to change this strategy in the `minijava.str file`:
     
     Visit `lib/runtime/editor/outline-library` for inspiration.
 
-3. Use one of the library strategies for folding to implement `pp-params`.
+3. Use one of the library strategies for folding to implement `pp-params`. You can find various folding strategies in the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
 
 ### Desugaring
 
