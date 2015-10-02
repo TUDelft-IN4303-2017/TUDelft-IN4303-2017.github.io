@@ -232,6 +232,31 @@ git commit -m "Message describing your changes"
 
 and then pull changes with `git pull`.
 
+#### No tracking branch
+
+When pulling without a tracking branch being set, you will get the following error:
+
+```shell
+git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> assignment3
+```
+
+Git already hints to the command that fixes the problem. Since you are pulling/pushing from *origin*, the following command will set the correct tracking branch:
+
+```shell
+git branch --set-upstream-to=origin/assignment3 assignment3
+```
+
+and then pull changes with `git pull`.
+
 ### Cannot automatically merge pull request
 
 If a pull request cannot be automatically merged, your branch is out of date with the branch on *upstream*.
