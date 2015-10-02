@@ -127,11 +127,11 @@ For example, you might want to show not only a variable's name, but also it's ty
 The following rule achieves this:
 
 ```
-    to-outline-label:
-      Var(t, v) -> label
-      where
-        t'    := <pp-partial-MiniJava> t
-      ; label := <concat-strings> [v, ": ", t']
+to-outline-label:
+  Var(t, v) -> label
+  where
+    t'    := <pp-partial-MiniJava> t
+  ; label := <concat-strings> [v, ": ", t']
 ```
 
 On its right-hand side, it produces a `label`, which is bound in the `where` clause.
@@ -150,7 +150,7 @@ Instead, you can also use string interpolation:
 to-outline-label:
   Var(t, v) -> $[[v]: [t']]
   where
-    t' := <pp> t
+    t' := <pp-partial-MiniJava> t
 ```
 
 String interpolation allows you to combine text with variables.
@@ -167,19 +167,21 @@ You should provide the following information in your outline labels:
 For parameter types, you need to turn a list of parameters into a string.
 You can do this with a recursive strategy:
 
-    pp-params: // empty parameter list
-      [] -> ...
+```
+pp-params: // empty parameter list
+  [] -> ...
 
-    pp-params: // single parameter
-      [Param(t, p)] -> ...
+pp-params: // single parameter
+  [Param(t, p)] -> ...
 
-    pp-params: // at least two parameters
-      [Param(t, p), param | params] -> ...
-      where
-        // do something on first parameter
-        ...
-        // recursive call on remaining parameters
-        ... := <pp-params> [param | params]
+pp-params: // at least two parameters
+  [Param(t, p), param | params] -> ...
+  where
+    // do something on first parameter
+    ...
+    // recursive call on remaining parameters
+    ... := <pp-params> [param | params]
+```
 
 Your current outline view is missing a root node.
 You can add a root node by providing a label for programs.
@@ -190,12 +192,14 @@ In Stratego, terms can be annotated with additional information.
 The Spoofax outline view uses annotations to determine the icon of a node.
 You can specify the icon to use in an annotation:
 
-    to-outline-label:
-      Var(t, v) -> label{icon}
-      where
-        t'    := <pp> t
-      ; label := $[[v]: [t']]
-      ; icon  := "icons/var.gif"
+```
+to-outline-label:
+  Var(t, v) -> label{icon}
+  where
+    t'    := <pp-partial-MiniJava> t
+  ; label := $[[v]: [t']]
+  ; icon  := "icons/var.gif"
+```
 
 We do not require you to use icons and you will not earn any points with them.
 If you want to use them anyway, you should put the icons into the folder `icons`
@@ -211,7 +215,7 @@ Typically, they are less guided and require more investigation or higher program
 See `lib/runtime/editor/origins/` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
-You need to change this strategy in the `minijava.str file`:
+You need to change this strategy in the `minijava.str` file:
 
     ```
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
@@ -290,7 +294,9 @@ while the content of the file is a desugared version of the selected AST node.
 You also need to hook your strategy into the editor, making desugaring available in the *Syntax* menu.
 You can do this in `editor/MiniJava-Menus.esv`:
 
-    action : "Show desugared syntax" = editor-desugar (realtime) (meta) (source)
+```
+action : "Show desugared syntax" = editor-desugar (realtime) (meta) (source)
+```
 
 This rule defines
 
