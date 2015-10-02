@@ -94,9 +94,11 @@ An outline view can be specified by rewrite rules `to-outline-label` in `editor/
 These rules should rewrite AST nodes to their label in an outline view.
 For example, the following rule rewrites a variable declaration to its name, which will be used as a label.
 
-    rules
+```
+rules
 
-      to-outline-label: Var(t, v) -> v
+  to-outline-label: Var(t, v) -> v
+```
 
 On the left-hand side, the rule matches a variable declaration.
 During the match, variables `t` and `v` are bound to actual terms.
@@ -124,22 +126,17 @@ In many cases, you want to provide more information than just the name.
 For example, you might want to show not only a variable's name, but also it's type.
 The following rule achieves this:
 
+```
     to-outline-label:
       Var(t, v) -> label
       where
-        t'    := <pp> t
+        t'    := <pp-partial-MiniJava> t
       ; label := <concat-strings> [v, ": ", t']
+```
 
 On its right-hand side, it produces a `label`, which is bound in the `where` clause.
-First, the term bound to `t` is turned into a string bound to `t'` by applying a strategy `pp`.
-You need to define this strategy yourself by a couple of rewrite rules:
-
-    rules
-
-      pp: Bool()       -> ...
-      pp: ClassType(c) -> ...
-      pp: Int()        -> ...
-      pp: IntArray()   -> ...
+First, the term bound to `t` is turned into a string bound to `t'` by applying a strategy `pp-partial-MiniJava`.
+This strategy is defined in `MiniJava/trans/pp.str` and uses the pretty-printing rules generated from our SDF3 grammar for MiniJava.
 
 Next, the label is bound to the concatenation of
 the string bound to `v`,
@@ -149,10 +146,12 @@ and the string bound to `t'`.
 String concatenation is not very intuitive.
 Instead, you can also use string interpolation:
 
-    to-outline-label:
-      Var(t, v) -> $[[v]: [t']]
-      where
-        t' := <pp> t
+```
+to-outline-label:
+  Var(t, v) -> $[[v]: [t']]
+  where
+    t' := <pp> t
+```
 
 String interpolation allows you to combine text with variables.
 Text is enclosed in `$[` and `]`, while variables inside the text are enclosed in `[` and `]`.
@@ -206,6 +205,7 @@ and place a proper attribution or license file next to them.
 
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation or higher programming skills.
+{: .notice .notice-success}
 
 1. Provide the file name as the root node label.
 See `lib/runtime/editor/origins/` for a suitable strategy.
@@ -213,9 +213,13 @@ See `lib/runtime/editor/origins/` for a suitable strategy.
 2. Outline the main method as a subnode of the main class.
 You need to change this strategy in the `minijava.str file`:
 
-        outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
+    ```
+    outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
+    ```
     
     Visit `lib/runtime/editor/outline-library` for inspiration.
+
+3. Use one of the library strategies for folding to implement `pp-params`.
 
 ### Desugaring
 
@@ -242,9 +246,11 @@ which combine an operator and an expression (respectively two expressions) to an
 
 The following rewrite rule defines a rule to desugar an addition:
 
-    rules
+```
+rules
 
-      desugar: Add(e1, e2) -> BinExp(Plus(), e1, e2)
+  desugar: Add(e1, e2) -> BinExp(Plus(), e1, e2)
+```
 
 This rewrite rule is named `desugar`.
 On the left-hand side, the rule matches an addition.
@@ -261,11 +267,13 @@ which transforms the original expression into a uniform representation.
 To test your transformation, you need to define a builder.
 This is done similar to the builder for pretty-printing. Add the following rewrite rule to `trans/minijava.str`:
 
-    editor-desugar:
-      (selected, position, ast, path, project-path) -> (filename, text)
-      where
-        filename := <guarantee-extension(|"desugared.aterm")> path ;
-        text     := <desugar> selected
+```
+editor-desugar:
+  (selected, position, ast, path, project-path) -> (filename, text)
+  where
+    filename := <guarantee-extension(|"desugared.aterm")> path ;
+    text     := <desugar> selected
+```
 
 This rule follows Spoofax' convention for strategies which implement editor services.
 On the left-hand site, it matches a tuple of
@@ -306,9 +314,11 @@ Furthermore, strategies can be defined to orchestrate rewrite rules to complex t
 A strategy consists of a name and a definition, which is typically a combination of strategy applications.
 For example, the following strategy orchestrates local desugarings to a desugaring of complete ASTs:
 
-    strategies
+```
+strategies
 
-      desugar-all = innermost(desugar)
+  desugar-all = innermost(desugar)
+```
 
 This strategy is named `desugar-all`.
 It applies local `desugar` rules.
@@ -330,7 +340,7 @@ Try to understand what is going on and decide for a suitable one.
 You can use the library strategy `debug` to print the currently visited node.
 For example, `innermost(debug; desugar)` will `debug` all nodes before it tries to `desugar` them.
 
-For the submission, you need to prepare an explanation (1 paragraph) of
+For the submission, you need to provide an explanation (1 paragraph) of
 1. the choice you made,
 2. why this choice is suitable for this project, and
 3. why other choices would be less suitable.
@@ -342,28 +352,32 @@ However, desugaring should be an automatic transformation as part of static anal
 In Spoofax, static analysis is performed by strategies.
 In the initial project, these strategies are implemented in `trans/minijava.str`:
 
-    rules // Analysis
+```
+rules // Analysis
 
-      editor-analyze = analysis-default-editor
+  editor-analyze = analysis-default-editor
 
-      analysis-single-default-interface =
-        analysis-single-default(id, id, id|<language>)
-      analysis-multiple-default-interface =
-        analysis-multiple-default(parse-file <+ !(), id, id, id|<language>, <project-path>)
+  analysis-single-default-interface =
+    analysis-single-default(id, id, id|<language>)
+  analysis-multiple-default-interface =
+    analysis-multiple-default(parse-file <+ !(), id, id, id|<language>, <project-path>)
+```
 
 The strategies `analysis-single-default` and `analysis-multiple-default` require various strategy parameters.
 The first parameter in `analysis-single-default` and
 the second parameter in `analysis-multiple-default` are used for transformations before name analysis.
 This is the place, where you should hook-in your desugaring:
 
-    rules // Analysis
+```
+rules // Analysis
 
-      editor-analyze = analysis-default-editor
+  editor-analyze = analysis-default-editor
 
-      analysis-single-default-interface =
-        analysis-single-default(desugar-all, id, id|<language>)
-      analysis-multiple-default-interface =
-        analysis-multiple-default(parse-file <+ !(), desugar-all, id, id|<language>, <project-path>)
+  analysis-single-default-interface =
+    analysis-single-default(desugar-all, id, id|<language>)
+  analysis-multiple-default-interface =
+    analysis-multiple-default(parse-file <+ !(), desugar-all, id, id|<language>, <project-path>)
+```
 
 To test your implementation, you can use a predefined builder labeled *Show analyzed syntax*.
 Open a MiniJava program and run the builder.
