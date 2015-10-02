@@ -9,7 +9,7 @@ subcontext: ms1
 
 {% include _toc.html %}
 
-This lab is your first encounter with Stratego.
+This lab is your first encounter with [Stratego](http://metaborg.org/stratego/).
 You add an outline view and a desugaring transformation to an initial editor provided by us.
 
 ## Overview
@@ -44,15 +44,17 @@ You can earn up to 40 points for your outline view:
 
 * names in labels (8 points)
 * super classes in labels (2 points)
-* types in labels (25 points)
-* challenge (5 points)
+* types in labels (15 points)
+* challenges (10 points)
+* code quality (5 points)
 
 You can earn up to 60 points for your desugarings:
 
-* signature (25 points)
+* signature (20 points)
 * rewrite rules (20 points)
 * strategy (10 points)
 * challenge  (5 points)
+* code quality (5 points)
 
 ## Detailed Instructions
 
