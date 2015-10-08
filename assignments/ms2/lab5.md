@@ -34,8 +34,7 @@ The test suite should provide
 
 ### Submission
 
-You should work on assignments 5 and 6 in parallel, to see your tests succeeding when you specify name binding rules.
-You can work on both assignments in the same branch of your repository, but for grading and early feedback you need to submit your test project with a pull request against branch `assignment5` on GitHub.
+You can work on labs 5 and 6 in the same branch of your repository, but for grading and early feedback you need to submit your test project with a pull request against branch `assignment5` on GitHub.
 Your GitHub repository contains a step-by-step procedure how to file such a request.
 
 Test files created during this assignment should go into the `MiniJava-tests-names` project.
@@ -58,6 +57,36 @@ This feedback gives you an indication which parts of the name binding rules migh
 It includes a summary on how many erroneous language definitions you reveal and how many points you earn by detecting them.
 
 ## Detailed Instructions
+
+### Preliminaries
+
+#### GitHub Repository
+
+We provide you with a template for this assignment in the `assignment5` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+
+#### Initial Editor Project
+
+The template provides you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
+For grading purposes, you are required to use this project as a starting point for milestone 2.
+You should build the new project, following these steps:
+
+1. select the project folder
+2. select **Build Project** from the **Project** menu
+3. the console will report success or failure
+
+#### Initial Test Projects
+
+You also find two new test projects in your GitHub repository.
+You need to import these into your Eclipse workspace, following these steps:
+
+1. right-click into the Package Explorer
+2. select **Import...** from the context menu
+3. choose **General/Existing Projects into Workspace** from the list
+4. select the project to import
+5. press the **Finish** button
+
+You should use `MiniJava-tests-names` for this lab.
 
 ### Testing Reference Resolution
 
