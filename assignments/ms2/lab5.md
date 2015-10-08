@@ -34,9 +34,15 @@ The test suite should provide
 
 ### Submission
 
-You need to submit your test project with a pull request against branch `assignment5` on GitHub.
-Test files created during this lab should go into the `MiniJava-tests-names` project.
-The deadline for submissions is October 22nd, 17:59.
+You should work on assignments 5 and 6 in parallel, to see your tests succeeding when you specify name binding rules.
+You can work on both assignments in the same branch of your repository, but for grading and early feedback you need to submit your test project with a pull request against branch `assignment5` on GitHub.
+Your GitHub repository contains a step-by-step procedure how to file such a request.
+
+Test files created during this assignment should go into the `MiniJava-tests-names` project.
+{: .notice .notice-warning}
+
+The deadline for submissions is November 9, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
