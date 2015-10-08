@@ -41,7 +41,7 @@ Your GitHub repository contains a step-by-step procedure how to file such a requ
 Test files created during this assignment should go into the `MiniJava-tests-names` project.
 {: .notice .notice-warning}
 
-The deadline for submissions is November 9, 23:59.
+The deadline for submissions is November 8, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
