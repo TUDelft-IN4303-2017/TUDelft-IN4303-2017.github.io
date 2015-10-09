@@ -20,21 +20,6 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 
 We provide you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
 For grading purposes, you are required to use this project as a starting point for milestone 2.
-You should build the new project, following these steps:
-
-1. select the project folder
-2. select **Build Project** from the **Project** menu
-3. the console will report success or failure
-
-You also find two new test projects in your GitHub repository.
-You need to import these into your Eclipse workspace, following these steps:
-
-1. right-click into the Package Explorer
-2. select **Import...** from the context menu
-3. choose **General/Existing Projects into Workspace** from the list
-4. select the project to import
-5. press the **Finish** button
-
 You should use `MiniJava-tests-names` for assignment 5 and `MiniJava-tests-types` for assignment 7.
 
 ## Resources
