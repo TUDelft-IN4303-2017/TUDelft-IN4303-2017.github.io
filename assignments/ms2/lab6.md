@@ -266,7 +266,7 @@ The arguments to this strategy are
 
 The strategy is applied to the term where the error should be shown (in this case, the class name).
 You should follow this pattern to provide custom error messages for all unresolved class references,
-field references and variable references.
+field references, and variable references.
 
 #### Duplicates and Hiding
 
