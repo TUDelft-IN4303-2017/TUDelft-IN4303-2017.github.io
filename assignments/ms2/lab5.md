@@ -55,6 +55,9 @@ We provide early feedback for the effectiveness of your test cases.
 This feedback gives you an indication which parts of the name binding rules might still be uncovered by your tests.
 It includes a summary on how many erroneous language definitions you reveal and how many points you earn by detecting them.
 
+We are still in the process of testing the early feedback mechanism for this assignment, which might result in some delay in your feedback.
+{: .notice .notice-warning}
+
 ## Detailed Instructions
 
 ### Preliminaries
