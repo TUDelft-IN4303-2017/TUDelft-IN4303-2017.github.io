@@ -200,6 +200,9 @@ You can start with test cases for duplicate and missing definitions.
 Similar to your syntax test cases, you can pair up positive (`0 errors`) and negative test cases.
 For duplicate definitions, each definition with the same name should produce an error, which is why the `error on duplicate class` test above expects 2 errors.
 
+For grading, it is important to specify the exact number of errors. You need to make sure that your program does not contain any other errors. For duplicate definitions, you get an error for every definition of the same name. For missing definitions, you get an error for every unresolved reference.
+{: .notice .notice-warning}
+
 Next, you should develop test cases for
  fields and variables which hide fields,
  and main class instantiation, subclassing, referencing.
