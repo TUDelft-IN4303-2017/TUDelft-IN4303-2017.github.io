@@ -79,6 +79,9 @@ A new version of Spoofax is required for this lab. To update Spoofax in Eclipse:
 We provide you with a template for this assignment in the `assignment5` branch.
 See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
+You can work on assignment 5 and 6 at the same time, but there is no need for a separate `assignment6` branch in your own repository.
+Push all your work for assignment 5 and 6 to the `assignment5` branch, but when you submit your work through a pull request, be sure to select the right branch of the upstream repository.
+
 #### Initial Editor Project
 
 The template provides you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
@@ -107,7 +110,7 @@ You should use `MiniJava-tests-names` for this lab.
 In test cases for reference resolution,
  you write syntactically correct programs and
  mark names at definition and use sites with inner square bracket blocks.
-You can then relate the use site with the definition site in a `resolve`-`to` clause,
+You can then relate the use site with the definition site in a `resolve x to y` clause,
   using numbers to refer to the inner blocks.
 For example, the following two test cases require to resolve the type `Foo` to the name in the definition of class `Foo`:
 
