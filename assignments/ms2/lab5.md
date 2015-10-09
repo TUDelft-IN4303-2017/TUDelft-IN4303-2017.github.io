@@ -134,7 +134,7 @@ test backward class name resolution [[
 ]] resolve #2 to #1
 ```
 
-You can use `setup` headers and footers to avoid repeating parts in similar test cases.
+You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
 
 You should come up with test cases for the resolution of class names, field names, parameter names, and variable names.
 Start with simple test cases, but keep in mind that coverage is the main criterion for your grade.
