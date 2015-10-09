@@ -114,9 +114,27 @@ figcaption {
   color: $white;
 }
 
+.notice-success code {
+  background-color: $success-code;
+  border-color: $success-code;
+  color: $white;
+}
+
+.notice-warning code {
+  background-color: $warning-code;
+  border-color: $warning-code;
+  color: $white;
+}
+
 .notice-warning {
   background-color: $warning;
   border-color: $warning;
+  color: $white;
+}
+
+.notice-danger code {
+  background-color: $danger-code;
+  border-color: $danger-code;
   color: $white;
 }
 
