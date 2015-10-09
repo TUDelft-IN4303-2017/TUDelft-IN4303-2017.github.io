@@ -146,7 +146,7 @@ It is important to think about
 ### Testing Error Checking
 
 In test cases for error checking, you need to specify the number of errors, warnings, or notes in a test case
- in `errors`, `warnings`, or `notes` clauses.
+ in `errors`, `warnings`, or `notes` clauses.
 For example, the following test cases specify a correct MiniJava program,
  a program with two errors which are reported on the name of a duplicate class `Foo`,
  and another program with an error which is reported on the name of an unknown class `Bar`:
