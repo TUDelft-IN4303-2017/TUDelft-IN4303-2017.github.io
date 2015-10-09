@@ -17,7 +17,7 @@ From this definition, you generate an Eclipse editor, that provides
 
 ### Objectives
 
-Specify name analysis for MiniJava in NaBL and Stratego and generate an Eclipse editor from it.
+Specify name analysis for MiniJava in [NaBL](http://metaborg.org/nabl/), [TS](http://metaborg.org/ts/) and [Stratego](http://metaborg.org/stratego/), and generate an Eclipse editor from it.
 The specification should include:
 
 1. Name binding rules for
@@ -39,11 +39,12 @@ The specification should include:
   * field declarations
   * parameter declarations
   * variable declarations
-4. Custom constraint rules for
-  * duplicate definitions of classes, fields, parameters, and variables
+4. Custom constraint rules in TS for
   * unresolved references to classes, fields, parameters, and variables
-  * variable declarations which hide local field declarations
   * references to the main class
+5. Custom constraint rules in Stratego for 
+  * duplicate definitions of classes, fields, parameters, and variables
+  * variable declarations which hide local field declarations
 
 ### Submission
 
@@ -115,15 +116,15 @@ This file contains implementation strategies for your name analysis.
 You need to import this file into `trans/minijava.str`.
 When you build your project, your name binding rules become effective in your MiniJava editor.
 
-#### Class Names
+#### Variable Names
 
-We use class names as an example to get you started with NaBL.
-First, you start a `namespaces` section and define a namespace `Class`:
+We use variable names as an example to get you started with [NaBL](http://metaborg.org/nabl/).
+First, you start a `namespaces` section and define a namespace `Variable`:
 
 ```
 namespaces
 
-  Class
+  Variable
 ```
 
 In NaBL, a *namespace* is a collection of names and is not necessarily connected to a specific language concept.
@@ -136,60 +137,77 @@ you can define name bindings rules in a `binding rules` section:
 ```
 binding rules
 
-  Class(c, _, _, _): defines Class c
+  VarDecl(_, v): defines Variable v
 
-  ClassType(c): refers to Class c
+  Var(v): refers to Variable v
 ```
 
 Each binding rule is of the form `pattern : clause*`,
   where `pattern` is a term pattern (like in Stratego rewrite rules) and
   `clause*` is a list of name binding specifications about the language construct that is matched by `pattern`.
 For example, the first rule specifies binding instances of class names.
-Its pattern matches regular MiniJava classes (but not the main class).
-Its `defines` clause states that these classes are definition sites for class names (i.e. they bind class names).
-Similarly, the second rule specifies bound instances of class names.
-Its pattern matches class types and
-its `refers` clause states that such class types are use sites for class names (i.e. they refer to bound class names).
+Its pattern matches regular MiniJava variable declarations (but not parameter declarations).
+Its `defines` clause states that these variable declarations are definition sites for variable names (i.e. they bind variable names).
+Similarly, the second rule specifies bound instances of variable names.
+Its pattern matches variable references and
+its `refers` clause states that such references are use sites for variable names (i.e. they refer to bound variable names).
 When a name can refer to different namespaces, you can combine refer clauses with `otherwise`, e.g.
 
 ```
-Foo(name) : refers to Namespace1 name otherwise refers to Namespace2 name
+Var(name) : refers to Namespace1 name otherwise refers to Namespace2 name
 ```
 
 When you save the file and build your project,
-  you will get reference resolution for class names in your MiniJava editor.
+  you will get reference resolution for variable names in your MiniJava editor.
 You might recognise that reference resolution works across files in the same Eclipse project.
 Though this is a nice feature, this is incorrect for MiniJava,
- where files scope their class declarations.
+ where methods scope their variable declarations.
 You can specify this scoping behaviour in a binding rule:
 
 ```
-Program(_, _): scopes Class
+Method(_, _, _, _, _, _): scopes Variable
 ```
 
-The pattern of this rule matches programs and its `scopes` clause specifies that this is a scope for class names.
+The pattern of this rule matches method declarations and its `scopes` clause specifies that this is a scope for variable names.
 
 When using multiple clauses in your patterns, be sure to combine them in a single binding rule. If they are spread across multiple binding rules it can occur that some clauses are ignored. The following is an example of correct usage when using multiple clauses:
 
 ```
-Bar(name): defines Bar name scopes Foo, Tux
+Method(_, name, _, _, _, _): 
+  defines Bar name
+  scopes Foo, Tux
 ```
 
 as compared to incorrect usage:
 
 ```
-Bar(name): defines Bar
-Bar(name): scopes Foo, Tux
+Method(_, name, _, _, _, _): defines Bar
+Method(_, name, _, _, _, _): scopes Foo, Tux
 ```
 
 #### More Name Binding Rules
 
 You are now able to complete the name binding rules for MiniJava. You should come up with:
 
-1. more name binding rules for class names (there are more definition and use sites of class names),
-2. namespaces and name binding rules for method declarations, field declarations and variable declarations,
+1. more name binding rules for variable names (there are more definition sites of variable names),
+2. namespaces and name binding rules for class declarations, method declarations and field declarations,
 3. scoping rules for these declarations and
 4. name binding rules for variable and field references.
+
+Build your editor and test your name binding specification with your SPT tests and in the editor.
+
+#### Properties of Binding Instances
+
+You can define certain properties of binding instances.
+`type` is a built-in property and you should define the type of field and variable declarations.
+You can do so in a special `defines` clause:
+
+```
+VarDecl(t, v): defines Variable v of type t
+```
+
+This associates the type `t` with the variable name `v`.
+You can see associated types by hovering over definition or use sites in the editor.
 
 ### Custom Constraints
 
@@ -220,6 +238,68 @@ strategies
   nabl-check-disable-unresolved = id
 ```
 
+You now need to specify custom constraints in TS and in Stratego.
+
+#### Property-based Constraints in TS
+
+[TS](http://metaborg.org/ts/) is a high-level language for the declarative specification of type analysis that is complementary to the name analysis expressed in NaBL.
+In upcoming labs, we will use TS to specify MiniJava's type system.
+In this lab, we only use it to specify constraints for unresolved references.
+
+To start a new type system specification,
+  you need to create a `.ts` file in directory `trans` or one of its subdirectories.
+
+```
+module module-name
+
+imports
+
+  common/src-gen/signatures/MiniJava-sig
+  common/desugar
+```
+
+Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory.
+For example, a file `foo.ts` in directory `trans/bar` should define a module `bar/foo`.
+When you save a TS file, a corresponding Stratego file will be generated from it.
+This file contains implementation strategies for your type analysis.
+You need to import this file into `trans/minijava.str`.
+When you build your project, your name binding rules become effective in your MiniJava editor.
+
+You can define constraints in a `typing rules` section:
+
+```
+typing rules
+
+Var(v):-
+  where definition of v: t
+  else error "a fancy error message" on v
+```
+
+Note that `:-` must be a single token, `: -` is not recognized.
+{: .notice .notice-warning}
+
+This rule reports errors on unresolved variable references.
+Therefor, it first checks the type of its definition.
+Since all variable declarations have a type, this can only fail if there exists no variable declaration to which the variable reference can be resolved.
+Otherwise, an error is reported.
+
+Similarly, you can report errors on unresolved class references.
+Therefor, you need to assign types to class declarations.
+You can use the assigned type to distinguish ordinary class declarations from main class declarations.
+That is, you can define a constructor for a special type and associate the main class with this type.
+You can use this to check if a class reference refers to the main class:
+
+```
+ClassType(c):-
+  where not (definition of c: YourSpecialTypeConstructor())
+  else error "another fancy error message" on c
+```
+This rule reports errors on class types which refer to the main class.
+It matches the type of the class declaration against your special type.
+If this match is successful, an error is reported.
+You should define your own special type constructor and provide a meaningful error message.
+Next, you can do similar checks for main class subtyping and main class instantiation.
+
 #### Tasks
 
 Spoofax uses tasks for name and type analysis.
@@ -230,6 +310,14 @@ When a file is changed, tasks are only re-collected for this file.
 A task is only re-evaluated, if it is new or if one of its dependencies changed.
 This might include tasks which originated from a different file than the file that changed.
 Tasks provide incremental name and type analysis in Spoofax.
+
+You can also see such associations in the index (try the *Show index > Partition* builder).
+The index stores all definitions and properties of these definitions.
+Search for entries of the form `prop URI -- Type() >> Result`.
+The `URI` specifies the definition by naming its scopes.
+The `Result` refers to a task which has the property as a result.
+You can see tasks and their results with the *Show tasks > Partition* builder.
+Alternatively, you can also use the *Show index > Partition (resolved)* builder, which inlines the results of tasks.
 
 When you change name binding and typing rules, you might actually confuse the incremental analysis, which is designed to handle changing programs, but not changing rules. You can fix this by right-clicking the project containing your example programs and chosing *Spoofax -> Reload analysis data*.
 {: .notice .notice-warning}
@@ -286,54 +374,11 @@ The following library strategies might be useful:
 * `task-create-error-on-multiple(|ctx, task, msg)` creates an error message `msg`, if `task` has more than one solution.
 * `task-create-warning-on-failure`, `task-create-warning-on-success` and `task-create-warning-on-multiple` are variants for warnings instead of errors.
 
-### Properties on Definitions
-
-#### Defining Properties
-
-You can define certain properties of binding instances.
-`type` is a built-in property and you should define the type of field and variable declarations.
-You can do so in a special `defines` clause:
-
-```
-...: defines Field f of type t
-```
-
-This associates the type `t` with the field name `f`.
-You can see such associations in the index (try the *Show index > Partition* builder).
-The index stores all definitions and properties of these definitions.
-Search for entries of the form `prop URI -- Type() >> Result`.
-The `URI` specifies the definition by naming its scopes.
-The `Result` refers to a task which has the property as a result.
-You can see tasks and their results with the *Show tasks > Partition* builder.
-Alternatively, you can also use the *Show index > Partition (resolved)* builder, which inlines the results of tasks.
-
-#### Property-based Constraints
-
-You can use properties in constraints.
-For example, you can define a constructor for a special type and associate the main class with this type.
-You can use this to check if a class reference refers to the main class:
-
-```
-nabl-constraint(|ctx):
-  ClassType(c) -> <fail>
-  where
-    lookup := <type-lookup(|ctx)> c
-  ; match  := <type-match(|ctx, YourSpecialTypeConstructor())> lookup
-  ; msg    := "Another fancy error message"
-  ; <task-create-error-on-success(|ctx, match, msg)> c
-```
-
-This rule reports errors on class types which refer to the main class.
-It creates a task `lookup` which looks up the type of `c` and
-another task `match` which matches the result of this lookup against your special type.
-If this match is successful, an error is reported.
-You should define your own special type constructor and provide a meaningful error message.
-Next, you can do similar checks for main class subtyping and main class instantiation.
-
 ### Challenges
 
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation or higher programming skills.
+{: .notice .notice-success}
 
 1. Enhance your error messages with information about scopes.
    For example, you might want to mention the surrounding method of a variable which hides a field.
