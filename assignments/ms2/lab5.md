@@ -29,7 +29,6 @@ The test suite should provide
   * errors on missing definitions of classes, fields, parameters, and variables,
   * errors on fields hiding fields in a parent class,
   * warnings on variables hiding fields,
-  * cyclic inheritance,
   * errors on instantiating, subclassing, or referencing the main class.
 
 ### Submission
@@ -145,7 +144,6 @@ It is important to think about
 
 In test cases for error checking, you need to specify the number of errors, warnings, or notes in a test case
  in `errors`, `warnings`, or `notes` clauses.
-You can use inner square bracket blocks to mark the positions where messages should be reported.
 For example, the following test cases specify a correct MiniJava program,
  a program with two errors which are reported on the name of a duplicate class `Foo`,
  and another program with an error which is reported on the name of an unknown class `Bar`:
@@ -190,7 +188,7 @@ test error on unknown class [[
   }
 
   class Foo {
-    [[Bar]] x;
+    Bar x;
   }
 ]] 1 error
 ```
@@ -200,7 +198,6 @@ Similar to your syntax test cases, you can pair up positive (`0 errors`) and neg
 For duplicate definitions, each definition with the same name should produce an error, which is why the `error on duplicate class` test above expects 2 errors.
 
 Next, you should develop test cases for
- cyclic inheritance,
  fields and variables which hide fields,
  and main class instantiation, subclassing, referencing.
 Again, you should keep in mind that coverage is the main criterion for your grade.
