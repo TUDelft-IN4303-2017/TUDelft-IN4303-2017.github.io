@@ -47,10 +47,11 @@ The specification should include:
 
 ### Submission
 
-You need to submit your MiniJava project with a pull request against branch `assignment6` on GitHub.
+You can work on labs 5 and 6 in the same branch of your repository, but for grading and early feedback you need to submit your editor project with a pull request against branch `assignment6` on GitHub.
 Your GitHub repository contains a step-by-step procedure how to file such a request.
 
-The deadline for submission is November 12th, 17:59.
+The deadline for submissions is November 8, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
