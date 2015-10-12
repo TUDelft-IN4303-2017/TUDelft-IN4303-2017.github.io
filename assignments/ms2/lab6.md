@@ -84,7 +84,7 @@ We particular focus on
 
 ### Initial Editor Project
 
-The initial editor project from the last assignment contains the desugarings implementation `common/desugar.ctree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `common/desugar`.
+The initial editor project from the last assignment contains the desugarings implementation `reference/desugar.ctree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `reference/desugar`.
 
 ### Name Binding
 
@@ -105,8 +105,8 @@ module module-name
 
 imports
 
-  common/src-gen/signatures/MiniJava-sig
-  common/desugar
+  reference/src-gen/signatures/MiniJava-sig
+  reference/desugar
 ```
 
 The module name has to be the same as the file name and should include the path relative to the `trans` directory.
@@ -220,8 +220,8 @@ module module-name
 
 imports
 
-  common/src-gen/signatures/MiniJava-sig
-  common/desugar
+  reference/src-gen/signatures/MiniJava-sig
+  reference/desugar
   lib/runtime/nabl/-
   lib/runtime/task/-
   lib/runtime/types/-
@@ -254,8 +254,8 @@ module module-name
 
 imports
 
-  common/src-gen/signatures/MiniJava-sig
-  common/desugar
+  reference/src-gen/signatures/MiniJava-sig
+  reference/desugar
 ```
 
 Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory.
