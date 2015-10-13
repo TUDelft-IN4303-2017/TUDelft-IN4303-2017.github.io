@@ -167,6 +167,9 @@ It is important to think about
  resolution in the presence of homonyms,
  and the influence of class hierarchies on resolution.
 
+For name binding tests, it is not possible to use sorts other than Program.
+{: .notice .notice-warning}
+
 ### Testing Error Checking
 
 In test cases for error checking, you need to specify the number of errors, warnings, or notes in a test case
