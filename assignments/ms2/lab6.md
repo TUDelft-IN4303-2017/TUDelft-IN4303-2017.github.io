@@ -273,7 +273,7 @@ When you build your project, your name binding rules become effective in your Mi
 You can define constraints in a `typing rules` section:
 
 ```
-typing rules
+type rules
 
 VarRef(v) :-
   where definition of v : t
