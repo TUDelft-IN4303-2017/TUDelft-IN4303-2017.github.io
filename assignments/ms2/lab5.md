@@ -164,8 +164,7 @@ You should come up with test cases for the resolution of class names, field name
 Start with simple test cases, but keep in mind that coverage is the main criterion for your grade.
 It is important to think about
  forward and backward references,
- resolution in the presence of homonyms,
- and the influence of class hierarchies on resolution.
+ and resolution in the presence of homonyms.
 
 Do not use start symbols other than Program.
 {: .notice .notice-warning}
