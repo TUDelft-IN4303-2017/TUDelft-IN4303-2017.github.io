@@ -288,16 +288,18 @@ Therefor, it first checks the type of its definition.
 Since all variable declarations have a type, this can only fail if there exists no variable declaration to which the variable reference can be resolved.
 Otherwise, an error is reported.
 
-Similarly, you can report errors on unresolved class references.
+Similarly, you can report errors on referencing the main class.
 Therefor, you need to assign types to class declarations.
 You can use the assigned type to distinguish ordinary class declarations from main class declarations.
-That is, you can define a constructor for a special type and associate the main class with this type.
-You can use this to check if a class reference refers to the main class:
+That is, you can define a constructor for a special type and associate the main class definition with this type.
+
+In NaBL, set the type of main class definitions to this special type.
+Then, in TS, you can use this to check if a class reference refers to the main class:
 
 ```
-ClassType(c):-
-  where not (definition of c: YourSpecialTypeConstructor())
-  else error "another fancy error message" on c
+ClassType(c) :-
+  where not(definition of c : YourSpecialTypeConstructor())
+    else error "another fancy error message" on c
 ```
 
 This rule reports errors on class types which refer to the main class.
@@ -331,7 +333,8 @@ When you change name binding and typing rules, you might actually confuse the in
 #### Constraints in Stratego
 
 Constraints for duplicate definitions and hiding cannot be expressed in the current version of TS.
-These constraints need to be defined in Stratego by providing rewrite rules for `nabl-constraint(|ctx)`:
+These constraints need to be defined in Stratego, add the rest of the constraints to the Stratego file that you created earlier which disables generic checks.
+You can define constraints by providing rewrite rules for `nabl-constraint(|ctx)`.
 
 ```
 rules
