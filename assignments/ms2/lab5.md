@@ -167,7 +167,7 @@ It is important to think about
  resolution in the presence of homonyms,
  and the influence of class hierarchies on resolution.
 
-For name binding tests, it is not possible to use sorts other than Program.
+Do not use start symbols other than Program.
 {: .notice .notice-warning}
 
 ### Testing Error Checking
