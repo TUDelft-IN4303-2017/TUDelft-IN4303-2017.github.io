@@ -75,7 +75,7 @@ A new version of Spoofax is required for this lab. To update Spoofax in Eclipse:
 
 1. go to **Help -> Install New Software...**
 2. in the **Work with** field, enter `http://download.spoofax.org/update/in4303`
-3. select all components by pressing **Select All**
+3. check **Spoofax Core** only
 4. press **Next** twice
 5. agree to the license agreements and press **Finish** to download and install updates
 6. when a security warning pops up, press **OK** to dismiss the warning
