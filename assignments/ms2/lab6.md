@@ -137,9 +137,9 @@ you can define name bindings rules in a `binding rules` section:
 ```
 binding rules
 
-  VarDecl(_, v): defines Variable v
+  Var(_, v): defines Variable v
 
-  Var(v): refers to Variable v
+  VarRef(v): refers to Variable v
 ```
 
 Each binding rule is of the form `pattern : clause*`,
@@ -154,7 +154,7 @@ its `refers` clause states that such references are use sites for variable names
 When a name can refer to different namespaces, you can combine refer clauses with `otherwise`, e.g.
 
 ```
-Var(name) : refers to Namespace1 name otherwise refers to Namespace2 name
+VarRef(name) : refers to Namespace1 name otherwise refers to Namespace2 name
 ```
 
 When you save the file and build your project,
@@ -203,7 +203,7 @@ You can define certain properties of binding instances.
 You can do so in a special `defines` clause:
 
 ```
-VarDecl(t, v): defines Variable v of type t
+Var(t, v): defines Variable v of type t
 ```
 
 This associates the type `t` with the variable name `v`.
@@ -275,7 +275,7 @@ You can define constraints in a `typing rules` section:
 ```
 typing rules
 
-Var(v) :-
+VarRef(v) :-
   where definition of v : t
     else error "a fancy error message" on v
 ```
@@ -328,45 +328,41 @@ Alternatively, you can also use the *Show index > Partition (resolved)* builder,
 When you change name binding and typing rules, you might actually confuse the incremental analysis, which is designed to handle changing programs, but not changing rules. You can fix this by right-clicking the project containing your example programs and chosing *Spoofax -> Reload analysis data*.
 {: .notice .notice-warning}
 
-#### Unresolved References
+#### Constraints in Stratego
 
-You can create your own constraints by providing rewrite rules for `nabl-constraint(|ctx)`:
+Constraints for duplicate definitions and hiding cannot be expressed in the current version of TS.
+These constraints need to be defined in Stratego by providing rewrite rules for `nabl-constraint(|ctx)`:
 
 ```
 rules
 
   nabl-constraint(|ctx):
-    ClassType(c) -> <fail>
+    Var(t, v) -> <fail>
     where
-      <has-annotation(?Use(task))> c
+      task := <nabl-lookup-local(|ctx)> v
     ; msg  := "Your meaningful error message should be here"
-    ; <task-create-error-on-failure(|ctx, task, msg)> c
+    ; <task-create-error-on-multiple(|ctx, task, msg)> v
 ```
 
-This rule matches a language construct on the left-hand side (in this case a class type) and fails on the right-hand side.
+This rule matches a language construct on the left-hand side (in this case a variable declaration) and fails on the right-hand side.
 The failure ensures that you can report different errors on the same language construct.
-The shown rule reports an error on unresolved class names in class types.
-Errors can be reported on failing tasks.
-In the current example of an unresolved error message, this needs to be a failing resolution task.
-The `where` clause of the rule obtains this `task` from the class name by matching a particular annotation.
+The shown rule reports an error on duplicate variable names.
+Errors can be reported on failing tasks, succeeding tasks, or tasks with multiple solutions.
+In the current example of duplicate definitions, this needs to be a resolution task with multiple solutions.
+The `where` clause of the rule creates this `task` from the variable name.
 Next, an error message `msg` is created.
 You should replace this with a meaningful message.
 You can use string interpolation to include elements from the matched term in the error message.
-Finally, a library strategy is called to create an error in case of a failing task.
+Finally, a library strategy is called to create an error in case of multiple solutions.
 The arguments to this strategy are
 
 1. a context variable `ctx`,
-2. the `task` which needs to fail to trigger the error message and
+2. the `task` which needs to have multiple solutions to trigger the error message, and
 3. the error message `msg`.
 
-The strategy is applied to the term where the error should be shown (in this case, the class name).
-You should follow this pattern to provide custom error messages for all unresolved class references,
-field references, and variable references.
+The strategy is applied to the term where the error should be shown (in this case, the variable name).
+You should follow this pattern to provide custom error messages for all kinds of duplicate definitions and for local variable declarations which hide field declarations.
 
-#### Duplicates and Hiding
-
-Constraints on duplicate or hiding declarations can also be specified with `nabl-constraint(|ctx)` rules.
-However, in these cases you cannot match existing tasks but need to create your own ones.
 The following library strategies might be useful:
 
 * `nabl-lookup-local(|ctx)` creates a resolution task that searches for a name in the same (local) scope.
@@ -377,6 +373,7 @@ The following library strategies might be useful:
   You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your
   name binding specification.
 * `task-create-error-on-success(|ctx, task, msg)` creates an error message `msg`, if `task` has one or more solutions.
+* `task-create-error-on-failure(|ctx, task, msg)` creates an error message `msg`, if `task` has no solution.
 * `task-create-error-on-multiple(|ctx, task, msg)` creates an error message `msg`, if `task` has more than one solution.
 * `task-create-warning-on-failure`, `task-create-warning-on-success` and `task-create-warning-on-multiple` are variants for warnings instead of errors.
 
