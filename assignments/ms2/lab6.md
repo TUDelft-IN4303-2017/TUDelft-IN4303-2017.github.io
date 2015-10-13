@@ -270,7 +270,7 @@ This file contains implementation strategies for your type analysis.
 You need to import this file into `trans/minijava.str`.
 When you build your project, your name binding rules become effective in your MiniJava editor.
 
-You can define constraints in a `typing rules` section:
+You can define constraints in a `type rules` section:
 
 ```
 type rules
