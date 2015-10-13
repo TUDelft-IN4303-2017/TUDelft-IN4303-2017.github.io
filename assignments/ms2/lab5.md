@@ -27,7 +27,6 @@ The test suite should provide
 2. Test cases for
   * errors on duplicate definitions of classes, fields, parameters, and variables,
   * errors on missing definitions of classes, fields, parameters, and variables,
-  * errors on fields hiding fields in a parent class,
   * warnings on variables hiding fields,
   * errors on instantiating, subclassing, or referencing the main class.
 
