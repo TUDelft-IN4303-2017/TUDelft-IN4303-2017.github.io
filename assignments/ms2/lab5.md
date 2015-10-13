@@ -81,6 +81,9 @@ A new version of Spoofax is required for this lab. To update Spoofax in Eclipse:
 6. when a security warning pops up, press **OK** to dismiss the warning
 7. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
 
+If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
+{: .notice .notice-warning}
+
 #### GitHub Repository
 
 We provide you with a template for this assignment in the `assignment5` branch.
