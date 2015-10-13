@@ -42,7 +42,7 @@ The specification should include:
 4. Custom constraint rules in TS for
   * unresolved references to classes, fields, parameters, and variables
   * references to the main class
-5. Custom constraint rules in Stratego for 
+5. Custom constraint rules in Stratego for
   * duplicate definitions of classes, fields, parameters, and variables
   * variable declarations which hide local field declarations
 
@@ -173,7 +173,7 @@ The pattern of this rule matches method declarations and its `scopes` clause spe
 When using multiple clauses in your patterns, be sure to combine them in a single binding rule. If they are spread across multiple binding rules it can occur that some clauses are ignored. The following is an example of correct usage when using multiple clauses:
 
 ```
-Method(_, name, _, _, _, _): 
+Method(_, name, _, _, _, _):
   defines Bar name
   scopes Foo, Tux
 ```
@@ -228,7 +228,7 @@ imports
 ```
 
 Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory. You need to import this file into `trans/minijava.str`.
-Now you can turn off the generic checks:
+Now you can turn off the generic checks, add the following code:
 
 ```
 strategies
@@ -244,7 +244,7 @@ You now need to specify custom constraints in TS and in Stratego.
 
 [TS](http://metaborg.org/ts/) is a high-level language for the declarative specification of type analysis that is complementary to the name analysis expressed in NaBL.
 In upcoming labs, we will use TS to specify MiniJava's type system.
-In this lab, we only use it to specify constraints for unresolved references.
+In this lab, we only use it to specify constraints for unresolved references and main class constraints.
 
 To start a new type system specification,
   you need to create a `.ts` file in directory `trans` or one of its subdirectories.
@@ -260,7 +260,12 @@ imports
 
 Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory.
 For example, a file `foo.ts` in directory `trans/bar` should define a module `bar/foo`.
+
+TS will give errors when importing Stratego files, this is a bug and you can safely ignore those errors.
+{: .notice .notice-warning}
+
 When you save a TS file, a corresponding Stratego file will be generated from it.
+You may have to refresh the project (right click project, choose Refresh) to see the new file.
 This file contains implementation strategies for your type analysis.
 You need to import this file into `trans/minijava.str`.
 When you build your project, your name binding rules become effective in your MiniJava editor.
@@ -270,9 +275,9 @@ You can define constraints in a `typing rules` section:
 ```
 typing rules
 
-Var(v):-
-  where definition of v: t
-  else error "a fancy error message" on v
+Var(v) :-
+  where definition of v : t
+    else error "a fancy error message" on v
 ```
 
 Note that `:-` must be a single token, `: -` is not recognized.
@@ -294,6 +299,7 @@ ClassType(c):-
   where not (definition of c: YourSpecialTypeConstructor())
   else error "another fancy error message" on c
 ```
+
 This rule reports errors on class types which refer to the main class.
 It matches the type of the class declaration against your special type.
 If this match is successful, an error is reported.
