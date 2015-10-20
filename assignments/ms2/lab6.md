@@ -84,7 +84,7 @@ We particular focus on
 
 ### Initial Editor Project
 
-The initial editor project from the last assignment contains the desugarings implementation `reference/desugar.ctree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `reference/desugar`.
+The initial editor project from the last assignment contains the desugarings implementation `reference/desugar.rtree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `reference/desugar`.
 
 ### Name Binding
 
