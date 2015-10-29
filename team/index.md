@@ -17,7 +17,8 @@ You will receive an email with
 
 ## Walk-in Hours 2015/16
 
-Until the midterm break, we offer walk-in hours on Wednesday mornings.
+In the first quarter, we offer walk-in hours on Wednesday mornings.
+In the second quarter, we offer walk-in hours on Friday mornings.
 
 ## Team Members
 
