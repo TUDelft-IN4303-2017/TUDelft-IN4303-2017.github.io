@@ -1,11 +1,9 @@
 ---
 layout: page
-title: "Team"
-excerpt: "Team"
-tags: ["team"]
+title: "Contact"
+excerpt: "Contact"
+tags: ["contact"]
 ---
-
-## Contact
 
 Handling questions by e-mail is very inefficient, why we try to avoid it as much as possible. Twitter works pretty well for short questions. Lectures and lab sessions are natural points of contacts with instructors and teaching assistants. We also offer walk-in hours. For longer discussions, we prefer appointments outside our walk-in hours. To make an appointment, please send the responsible instructor an email with
 
