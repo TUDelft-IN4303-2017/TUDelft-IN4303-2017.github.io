@@ -111,8 +111,8 @@ module module-name
 
 imports
 
-  reference/src-gen/signatures/MiniJava-sig
-  reference/desugar
+  reference/src-gen/signatures/-
+  reference/-
 ```
 
 The module name has to be the same as the file name and should include the path relative to the `trans` directory.
@@ -260,8 +260,8 @@ module module-name
 
 imports
 
-  reference/src-gen/signatures/MiniJava-sig
-  reference/desugar
+  reference/src-gen/signatures/-
+  reference/-
 ```
 
 Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory.
@@ -374,9 +374,9 @@ You should follow this pattern to provide custom error messages for all kinds of
 
 The following library strategies might be useful:
 
-* `nabl-lookup-local(|ctx)` creates a resolution task that searches for a name in the same (local) scope.
+* `nabl-lookup-local(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the same (local) scope.
   This strategy needs to be applied to a binding instance of a name.
-* `nabl-lookup-lexical(|ctx)` creates a resolution task that searches for a name in the local and surrounding (lexical) scope.
+* `nabl-lookup-lexical(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the local and surrounding (lexical) scope.
   This strategy needs to be applied to a binding instance of a name.
 * `nabl-lookup-lexical(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
   You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your
