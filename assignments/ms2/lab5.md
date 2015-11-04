@@ -33,7 +33,7 @@ The test suite should provide
 ### Submission
 
 You can work on labs 5 and 6 in the same branch of your repository, but for grading and early feedback you need to submit your test project with a pull request against branch `assignment5` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
 Test files created during this assignment should go into the `MiniJava-tests-names` project.
 {: .notice .notice-warning}

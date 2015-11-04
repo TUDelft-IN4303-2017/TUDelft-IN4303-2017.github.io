@@ -28,7 +28,7 @@ You should include only structures where folding is reasonable.
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment3` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 As part of your submission, we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
 
 The deadline for submission is October 1, 23:59.
@@ -208,4 +208,3 @@ Definition._ (disabled)
 
 You should now specify additional custom folding rules.
 It is important, to include only those structures, where folding is reasonable.
-

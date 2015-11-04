@@ -25,6 +25,8 @@ The test suite should provide
   * errors on duplicate method definitions
   * errors on missing method definitions
   * errors on overloaded methods
+  * errors on cyclic inheritance
+  * errors on fields hiding fields in a parent class
   * notes on overriding methods
   * type errors in expressions
   * type errors in statements
@@ -33,10 +35,13 @@ The test suite should provide
 ### Submission
 
 You need to submit your test project with a pull request against branch `assignment7` on GitHub.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
 Test files created during this lab should go into the `MiniJava-tests-types` project.
+{: .notice .notice-warning}
 
-The deadline for submissions is November 19th, 17:59.
+The deadline for submissions is November 15th, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
@@ -52,6 +57,13 @@ This feedback gives you an indication which parts of the name binding rules migh
 It includes a summary on how many erroneous language definitions you reveal and how many points you earn by detecting them.
 
 ## Detailed Instructions
+
+### Preliminaries
+
+#### Git Repository
+
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment7` branch from your previous work.
 
 ### Testing Types of Expressions
 
@@ -69,49 +81,49 @@ language MiniJava
 start symbol Program
 
 test integer literal type [[
-class Main {
+  class Main {
     public static void main (String[] args) {
         System.out.println([[1]]);
     }
-}
+  }
 ]] run get-type to Int()
 
 test variable reference type [[
-class Main {
+  class Main {
     public static void main (String[] args) {
         System.out.println(new Foo().run());
     }
-}
+  }
 
-class Foo {
-  public int run() {
-    boolean x;
-    int y;
+  class Foo {
+    public int run() {
+      boolean x;
+      int y;
 
-    if ([[x]])
+      if ([[x]])
         y = 1;
-    else
+      else
         y = 0;
 
-    return y;
+      return y;
+    }
   }
-}
 ]] run get-type to Bool()
 ```
 
-You can use `setup` headers and footers to avoid repeating parts in similar test cases.
+You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
 
 When using get-type on objects the expected `ClassType` constructor also requires annotations.
 These annotations should be added to the constructor using a wild card as done below.
 
 ```
 test expression id type [[
-	class Foobar {
-		Foo x;
-		public Foo method() {
-			return [[x]];
-		}
-	}
+  class Foobar {
+    Foo x;
+    public Foo method() {
+      return [[x]];
+    }
+  }
 ]] run get-type to ClassType("Foo"{_})
 ```
 
@@ -120,23 +132,23 @@ Just like previous testing assignments, this assignment is all about the coverag
 
 ### Testing Method Name Resolution
 
-We covered name resolution tests already in a previous assignment.
-We skipped method names in that assignment, since method name resolution requires type analysis.
+We did not test method names in assignment 5, since method name resolution requires type analysis.
+Types are available now, so we can test method name resolution.
 Consider the following test case as an example:
 
 ```
 test method name resolution [[
-class Main {
+  class Main {
     public static void main (String[] args) {
-        System.out.println(new Foo().[[run]]());
+      System.out.println(new Foo().[[run]]());
     }
-}
+  }
 
-class Foo {
+  class Foo {
     public int [[run]]() {
-        return 1;
+      return 1;
     }
-}
+  }
 ]] resolve #1 to #2
 ```
 
@@ -175,7 +187,7 @@ In MiniJava, `System.out.println()` can only print integers.
 Thus, there should be an error on `true`, when we pass it to the print statement.
 Similarly, type errors can occur in other statements, expressions, and method declarations.
 You should come up with test cases for such errors.
-Subtyping is a common source for errors not only in programs, but also in language implementations. 
+Subtyping is a common source for errors not only in programs, but also in language implementations.
 It is therefore important to have positive and negative typing tests, which involve correct and incorrect subtyping.
 
 Again, keep in mind that coverage is the main criterion for your grade.

@@ -33,7 +33,7 @@ For grading, it is required to comply with all constructor names, rule names, an
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment4` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
 The deadline for submission is October 8, 23:59.
 {: .notice .notice-warning}
@@ -220,7 +220,7 @@ You need to change this strategy in the `minijava.str` file:
     ```
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
     ```
-    
+
     Visit `lib/runtime/editor/outline-library` for inspiration.
 
 3. Use one of the library strategies for folding to implement `pp-params`. You can find various folding strategies in the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).

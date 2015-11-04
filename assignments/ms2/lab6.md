@@ -49,7 +49,7 @@ The specification should include:
 ### Submission
 
 You can work on labs 5 and 6 in the same branch of your repository, but for grading and early feedback you need to submit your editor project with a pull request against branch `assignment6` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
 The deadline for submissions is November 8, 23:59.
 {: .notice .notice-warning}
@@ -81,6 +81,12 @@ We particular focus on
  and the level of detail in your messages.
 
 ## Detailed Instructions
+
+#### Git Repository
+
+You continue with your work from the previous assignment.
+There is no need to create a new branch in your repository for this assignment, keep working in the `assignment5` branch.
+When you make a pull request, be sure to make a pull request to the `assignment6` branch of the upstream repository though.
 
 ### Initial Editor Project
 
