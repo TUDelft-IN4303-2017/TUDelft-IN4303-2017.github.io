@@ -65,12 +65,22 @@ It includes a summary on how many erroneous language definitions you reveal and 
 You continue with your work from the previous assignment.
 See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment7` branch from your previous work.
 
+#### Initial Test Project
+
+Import the `MiniJava-tests-types` projects into Eclipse if you have not already done so:
+
+1. right-click into the Package Explorer
+2. select **Import...** from the context menu
+3. choose **General/Existing Projects into Workspace** from the list
+4. select the project to import
+5. press the **Finish** button
+
 ### Testing Types of Expressions
 
 In test cases for type analysis,
  you write syntactically correct programs and
  mark expressions with inner square bracket blocks.
-You can then specify the expected type of the marked expression in a `run`-`to` clause.
+You can then specify the expected type of the marked expression in a `run x to y` clause.
 For example, the following two test cases require an integer literal to be of type `Int()`
 and a variable reference to be of its declared type `Bool()`:
 
@@ -130,6 +140,12 @@ test expression id type [[
 You should come up with test cases for the types of all kinds of expressions.
 Just like previous testing assignments, this assignment is all about the coverage of your test suite.
 
+Make sure that there are no errors in tests with a `run x to y` clause, these tests are invalid when there are errors.
+{: .notice .notice-warning}
+
+Do not use start symbols other than Program.
+{: .notice .notice-warning}
+
 ### Testing Method Name Resolution
 
 We did not test method names in assignment 5, since method name resolution requires type analysis.
@@ -168,6 +184,9 @@ This should include test cases for errors on duplicate definitions, missing defi
  as well as for notes on method overriding.
 Similar to previous test cases, you can pair up positive (`0 errors`) and negative test cases.
 
+Make sure that there are no errors in tests with a `resolve x to y` clause, these tests are invalid when there are errors.
+{: .notice .notice-warning}
+
 ### Testing Type Error Checking
 
 A type error occurs, when the type of an expression does not conform to its expected type.
@@ -191,3 +210,20 @@ Subtyping is a common source for errors not only in programs, but also in langua
 It is therefore important to have positive and negative typing tests, which involve correct and incorrect subtyping.
 
 Again, keep in mind that coverage is the main criterion for your grade.
+
+### Number of errors
+
+Similar to the previous testing lab, it is important to specify the exact number of errors in `x errors` tests for grading to work correctly.
+You need to make sure that your program does not contain any other errors.
+
+For duplicate method definitions, you get an error for every definition of the same name.
+For missing method definitions, an error for every unresolved reference.
+For overloaded method definitions, an error for every overloaded definition in the same class.
+And for cyclic inheritance, an error for every class definition in the cycle.
+
+Interaction between names and types give rise to more complex cases.
+Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped.
+In addition, unresolved method references create an additional error because the arguments cannot be checked.
+Assignment statements have the same behavior, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked.
+
+Primitive, unary, and binary expressions do not cascade errors, because their type is always known.

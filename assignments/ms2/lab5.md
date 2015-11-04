@@ -166,6 +166,9 @@ It is important to think about
  forward and backward references,
  and resolution in the presence of homonyms.
 
+Make sure that there are no errors in tests with a `resolve x to y` clause, these tests are invalid when there are errors.
+{: .notice .notice-warning}
+
 Do not use start symbols other than Program.
 {: .notice .notice-warning}
 
