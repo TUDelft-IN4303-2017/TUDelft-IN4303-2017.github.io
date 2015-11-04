@@ -194,11 +194,11 @@ Consider the following test case as an example:
 
 ```
 test print boolean [[
-class Main {
+  class Main {
     public static void main (String[] args) {
-        System.out.println([[true]]);
+      System.out.println([[true]]);
     }
-}
+  }
 ]] 1 error
 ```
 
@@ -224,6 +224,6 @@ And for cyclic inheritance, an error for every class definition in the cycle.
 Interaction between names and types give rise to more complex cases.
 Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped.
 In addition, unresolved method references create an additional error because the arguments cannot be checked.
-Assignment statements have the same behavior, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked.
+For assignments, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked.
 
 Primitive, unary, and binary expressions do not cascade errors, because their type is always known.
