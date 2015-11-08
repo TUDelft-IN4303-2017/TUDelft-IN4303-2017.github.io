@@ -45,7 +45,15 @@ The deadline for submissions is November 15th, 23:59.
 
 ### Grading
 
-You can earn up to 100 points for the coverage of your test cases.
+You can earn up to 100 points for the coverage of your test cases. Therefor, we run your test cases against 48 correct and erroneous definitions of MiniJava. The total number of points depends on how many erroneous language you detect in each of the following groups:
+
+- Names (30 points)
+  - Classes (2 points)
+  - Methods (25 points)
+  - Hiding (3 points)
+- Types (70 points)
+  - Expressions (44 points)
+  - Statements (26 points)
 
 It is important to name tests in a testsuite uniquely. Tests in different test suites can have the same name, but for grading, we need to be able to distinguish tests in the same test suite by their name.
 {: .notice .notice-warning}
