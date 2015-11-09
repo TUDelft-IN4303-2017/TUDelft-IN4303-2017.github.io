@@ -237,4 +237,4 @@ Unresolved references cause an error, but also cascade into the surrounding expr
 In addition, unresolved method references create an additional error because the arguments cannot be checked.
 For assignments, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked.
 
-Primitive, unary, and binary expressions do not cascade errors, because their type is always known.
+Literal, unary, and binary expressions do not cascade errors, because their type is always known.
