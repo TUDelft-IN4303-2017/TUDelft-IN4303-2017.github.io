@@ -40,7 +40,7 @@ The [Git documentation](/documentation/git.html#submitting-an-assignment) explai
 Test files created during this lab should go into the `MiniJava-tests-types` project.
 {: .notice .notice-warning}
 
-The deadline for submissions is November 15th, 23:59.
+The deadline for submissions is November 23rd, 23:59, together with the deadline for assignment 9.
 {: .notice .notice-warning}
 
 ### Grading
