@@ -28,7 +28,7 @@ The test suite should provide
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
   * notes on overriding methods
-  * type errors in expressions
+  * type errors in expressions (except for new array and array subscript expressions)
   * type errors in statements
   * type errors in method definitions
 
@@ -101,7 +101,7 @@ start symbol Program
 test integer literal type [[
   class Main {
     public static void main (String[] args) {
-        System.out.println([[1]]);
+      System.out.println([[1]]);
     }
   }
 ]] run get-type to Int()
@@ -109,7 +109,7 @@ test integer literal type [[
 test variable reference type [[
   class Main {
     public static void main (String[] args) {
-        System.out.println(new Foo().run());
+      System.out.println(new Foo().run());
     }
   }
 
@@ -147,6 +147,9 @@ test expression id type [[
 
 You should come up with test cases for the types of all kinds of expressions.
 Just like previous testing assignments, this assignment is all about the coverage of your test suite.
+
+New array and array subscript expressions cannot be tested because of a bug in SPT.
+{: .notice .notice-warning}
 
 Make sure that there are no errors in tests with a `run x to y` clause, these tests are invalid when there are errors.
 {: .notice .notice-warning}
