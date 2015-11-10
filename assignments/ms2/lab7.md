@@ -131,7 +131,7 @@ test variable reference type [[
 
 You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
 
-When using get-type on objects the expected `ClassType` constructor also requires annotations.
+When applying `get-type` to objects, the expected `ClassType` constructor also requires annotations.
 These annotations should be added to the constructor using a wild card as done below.
 
 ```
@@ -148,13 +148,13 @@ test expression id type [[
 You should come up with test cases for the types of all kinds of expressions.
 Just like previous testing assignments, this assignment is all about the coverage of your test suite.
 
-New array and array subscript expressions cannot be tested because of a bug in SPT.
+Array creation and array subscript expressions cannot be tested because of a bug in SPT.
 {: .notice .notice-warning}
 
-Make sure that there are no errors in tests with a `run x to y` clause, these tests are invalid when there are errors.
+Make sure that there are no errors in tests with a `run x to y` clause. These tests are invalid when there are errors.
 {: .notice .notice-warning}
 
-Do not use start symbols other than Program.
+Do not use start symbols other than `Program`.
 {: .notice .notice-warning}
 
 ### Testing Method Name Resolution
@@ -195,7 +195,7 @@ This should include test cases for errors on duplicate definitions, missing defi
  as well as for notes on method overriding.
 Similar to previous test cases, you can pair up positive (`0 errors`) and negative test cases.
 
-Make sure that there are no errors in tests with a `resolve x to y` clause, these tests are invalid when there are errors.
+Make sure that there are no errors in tests with a `resolve x to y` clause. These tests are invalid when there are errors.
 {: .notice .notice-warning}
 
 ### Testing Type Error Checking
@@ -228,9 +228,9 @@ Similar to the previous testing lab, it is important to specify the exact number
 You need to make sure that your program does not contain any other errors.
 
 For duplicate method definitions, you get an error for every definition of the same name.
-For missing method definitions, an error for every unresolved reference.
-For overloaded method definitions, an error for every overloaded definition in the same class.
-And for cyclic inheritance, an error for every class definition in the cycle.
+For missing method definitions, you get an error for every unresolved reference.
+For overloaded method definitions, you get an error for every overloaded definition in the same class.
+And for cyclic inheritance, you get an error for every class definition in the cycle.
 
 Interaction between names and types give rise to more complex cases.
 Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped.
