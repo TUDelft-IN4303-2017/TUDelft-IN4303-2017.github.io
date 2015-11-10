@@ -66,7 +66,7 @@ These rules allow you to compensate for lower grades in single assignments, but 
 ## Deadlines 2015/16
 
 In the first quarter, assignments must be submitted weekly until Thursday, 23:59.
-In the second quarter, assignments must be submitted weekly until Friday, 23:59.
+In the second quarter, assignments must be submitted weekly until Sunday, 23:59.
 Each student has 5 late days to use at his or her discretion.
 Each late day constitutes a 24-hour extension; you cannot split late labs into smaller increments.
 Once a student runs out of late days, any late submission is penalised at a rate of 0.1 grading points per day.
