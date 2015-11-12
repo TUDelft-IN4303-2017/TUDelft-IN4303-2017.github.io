@@ -131,8 +131,13 @@ test variable reference type [[
 
 You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
 
+<<<<<<< Updated upstream
 When applying `get-type` to objects, the expected `ClassType` constructor also requires annotations.
 These annotations should be added to the constructor using a wild card as done below.
+=======
+When using `get-type` on objects the expected `ClassType` constructor also requires annotations.
+These annotations should be added to the constructor using a wildcard as done below.
+>>>>>>> Stashed changes
 
 ```
 test expression id type [[
@@ -207,7 +212,7 @@ Consider the following test case as an example:
 test print boolean [[
   class Main {
     public static void main (String[] args) {
-      System.out.println([[true]]);
+      System.out.println(true);
     }
   }
 ]] 1 error
