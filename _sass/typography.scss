@@ -106,42 +106,40 @@ figcaption {
   background-color: $info;
   border-color: $info;
   color: $white;
+	code {
+	  background-color: $info-code;
+	  border-color: $info-code;
+	}
 }
 
 .notice-success {
   background-color: $success;
   border-color: $success;
   color: $white;
-}
-
-.notice-success code {
-  background-color: $success-code;
-  border-color: $success-code;
-  color: $white;
-}
-
-.notice-warning code {
-  background-color: $warning-code;
-  border-color: $warning-code;
-  color: $white;
+	code {
+	  background-color: $success-code;
+	  border-color: $success-code;
+	}
 }
 
 .notice-warning {
   background-color: $warning;
   border-color: $warning;
   color: $white;
-}
-
-.notice-danger code {
-  background-color: $danger-code;
-  border-color: $danger-code;
-  color: $white;
+	code {
+	  background-color: $warning-code;
+	  border-color: $warning-code;
+	}
 }
 
 .notice-danger {
   background-color: $danger;
   border-color: $danger;
   color: $white;
+	code {
+	  background-color: $danger-code;
+	  border-color: $danger-code;
+	}
 }
 
 /*

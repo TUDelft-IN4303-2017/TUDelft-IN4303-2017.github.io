@@ -361,7 +361,7 @@ $button-size: 1.5rem;
 	a, a:hover {
 		border-bottom: 0 solid transparent;
 	}
-} 
+}
 .author-social {
   display: block;
   margin-bottom: 5px;
@@ -521,6 +521,9 @@ $button-size: 1.5rem;
 				@include opacity(1);
 			}
 		}
+		code {
+			background: lighten($black, 5);
+		}
 		ul {
 			margin: 1px 0 0;
 			li {
@@ -528,12 +531,18 @@ $button-size: 1.5rem;
 			    padding: 10px 10px 10px 20px;
 			    background: lighten($black, 30);
 			  }
+				code {
+					background: lighten($black, 20);
+				}
 			  ul {
 			    li {
 			      a {
 			       padding: 10px 10px 10px 30px;
 			       background: lighten($black, 45);
 			      }
+						code {
+							background: lighten($black, 35);
+						}
 			    }
 		    }
 			}

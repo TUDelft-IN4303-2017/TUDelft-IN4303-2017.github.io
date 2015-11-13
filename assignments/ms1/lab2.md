@@ -50,7 +50,7 @@ As part of your submission, we ask you to provide a short explanation of the org
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 Finally, to help the manual grading progress, we ask you to paste the content of `MiniJava/include/MiniJava.str` into WebLab.
 
-The deadline for submission is September 24, 23:59.
+The deadline for submission is September 24th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

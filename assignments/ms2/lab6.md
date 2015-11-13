@@ -51,7 +51,7 @@ The specification should include:
 You can work on labs 5 and 6 in the same branch of your repository, but for grading and early feedback you need to submit your editor project with a pull request against branch `assignment6` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is November 8, 23:59.
+The deadline for submissions is November 8th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -80,7 +80,15 @@ We particular focus on
  precision,
  and the level of detail in your messages.
 
+### Early Feedback
+
+We provide early feedback for your language implementation.
+This feedback gives you an indication which parts of your implementation might still be wrong.
+It includes a summary on how many tests you pass and how many points you earn by passing them.
+
 ## Detailed Instructions
+
+### Preliminaries
 
 #### Git Repository
 
@@ -88,7 +96,7 @@ You continue with your work from the previous assignment.
 There is no need to create a new branch in your repository for this assignment, keep working in the `assignment5` branch.
 When you make a pull request, be sure to make a pull request to the `assignment6` branch of the upstream repository though.
 
-### Initial Editor Project
+#### Initial Editor Project
 
 The initial editor project from the last assignment contains the desugarings implementation `reference/desugar.rtree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `reference/desugar`.
 
@@ -284,6 +292,12 @@ type rules
 VarRef(v) :-
   where definition of v : t
     else error "a fancy error message" on v
+```
+
+You can also add variables to your error messages in using the following syntax:
+
+```
+  else error $[a fancy error message with variable [t]] on v
 ```
 
 Note that `:-` must be a single token, `: -` is not recognized.

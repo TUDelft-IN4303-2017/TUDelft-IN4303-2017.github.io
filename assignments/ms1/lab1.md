@@ -48,7 +48,7 @@ We expect to find your Spoofax project `MiniJava` and your test project `MiniJav
 The test project should contain a `README.md` with a short paragraph explaining the organisation of your test project.
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 
-The deadline for submission is 17 September, 23:59.
+The deadline for submission is 17th September, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

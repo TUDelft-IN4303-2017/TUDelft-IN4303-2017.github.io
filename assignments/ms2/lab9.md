@@ -33,10 +33,18 @@ Specify inheritance and subtyping in MiniJava with name binding and type rules i
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
-This project should contain a `README.md` with a short paragraph explaining the organisation of your NaBL, TS, and Stratego files.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is December 3rd, 17:59.
+The deadline for submission is October 29th, 23:59.
+{: .notice .notice-warning}
+
+### Early Feedback
+
+We provide early feedback for your language implementation.
+This feedback gives you an indication which parts of your name and type analysis might still be wrong.
+It includes a summary on how many tests you pass and how many points you earn by passing them.
+
+If you scored 50 or more points during lab 7, you can also get more feedback for your tests until the deadline for this assignment.
 
 ### Grading
 
@@ -69,14 +77,10 @@ We will consider the fact that these languages are new to you.
 
 ## Detailed Instructions
 
-### Spoofax Update
+### Git Repository
 
-This lab requires you to update Spoofax to the latest version. Use the `http://download.spoofax.org/update/in4303` update site.
-
-1. Choose *Check for Updates* from the *Help* menu.
-2. Wait for updates to be found.
-3. Install the updates to Spoofax.
-4. Restart Eclipse
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment9` branch from your previous work.
 
 ### Inheritance
 
