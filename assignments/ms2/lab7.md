@@ -27,7 +27,7 @@ The test suite should provide
   * errors on overloaded methods
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
-  * notes on overriding methods
+  * info notes on overriding methods
   * type errors in expressions (except for new array and array subscript expressions)
   * type errors in statements
   * type errors in method definitions
@@ -131,13 +131,8 @@ test variable reference type [[
 
 You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
 
-<<<<<<< Updated upstream
 When applying `get-type` to objects, the expected `ClassType` constructor also requires annotations.
 These annotations should be added to the constructor using a wild card as done below.
-=======
-When using `get-type` on objects the expected `ClassType` constructor also requires annotations.
-These annotations should be added to the constructor using a wildcard as done below.
->>>>>>> Stashed changes
 
 ```
 test expression id type [[
