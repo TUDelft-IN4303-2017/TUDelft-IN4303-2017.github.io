@@ -159,7 +159,7 @@ For example, the `not` expression is of type `boolean`:
 ```
 
 Note that these expressions have been desugared.
-See the `reference/desugar-signatures.str` file for their signatures, or run the `Syntax -> Show desugared syntax` on a MiniJava file to see the AST.
+See the `reference/desugar-signatures.str` file for their signatures, or run the `Syntax -> Show desugared syntax` builder on a MiniJava file to see the AST.
 
 Specify typing rules for all kinds of unary and binary expressions.
 
