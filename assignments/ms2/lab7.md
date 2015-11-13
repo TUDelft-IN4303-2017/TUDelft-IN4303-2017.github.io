@@ -27,7 +27,7 @@ The test suite should provide
   * errors on overloaded methods
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
-  * info notes on overriding methods
+  * notes on overriding methods
   * type errors in expressions (except for new array and array subscript expressions)
   * type errors in statements
   * type errors in method definitions
@@ -196,6 +196,14 @@ This should include test cases for errors on duplicate definitions, missing defi
 Similar to previous test cases, you can pair up positive (`0 errors`) and negative test cases.
 
 Make sure that there are no errors in tests with a `resolve x to y` clause. These tests are invalid when there are errors.
+{: .notice .notice-warning}
+
+### Testing notes
+
+Notes are notices that display some information.
+Testing notes is similar to testing errors, add a `x notes` clause to a test to expect notes in the test fragment.
+
+Make sure that there are no errors in tests with a `x notes` clause. These tests are invalid when there are errors.
 {: .notice .notice-warning}
 
 ### Testing Type Error Checking
