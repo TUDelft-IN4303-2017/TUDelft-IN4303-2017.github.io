@@ -191,7 +191,7 @@ Constraint rules (rules in the form of `e:-`) may always overlap.
 
 #### `this` Expressions
 
-To type `this` expressions, you first need to specify a name binding rule for `This()`.
+To type `this` expressions, you first need to specify a name binding rule for `this`.
 Since `this` is nowhere specified explicitly,
   you need to add an implicit definition clause in NaBL to one of your existing name binding rules.
 An implicit definition adds an addition definition, with a different name, namespace, and type, to a name binding rule that already defines something.
@@ -201,7 +201,7 @@ It has the following form:
 
 You might want to reuse an existing namespace or define a new one for `this`.
 If you use a new namespace, you need to scope this namespace properly.
-As a name, use the constructor for `this`.
+As a name, use the constructor for `this`: `This()`.
 Implicit definitions can also have properties, which allows you to specify the type of `this`.
 
 Think about the scoping of `this` and what type it should have, then add an implicit definition for `this` to one of your existing name binding rules in NaBL.
