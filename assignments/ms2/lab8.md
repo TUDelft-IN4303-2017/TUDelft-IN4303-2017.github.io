@@ -183,8 +183,8 @@ Here, `r` should be a reference in the expression `e`.
 Specify typing rules for variable and field references, and object creation.
 
 You do not have to modify your old constraint rules in TS, add new type rules that assign types to references instead.
-TS supports overlapping rules, as long as there is only a single rule that assigns a type (rule in the form of `e:ty`) to a reference.
-Constraint rules (rules in the form of `e:-`) may always overlap.
+TS supports overlapping rules, as long as there is only a single rule that assigns a type (rule in the form of `e : ty`) to a reference.
+Constraint rules (rules in the form of `e :-`) may always overlap.
 {: .notice .notice-info}
 
 ### Name Binding Revisited
