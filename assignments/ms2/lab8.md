@@ -45,25 +45,25 @@ The deadline for submission is November 22nd, 23:59.
 
 ### Grading
 
-You can earn up to 75 points for the correctness of your type analysis.
+You can earn up to 80 points for the correctness of your type analysis.
 Therefore, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
-* name binding (15 points)
-  * this expressions (5 points)
-  * method declarations (4 points)
-  * method calls (6 points)
-* typing rules (25 points)
+* name binding (10 points)
+  * method declarations
+  * method calls
+* typing rules (30 points)
+  * literals (3 points)
   * unary expressions (5 points)
   * binary expressions (10 points)
+  * variable and field references (1 points)
   * object creation (1 point)
-  * `this` expression (2 points)
-  * variable and field references (2 points)
+  * `this` expression (5 points)
   * method call (5 points)
-* constraints (30 points)
-  * expressions (10 points)
-  * statements and method declarations (20 points)
+* constraints (35 points)
+  * expressions (25 points)
+  * statements (10 points)
 * challenge (5 points)
 
 You can earn up to 10 points for your messages in errors and warnings.
