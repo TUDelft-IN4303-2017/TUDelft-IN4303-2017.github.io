@@ -40,7 +40,7 @@ The specification should include:
 You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submission is October 22nd, 23:59.
+The deadline for submission is November 22nd, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -89,13 +89,13 @@ See the [Git documentation](/documentation/git.html#continue-from-previous-assig
 
 ### TS
 
-You have already used TS in a previous lab to write constraints.
-In this lab you specify typing rules for expressions, and more constraints in TS.
+You have already used TS in a previous lab to specify constraints.
+In this lab, you specify typing rules for expressions and additional constraints in TS.
 
 #### Debugging
 
 Your test cases from the previous lab should enable a principled way of testing type analysis.
-But, hovers also offer a quick way to check if type analysis works as expected. When you move your mouse over an expression or definition in a MiniJava editor, you should see its type in a hover text.
+In addition, hover functionality in the MiniJava editor also offers a quick way to check if type analysis works as expected. When you move your mouse over an expression or definition in a MiniJava editor, you should see its type in a hover text.
 
 When you get unexpected results, you can inspect index entries and
   collected tasks with the *Show analysis*, *Show tasks* and *Show index* builders.
@@ -144,7 +144,7 @@ A typical example for such expressions are literals.
 For example, integer literals are of type `int`:
 
 ```
-  IntValue(_): Int()
+IntValue(_): Int()
 ```
 
 Specify typing rules for the other literals.
@@ -155,7 +155,7 @@ Types for unary and binary expressions are also directly known.
 For example, the `not` expression is of type `boolean`:
 
 ```
-  UnExp(NotOp(), _): Boolean()
+UnExp(NotOp(), _): Boolean()
 ```
 
 Note that these expressions have been desugared.
@@ -169,22 +169,26 @@ For references, you need to lookup the type of the corresponding definition.
 Types of definitions are specified in NaBL rules.
 You should have specified these types in the name analysis assignment:
 
-    ...: defines Field f of type t
+```
+...: defines Field f of type t
+```
 
 In TS, you can lookup the type of definitions.
 You already did this for the constraint rules in a previous lab, but this time the type will actually be used.
 Lookup the type of a definition as follows:
 
-    e: ty
-    where definition of r: ty
+```
+e: ty
+where definition of r: ty
+```
 
 Here, `r` should be a reference in the expression `e`.
 
 Specify typing rules for variable and field references, and object creation.
 
-You do not have to modify your old constraint rules in TS, add new type rules that assign types to references instead.
-TS supports overlapping rules, as long as there is only a single rule that assigns a type (rule in the form of `e : ty`) to a reference.
-Constraint rules (rules in the form of `e :-`) may always overlap.
+Do not modify your existing constraint rules to achieve this. Instead, add additional type rules that assign types to references.
+TS supports overlapping rules, as long as typing rules of the form `e : ty` do not overlap with each other.
+Constraint rules of the form `e :-` can overlap with typing rules and other constraint rules.
 {: .notice .notice-info}
 
 ### Name Binding Revisited
@@ -193,18 +197,18 @@ Constraint rules (rules in the form of `e :-`) may always overlap.
 
 To type `this` expressions, you first need to specify a name binding rule for `this`.
 Since `this` is nowhere specified explicitly,
-  you need to add an implicit definition clause in NaBL to one of your existing name binding rules.
-An implicit definition adds an addition definition, with a different name, namespace, and type, to a name binding rule that already defines something.
-It has the following form:
+  you need to add an implicit definition clause to one of your existing name binding rules in NaBL.
+An implicit definition has the following form:
 
     ...: implicitly defines Namespace name of type t
 
+It adds an additional definition for `name` in namespace `Namespace` to a name binding rule that already defines some other name.
+
+Think about the scoping of `this` and what type it should have, then add an implicit definition for `this` to one of your existing name binding rules.
 You might want to reuse an existing namespace or define a new one for `this`.
 If you use a new namespace, you need to scope this namespace properly.
 As a name, use the constructor for `this`: `This()`.
 Implicit definitions can also have properties, which allows you to specify the type of `this`.
-
-Think about the scoping of `this` and what type it should have, then add an implicit definition for `this` to one of your existing name binding rules in NaBL.
 
 Next, you should specify a name binding rule in NaBL which resolves the `this` to the implicit definition you just added.
 Again, you should use the constructor for `this` as the name in this rule.
@@ -237,9 +241,8 @@ To type a method call, you need to define the type of a method name definition:
 
     ...: defines Method m of type t
 
-Modify your name binding rule for method definitions to include its type.
-
-Next, specify a type rule in TS for method calls, which looks up the type of the method definition.
+Modify your name binding rule for method declarations to include its type.
+Next, specify a type rule in TS for method calls, which looks up the type of the method declaration.
 
 ### Constraints
 
@@ -270,16 +273,16 @@ You can add variables to your error messages in TS using the following syntax:
 ```
 
 Specify constraints for all kinds of unary and binary expressions.
-Add new typing rules instead of modifying your existing rules, to prevent cascading errors when a constraint fails.
+To prevent cascading errors when a constraint fails, you should add new constraint rules instead of extending your existing rules.
 Also separate the left and right-hand subexpression checks for binary expressions, like in the example above.
 This is to prevent error messages on the right-hand expression from showing when the constraint on the left-hand expression fails.
 
 #### Statements
 
 Statements typically do not have a type, but they might expect a certain type of an expression in the statement.
-For example, an if statement requires a boolean expression.
+For example, an `if` statement requires a boolean expression.
 
-Specify constraints for if, while, print, and assignment statements.
+Specify constraints for `if` statements, `while` statements, print statements, and assignments.
 Again, keep constraints separate to prevent cascading.
 
 #### Method Declarations
@@ -288,20 +291,20 @@ Specify a constraint which checks the type of a return expression against the de
 
 #### Method Calls
 
-Finally, we need to check the arguments of method calls, which can have missing arguments, too many arguments, or wrong argument types.
+Finally, you need to check the arguments of method calls, which can have missing arguments, too many arguments, or wrong argument types.
 
-To check this, you need to specify a more sophisticated type at the definition site.
+To check this, you need to modify your name binding rule for method declarations again, this time to associate each method declaration with a more sophisticated type.
 This type should include the expected types for the parameters and the return type of the method.
-You can construct this sophisticated type as a tuple of parameter types and return type, for example: `(pty*, ty)`.
+You can construct such a type as a tuple `(pty*, ty)` of parameter types `pty*` and return type `ty`.
 Similar to the rule for method calls, you can collect the parameter types in a `where` clause.
-Modify your name binding rule for method definitions again, this time to include a tuple with parameter types and return type.
-To make this work, you also need to create a type rule for parameters:
+To make this work, you also need to create a type rule for parameters in TS:
 
     Param(t, _): ...
 
 Before you continue, you should check if the type associated with the method name carries all the information you need.
 Hover over a method name, the tooltip should include the type which should look like: `([p1ty, p2ty, ..., pnty], rty)`.
 Do not continue, until this is working.
+{: .notice .notice-warning}
 
 Next, add a constraint in TS which checks the argument types.
 The type lookup will now yield the more sophisticated type.
@@ -315,4 +318,4 @@ You can use a pattern for `sophisticated-type` which matches a tuple with `param
     else ...                                  // show error if types are not equal
 
 The type equivalence operator `==` in TS also works on lists of types.
-It checks if the lists are the same size, and fails if they are not.
+It also checks if both lists are of the same size, and fails if they are not.
