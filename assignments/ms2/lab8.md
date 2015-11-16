@@ -45,7 +45,7 @@ The deadline for submission is November 22nd, 23:59.
 
 ### Grading
 
-You can earn up to 80 points for the correctness of your type analysis.
+You can earn up to 75 points for the correctness of your type analysis.
 Therefore, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
@@ -64,9 +64,8 @@ The total number of points depends on how many test cases you pass in each of th
 * constraints (35 points)
   * expressions (25 points)
   * statements (10 points)
-* challenge (5 points)
 
-You can earn up to 10 points for your messages in errors and warnings.
+You can earn up to 20 points for your messages in errors and warnings.
 We particular focus on
  readability,
  precision,
