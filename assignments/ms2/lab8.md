@@ -70,6 +70,7 @@ We particular focus on
  readability,
  precision,
  and the level of detail in your messages.
+Finally, you can earn up to 5 points with a challenge.
 
 ### Early Feedback
 
@@ -199,7 +200,9 @@ Since `this` is nowhere specified explicitly,
   you need to add an implicit definition clause to one of your existing name binding rules in NaBL.
 An implicit definition has the following form:
 
-    ...: implicitly defines Namespace name of type t
+```
+...: implicitly defines Namespace name of type t
+```
 
 It adds an additional definition for `name` in namespace `Namespace` to a name binding rule that already defines some other name.
 
@@ -209,15 +212,17 @@ If you use a new namespace, you need to scope this namespace properly.
 As a name, use the constructor for `this`: `This()`.
 Implicit definitions can also have properties, which allows you to specify the type of `this`.
 
-Next, you should specify a name binding rule in NaBL which resolves the `this` to the implicit definition you just added.
+Next, you should specify a name binding rule in NaBL which resolves a `this` expression to the implicit definition you just added.
 Again, you should use the constructor for `this` as the name in this rule.
 
 Finally, define a typing rule which looks up the type of `this`.
 You need to make sure that `definition of` is applied to the term matched by the rule, not to a new term `This()`.
-You can achieve this by matching with a variable `v` and a term matching `this`:
+You can achieve this by binding a variable `v` to the term matching `this`:
 
-    v@This(): ...
-    where definition of v ...
+```
+v@This(): ...
+where definition of v ...
+```
 
 #### Method Calls
 
@@ -225,9 +230,11 @@ Method calls need to be resolved with respect to the type of the callee expressi
 This expression needs to be of a class type and the method call should resolve to a method in the corresponding class.
 Such contextual references are specified in NaBL as follows:
 
-    ...:
-      refers to Namespace1 name1 in Namespace2 name2
-      where e has type ty
+```
+...:
+  refers to Namespace1 name1 in Namespace2 name2
+  where e has type ty
+```
 
 The `where` clause requires an expression `e` to be of type `ty`.
 `name1` is then resolved in the scope of `name2`.
@@ -238,7 +245,9 @@ Add a name binding rule for method calls in NaBL.
 
 To type a method call, you need to define the type of a method name definition:
 
-    ...: defines Method m of type t
+```
+...: defines Method m of type t
+```
 
 Modify your name binding rule for method declarations to include its type.
 Next, specify a type rule in TS for method calls, which looks up the type of the method declaration.
@@ -268,7 +277,7 @@ where e2 : ty
 You can add variables to your error messages in TS using the following syntax:
 
 ```
-  else error $[Expression [e1] is of type [ty]] on e1
+ else error $[Expression [e1] is of type [ty]] on e1
 ```
 
 Specify constraints for all kinds of unary and binary expressions.
@@ -298,7 +307,9 @@ You can construct such a type as a tuple `(pty*, ty)` of parameter types `pty*` 
 Similar to the rule for method calls, you can collect the parameter types in a `where` clause.
 To make this work, you also need to create a type rule for parameters in TS:
 
-    Param(t, _): ...
+```
+Param(t, _): ...
+```
 
 Before you continue, you should check if the type associated with the method name carries all the information you need.
 Hover over a method name, the tooltip should include the type which should look like: `([p1ty, p2ty, ..., pnty], rty)`.
@@ -310,11 +321,23 @@ The type lookup will now yield the more sophisticated type.
 You need to extract the parameter types and the return type from the tuple.
 You can use a pattern for `sophisticated-type` which matches a tuple with `parameter-types` and `return-type`:
 
-    ... :-
-    where definition of m: sophisticated-type // lookup sophisticated type and match parameter-types and return-type
-      and ...                                 // get the actual argument types from the method
-      and ...                                 // check actual argument types w.r.t. parameter types
-    else ...                                  // show error if types are not equal
+```
+... :-
+where definition of m: sophisticated-type // lookup sophisticated type and match parameter-types and return-type
+  and ...                                 // get the actual argument types from the method
+  and ...                                 // check actual argument types w.r.t. parameter types
+ else ...                                 // show error if types are not equal
+```
 
 The type equivalence operator `==` in TS also works on lists of types.
 It also checks if both lists are of the same size, and fails if they are not.
+
+### Challenge
+
+Challenges are meant to distinguish excellent solutions from good solutions.
+Typically, they are less guided and require more investigation or higher programming skills.
+{: .notice .notice-success}
+
+Currently, the rules for unary and binary expressions do not benefit from desugaring. This can be improved, by adding typing rules for unary and binary operators. Similar to the types of method names, the type of an operator should encode the type of its arguments and its result.
+
+Provide typing rules for all unary and binary operators. Next, provide a single typing rule for unary expressions, which inspects the type of its unary operator. In a similar fashion, provide a single constraint rule for unary expressions. Finally, provide a single typing rule for binary expressions, which inspects the type of its binary operator. Provide two constraint rules for checking type errors in the left and right subexpression of a binary expression.
