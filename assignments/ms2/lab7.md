@@ -27,6 +27,7 @@ The test suite should provide
   * errors on overloaded methods
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
+  * warnings on variables hiding fields in a parent class
   * notes on overriding methods
   * type errors in expressions (except for new array and array subscript expressions)
   * type errors in statements
