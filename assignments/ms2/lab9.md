@@ -54,12 +54,11 @@ You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
 * name binding (5 points)
-* subtyping (10 points)
-* constraints (60 points)
+* constraints (70 points)
+    * cyclic inheritance (10 points)
     * hiding variables and fields (10 points)
     * method overloading and method overriding (20 points)
-    * cyclic inheritance (10 points)
-    * subtyping in assignments, return expressions, method calls (20 points)
+    * subtyping in assignments, return expressions, method calls (30 points)
 
 You can earn up to 10 points for your messages in errors and warnings.
 We particular focus on
