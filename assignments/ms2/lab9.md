@@ -35,7 +35,7 @@ Specify inheritance and subtyping in MiniJava with name binding and type rules i
 You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submission is October 29th, 23:59.
+The deadline for submission is November 29th, 23:59.
 {: .notice .notice-warning}
 
 ### Early Feedback
@@ -66,14 +66,6 @@ We particular focus on
  precision,
  and the level of detail in your messages.
 
-Finally, you can earn up to 5 points for the organisation of your NaBL, TS and Stratego files and
-up to 10 points for the quality of your code.
-We focus on
-  readability in general,
-  meaningful variable names and
-  the consistent use of NaBL Stratego paradigms.
-We will consider the fact that these languages are new to you.
-
 ## Detailed Instructions
 
 ### Git Repository
@@ -90,18 +82,24 @@ Similarly, method names are resolved to method declarations in the callee class,
 You can fix this by importing fields and methods from parent classes into their child classes with an `imports` clause.
 A clause
 
-    imports NS1, NS2 from NS name
+```
+imports NS1, NS2 from NS name
+```
 
 works like
 
-    refers to NS name
+```
+refers to NS name
+```
 
 but additionally imports declarations of `NS1` and `NS2` from the referred scope into the current scope.
 It only considers declarations which are declared in the referred scope, but not those which are imported into the referred scope.
 `imported` is a keyword for one specific label, not a clause such as `imports`.
 The following clause also imports declarations of `NS1` which are imported into the referred scope:
 
-    imports NS1, imported NS1, NS2 from NS name
+```
+imports NS1, imported NS1, NS2 from NS name
+```
 
 ### Subtyping
 
@@ -148,7 +146,10 @@ type rules
   where store c <name: sc
 ```
 
-This stores a new instance of a relation between `c` and `sc`. TS has a limitation where references are not allowed on the left hand side of a relation, these must be definitions. If you use a reference on the left hand side, the analysis will crash. Now add corresponding rule(s) to store instances of subtype relations.
+This stores a new instance of a relation between `c` and `sc`.
+TS has a limitation where references are not allowed on the left hand side of a relation, these must be definitions.
+If you use a reference on the left hand side, the analysis will crash.
+Now add corresponding rule(s) to store instances of subtype relations.
 
 #### Using the Subtype Relation
 
@@ -163,6 +164,9 @@ can be replaced by subtyping checks
 ```
 ty1 <name: ty2
 ```
+
+Like the equivalence check, relation checks also handle lists of types.
+When the lists have different sizes, or when the relation does not hold for a pair in the lists, the relation check will fail.
 
 Now you can update any constraints with subtyping checks where needed, and create new constraints to handle subtyping errors.
 
@@ -186,8 +190,8 @@ You can use the following template as a starting point:
 
 ````
 nabl-constraint(|ctx) =
-    ?Method(retty, mname, _, _, _, _)
-  ; local := <...(|ctx)> mname                                   // lookup method declarations in the current class
+  ?Method(retty, mname, _, _, _, _)
+  ; local    := <...(|ctx)> mname                                // lookup method declarations in the current class
   ; ...                                                          // report an error if there is more than one method declaration of that name
   ; imported := <...(|ctx)> mname                                // lookup method declarations in ancestor classes
   ; mty      := <type-lookup(|ctx)> mname                        // get the type of the current method
@@ -202,30 +206,43 @@ nabl-constraint(|ctx) =
   ; ...                                                          // report note if current method overrides inherited method correctly
   ; fail
 
-  task-rewrite: ("return-type", (_, rt))      -> rt
-  task-rewrite: ("parameter-types", (pt*, _)) -> pt*
-
+task-rewrite: ("return-type", (_, rt))      -> rt
+task-rewrite: ("parameter-types", (pt*, _)) -> pt*
 ````
+
 The following strategies might be useful:
 
-* `nabl-lookup-local(|ctx)` looks up a name in the current scope.
-* `nabl-lookup-lexical(|ctx)` looks up a name in the current and parent scopes.
-* `nabl-lookup-local-import(|ctx)` looks up a name imported into the current scope.
-* `nabl-lookup-lexical-import(|ctx)` looks up a name imported into the current or parent scopes.
-* `type-match(|ctx, ty)` checks if a type matches type `ty`.
-* `relation-create-match(|ctx)` checks for a tuple `("<name:", ty1, ty2)` if `ty1 <name: ty2` holds.
-* `task-create-error-on-triggers(|ctx, triggers, msg)` creates an error message based on a list of triggers.
-* `task-create-warning-on-triggers(|ctx, triggers, msg)` creates a warning message based on a list of triggers.
-* `task-create-note-on-triggers(|ctx, triggers, msg)` creates a note based on a list of triggers.
+* `nabl-lookup-local(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the same (local) scope.
+  This strategy needs to be applied to a binding instance of a name.
+* `nabl-lookup-lexical(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the local and surrounding (lexical) scope.
+  This strategy needs to be applied to a binding instance of a name.
+* `nabl-lookup-local-import(|ctx)` creates a resolution task that searches for a name, of the same namespace, that is imported into the local scope.
+  This strategy needs to be applied to a binding instance of a name.
+* `nabl-lookup-lexical-import(|ctx)` creates a resolution task that searches for a name, of the same namespace, that is imported into the current or parent scope.
+  This strategy needs to be applied to a binding instance of a name.
+* `<type-match(|ctx, ty1)> ty2` creates a task that checks if `ty1` matches type `ty2`.
+* `<relation-create-match(|ctx)> ("<name:", ty1, ty2)` creates a task that checks for a tuple `("<name:", ty1, ty2)` if `ty1 <name: ty2` holds.
+* `<task-create-error-on-triggers(|ctx, triggers, "Useful message")> term` creates an error message on a term when any triggers in the list succeed.
+* `<task-create-warning-on-triggers(|ctx, triggers, "Useful message")> term` creates a warning message on a term when any triggers in the list succeed.
+* `<task-create-note-on-triggers(|ctx, triggers, "Useful message")> term` creates a note on a term when any triggers in the list succeed.
 
 You can use the following triggers:
 
 * `Success(task)` triggers if `task` succeeds.
 * `Failure(task)` triggers if `task` fails.
 
+Triggers are combined into a list as follows: `[Success(task), Failure(task)]`.
+Even if you only use a single trigger, it must be enclosed in a list: `[Success(task)]`.
+
 ### Cyclic inheritance
-Finally, you should report an error message on cyclic inheritance. This can be done in TS. You can use
+
+Finally, you should report an error message for cyclic inheritance on class definitions, using TS.
+You can use:
+
 ```
-not(ty1 <name: ty2)
+pattern :-
+where not(c1 <name: c2)
+ else error "Useful message" on term
 ```
-to get the negation of a subtype relation.
+
+where `c1` and `c2` are names from the pattern, to show an error message when a relation succeeds.
