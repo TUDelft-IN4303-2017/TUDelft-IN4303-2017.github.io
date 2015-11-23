@@ -48,17 +48,17 @@ If you scored 50 or more points during lab 7, you can also get more feedback for
 
 ### Grading
 
-You can earn up to 75 points for the correctness of your name and type analysis.
+You can earn up to 90 points for the correctness of your name and type analysis.
 Therefor, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
-* name binding (5 points)
-* constraints (70 points)
-    * cyclic inheritance (10 points)
-    * hiding variables and fields (10 points)
-    * method overloading and method overriding (20 points)
-    * subtyping in assignments, return expressions, method calls (30 points)
+* name binding (6 points)
+* constraints (84 points)
+    * cyclic inheritance (12 points)
+    * hiding variables and fields (12 points)
+    * method overloading and method overriding (24 points)
+    * subtyping in assignments, return expressions, method calls (36 points)
 
 You can earn up to 10 points for your messages in errors and warnings.
 We particular focus on
