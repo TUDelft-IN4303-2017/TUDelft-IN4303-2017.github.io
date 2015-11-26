@@ -295,14 +295,14 @@ VarRef(v) :-
     else error "Useful message" on v
 ```
 
-You can also add variables to your error messages in using the following syntax:
-
-```
-  else error $[Fancy message with variable [t]] on v
-```
-
 Note that `:-` must be a single token, `: -` is not recognized.
 {: .notice .notice-warning}
+
+You can add names to your error messages in TS using the following syntax:
+
+```
+ else error $[Useful message with name [v]] on e
+```
 
 This rule reports errors on unresolved variable references.
 Therefor, it first checks the type of its definition.
@@ -320,7 +320,7 @@ Then, in TS, you can use this to check if a class reference refers to the main c
 ```
 ClassType(c) :-
   where not(definition of c : YourSpecialTypeConstructor())
-    else error "another fancy error message" on c
+    else error "Another useful message" on c
 ```
 
 This rule reports errors on class types which refer to the main class.
@@ -364,8 +364,8 @@ rules
     Var(t, v) -> <fail>
     where
       task := <nabl-lookup-local(|ctx)> v
-    ; msg  := "Your meaningful error message should be here"
-    ; <task-create-error-on-multiple(|ctx, task, msg)> v
+    ; msg  := "Yet another useful message"
+    ; <task-create-error-on-triggers(|ctx, [Multiple(task)], msg)> v
 ```
 
 This rule matches a language construct on the left-hand side (in this case a variable declaration) and fails on the right-hand side.
@@ -381,7 +381,7 @@ Finally, a library strategy is called to create an error in case of multiple sol
 The arguments to this strategy are
 
 1. a context variable `ctx`,
-2. the `task` which needs to have multiple solutions to trigger the error message, and
+2. a single trigger on `task` which triggers the error message when the task produces multiple results, and
 3. the error message `msg`.
 
 The strategy is applied to the term where the error should be shown (in this case, the variable name).
@@ -403,6 +403,7 @@ You can use the following triggers:
 
 * `Success(task)` triggers if `task` succeeds.
 * `Failure(task)` triggers if `task` fails.
+* `Multiple(task)` triggers if `task` succeeds and returns more than one result.
 
 Triggers are combined into a list as follows: `[Success(task), Failure(task)]`.
 Even if you only use a single trigger, it must be enclosed in a list: `[Success(task)]`.

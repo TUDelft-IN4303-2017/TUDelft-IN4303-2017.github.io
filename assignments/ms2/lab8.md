@@ -267,19 +267,22 @@ In TS, equality of types can be checked against an expected type with `==`:
 BinExp(Plus(), e1, _) :-
 where e1 : ty
   and ty == expected-ty
- else error "Your meaningful error message should be here" on e1
+ else error "Useful message" on e1
 
 BinExp(Plus(), _, e2) :-
 where e2 : ty
   and ty == expected-ty
- else error "Another meaningful error message should be here" on e2
+ else error "Another useful message" on e2
 ```
 
-You can add variables to your error messages in TS using the following syntax:
+You can add names and types to your error messages in TS using the following syntax:
 
 ```
- else error $[Expression [e1] is of type [ty]] on e1
+ else error $[Expression is of type [ty]] on e
 ```
+
+Do not add expressions to your messages, this can cause your analysis to fail.
+{: .notice .notice-warning}
 
 Specify constraints for all kinds of unary and binary expressions.
 To prevent cascading errors when a constraint fails, you should add new constraint rules instead of extending your existing rules.
