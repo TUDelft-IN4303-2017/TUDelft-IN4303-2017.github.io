@@ -393,8 +393,7 @@ The following library strategies might be useful:
 * `nabl-lookup-lexical(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the local and surrounding (lexical) scope.
   This strategy needs to be applied to a binding instance of a name.
 * `nabl-lookup-lexical(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
-  You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your
-  name binding specification.
+  You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your name binding specification, for example `NablNsClass()`.
 * `task-create-error-on-success(|ctx, task, msg)` creates an error message `msg`, if `task` has one or more solutions.
 * `task-create-error-on-failure(|ctx, task, msg)` creates an error message `msg`, if `task` has no solution.
 * `task-create-error-on-multiple(|ctx, task, msg)` creates an error message `msg`, if `task` has more than one solution.

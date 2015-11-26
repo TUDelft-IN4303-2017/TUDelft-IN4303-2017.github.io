@@ -23,12 +23,12 @@ Specify inheritance and subtyping in MiniJava with name binding and type rules i
     * class declarations and
     * a subtype relation.
 * Custom constraint rules for
-    * variables hiding inherited fields,
-    * fields hiding inherited fields,
-    * method overloading,
-    * method overriding,
-    * cyclic inheritance and
-    * valid subtyping in assignments, method calls and return expressions.
+    * warnings on variables hiding inherited fields,
+    * errors on fields hiding inherited fields,
+    * errors for method overloading,
+    * notes for method overriding,
+    * errors for cyclic inheritance and
+    * errors for invalid subtyping in assignments, method calls and return expressions.
 
 ### Submission
 
@@ -218,8 +218,15 @@ The following strategies might be useful:
   This strategy needs to be applied to a binding instance of a name.
 * `nabl-lookup-local-import(|ctx)` creates a resolution task that searches for a name, of the same namespace, that is imported into the local scope.
   This strategy needs to be applied to a binding instance of a name.
+* `nabl-lookup-local-import(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
+  You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your
+name binding specification, for example `NablNsClass()`.
+  This strategy needs to be applied to a binding instance of a name.
 * `nabl-lookup-lexical-import(|ctx)` creates a resolution task that searches for a name, of the same namespace, that is imported into the current or parent scope.
   This strategy needs to be applied to a binding instance of a name.
+* `nabl-lookup-lexical-import(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
+  You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your
+name binding specification, for example `NablNsClass()`.
 * `<type-match(|ctx, ty1)> ty2` creates a task that checks if `ty1` matches type `ty2`.
 * `<relation-create-match(|ctx)> ("<name:", ty1, ty2)` creates a task that checks for a tuple `("<name:", ty1, ty2)` if `ty1 <name: ty2` holds.
 * `<task-create-error-on-triggers(|ctx, triggers, "Useful message")> term` creates an error message on a term when any triggers in the list succeed.
