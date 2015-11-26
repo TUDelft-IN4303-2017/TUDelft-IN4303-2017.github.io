@@ -305,7 +305,9 @@ Finally, you need to check the arguments of method calls, which can have missing
 To check this, you need to modify your name binding rule for method declarations again, this time to associate each method declaration with a more sophisticated type.
 This type should include the expected types for the parameters and the return type of the method.
 You can construct such a type as a tuple `(pty*, ty)` of parameter types `pty*` and return type `ty`.
-Similar to the rule for method calls, you can collect the parameter types in a `where` clause.
+
+Similar to the rule for method calls, you can collect the parameter types with a `where x has type tys` clause.
+When this clause is used on a list `x`, it will automatically retrieve the types of elements in `x`, and produce a list of types `tys`.
 To make this work, you also need to create a type rule for parameters in TS:
 
 ```
@@ -316,6 +318,8 @@ Before you continue, you should check if the type associated with the method nam
 Hover over a method name, the tooltip should include the type which should look like: `([p1ty, p2ty, ..., pnty], rty)`.
 Do not continue, until this is working.
 {: .notice .notice-warning}
+
+Since the type of method definitions has changed, you should modify your type rule for method calls to extract the return type from the tuple `(pty*, ty)`.
 
 Next, add a constraint in TS which checks the argument types.
 The type lookup will now yield the more sophisticated type.
@@ -332,6 +336,9 @@ where definition of m: sophisticated-type // lookup sophisticated type and match
 
 The type equivalence operator `==` in TS also works on lists of types.
 It also checks if both lists are of the same size, and fails if they are not.
+
+Think about where the error message should appear if parameter and argument types are not equal.
+Even when there are no arguments (the argument list is empty), the error should appear somewhere.
 
 ### Challenge
 
