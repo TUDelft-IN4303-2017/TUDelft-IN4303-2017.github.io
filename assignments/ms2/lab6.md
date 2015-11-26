@@ -292,13 +292,13 @@ type rules
 
 VarRef(v) :-
   where definition of v : t
-    else error "a fancy error message" on v
+    else error "Useful message" on v
 ```
 
 You can also add variables to your error messages in using the following syntax:
 
 ```
-  else error $[a fancy error message with variable [t]] on v
+  else error $[Fancy message with variable [t]] on v
 ```
 
 Note that `:-` must be a single token, `: -` is not recognized.
@@ -395,10 +395,19 @@ The following library strategies might be useful:
   This strategy needs to be applied to a binding instance of a name.
 * `nabl-lookup-lexical(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
   You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your name binding specification, for example `NablNsClass()`.
-* `task-create-error-on-success(|ctx, task, msg)` creates an error message `msg`, if `task` has one or more solutions.
-* `task-create-error-on-failure(|ctx, task, msg)` creates an error message `msg`, if `task` has no solution.
-* `task-create-error-on-multiple(|ctx, task, msg)` creates an error message `msg`, if `task` has more than one solution.
-* `task-create-warning-on-failure`, `task-create-warning-on-success` and `task-create-warning-on-multiple` are variants for warnings instead of errors.
+* `<task-create-error-on-triggers(|ctx, triggers, msg)> term` creates an error message on a term when all triggers in the list succeed.
+* `<task-create-warning-on-triggers(|ctx, triggers, msg)> term` creates a warning message on a term when all triggers in the list succeed.
+* `<task-create-note-on-triggers(|ctx, triggers, msg)> term` creates a note on a term when all triggers in the list succeed.
+
+You can use the following triggers:
+
+* `Success(task)` triggers if `task` succeeds.
+* `Failure(task)` triggers if `task` fails.
+
+Triggers are combined into a list as follows: `[Success(task), Failure(task)]`.
+Even if you only use a single trigger, it must be enclosed in a list: `[Success(task)]`.
+
+As messages, you can use a simple string like `"Useful message"`, or a list of strings and variables if you'd like to include variables in your message, like `["Fancy message with variable ", v, " and other variable ", t]`.
 
 ### Challenges
 
