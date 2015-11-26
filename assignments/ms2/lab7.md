@@ -243,8 +243,8 @@ For overloaded method definitions, you get an error for every overloaded definit
 And for cyclic inheritance, you get an error for every class definition in the cycle.
 
 Interaction between names and types give rise to more complex cases.
-Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped.
-In addition, unresolved method references create an additional error because the arguments cannot be checked.
-For assignments, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked.
+Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped, resulting in 2 errors in total.
+In addition, unresolved method references create an additional error because the arguments cannot be checked, resulting in 3 errors in total.
+For assignments, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked, resulting in 2 errors in total.
 
 Literal, unary, and binary expressions do not cascade errors, because their type is always known.

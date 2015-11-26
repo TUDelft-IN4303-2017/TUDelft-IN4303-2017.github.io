@@ -278,7 +278,7 @@ where e2 : ty
 You can add names and types to your error messages in TS using the following syntax:
 
 ```
- else error $[Expression is of type [ty]] on e
+ else error $[Useful message with type [ty]] on e1
 ```
 
 Do not add expressions to your messages, this can cause your analysis to fail.
@@ -340,7 +340,7 @@ where definition of m: sophisticated-type // lookup sophisticated type and match
 The type equivalence operator `==` in TS also works on lists of types.
 It also checks if both lists are of the same size, and fails if they are not.
 
-Think about where the error message should appear if parameter and argument types are not equal.
+Think about where the error message should appear if the parameter and argument types do not match.
 Even when there are no arguments (the argument list is empty), the error should appear somewhere.
 
 ### Challenge
