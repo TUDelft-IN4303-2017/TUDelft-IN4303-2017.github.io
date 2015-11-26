@@ -229,9 +229,9 @@ name binding specification, for example `NablNsClass()`.
 name binding specification, for example `NablNsClass()`.
 * `<type-match(|ctx, ty1)> ty2` creates a task that checks if `ty1` matches type `ty2`.
 * `<relation-create-match(|ctx)> ("<name:", ty1, ty2)` creates a task that checks for a tuple `("<name:", ty1, ty2)` if `ty1 <name: ty2` holds.
-* `<task-create-error-on-triggers(|ctx, triggers, "Useful message")> term` creates an error message on a term when any triggers in the list succeed.
-* `<task-create-warning-on-triggers(|ctx, triggers, "Useful message")> term` creates a warning message on a term when any triggers in the list succeed.
-* `<task-create-note-on-triggers(|ctx, triggers, "Useful message")> term` creates a note on a term when any triggers in the list succeed.
+* `<task-create-error-on-triggers(|ctx, triggers, "Useful message")> term` creates an error message on a term when all triggers in the list succeed.
+* `<task-create-warning-on-triggers(|ctx, triggers, "Useful message")> term` creates a warning message on a term when all triggers in the list succeed.
+* `<task-create-note-on-triggers(|ctx, triggers, "Useful message")> term` creates a note on a term when all triggers in the list succeed.
 
 You can use the following triggers:
 
