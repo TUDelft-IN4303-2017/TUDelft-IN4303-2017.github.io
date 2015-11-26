@@ -76,6 +76,7 @@ A test case is *valid*, if it passes on correct syntax definitions.
 A test is *effective*, if it reveals an erroneous syntax definition.
 The feedback lists for different language constructs how well you discover liberal and restrictive syntax definitions.
 It also includes a summary on how many valid tests you provide, how many erroneous syntax definitions you reveal with these tests, and how many points you earn by detecting them.
+You have 3 early feedback attempts.
 
 ## Detailed Instructions
 

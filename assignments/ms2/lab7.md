@@ -64,6 +64,7 @@ It is important to name tests in a testsuite uniquely. Tests in different test s
 We provide early feedback for the effectiveness of your test cases.
 This feedback gives you an indication which parts of the name binding rules might still be uncovered by your tests.
 It includes a summary on how many erroneous language definitions you reveal and how many points you earn by detecting them.
+You have 5 early feedback attempts.
 
 ## Detailed Instructions
 

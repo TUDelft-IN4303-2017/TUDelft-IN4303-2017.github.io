@@ -56,6 +56,10 @@ You can earn up to 60 points for your desugarings:
 * challenge  (5 points)
 * code quality (5 points)
 
+### Early Feedback
+
+This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+
 ## Detailed Instructions
 
 ### Preliminaries

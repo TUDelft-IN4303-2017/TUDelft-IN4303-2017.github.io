@@ -77,6 +77,7 @@ Finally, you can earn up to 5 points with a challenge.
 We provide early feedback for your language implementation.
 This feedback gives you an indication which parts of your name and type analysis might still be wrong.
 It includes a summary on how many tests you pass and how many points you earn by passing them.
+You have 5 early feedback attempts.
 
 If you scored 50 or more points during lab 7, you can also get more feedback for your tests until the deadline for assignment 9.
 

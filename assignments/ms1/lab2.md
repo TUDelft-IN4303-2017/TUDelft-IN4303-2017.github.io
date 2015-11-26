@@ -94,6 +94,7 @@ We particular focus on
 We provide early feedback for the correctness of your syntax definition.
 This feedback gives you an indication which parts of your syntax definition might still be wrong.
 It includes a summary on how many tests you pass and how many points you earn by passing them.
+You have 3 early feedback attempts.
 
 ## Detailed Instructions
 

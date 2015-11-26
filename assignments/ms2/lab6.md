@@ -85,6 +85,7 @@ We particular focus on
 We provide early feedback for your language implementation.
 This feedback gives you an indication which parts of your implementation might still be wrong.
 It includes a summary on how many tests you pass and how many points you earn by passing them.
+You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
