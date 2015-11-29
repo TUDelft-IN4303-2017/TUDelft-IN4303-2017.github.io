@@ -18,11 +18,10 @@ In this lab, you develop a simple code generator, that generates Java bytecode f
 1. Write a Jasmin program which prints `42`.
 2. Implement a code generator that transforms MiniJava programs into Java bytecode.
 The code generator should include
-    1. A transformation from MiniJava ASTs to Jasmin ASTs which handles
-        * MiniJava programs
+    1. A transformation from MiniJava ASTs to Jasmin ASTs which handles MiniJava programs
         * with only a main class
-        * with a single print statement with
-        * an integer constant expression.
+        * with a single print statement
+        * with an integer constant expression.
     2. A menu action which invokes the transformation and pretty-prints the Jasmin AST to concrete syntax.
     3. A menu action which generates a Java class file instead of a Jasmin file.
     4. A menu action which runs the program (challenge).
@@ -30,10 +29,12 @@ The code generator should include
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment10` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
+
 This project should contain a `README.md` with a short paragraph explaining the organisation of your Stratego files.
 
-The deadline for submissions is December 10th, 17:59.
+The deadline for submission is December 6th, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
@@ -52,15 +53,27 @@ You can earn up to 10 points for your Jasmin program and up to 75 points for you
     * automatic code generation (5 points)
     * runner (6 points)
 
-You can earn up to 5 points for the organisation of your Stratego files and up to 10 points for the quality of your code. We focus on readibility in general, meaningful variable names and the consistent use of Stratego paragdims.
+You can earn up to 10 points for the quality of your code. We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
 We will consider the fact that Stratego is new to you.
+
+### Early Feedback
+
+This assignment is graded manually. Thus, we do not provide early feedback for this submission.
 
 ## Detailed Instructions
 
-### Initial Editor Project
+### Preliminaries
 
-We provide you with an initial MiniJava project in the branch `assignment10`.
-Make sure you have this branch in your fork as well, before you start working on this assignment.
+#### GitHub Repository
+
+We provide you with a template for this assignment in the `assignment10` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+
+#### Initial Editor Project
+
+The template provides you with a fresh MiniJava editor project, which covers the syntax and analysis of MiniJava.
+For grading purposes, you are required to use this project as a starting point for milestone 3.
+You should build the new project, following these steps:
 
 1. Import the project into your workspace:
     1. right-click into the Package Explorer
@@ -75,18 +88,13 @@ Make sure you have this branch in your fork as well, before you start working on
 
 This project contains the following implementations:
 
-* MiniJava signatures in `common/src-gen/signatures/MiniJava-sig`.
-* MiniJava pretty-printer in `common/src-gen/pp/MiniJava-pp`
-* MiniJava syntactic completions in `common/src-gen/completions/MiniJava-esv`.
-* MiniJava desugarings in `common/desugar`.
-* MiniJava name analysis in `common/names`.
-* MiniJava type analysis in `common/types`.
-* JasminXT signatures in `common/src-gen/signatures/JasminXT*-sig`
-* JasminXT pretty-printer in `common/src-gen/pp/JasminXT*-pp`
+* MiniJava signatures in `reference/src-gen/signatures/MiniJava-sig`.
+* MiniJava pretty-printer in `reference/src-gen/pp/MiniJava-pp`
+* MiniJava syntactic completions in `reference/src-gen/completions/MiniJava-esv`.
+* MiniJava desugaring signatures in `reference/desugar-signatures`.
+* JasminXT signatures in `reference/src-gen/jasmin-signatures/JasminXT*-sig`
 
 These implementations are already imported into the initial project.
-
-***Update:*** There is an inconsistency in the pretty-printing rules. You can fix this, by deleting `common/src-gen/pp/JasminXT-Extra-PP-Rules.pp.str`.
 
 ### Write Jasmin Code
 
@@ -102,23 +110,20 @@ Write a Jasmin program `simple.j`, which you expect to be the result of a MiniJa
 Generate a Java class file from it and run it.
 Improve your program until it runs without errors.
 
-### Integrate Code Generation into the Editor
-
-Code generation should be a service of your MiniJava editor. To achieve this, define a new strategy `generate-jbc`, which will be associated with the *Generate Java bytecode* entry in the *Generate* menu. Implement this strategy in Stratego by following the interface for action strategies:
-
-    generate-jbc: (selected, position, ast, path, project-path) -> (filename, result)
-
-The implementation  should rely on a strategy `program-to-jbc`, which transforms MiniJava programs into Java bytecode.
-
 ### Implement a Code Generation Strategy
 
-Next, you need to implement `program-to-jbc`.
+Code generation should be a service of your MiniJava editor.
+The initial project contains a *Generate Java bytecode* builder in the *Generate* menu.
+This builder calls the `generate-jbc` strategy which is defined in `trans/minijava.str`.
+The implementation relies on a strategy `program-to-jbc`, which transforms MiniJava programs into Java bytecode.
+
+You need to implement `program-to-jbc`.
 You will do this stepwise over the remaining labs.
 During this lab, you should implement it for programs that contain only a main class, which prints a single integer constant.
 To understand Jasmin's abstract syntax, you can either
   study example ASTs generated by a Jasmin editor,
   study the grammar in the Jasmin project,
-  or have a closer look into `common/src-gen/signatures/JasminXT-sig.str`.
+  or have a closer look into `reference/src-gen/jasmin-signatures/-`.
 
 1. Provide a rule for `exp-to-jbc`, which translates an integer constant from MiniJava into a sequence of Java bytecode instructions, that loads this constant to the operand stack.
    Note that it is important to generate a sequence here, even if you only need a single instruction, because in general a MiniJava expression translates into a sequence of bytecode instructions.
