@@ -10,6 +10,11 @@
   context: lectures
   subcontext: introduction
 
+- title: Domain-Specific Languages
+  url: /lectures/introduction/domain-specific-languages.html
+  context: lectures
+  subcontext: introduction
+
 # Language Specification
 
 - title: Formal Grammars
