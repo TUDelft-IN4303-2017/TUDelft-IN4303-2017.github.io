@@ -122,9 +122,10 @@ Improve your program until it runs without errors.
 ### Implement a Code Generation Strategy
 
 Code generation should be a service of your MiniJava editor.
-The initial project contains a *Generate Java bytecode* builder in the *Generate* menu.
-This builder calls the `generate-jbc` strategy which is defined in `trans/minijava.str`.
+The initial project contains several builders in the *Generate* menu.
+The *Generate Java bytecode* builder calls the `generate-jbc` strategy which is defined in `trans/codegen/build.str`.
 The implementation relies on a strategy `program-to-jbc`, which transforms MiniJava programs into Java bytecode.
+We provided an implemntation of `program-to-jbc` that always fails in `trans/codegen/classes.str`.
 
 You need to implement `program-to-jbc`.
 You will do this stepwise over the remaining labs.
