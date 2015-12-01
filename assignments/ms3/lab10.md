@@ -195,6 +195,25 @@ To translate a Jasmin AST into a Java class file we use the strategy `jasmin-gen
 
 Even though in MiniJava some keywords are reserved, Jasmin has its own keywords. Some Jasmin implementations consider those as reserved, some do not. Typical examples are keywords such as `field` or `class`. In the Spoofax implementation, we do not reserve these, but other Jasmin implementations might do, particularly if they may not have the latest updates (Debian for example). See [StackOverflow](http://stackoverflow.com/questions/10371352/how-to-handle-field-named-as-keywords-in-jasmin) for more information about this.
 
+### Debuggin stratego code
+
+Stratego is hard to debug, so here are some tips to make it easier.
+
+#### The `debug` strategy
+
+The `debug` strategy prints the current term. There is also an overloaded version `debug(msg)`. This will print the term produced by applying `msg` followed by the current term. Note that this allows you to add some text while leaving the current term intact. For example, compare the following version of `generate-jbc` to the one provided in the initial project:
+
+    generate-jbc:
+        (selected, position, ast, path, project-path) -> None()
+        with
+          <debug(!"Path: ")> path
+        ; dir := <remove-extension> path
+        ; <debug(!"Dir: ")> dir
+        ; <try(mkdir)> dir
+        ; index-setup(|<language>, project-path)
+        ; task-setup(|project-path)
+        ; <program-to-jbc(|path); debug(!"program-to-jbc: "); map(write-jbc(|dir))> ast
+
 ## Challenge
 
 Challenges are meant to distinguish excellent solutions from good solutions.
