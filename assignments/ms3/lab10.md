@@ -31,30 +31,20 @@ The code generator should include
 You need to submit your MiniJava project with a pull request against branch `assignment10` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-This project should contain a `README.md` with a short paragraph explaining the organisation of your Stratego files.
-
 The deadline for submission is December 6th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
 
-You can earn up to 10 points for your Jasmin program and up to 75 points for your code generator:
+You can earn up to 10 points for your Jasmin program and up to 90 points for your code generator:
 
 * transformation (50 points)
     * program (2 points)
     * main class (18 points)
     * main method (13 points)
     * print statement (17 points)
-* menu actions (10 points)
-    * Jasmin (5 points)
-    * Java class file (5 points)
-* challenges (15 points)
-    * target directories (4 points)
+* challenges (5 points)
     * automatic code generation (5 points)
-    * runner (6 points)
-
-You can earn up to 10 points for the quality of your code. We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
-We will consider the fact that Stratego is new to you.
 
 ### Early Feedback
 
@@ -63,6 +53,21 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 ## Detailed Instructions
 
 ### Preliminaries
+
+#### Updating Jasmin
+
+A new version of Jasmin is required for this lab. To update Jasmin in Eclipse:
+
+1. go to **Help -> Install New Software...**
+2. in the **Work with** field, enter `http://download.spoofax.org/update/jasmin`
+3. check **JasminXT**
+4. press **Next** twice
+5. agree to the license agreements and press **Finish** to download and install updates
+6. when a security warning pops up, press **OK** to dismiss the warning
+7. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
+
+If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
+{: .notice .notice-warning}
 
 #### GitHub Repository
 
@@ -73,20 +78,20 @@ See the [Git documentation](/documentation/git.html#template) on how to check ou
 
 The template provides you with a fresh MiniJava editor project, which covers the syntax and analysis of MiniJava.
 For grading purposes, you are required to use this project as a starting point for milestone 3.
-You should build the new project, following these steps:
+You should import and build the new project, following these steps:
 
-1. Import the project into your workspace:
+1. Import the projects into your workspace:
     1. right-click into the Package Explorer
     2. select **Import...** from the context menu
     3. choose **General/Existing Projects into Workspace** from the list
-    4. select the MiniJava project
+    4. select the MiniJava and Jasmin-examples project
     5. press the **Finish** button
 2. Build the project:
     1. select the project folder
     2. select **Build Project** from the **Project** menu
     3. the console will report success or failure
 
-This project contains the following implementations:
+The MiniJava project contains the following implementations:
 
 * MiniJava signatures in `reference/src-gen/signatures/MiniJava-sig`.
 * MiniJava pretty-printer in `reference/src-gen/pp/MiniJava-pp`
@@ -96,15 +101,19 @@ This project contains the following implementations:
 
 These implementations are already imported into the initial project.
 
+The Jasmin-examples project is an empty project where you can put your example Jasmin programs.
+
 ### Write Jasmin Code
 
 Consider the following simple MiniJava program:
 
-    class Main {
-        public static void main(String[] args) {
-            System.out.println(42);
-        }
+```
+class Main {
+    public static void main(String[] args) {
+        System.out.println(42);
     }
+}
+```
 
 Write a Jasmin program `simple.j`, which you expect to be the result of a MiniJava-to-Jasmin compiler.
 Generate a Java class file from it and run it.
@@ -189,15 +198,6 @@ Even though in MiniJava some keywords are reserved, Jasmin has its own keywords.
 
 Challenges are meant to distinguish excellent solutions from good solutions. Typically, they are less guided and require more investigation and programming skills.
 
-### Target Directories
-
-Real-world compilers like the JDT place generated code in designated directories, such as `bin/` or `src-gen/`. Implement a similar behaviour for your MiniJava compiler. Make sure you can handle classes with the same name from different programs and files with the same name from different directories.
-
-The following strategies deal with directories:
-
-* `<file-exists ; filemode ; isdir> path` succeeds if `path` is a path to an existing directory in the file system.
-* `<mkdir> path` creates a new directory.
-
 ### Automatic Code Generation
 
 Real-world compilers like the JDT generate code silently in the background. Implement a similar behaviour, using Spoofax's `on-save` builder. In your main Stratego file, change `editor-save` to run your compiler: `editor-save = where(analysis-save-default(|<language>)); generate-java-class-files`. `editor-save` has the same input interface as a builder, but the output should be `None()`. This means that you cannot return a `(filename, result)` tuple like a normal builder, but need to write to a file yourself.
@@ -208,7 +208,3 @@ Implement a strategy `write-file` that rewrites a pair of file name and file con
 * `<fputs> (content, filedescriptor)` writes to a file.
 * `<fclose> filedescriptor` closes a file.
 * `<refresh-workspace-file> filename` refreshes a file in the Eclipse workspace.
-
-### Run a MiniJava Program
-
-Add a builder that runs a MiniJava program by running the main method from the generated class file.
