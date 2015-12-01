@@ -34,7 +34,7 @@ We consider the following material to be useful for this milestone.
 
 1. Lecture on Virtual Machines
 
-    In [this lecture](lectures/techniques/virtual-machines), we discussed the architecture of the JVM, some Java bytecode instructions, and different approaches to code generation in Spoofax.
+    In [this lecture](/lectures/techniques/virtual-machines), we discussed the architecture of the JVM, some Java bytecode instructions, and different approaches to code generation in Spoofax.
 
 2. Java Virtual Machine Specification
 
