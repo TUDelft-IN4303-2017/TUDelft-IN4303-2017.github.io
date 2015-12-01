@@ -11,7 +11,7 @@ subcontext: introduction
 #    creditlink: http://repository.tudelft.nl/view/MMP/uuid%3Aa2f25709-c56e-453e-9394-4a05acf603a4/
 ---
 
-The course comes with three introductionary lectures.
+The course comes with three introductionary lectures about different kinds of languages.
 
 The very first lecture sets the scene for the course. It starts from a bigger, interdisciplinary picture and introduces fundamental concepts such as *language*, *software languages*, *language software*, *interpreters*, *compilers*, *language processors*, *compiler compilers*, and *language workbenches*.
 
