@@ -32,19 +32,19 @@ You can edit Jasmin files with a Spoofax editor. The editor's menu entries allow
 
 We consider the following material to be useful for this milestone.
 
-1. [Lecture on Virtual Machines](lectures/techniques/virtual-machines)
+1. Lecture on Virtual Machines
 
-    In this lecture, we discussed the architecture of the JVM, some Java bytecode instructions, and different approaches to code generation in Spoofax.
+    In [this lecture](lectures/techniques/virtual-machines), we discussed the architecture of the JVM, some Java bytecode instructions, and different approaches to code generation in Spoofax.
 
 2. Java Virtual Machine Specification
 
-Oracle provides an [online version][JVM] of the Java Virtual Machine Specification. Chapters 3, 4, and 6 are particular helpful for this milestone. Furthermore, you can find a comprehensive list of [Java bytecode instructions][] in the English Wikipedia.
+    Oracle provides an [online version][JVM] of the Java Virtual Machine Specification. Chapters 3, 4, and 6 are particular helpful for this milestone. Furthermore, you can find a comprehensive list of [Java bytecode instructions][] in the English Wikipedia.
 
 [JVM]: http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html (The Java Virtual Machine Specification, 2nd edition)
 [Java bytecode instructions]: http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings (List of Java bytecode instructions)
 
-### Stratego Standard Library
+3. Stratego Standard Library
 
-Many useful strategies from Stratego's standard library are documented in this [API Documentation][LibDoc].
+    Many useful strategies from Stratego's standard library are documented in this [API Documentation][LibDoc].
 
 [LibDoc]: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/ (Stratego Library API Documentation)
