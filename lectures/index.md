@@ -28,5 +28,12 @@ In the final topic, we take a closer look on the inside working of compiler comp
 * Wed 30 September, 17:45, EWI Chip: [Term Rewriting](specification/term-rewriting) 
 * Wed  7 October,   17:45, EWI Chip: [Dataflow Analysis](techniques/dataflow-analysis)
 * Wed 14 October,   17:45, EWI Chip: [Register Allocation](techniques/register-allocation)
-* Wed 21 October,   17:45, EWI Chip: [Virtual Machines](techniques/virtual-machines)
+* Wed 21 October,   17:45, EWI Chip: [Garbage Collection](techniques/garbage-collection)
+* Tue 10 November,  13:45, EWI Chip: [Virtual Machines](techniques/virtual-machines)
+* Tue 17 November,  13:45, CT-CZ C: [Domain-Specific Languages](introduction/domain-specific-languages)
+* Tue 24 November,  13:45, CT-CZ C: [Dynamic Semantics](specification/dynamic-semantics)
+* Tue  1 December,  13:45, CT-CZ C: [Lexical Analysis](generation/lexical-analysis)
+* Tue  8 December,  13:45, CT-CZ C: [LL Parsing](generation/ll-parsing)
+* Tue 15 December,  13:45, CT-CZ C: [LR Parsing](generation/lr-parsing)
+* Tue  5 January,   13:45, CT-CZ C: exam preparation
 
