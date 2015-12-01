@@ -18,3 +18,9 @@ subcontext: ms2
 # Testing Type Analysis
 
 # Type Analysis
+
+# Inheritance and Subtyping
+
+##### My Spoofax editor tells me "Strategy or rule 'relation-create-match' not defined"
+
+You should add `lib/runtime/relations/-` to the imports section of that file.
