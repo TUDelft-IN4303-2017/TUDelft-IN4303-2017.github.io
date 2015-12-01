@@ -194,17 +194,12 @@ To translate a Jasmin AST into a Java class file we use the strategy `jasmin-gen
 
 Even though in MiniJava some keywords are reserved, Jasmin has its own keywords. Some Jasmin implementations consider those as reserved, some do not. Typical examples are keywords such as `field` or `class`. In the Spoofax implementation, we do not reserve these, but other Jasmin implementations might do, particularly if they may not have the latest updates (Debian for example). See [StackOverflow](http://stackoverflow.com/questions/10371352/how-to-handle-field-named-as-keywords-in-jasmin) for more information about this.
 
-## Challenges
+## Challenge
 
-Challenges are meant to distinguish excellent solutions from good solutions. Typically, they are less guided and require more investigation and programming skills.
+Challenges are meant to distinguish excellent solutions from good solutions.
+Typically, they are less guided and require more investigation or higher programming skills.
+{: .notice .notice-success}
 
-### Automatic Code Generation
+The JVM provides different Java bytecode instructions to load integer constants, which differ in memory consumption both in the constant pool and in the actual bytecode. As explained in the lecture, generated code can be optimised after code generation. This keeps code generation and optimisation separated, and allows reuse of optimisations in different compiler backends.
 
-Real-world compilers like the JDT generate code silently in the background. Implement a similar behaviour, using Spoofax's `on-save` builder. In your main Stratego file, change `editor-save` to run your compiler: `editor-save = where(analysis-save-default(|<language>)); generate-java-class-files`. `editor-save` has the same input interface as a builder, but the output should be `None()`. This means that you cannot return a `(filename, result)` tuple like a normal builder, but need to write to a file yourself.
-
-Implement a strategy `write-file` that rewrites a pair of file name and file content to itself. As a side effect, this strategy should create (if necessary) and write a file. These strategies might be useful:
-
-* `<fopen> (filename, "w")` opens a file for writing and gives you a file descriptor of the open file.
-* `<fputs> (content, filedescriptor)` writes to a file.
-* `<fclose> filedescriptor` closes a file.
-* `<refresh-workspace-file> filename` refreshes a file in the Eclipse workspace.
+Implement an optimisation strategy `optimize-jbc`, which optimises a sequence of Java bytecode instructions by replacing instructions to load integer constants with more efficient variants. Integrate this strategy into your code generation by applying it in `class-to-jbc` to the sequence of generated Java bytecode instructions.
