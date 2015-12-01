@@ -36,15 +36,16 @@ The deadline for submission is December 6th, 23:59.
 
 ### Grading
 
-You can earn up to 10 points for your Jasmin program and up to 90 points for your code generator:
+You can earn up to 20 points for your Jasmin program and up to 70 points for your code generator:
 
 * transformation (50 points)
     * program (2 points)
     * main class (18 points)
     * main method (13 points)
     * print statement (17 points)
-* challenges (5 points)
-    * automatic code generation (5 points)
+* challenge (20 points)
+
+You can earn up to 10 points for the quality of your code. We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms. We pay special attention on the treatment of lists in your code. We will consider the fact that Stratego is new to you.
 
 ### Early Feedback
 
