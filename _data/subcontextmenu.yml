@@ -32,6 +32,11 @@
   context: lectures
   subcontext: specification
 
+- title: Dynamic Semantics
+  url: /lectures/specification/dynamic-semantics.html
+  context: lectures
+  subcontext: specification
+
 # Compiler Techniques
 
 - title: Dataflow Analysis
