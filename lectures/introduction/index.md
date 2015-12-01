@@ -17,4 +17,4 @@ The very first lecture sets the scene for the course. It starts from a bigger, i
 
 The second introduction lecture focuses on the core concepts of so called *imperative* and *object-oriented programming languages*. It introduces the core abstractions in such languages and pays special attention to the notion of types. You will learn about static and dynamic type checking, type equivalence, polymorphic type systems, inheritance, method overloading and overriding, and static and dynamic dispatch.
 
-The final introduction lecture focuses on domain-specific languages.
+The final introduction lecture focuses on *domain-specific languages*.
