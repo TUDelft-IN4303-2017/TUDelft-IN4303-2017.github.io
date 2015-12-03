@@ -109,7 +109,7 @@ The Jasmin-examples project is an empty project where you can put your example J
 Consider the following simple MiniJava program:
 
 ```
-class Main {
+class Simple {
     public static void main(String[] args) {
         System.out.println(42);
     }
