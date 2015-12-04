@@ -102,7 +102,7 @@ The MiniJava project contains the following implementations:
 
 These implementations are already imported into the initial project.
 
-The Jasmin-examples project is an empty project where you can put your example Jasmin programs.
+The Jasmin-examples project contains several Jasmin examples. You can try to run them using the builders from the JVM menu.
 
 ### Write Jasmin Code
 
@@ -126,7 +126,7 @@ Code generation should be a service of your MiniJava editor.
 The initial project contains several builders in the *Generate* menu.
 The *Generate Java bytecode* builder calls the `generate-jbc` strategy which is defined in `trans/codegen/build.str`.
 The implementation relies on a strategy `program-to-jbc`, which transforms MiniJava programs into Java bytecode.
-We provided an implemntation of `program-to-jbc` that always fails in `trans/codegen/classes.str`.
+We provide an implementation of `program-to-jbc` that always fails in `trans/codegen/classes.str`.
 
 You need to implement `program-to-jbc`.
 You will do this stepwise over the remaining labs.
