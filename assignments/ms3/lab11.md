@@ -30,9 +30,7 @@ In this lab, you extend your code generator to handle expressions, statements, m
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment11` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
-This project should contain a `README.md` with a short paragraph explaining the organisation of your Stratego files.
-When you solved challenges, you should provide another paragraph sketching your approach.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
 The deadline for submissions is December 13th, 23:59.
 {: .notice .notice-warning}
@@ -62,7 +60,7 @@ Furthermore, you can earn up to 65 points for your code generator:
     * reusable method descriptors (2 points)
     * stack limits (6 points)
 
-You can earn up to 5 points for the organisation of your Stratego files and up to 5 points for the quality of your code.
+You can earn up to 10 points for the quality of your code.
 We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
 We will consider the fact that Stratego is new to you.
 
