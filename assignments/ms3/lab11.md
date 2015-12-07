@@ -66,6 +66,10 @@ You can earn up to 5 points for the organisation of your Stratego files and up t
 We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
 We will consider the fact that Stratego is new to you.
 
+### Early Feedback
+
+This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+
 ## Detailed Instructions
 
 ### Git Repository
