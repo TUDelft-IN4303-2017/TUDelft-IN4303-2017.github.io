@@ -34,7 +34,8 @@ Your GitHub repository contains a step-by-step procedure how to file such a requ
 This project should contain a `README.md` with a short paragraph explaining the organisation of your Stratego files.
 When you solved challenges, you should provide another paragraph sketching your approach.
 
-The deadline for submissions is December 17th, 17:59.
+The deadline for submissions is December 13th, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
@@ -133,7 +134,6 @@ where
   fn  := $[[dir]/[cn].j];
   <fputs; fclose> (<jasmin-pp> f, <fopen> (fn, "w"));
   <refresh-workspace-file> fn
-
 ```
 
 2. Provide rules for `class-to-jbc`, which translate classes from MiniJava into Jasmin class files.
