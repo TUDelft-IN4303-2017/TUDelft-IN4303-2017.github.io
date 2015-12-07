@@ -68,6 +68,11 @@ We will consider the fact that Stratego is new to you.
 
 ## Detailed Instructions
 
+### Git Repository
+
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment11` branch from your previous work.
+
 ### Write More Jasmin Code
 
 Before you extend your code generator, you should come up with small example MiniJava programs, which cover the following constructs:
