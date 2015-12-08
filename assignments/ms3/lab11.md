@@ -283,3 +283,6 @@ The following strategies might be useful:
 * `addi` rewrites a pair of integer numbers to the sum of both numbers.
 * `foldr(s1, s2, f)` right-folds a list.
   `s1` yields the starting point of the folding, `s2` is the folding strategy, and `f` is applied to each element just before each folding step.
+
+For grading it is important that your strategy `stack-limit` does not take any parameters. You are free to use parameters in strategies that you call yourself.
+{: .notice .notice-info}
