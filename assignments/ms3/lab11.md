@@ -273,7 +273,7 @@ As a benefit, the rule for method calls becomes simpler:
 ### Precise Stack Limit Directives
 
 A stack limit directive tells the Java Virtual Machine the maximum number of elements at the operand stack.
-To give a precise limit, you need to write a strategy `stack-limit` that maps MiniJava expressions and statements to a stack limit 
+To give a precise limit, you need to write a strategy `stack-limit` that maps MiniJava expressions and statements to a stack limit.
 
 Do not do this analysis on the Java bytecode level.
 {: .notice .notice-danger}
