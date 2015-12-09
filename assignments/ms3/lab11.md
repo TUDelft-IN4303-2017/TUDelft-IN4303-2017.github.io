@@ -276,7 +276,7 @@ A stack limit directive tells the Java Virtual Machine the maximum number of ele
 To give a precise limit, you need to write a strategy `stack-limit` that maps MiniJava expressions and statements to a stack limit 
 
 Do not do this analysis on the Java bytecode level.
-{: .notice .notice-error}
+{: .notice .notice-danger}
 
 For expressions, you need to consider the number of elements already on the stack before the expression is evaluated. You can either pass this number as a term parameter or adapt intermediate results accordingly.
 For statements, you do not need this information since statements should not leave any elements on the stack.
