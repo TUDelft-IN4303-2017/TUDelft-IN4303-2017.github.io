@@ -37,9 +37,9 @@ The deadline for submissions is December 13th, 23:59.
 
 ### Grading
 
-You can earn up to 25 points for your example MiniJava programs and their corresponding Jasmin programs.
+You can earn up to 20 points for your example MiniJava programs and their corresponding Jasmin programs.
 We will focus on completeness and correctness of your examples.
-Furthermore, you can earn up to 65 points for your code generator:
+Furthermore, you can earn up to 70 points for your code generator:
 
 * transformation (55 points)
     * classes (8 points)
@@ -51,14 +51,14 @@ Furthermore, you can earn up to 65 points for your code generator:
     * expressions (27 points)
         * logic constants (1 point)
         * unary expressions (5 points)
-        * binary expressions, including array subscript (14 points)
+        * binary expressions  (14 points)
         * object and array creation (1 point)
         * `this` expressions (1 point)
         * method calls (5 points)
-* challenges (10 points)
+* challenges (15 points)
     * overlays (2 points)
-    * reusable method descriptors (2 points)
-    * stack limits (6 points)
+    * reusable method descriptors (3 points)
+    * stack limits (10 points)
 
 You can earn up to 10 points for the quality of your code.
 We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
@@ -151,8 +151,9 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation and programming skills.
+{: .notice .notice-success}
 
-### Use Overlays
+### Overlays
 
 Code generation rules become hard to read, when you construct large ASTs.
 Often, these rules inject only small parts into a skeleton AST.
@@ -205,7 +206,7 @@ You can use overlays like terms in your rules, both for matching and building:
        Class(c, e, fs, ms) -> JBCFile(header, jbc-fs, [ DEFAULT-CONSTRUCTOR(c, p) | jbc-ms ])
        where ...
 
-You should identify AST patterns in your code generation rules and come up with overlays to improve the readability of these rules.
+Identify AST patterns in your code generation rules and come up with overlays to improve the readability of these rules.
 
 ### Reusable Method Descriptors
 
@@ -226,7 +227,7 @@ First, you need to declare a property `descriptor` for namespace `Method` in a N
 
       descriptor of Method: MethodDescriptor
 
-Next, you need to store the property at a method declaration by defining a rewrite rule for `nabl-prop-site`:
+Next, you need to store the property at a method declaration by defining a Stratego rewrite rule for `nabl-prop-site`:
 
     nabl-prop-site(|lang, ctx, uris, states, implicits):
       Method(ty, mname, param*, var*, stmt*, exp) -> <fail>
@@ -272,7 +273,11 @@ As a benefit, the rule for method calls becomes simpler:
 ### Precise Stack Limit Directives
 
 A stack limit directive tells the Java Virtual Machine the maximum number of elements at the operand stack.
-To give a precise limit, you need to write a strategy `stack-limit` that maps MiniJava expressions and statements to a stack limit ( **IMPORTANT**: Do not do this analysis on the Java bytecode level).
+To give a precise limit, you need to write a strategy `stack-limit` that maps MiniJava expressions and statements to a stack limit 
+
+Do not do this analysis on the Java bytecode level.
+{: .notice .notice-error}
+
 For expressions, you need to consider the number of elements already on the stack before the expression is evaluated. You can either pass this number as a term parameter or adapt intermediate results accordingly.
 For statements, you do not need this information since statements should not leave any elements on the stack.
 
