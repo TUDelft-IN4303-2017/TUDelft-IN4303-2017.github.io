@@ -30,13 +30,15 @@ We consider the following material to be useful for this milestone.
 
 2. Java Virtual Machine Specification
 
-    Oracle provides an [online version][JVM] of the Java Virtual Machine Specification. Chapters 3, 4, and 6 are particular helpful for this milestone. Furthermore, you can find a comprehensive list of [Java bytecode instructions][] in the English Wikipedia.
+    Oracle provides an [online version][JVM] of the Java Virtual Machine Specification.
+    Chapters 3 and 6 are particularly helpful for this milestone.
+    Furthermore, you can find a comprehensive list of [Java Bytecode instructions][JBCInstructions] in the English Wikipedia.
 
-[JVM]: http://java.sun.com/docs/books/jvms/second_edition/html/VMSpecTOC.doc.html (The Java Virtual Machine Specification, 2nd edition)
-[Java bytecode instructions]: http://en.wikipedia.org/wiki/Java_bytecode_instruction_listings (List of Java bytecode instructions)
+[JVM]: http://docs.oracle.com/javase/specs/jvms/se8/html/
+[JBCInstructions]: https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
 
-3. Stratego Standard Library
+3. Stratego documentation
 
-    Many useful strategies from Stratego's standard library are documented in this [API Documentation][LibDoc].
-
-[LibDoc]: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/ (Stratego Library API Documentation)
+    The Stratego language is described in the [Stratego language manual](http://hydra.nixos.org/job/strategoxt-docs/strategoxt-manual/html/latest/download/1/manual/chunk-chapter/stratego-language.html).
+    Useful strategies in the Stratego standard library are described with examples in [Stratego library manual](http://hydra.nixos.org/job/strategoxt-docs/strategoxt-manual/html/latest/download/1/manual/chunk-chapter/stratego-library.html).
+    A complete listing of all strategies in the Stratego standard library can be found in the [API documentation](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
