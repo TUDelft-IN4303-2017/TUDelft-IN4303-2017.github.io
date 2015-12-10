@@ -197,7 +197,7 @@ Even though in MiniJava some keywords are reserved, Jasmin has its own keywords.
 
 ### Debugging stratego code
 
-Stratego is hard to debug, so here are some tips to make it easier.
+Stratego is hard to debug, so here are some tips. Using `debug` is not part of the assignment, but it will make your life easier.
 
 #### The `debug` strategy
 
@@ -213,6 +213,8 @@ The `debug` strategy prints the current term. There is also an overloaded versio
         ; index-setup(|<language>, project-path)
         ; task-setup(|project-path)
         ; <program-to-jbc(|path); debug(!"program-to-jbc: "); map(write-jbc(|dir))> ast
+
+The runtime library provides several shorthand functions. The strategy `ppdebug0` produces more readable output by prettyprinting the current term before calling `debug(!"0")`. Moreover, the strategy `ppdebugna0` calls `ppdebug0` but strips the annotations first.
 
 ## Challenge
 
