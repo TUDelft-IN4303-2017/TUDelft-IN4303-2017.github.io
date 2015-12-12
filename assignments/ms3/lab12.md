@@ -57,7 +57,16 @@ We will consider the fact that Stratego is new to you.
 In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
 
+### Early Feedback
+
+This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+
 ## Detailed Instructions
+
+### Git Repository
+
+You continue with your work from the previous assignment.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment12` branch from your previous work.
 
 ### Write Even More Jasmin Code
 
