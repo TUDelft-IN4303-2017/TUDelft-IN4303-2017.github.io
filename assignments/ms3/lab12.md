@@ -28,11 +28,10 @@ In this lab, you complete your code generator to handle arbitrary MiniJava progr
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment12` on GitHub.
-Your GitHub repository contains a step-by-step procedure how to file such a request.
-This project should contain a `README.md` with a short paragraph explaining the organisation of your MiniJava examples, the corresponding Jasmin files, and your Stratego files.
-When you solved challenges, you should provide another paragraph sketching your approach.
+The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is January 7, 17:59.
+The deadline for submissions is December 20th, 23:59.
+{: .notice .notice-warning}
 
 ### Grading
 
@@ -51,7 +50,7 @@ Furthermore, you can earn up to 65 points for your code generator:
     * reusable variable accessors (2 points)
     * debug information (6 points)
 
-You can earn up to 5 points for the organisation of your Stratego files and up to 5 points for the quality of your code.
+You can earn up to 10 points for the quality of your code.
 We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
 We will consider the fact that Stratego is new to you.
 
@@ -59,15 +58,6 @@ In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
 
 ## Detailed Instructions
-
-### JasminXT Update
-
-This lab requires you to update JasminXT to the latest version.
-
-1. Choose *Check for Updates* from the *Help* menu.
-2. Wait for updates to be found.
-3. Install the updates to JasminXT.
-4. Restart Eclipse
 
 ### Write Even More Jasmin Code
 
