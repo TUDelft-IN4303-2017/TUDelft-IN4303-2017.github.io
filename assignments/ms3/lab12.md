@@ -57,6 +57,9 @@ We will consider the fact that Stratego is new to you.
 In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
 
+To make automated grading possible, you should make sure the _Run main class_ builder from the _Generate_ menu works! If this does not work, check if you are using `JBCSource` (see lab 10).
+{: .notice .notice-danger}
+
 ### Early Feedback
 
 This assignment is graded manually. Thus, we do not provide early feedback for this submission.
