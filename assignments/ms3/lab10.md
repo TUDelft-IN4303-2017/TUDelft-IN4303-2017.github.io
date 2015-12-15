@@ -214,7 +214,7 @@ The `debug` strategy prints the current term. There is also an overloaded versio
         ; task-setup(|project-path)
         ; <program-to-jbc(|path); debug(!"program-to-jbc: "); map(write-jbc(|dir))> ast
 
-The runtime library provides several shorthand functions. The strategy `ppdebug0` produces more readable output by prettyprinting the current term before calling `debug(!"0")`. Moreover, the strategy `ppdebugna0` calls `ppdebug0` but strips the annotations first.
+The runtime library `lib/runtime/nabl/utils.str` contains several shorthand functions. The strategy `ppdebug0` produces more readable output by prettyprinting the current term before calling `debug(!"0")`. Moreover, the strategy `ppdebugna0` calls `ppdebug0` but strips the annotations first.
 
 ## Challenge
 
