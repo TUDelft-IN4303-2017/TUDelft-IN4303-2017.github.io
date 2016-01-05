@@ -15,7 +15,7 @@ subcontext: introduction
 
 ### Sungpack Hong et al.: *Green-Marl: A DSL for Easy and Efficient Graph Analysis*
 
-<object data=https://ppl.stanford.edu/papers/asplos12_hong_slides.pdf" type="application/pdf" width="595" height="485">
+<object data="https://ppl.stanford.edu/papers/asplos12_hong_slides.pdf" type="application/pdf" width="595" height="485">
   alt : <a href="https://ppl.stanford.edu/papers/asplos12_hong_slides.pdf">Green-Marl: A DSL for Easy and Efficient Graph Analysis</a>
 </object>
 
