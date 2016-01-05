@@ -23,8 +23,5 @@ You will learn about inheritance, method overloading and overriding, and static 
 
 ## Slides
 
-<object data="http://www.voelter.de/data/presentations/RobDSL2015.pdf" type="application/pdf" width="595" height="485">
-  alt : <a href="http://www.voelter.de/data/presentations/RobDSL2015.pdf">Language Workbenches and DSLs for Embeeded Software</a>
-</object>
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/bqsfcnoLxUs9IE" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
