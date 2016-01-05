@@ -13,6 +13,12 @@ subcontext: introduction
 
 ## Slides
 
+### Sungpack Hong et al.: *Green-Marl: A DSL for Easy and Efficient Graph Analysis*
+
+<object data=https://ppl.stanford.edu/papers/asplos12_hong_slides.pdf" type="application/pdf" width="595" height="485">
+  alt : <a href="https://ppl.stanford.edu/papers/asplos12_hong_slides.pdf">Green-Marl: A DSL for Easy and Efficient Graph Analysis</a>
+</object>
+
 ### Markus Voelter: *Language Workbenches and DSLs for Embeeded Software*
 
 <object data="http://www.voelter.de/data/presentations/RobDSL2015.pdf" type="application/pdf" width="595" height="485">
