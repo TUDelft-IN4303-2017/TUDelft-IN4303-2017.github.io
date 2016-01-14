@@ -28,6 +28,10 @@ Finally, we introduce traditional *compiler compilers* and modern *language work
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/9hKNDjA8DRopOX" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 
+## Reader
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/mGYcjfruU8RSJg" width="668" height="714" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
+
 ## Further Reading
 
 1.  Edward Sapir (1921). Introductory: Language Defined. In [Language. An Introduction to the Study of Speech](http://www.gutenberg.org/files/12629/12629-h/12629-h.htm).
