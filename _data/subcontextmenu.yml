@@ -72,12 +72,12 @@
   subcontext: generation
 
 - title: LL Parsing
-  url: /lectures/generation/LL-parsing.html
+  url: /lectures/generation/ll-parsing.html
   context: lectures
   subcontext: generation
 
 - title: LR Parsing
-  url: /lectures/generation/LR-parsing.html
+  url: /lectures/generation/lr-parsing.html
   context: lectures
   subcontext: generation
 
