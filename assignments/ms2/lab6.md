@@ -66,13 +66,13 @@ The total number of points depends on how many test cases you pass in each of th
   * method declarations (2 point)
   * variable and field declarations (6 points)
   * variable and field references (6 points)
-* scopes (15 points)
+* scopes (10 points)
 * constraints (35 points)
   * duplicate definitions (10 points)
   * unresolved references (10 points)
   * hiding variables (5 points)
   * main class references (10 points)
-* challenge (10 points)
+* challenge (5 points)
 
 You can earn up to 20 points for your messages in errors and warnings.
 We particular focus on
