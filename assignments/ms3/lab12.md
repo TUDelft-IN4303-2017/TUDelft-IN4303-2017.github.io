@@ -71,23 +71,6 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 You continue with your work from the previous assignment.
 See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment12` branch from your previous work.
 
-### Post-analysis desugaring
-
-<!-- This should not be needed in 2016 -->
-During code transformation, field reference should be handled differently from variable reference. Your project contains a post-analysis desugaring that will replace `VarRef(x)` terms which refer to fields and not to variables with a term `FieldRef(x)`. However, to apply this desugaring you need to make a small change in `trans/minijava.str`:
-
-      analysis-single-default-interface =
-        analysis-single-default(desugar-all, id, id|<language>)
-      analysis-multiple-default-interface =
-        analysis-multiple-default(parse-file <+ !(), desugar-all, id, id|<language>, <project-path>)
-
-becomes:
-
-      analysis-single-default-interface =
-        analysis-single-default(desugar-all, desugar-all-after, id|<language>)
-      analysis-multiple-default-interface =
-        analysis-multiple-default(parse-file <+ !(), desugar-all, desugar-all-after, id|<language>, <project-path>)
-
 ### Write Even More Jasmin Code
 
 Before you complete your code generator, you should come up with small example MiniJava programs, which cover the following constructs:
