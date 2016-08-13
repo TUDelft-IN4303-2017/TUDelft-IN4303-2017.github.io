@@ -122,7 +122,7 @@ While you change a MiniJava program in the editor, its corresponding AST is upda
 You might notice that the editor will give you an AST even for syntactically incorrect programs.
 This is because Spoofax editors support syntactic error recovery.
 
-![Menu entry to inspect the abstract syntax of a program fragment.](http://strategoxt.org/pub/Spoofax/Features/show-abstract-syntax.png  "Menu entry to inspect the abstract syntax of a program fragment.")
+![Menu entry to inspect the abstract syntax of a program fragment.]({{ site.url }}/assets/show-abstract-syntax.png)
 
 ### Syntax Definition
 
