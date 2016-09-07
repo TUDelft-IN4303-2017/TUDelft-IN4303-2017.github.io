@@ -15,10 +15,9 @@ You will receive an email with
 * some tasks for you to prepare the appointment,
 * the date of our appointment, which you are asked to confirm.
 
-## Walk-in Hours 2015/16
+## Walk-in Hours 2016-2017
 
-In the first quarter, we offer walk-in hours on Wednesday mornings.
-In the second quarter, we offer walk-in hours on Friday mornings.
+We offer walk-in hours on Wednesday mornings.
 
 ## Team Members
 
