@@ -1,20 +1,20 @@
 # Authors
 
-- name: Guido Wachsmuth
-  position: responsible instructor
-  office: HB 08.030
-  hours: Wed 10:15-11:45
-  email: G.H.Wachsmuth@tudelft.nl
-  avatar: http://icto.tudelft.nl/fileadmin/Files/medewerkersportal/icto/ICTO/Grassroots/wachsmuth.png
-  twitter: guwac
-  
 - name: Eelco Visser
-  position: instructor
+  position: responsible instructor
   office: HB 08.270
+  hours: Wed 10:15-11:45
   email: E.Visser@tudelft.nl
   avatar: http://farm3.staticflickr.com/2818/9163072497_bd288b7ed7_m.jpg
   twitter: eelcovisser
-
+  
+- name: Hendrik van Antwerpen
+  position: graduate teaching assistant
+  office: HB 08.280
+  hours: Wed 10:15-11:45
+  email: E.A.Hendriks@tudelft.nl
+  avatar: bio-photo.jpg
+  
 - name: Eduardo de Souza Amorim
   position: graduate teaching assistant
   office: HB 08.280
@@ -32,4 +32,6 @@
 - name: Martijn Dwars
   position: student teaching assistant
   avatar: bio-photo.jpg
+  
+
   
