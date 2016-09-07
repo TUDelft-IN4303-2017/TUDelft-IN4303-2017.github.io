@@ -36,7 +36,7 @@ We assign a private GitHub repository to each student and encourage students to 
 To submit your assignment, you need to file a pull request.
 There are two kinds of submissions.
 
-To check your progress on an assignment, you can submit a *prelimanary solution*.
+To check your progress on an assignment, you can submit a *preliminary solution*.
 We will provide limited early feedback on preliminary solutions.
 This feedback typically comes with a tentative grade and points out areas where your solution is incomplete or insufficient, without giving any details on the reasons.
 We do not give any feedback on the day of a deadline, since this will not be early at all.
