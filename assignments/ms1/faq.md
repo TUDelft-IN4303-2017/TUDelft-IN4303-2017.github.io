@@ -94,7 +94,7 @@ Fixing these issues should make running your tests way faster.
 This is also very likely caused by erroneous rules for `LAYOUT`.
 
 1. Close Eclipse.
-2. Delete all files in the `include` folder in your MiniJava project.
+2. Delete all files in the `target` and `src-gen` folders in your MiniJava project.
 3. Fix the erroneous rules.
 4. Build your project.
 
