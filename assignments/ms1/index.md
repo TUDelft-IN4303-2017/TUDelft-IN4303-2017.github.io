@@ -37,9 +37,6 @@ You can download an Eclipse installation with the Spoofax Eclipse plugin preinst
 
 To get started with the absolute basics of Spoofax, follow our [Getting Started guide](http://spoofax.org/en/latest/source/langdev/start.html), but skip the downloading step (start at the unpacking step) and use the file you downloaded from one of the above links.
 
-Please note that the links above point to a special version of Spoofax, specifically prepared for this lab.
-Do **not** use a regular version of Spoofax.
-
 ## Resources
 
 You can find the *MiniJava Language Reference Manual* in the appendix of the book *Modern Compiler Implementation in Java* (2nd edition).
