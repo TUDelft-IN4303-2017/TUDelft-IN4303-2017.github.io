@@ -55,21 +55,6 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 
 ### Preliminaries
 
-#### Updating Jasmin
-
-A new version of Jasmin is required for this lab. To update Jasmin in Eclipse:
-
-1. go to **Help -> Install New Software...**
-2. in the **Work with** field, enter `http://download.spoofax.org/update/jasmin`
-3. check **JasminXT**
-4. press **Next** twice
-5. agree to the license agreements and press **Finish** to download and install updates
-6. when a security warning pops up, press **OK** to dismiss the warning
-7. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
-
-If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
-{: .notice .notice-warning}
-
 #### GitHub Repository
 
 We provide you with a template for this assignment in the `assignment10` branch.
@@ -84,7 +69,7 @@ You should import and build the new project, following these steps:
 1. Import the projects into your workspace:
     1. right-click into the Package Explorer
     2. select **Import...** from the context menu
-    3. choose **General/Existing Projects into Workspace** from the list
+    3. choose **Maven/Existing Maven Projects** from the list
     4. select the MiniJava and Jasmin-examples project
     5. press the **Finish** button
 2. Build the project:
@@ -94,10 +79,11 @@ You should import and build the new project, following these steps:
 
 The MiniJava project contains the following implementations:
 
-* MiniJava signatures in `reference/src-gen/signatures/MiniJava-sig`.
-* MiniJava pretty-printer in `reference/src-gen/pp/MiniJava-pp`
-* MiniJava syntactic completions in `reference/src-gen/completions/MiniJava-esv`.
+* MiniJava signatures in `reference/src-gen/signatures/minijava-sig`.
+* MiniJava pretty-printer in `reference/src-gen/pp/minijava-pp`
+* MiniJava syntactic completions in `reference/src-gen/completions/minijava-esv`.
 * MiniJava desugaring signatures in `reference/desugar-signatures`.
+<!-- TODO: These are no longer in the initial project, since Jasmin is in Eclipse. But students need the signatures, right? -->
 * JasminXT signatures in `reference/src-gen/jasmin-signatures/JasminXT*-sig`
 
 These implementations are already imported into the initial project.

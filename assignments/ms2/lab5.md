@@ -69,21 +69,6 @@ You have 3 early feedback attempts.
 
 ### Preliminaries
 
-#### Updating Spoofax
-
-A new version of Spoofax is required for this lab. To update Spoofax in Eclipse:
-
-1. go to **Help -> Install New Software...**
-2. in the **Work with** field, enter `http://download.spoofax.org/update/in4303`
-3. check **Spoofax Core** only
-4. press **Next** twice
-5. agree to the license agreements and press **Finish** to download and install updates
-6. when a security warning pops up, press **OK** to dismiss the warning
-7. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
-
-If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
-{: .notice .notice-warning}
-
 #### GitHub Repository
 
 We provide you with a template for this assignment in the `assignment5` branch.
@@ -113,7 +98,7 @@ You need to import these into your Eclipse workspace, following these steps:
 4. select the project to import
 5. press the **Finish** button
 
-You should use `MiniJava-tests-names` for this lab.
+You should use `minijava.test.name` for this lab.
 
 ### Testing Reference Resolution
 
@@ -127,7 +112,7 @@ For example, the following two test cases require to resolve the type `Foo` to t
 ```
 module resolution
 
-language MiniJava
+language minijava
 start symbol Program
 
 test forward class name resolution [[
@@ -159,7 +144,7 @@ test backward class name resolution [[
 ]] resolve #2 to #1
 ```
 
-You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
+You can use _fixtures_ to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/spt.html#test-fixtures) for details.
 
 You should come up with test cases for the resolution of class names, field names, parameter names, and variable names.
 Start with simple test cases, but keep in mind that coverage is the main criterion for your grade.
@@ -170,7 +155,7 @@ It is important to think about
 Make sure that there are no errors in tests with a `resolve x to y` clause, these tests are invalid when there are errors.
 {: .notice .notice-warning}
 
-Do not use start symbols other than Program.
+Do not use start symbols other than `Program`.
 {: .notice .notice-warning}
 
 ### Testing Error Checking
@@ -184,7 +169,7 @@ For example, the following test cases specify a correct MiniJava program,
 ```
 module resolution
 
-language MiniJava
+language minijava
 start symbol Program
 
 test correct program [[
@@ -223,7 +208,7 @@ test error on unknown class [[
   class Foo {
     Bar x;
   }
-]] 1 error
+]] 1 errors
 ```
 
 You can start with test cases for duplicate and missing definitions.

@@ -55,8 +55,7 @@ The deadline for submission is September 24th, 23:59.
 
 ### Grading
 
-You can earn up to 5 points for the organisation of your syntax definition. We take its structure, module names, and your explanation into account.
-You can earn up to 75 points for your concrete syntax definition.
+You can earn up to 100 points for your concrete syntax definition.
 Therefor, we run 333 test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
@@ -81,14 +80,6 @@ The total number of points depends on how many test cases you pass in each of th
   * associativity (10 points)
   * precedence (20 points)
 
-You can earn up to 20 points for your abstract syntax definition.
-Therefor, we run a few test cases against your implementation and generate an abstract syntax tree for the example program `MiniJava-examples/program1.mjv`.
-We inspect your syntax definition and the generated AST manually.
-We particular focus on
- meaningful constructor names,
- distinctness of different constructs,
- and the representation of formal and actual parameter lists.
-
 ### Early Feedback
 
 We provide early feedback for the correctness of your syntax definition.
@@ -105,20 +96,6 @@ You have 3 early feedback attempts.
 You continue with your work from the previous assignment.
 See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment2` branch from your previous work.
 
-We have made some changes in the template for this assignment, you need to merge the changes from `upstream/assignment2`.
-See [Pulling in changes from upstream](/documentation/git.html#pulling-in-changes-from-upstream) on how to do this. Merging these changes provides you with an example program at `MiniJava-examples/program1.mjv`.
-
-#### Committing Derived Artifacts
-
-While you typically do not commit derived artifacts, we require some of these artifacts for grading.
-Thus, you should commit derived artifacts from the `include` directory of the `MiniJava` project.
-Please check whether the derived artifacts are there when pushing your changes and submitting your pull request.
-
-The Git plugin of Eclipse will ignore the derived artifacts by adding the include directory to the .gitignore file.
-You must disable this behavior in the Eclipse preferences. Go to *Team -> Git -> Projects* in the Eclipse preferences and disable "Automatically ignore derived resources by adding them to .gitignore".
-Check the MiniJava/.gitignore file and remove the /include/ entry, if it is there. Eclipse hides files starting with ., so you need to open the .gitignore file some other way.
-{: .notice .notice-warning}
-
 ### Agile Software Language Engineering
 
 Spoofax supports short development cycles.
@@ -134,36 +111,36 @@ When you have many tests, Spoofax might not be able to handle them. If you exper
 
 You can also test the generated editor in the same Eclipse instance.
 This requires you to specify the start symbol that is used by the editor
-  in the main editor description `editor/MiniJava.main.esv`.
+  in `editor/Syntax.esv`.
 Of course, this should also be a start symbol in your syntax definition.
 You can test the editor by first building your project and opening a MiniJava program.  
-In Eclipse, you build a project by choosing *Build Project* from the *Project* menu or by pressing the corresponding keyboard shortcut.
+In Eclipse, you build a project by choosing *Build Project* from the *Project* menu or by pressing the corresponding keyboard shortcut (OS X: Cmd + Alt + B, Enter).
 When you later rebuild your project, any open MiniJava editor is updated to the new version you just built.
 
-You can also use *Show AST* in the editor's *Transform* menu to test your abstract syntax definition interactively.
+You can also use *Show parsed AST* in the editor's *Spoofax* -> *Syntax* menu to test your abstract syntax definition interactively.
 While you change a MiniJava program in the editor, its corresponding AST is updated automatically.
 You might notice that the editor will give you an AST even for syntactically incorrect programs.
 This is because Spoofax editors support syntactic error recovery.
 
-![Menu entry to inspect the abstract syntax of a program fragment.](http://strategoxt.org/pub/Spoofax/Features/show-abstract-syntax.png  "Menu entry to inspect the abstract syntax of a program fragment.")
+![Menu entry to inspect the abstract syntax of a program fragment.]({{ site.url }}/assets/show-abstract-syntax.png)
 
 ### Syntax Definition
 
-You should define your syntax in [SDF3](http://metaborg.org/sdf3/).
-You can start by opening the file `syntax/MiniJava.sdf3` in your MiniJava project.
-When you save this file, you should get a corresponding file `src-gen/syntax/MiniJava.sdf`.
-You can also split your syntax definition over several modules in `syntax/` and import modules into module `MiniJava`.
+You should define your syntax in [SDF3](http://metaborg.org/en/latest/source/langdev/meta/lang/sdf3.html).
+You can start by opening the file `syntax/minijava.sdf3` in your minijava project.
+When you save this file, you should get a corresponding file `src-gen/syntax/minijava.sdf`.
+You can also split your syntax definition over several modules in `syntax/` and import modules into module `minijava`.
 
 
 ```
-module MiniJava
+module minijava
 
 imports
 
-  Common
+  common
 ```
 
-The module already imports a module `Common`, which you can find in any initial Spoofax editor project.
+The module already imports a module `common`, which you can find in any initial Spoofax editor project.
 This module provides syntax definitions for common lexical sorts such as identifiers, integers, strings, and whitespace, including single line and block comments.
 
 #### Context-free Syntax
@@ -216,8 +193,8 @@ context-free priorities
 #### Lexical Syntax
 
 Continue with the lexical syntax definition including identifiers, integer, and simple layout.
-The `Common` module in `syntax/Common.sdf3` provides already definitions, but these do not comply with MiniJava.
-You can either fix these definitions in `Common`, or define and import your own module and use `Common` only for inspiration.
+The `common` module in `syntax/common.sdf3` provides already definitions, but these do not comply with MiniJava.
+You can either fix these definitions in `common`, or define and import your own module and use `common` only for inspiration.
 
 First, define lexical syntax rules:
 
@@ -248,14 +225,6 @@ Finally, use rejection rules to rule out reserved words.
 lexical syntax
 
   ID = ... {reject}
-```
-
-In your tests, you declare `ID` and `INT` as start symbols for those tests. To get those tests running, you also need to define those as start symbols in your grammar:
-
-```
-context-free start-symbols
-
-  ID INT
 ```
 
 You now can run your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience long running times for your tests, this is most likely caused by an erroneous definition of `LAYOUT`.

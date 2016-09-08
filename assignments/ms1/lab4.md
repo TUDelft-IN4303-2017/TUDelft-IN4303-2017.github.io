@@ -9,7 +9,7 @@ subcontext: ms1
 
 {% include _toc.html %}
 
-This lab is your first encounter with [Stratego](http://metaborg.org/stratego/).
+This lab is your first encounter with [Stratego](http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html).
 You add an outline view and a desugaring transformation to an initial editor provided by us.
 
 ## Overview
@@ -75,10 +75,11 @@ We provide you with an initial MiniJava project in the branch `assignment4`.
 This project is a common starting point for all of you.
 It includes:
 
-* a parse table `reference/Minimal.tbl` which passes all syntax tests,
-* a corresponding signature `reference/src-gen/signatures/MiniJava-sig.str`,
-* a pretty-printing definition `reference/src-gen/pp/MiniJava-pp.str`, and a
-* a content-completion definition `reference/src-gen/completions/MiniJava-esv.esv` (errors in the completion files can be ignored).
+* a parse table `reference/sdf.tbl` which passes all syntax tests,
+* a corresponding signature `reference/src-gen/signatures/minijava-sig.str`,
+* a pretty-printing definition `reference/src-gen/pp/minijava-pp.str`, and a
+* a content-completion definition `reference/src-gen/completion/minijava-cp.str` (errors in the completion files can be ignored).
+<!-- TODO: These are currently not included! -->
 * stratego rules `reference/src-gen/check/MiniJava-chk` to check whether an AST in MiniJava is valid.
 
 #### Signature
@@ -86,7 +87,7 @@ It includes:
 Signatures declare sorts and constructors for terms.
 In Spoofax, terms are used to represent abstract syntax trees.
 The corresponding signature is generated from the constructors in a syntax definition.
-You can find a signature for MiniJava in `reference/src-gen/signatures/MiniJava-sig.str`.
+You can find a signature for MiniJava in `reference/src-gen/signatures/minijava-sig.str`.
 It was generated from a syntax definition, which itself is not included in the initial project.
 If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/`.
 
@@ -94,7 +95,7 @@ If you write your own syntax definition, the generated signatures can be found i
 
 #### Rewrite Rules
 
-An outline view can be specified by rewrite rules `to-outline-label` in `editor/MiniJava-Outliner`.
+An outline view can be specified by rewrite rules `to-outline-label` in `trans/outline.str`.
 These rules should rewrite AST nodes to their label in an outline view.
 For example, the following rule rewrites a variable declaration to its name, which will be used as a label.
 
@@ -134,13 +135,13 @@ The following rule achieves this:
 to-outline-label:
   Var(t, v) -> label
   where
-    t'    := <pp-partial-MiniJava> t
+    t'    := <pp-partial-minijava-string> t
   ; label := <concat-strings> [v, ": ", t']
 ```
 
 On its right-hand side, it produces a `label`, which is bound in the `where` clause.
-First, the term bound to `t` is turned into a string bound to `t'` by applying a strategy `pp-partial-MiniJava`.
-This strategy is defined in `MiniJava/trans/pp.str` and uses the pretty-printing rules generated from our SDF3 grammar for MiniJava.
+First, the term bound to `t` is turned into a string bound to `t'` by applying a strategy `pp-partial-minijava-string`.
+This strategy is defined in `minijava/trans/pp.str` and uses the pretty-printing rules generated from our SDF3 grammar for MiniJava.
 
 Next, the label is bound to the concatenation of
 the string bound to `v`,
@@ -154,7 +155,7 @@ Instead, you can also use string interpolation:
 to-outline-label:
   Var(t, v) -> $[[v]: [t']]
   where
-    t' := <pp-partial-MiniJava> t
+    t' := <pp-partial-minijava-string> t
 ```
 
 String interpolation allows you to combine text with variables.
@@ -200,7 +201,7 @@ You can specify the icon to use in an annotation:
 to-outline-label:
   Var(t, v) -> label{icon}
   where
-    t'    := <pp-partial-MiniJava> t
+    t'    := <pp-partial-minijava-string> t
   ; label := $[[v]: [t']]
   ; icon  := "icons/var.gif"
 ```
@@ -216,6 +217,7 @@ Typically, they are less guided and require more investigation or higher program
 {: .notice .notice-success}
 
 1. Provide the file name as the root node label.
+<!-- TODO: This is moved -->
 See `lib/runtime/editor/origins/` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
@@ -225,6 +227,7 @@ You need to change this strategy in the `minijava.str` file:
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
     ```
 
+    <!-- TODO: This is moved -->
     Visit `lib/runtime/editor/outline-library` for inspiration.
 
 3. Use one of the library strategies for folding to implement `pp-params`. You can find various folding strategies in the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
@@ -296,7 +299,7 @@ Both variables are bound in the `where` clause.
 The file name is derived from the path of the current file,
 while the content of the file is a desugared version of the selected AST node.
 You also need to hook your strategy into the editor, making desugaring available in the *Syntax* menu.
-You can do this in `editor/MiniJava-Menus.esv`:
+You can do this in `editor/Syntax.esv`:
 
 ```
 action : "Show desugared syntax" = editor-desugar (realtime) (meta) (source)
@@ -355,6 +358,7 @@ For the submission, you need to provide an explanation (1 paragraph) of
 2. why this choice is suitable for this project, and
 3. why other choices would be less suitable.
 
+<!-- TODO: This is outdated -->
 #### Editor Integration Revisited
 
 With a builder, you can invoke a transformation manually from any of the menus.
