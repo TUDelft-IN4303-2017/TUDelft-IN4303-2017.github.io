@@ -89,7 +89,7 @@ See the [Git documentation](/documentation/git.html#template) on how to check ou
 The template contains 3 Maven projects:
 
 * `minijava`: the initial Spoofax project for MiniJava,
-* `minijava.examples`: an empty project for your example MiniJava programs,
+* `minijava.example`: an empty project for your example MiniJava programs,
 * `minijava.test.syntax`: an empty project for your MiniJava syntax tests.
 
 #### Importing projects into Eclipse
