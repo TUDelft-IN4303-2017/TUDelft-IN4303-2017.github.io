@@ -50,7 +50,7 @@ As part of your submission, we ask you to provide a short explanation of the org
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 Finally, to help the manual grading progress, we ask you to paste the content of `MiniJava/include/MiniJava.str` into WebLab.
 
-The deadline for submission is September 24th, 23:59.
+The deadline for submission is September 27th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -71,7 +71,7 @@ The total number of points depends on how many test cases you pass in each of th
   * `Program` (1 point)
   * `MainClass` (2 points)
   * `ClassDecl` (2 points)
-  * `VarDecl` (2 points)
+  * `VarDecl`, `ParamDecl` and `FieldDecl` (2 points)
   * `Type` (2 points)
   * `MethodDecl` (5 points)
   * `Statement` (6 points)
@@ -122,7 +122,7 @@ While you change a MiniJava program in the editor, its corresponding AST is upda
 You might notice that the editor will give you an AST even for syntactically incorrect programs.
 This is because Spoofax editors support syntactic error recovery.
 
-![Menu entry to inspect the abstract syntax of a program fragment.]({{ site.url }}/assets/show-abstract-syntax.png)
+![Menu entry to inspect the abstract syntax of a program fragment.](../../assets/images/show-abstract-syntax.png)
 
 ### Syntax Definition
 
@@ -151,14 +151,14 @@ Use the context-free grammar in the *MiniJava Language Reference Manual* as a re
 When you define your syntax definition bottom-up, you start with sorts such as `Type` and `VarDecl`.
 This allows you to run your tests frequently and check your progress.
 
-We recommend to use *template productions* for your context-free syntax definition, since this will give you a head start for the next lab.
+We recommend to use *template productions* for your context-free syntax definition, since this they help when generating other artifacts other than just the parser.
 When you use template productions, you need to make sure that templates are correctly tokenised.
 Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
 Check the SDF3 documentation for details.
 In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
 
 You need disambiguation constructs to disambiguate your syntax definition.
-You can specify the associativity with attributes `left`, `right`, or `non-assoc`.
+You can specify the associativity with attributes `left`, `right`, or `non-assoc` (See [documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/sdf3.html#attributes)). 
 These attributes are added to the end of a rule:
 
 ```
@@ -187,8 +187,9 @@ context-free priorities
   { left:
     Exp.Constr1
     Exp.Constr2
-  } > { ... } > ...
+  } > { ... } > ...    
 ```
+Finally you should also consider specifying a `bracket` rule to be used in combination with priorities. 
 
 #### Lexical Syntax
 
@@ -227,13 +228,45 @@ lexical syntax
   ID = ... {reject}
 ```
 
-You now can run your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience long running times for your tests, this is most likely caused by an erroneous definition of `LAYOUT`.
+You now can check your tests. It is important to get your grammar working at this stage. Do not move on if you have issues here, since there is a high chance that these issues influence your other tests as well. If you experience weird behaviour on your tests, this is most likely caused by an erroneous definition of `LAYOUT`.
 {: .notice .notice-danger}
 
 Finally, you should add lexical syntax rules for comments to your syntax definition.
 Start with single line comments.
 Continue with unnested block comments.
 Do not forget to define follow restrictions.
+
+### Editor Services
+
+When developing a language in Spoofax, the syntax definition written in SDF3 does not produce only a parser but other editor services as well. 
+
+#### Pretty Printing
+
+Spoofax generates pretty-printing rules from your syntax definition.
+You can find these rules in `src-gen/pp/<name>-pp.str`.
+
+In order to test the pretty-print builder, you need to build your project.
+Your MiniJava editor provides a menu entry named `Format` that uses these generated rules to pretty-print a MiniJava file.
+Create or open a `.mjv` test file with a valid program, press the down-facing arrow on the right of the `Syntax` button and choose `Format`.
+This will apply `Format` to the current file and show the result in a new editor.
+
+If your start symbols are not defined in the main SDF3 module, you might need to import the generated `src-gen/pp/*-pp.str` files into `trans/pp.str`.
+{: .notice .notice-warning}
+
+Typically, the pretty-printed code lacks proper indentation and line breaks.
+You can fix this by improving your templates in the syntax definition.
+The pretty-printer follows the indentation and line breaks from the syntax definition.
+
+You should improve your syntax definition in order to get readable code with a consistent indentation.
+You might read on [indent styles](http://en.wikipedia.org/wiki/Indent_style) for some inspiration.
+
+Make sure that your altered syntax definition is still correct and can be used to parse MiniJava programs.
+{: .notice .notice-warning}
+
+#### Syntactic Code Completion
+
+Together with a pretty-printer, Spoofax also automatically derives syntactic code completion from the syntax definition. This feature allows for example, for new users to discover the language's syntax while editing the program. To know more details about syntactic code completion in Spoofax, check the [documentation](http://metaborg.org/en/latest/source/release/migrate/new_completions_framework.html).
+ 
 
 ### Challenge
 
