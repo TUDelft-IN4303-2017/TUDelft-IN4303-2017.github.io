@@ -189,7 +189,7 @@ context-free priorities
     Exp.Constr2
   } > { ... } > ...    
 ```
-Finally you should also consider specifying a `bracket` rule to be used in combination with priorities. 
+Finally you should also consider specifying a `bracket` rule for disambiguation of expressions.
 
 #### Lexical Syntax
 
