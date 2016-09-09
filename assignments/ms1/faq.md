@@ -42,12 +42,11 @@ If you build the editor project, your test modules will be parsed.
 
 ##### Should I use templates?
 
-Yes.
-This will save you several hours of work in the next assignment.
+Yes. Even though we do not grade the generated pretty-printer, it will be useful in the next labs if your grammar has reasonable indentation when formating (or completing) a program.
 
 ##### Is it possible to split my syntax definition up in several files possibly in subfolders?
 
-Yes that is possible. You can have the following directory tree for example:
+Yes, that is possible. You can have the following directory tree for example:
 
     syntax/
       subdir/
@@ -98,7 +97,6 @@ This is also very likely caused by erroneous rules for `LAYOUT`.
 3. Fix the erroneous rules.
 4. Build your project.
 
-# Syntactic Editor Services
 
 # Simple Term Rewriting
 
