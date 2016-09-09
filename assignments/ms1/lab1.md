@@ -145,7 +145,7 @@ To read more on SPT, visit the [documentation](http://metaborg.org/en/latest/sou
 ### MiniJava Syntax Definition
 
 To write your own test cases, you need to understand MiniJava's syntax.
-You can find the ultimate MiniJava syntax definition in the *MiniJava Language Reference Manual*.
+You can find the ultimate MiniJava syntax definition in the [*MiniJava Language Reference Manual*](http://www.cambridge.org/us/features/052182060X/mjreference/node1.html).
 The manual says nothing about reserved words.
 But it states that the meaning of a MiniJava program is given by the meaning as a Java program.
 Therefore, you should treat all reserved words in Java as reserved in MiniJava as well and provide test cases which address this issue.
