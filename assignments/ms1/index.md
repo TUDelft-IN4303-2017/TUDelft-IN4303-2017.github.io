@@ -35,7 +35,7 @@ You can download an Eclipse installation with the Spoofax Eclipse plugin preinst
 * [Linux 64-bits](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-linux-x86_64-jre.tar.gz)
 * [Mac OS X (Intel only)](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-macosx-x86_64-jre.tar.gz)
 
-To get started with the absolute basics of Spoofax, follow our [Getting Started guide](http://spoofax.org/en/latest/source/langdev/start.html), but skip the downloading step (start at the unpacking step) and use the file you downloaded from one of the above links.
+To get started with the absolute basics of Spoofax, follow our [Getting Started guide](http://spoofax.org/en/latest/source/langdev/start.html#unpack), but skip the download step (start at the unpack step) and use the file you downloaded from one of the above links.
 
 ## Resources
 
