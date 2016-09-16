@@ -11,6 +11,15 @@ subcontext: ms1
 
 # Installation
 
+##### How can I solve the "Unable to access language under test" error?
+
+If you get the error "Unable to access the language under test: 'minijava'", then please do the following:
+
+1. Check that you are using the latest version fo Spoofax Eclipse (at the moment: 2.1.0.20160909-143437-in4303) by going to *Help* > *Installation Details*. If you are using an older version, please download the newest version (again) as per the [instructions](assignments/ms1/).
+2. Make sure the path to your Spoofax installation does not contain a space! If this is the case, move your Spoofax installation to a location without a space.
+3. Clean and build all projects (through *Project* > *Clean*, *Project* > *Build All*). You can see what's going on by opening the console (*Window* > *Show View* > *Console*).
+4. Finally, close and re-open any test files that were already open.
+
 ##### How can I disable the cygwin warnings about paths when building on Windows?
 
 1. Add a system [environment variable](http://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them)
