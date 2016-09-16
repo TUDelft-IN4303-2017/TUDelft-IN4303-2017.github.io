@@ -32,26 +32,8 @@ If you get the error "Unable to access the language under test: 'minijava'", the
 
 If you get errors after [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) you should build the project by choosing *Project > Build All* from the menu.
 
-# Testing Syntax Definition
-
-##### How do I get started?
-
-1. Create a Spoofax editor project ([instructions](https://github.com/TUDelft-IN4303/assignments/tree/master/milestone1-editor#initial-spoofax-project))
-   and a test project ([instructions](https://github.com/TUDelft-IN4303/assignments/tree/master/milestone1-editor#initial-test-project)) in Eclipse.
-2. Create a new test suite in the test project.
-   1. Select *File > New > File* from the menu.
-   2. Use `.spt` as a file extension.
-3. Write your first test module in that file.
-
-Each test module gets its own file.
-You can add directories to your project to group the test files.
-If you build the editor project, your test modules will be parsed.
 
 # Syntax Definition
-
-##### Should I use templates?
-
-Yes. Even though we do not grade the generated pretty-printer, it will be useful in the next labs if your grammar has reasonable indentation when formating (or completing) a program.
 
 ##### Is it possible to split my syntax definition up in several files possibly in subfolders?
 
@@ -75,13 +57,11 @@ and `c` should be declared as
 
     module subdir/c
 
-If you get errors while you think you shouldn't, open all `.sdf3` files and run *Generate SDF (concrete, for selection)* from the *Transform* button. If this does not result in a corresponding `.sdf` file, something is wrong in your `.sdf3` file.
-
 ##### Why do my disambiguation tests fail?
 
 Disambiguation tests (i.e. tests of the form `test name [[...]] parse to [[..]]`) compare the ASTs for both test fragments. If these ASTs differ, the test fails. Use the *Show AST* option in the editor's *Transform* menu to view the AST; this may give you clue as to what is going wrong. A common mistake is to introduce a constructor when parsing a parenthesized expression. This can be solved by using the `bracket` attribute.
 
-##### Why does the `bracket` attribute has no effect?
+##### Why does the `bracket` attribute have no effect?
 
 You probably used a constructor name together with the `bracket` attribute.
 As the SDF3 editor indicates, this is a mistake.
