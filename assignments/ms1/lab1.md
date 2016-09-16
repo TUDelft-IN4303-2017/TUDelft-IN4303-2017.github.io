@@ -36,17 +36,20 @@ The test suite should provide
     For grading, it is required to comply with these sort names literally.
     {: .notice .notice-warning}
 
+<<<<<<< Updated upstream
 
 2. Disambiguation tests for associativity and precedence in expressions.
 3. Test cases for mandatory and optional whitespace.
+=======
+3. Disambiguation tests for associativity and precedence in expressions.
+4. Test cases for mandatory and optional whitespace.
+>>>>>>> Stashed changes
 
 ### Submission
 
 You need to submit your test project with a pull request against branch `assignment1` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 We expect to find your Spoofax project `minijava` and your test project `minijava.test.syntax` next to each other in the root of the repository.
-The test project should contain a `README.md` with a short paragraph explaining the organisation of your test project.
-To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 
 The deadline for submission is 21th September, 23:59.
 {: .notice .notice-warning}
