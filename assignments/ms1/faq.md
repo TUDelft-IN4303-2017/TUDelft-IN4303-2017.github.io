@@ -15,7 +15,7 @@ subcontext: ms1
 
 If you get the error "Unable to access the language under test: 'minijava'", then please do the following:
 
-1. Check that you are using the latest version fo Spoofax Eclipse (at the moment: 2.1.0.20160909-143437-in4303) by going to *Help* > *Installation Details*. If you are using an older version, please download the newest version (again) as per the [instructions](assignments/ms1/).
+1. Check that you are using the latest version fo Spoofax Eclipse (at the moment: 2.1.0.20160909-143437-in4303) by going to *Help* > *Installation Details*. If you are using an older version, please download the newest version (again) as per the [instructions](/assignments/ms1/).
 2. Make sure the path to your Spoofax installation does not contain a space! If this is the case, move your Spoofax installation to a location without a space.
 3. Clean and build all projects (through *Project* > *Clean*, *Project* > *Build All*). You can see what's going on by opening the console (*Window* > *Show View* > *Console*).
 4. Finally, close and re-open any test files that were already open.
@@ -30,7 +30,7 @@ If you get the error "Unable to access the language under test: 'minijava'", the
 
 ##### After importing the projects into Eclipse I receive several errors that have to do with importing and including files. 
 
-If you get errors after [importing the projects into Eclipse](https://tudelft-in4303.github.io/assignments/ms1/lab1.html#importing-projects-into-eclipse) you should build the project by choosing *Project > Build All* from the menu.
+If you get errors after [importing the projects into Eclipse](/assignments/ms1/lab1.html#importing-projects-into-eclipse) you should build the project by choosing *Project > Build All* from the menu.
 
 
 # Syntax Definition
