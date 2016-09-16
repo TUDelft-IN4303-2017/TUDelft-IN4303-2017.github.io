@@ -36,14 +36,8 @@ The test suite should provide
     For grading, it is required to comply with these sort names literally.
     {: .notice .notice-warning}
 
-<<<<<<< Updated upstream
-
 2. Disambiguation tests for associativity and precedence in expressions.
 3. Test cases for mandatory and optional whitespace.
-=======
-3. Disambiguation tests for associativity and precedence in expressions.
-4. Test cases for mandatory and optional whitespace.
->>>>>>> Stashed changes
 
 ### Submission
 
