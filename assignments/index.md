@@ -62,18 +62,10 @@ To pass the practical part of the course, you need to meet all of the following 
 
 These rules allow you to compensate for lower grades in single assignments, but ensure a minimal quality in all your milestones as well as in your overall practical work.
 
-<!-- ## Deadlines 2016/17
+## Deadlines 2016/17
 
-In the first quarter, assignments must be submitted weekly until Tuesday, 23:59.
-Each student has 2 late days to use at his or her discretion.
-Once a student runs out of late days, any late submission is penalised at a rate of 0.1 grading points per day.
-No submission may be handed in more than 5 days late.
-
-Please reserve your late days for legitimate emergencies.
-If you think you cannot meet deadlines due to special circumstances, you should contact the academic counsellor.
-Together we will try to find an individual solution for you.
-Remember to contact the academic counsellor as soon as possible, once you become aware of your situation.
-Otherwise, you might lose your chance for a deadline extension. -->
+In the first quarter, assignments must be submitted weekly until Wednesday, 23:59. For the last lab of the quarter, the deadline should be extended. We communicate that in the description for that assignment. 
+The deadlines have a one day extension policy, with the penalty of 2 points.
 
 ## Academic Misconduct
 

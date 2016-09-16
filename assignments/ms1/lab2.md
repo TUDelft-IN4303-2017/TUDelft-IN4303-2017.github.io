@@ -50,7 +50,7 @@ As part of your submission, we ask you to provide a short explanation of the org
 To help us to maintain your submissions, also submit this paragraph in WebLab and add a link to your final pull request there.
 Finally, to help the manual grading progress, we ask you to paste the content of `MiniJava/include/MiniJava.str` into WebLab.
 
-The deadline for submission is September 27th, 23:59.
+The deadline for submission is September 28th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -247,7 +247,7 @@ You can find these rules in `src-gen/pp/<name>-pp.str`.
 
 In order to test the pretty-print builder, you need to build your project.
 Your MiniJava editor provides a menu entry named `Format` that uses these generated rules to pretty-print a MiniJava file.
-Create or open a `.mjv` test file with a valid program, press the down-facing arrow on the right of the `Syntax` button and choose `Format`.
+Create or open a `.mjv` test file with a valid program, go to the *Spoofax* -> *Syntax* menu and choose `Format`.
 This will apply `Format` to the current file and show the result in a new editor.
 
 If your start symbols are not defined in the main SDF3 module, you might need to import the generated `src-gen/pp/*-pp.str` files into `trans/pp.str`.
