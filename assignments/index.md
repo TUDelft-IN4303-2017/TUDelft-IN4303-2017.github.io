@@ -11,7 +11,7 @@ image:
 ---
 
 In the practical part of the course, you build an IDE for MiniJava, a small subset of Java.
-We split this task into three milestones of weekly individual assignments:
+We split this task into three milestones of (roughly) weekly individual assignments:
 
 * [Milestone 1: Syntax Analysis](ms1)
   * [Testing Syntax Analysis](ms1/lab1.html)
@@ -58,14 +58,31 @@ To pass the practical part of the course, you need to meet all of the following 
 
 1. You completed each assignment with a grade of 4.0 or better.
 2. You completed the assignments of each milestone with an average grade of 5.0 or better.
-3. You completed all the assignments with an average grade of 6.0 better.
+3. You completed all the assignments with an average grade of 6.0 or better.
 
 These rules allow you to compensate for lower grades in single assignments, but ensure a minimal quality in all your milestones as well as in your overall practical work.
 
-## Deadlines 2016/17
+## Deadlines 2016-2017
 
-In the first quarter, assignments must be submitted weekly until Wednesday, 23:59. For the last lab of the quarter, the deadline should be extended. We communicate that in the description for that assignment. 
-The deadlines have a one day extension policy, with the penalty of 2 points.
+In Q1 the lab is on Friday, and deadlines are on Wednesdays at 23:59. Each assignment has a 24 hour deadline extension with a penalty of 2 points.
+
+* Milestone 1: Syntax Analysis
+- 21/09: Lab 1: Testing Syntax Analysis 
+- 28/10: Lab 2: Syntax Definition
+- 05/10: Lab 3: Simple Term Rewriting
+* Milestone 2: Semantic Analysis
+- 26/10: Lab 4: Testing Name Analysis 
+- 26/10: Lab 5: Name Analysis
+
+In Q2 the lab is on Thursday and the deadlines are on Monday at 17:00. Each assignment has a 24 hour deadline extension with a penalty of 2 points.
+
+* Milestone 2: Semantic Analysis
+- 21/11: Lab 6: Testing Type Analysis
+- 28/11: Lab 7: Type Analysis 
+* Milestone 3: Code Generation
+- 5/12: Lab 8: Compiling Minimal Programs
+- 19/12: Lab 9: Compiling Expressions and Statements
+- 16/01: Lab 10: Compiling, Fields, Parameters, and Variables
 
 ## Academic Misconduct
 
