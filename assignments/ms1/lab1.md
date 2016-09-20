@@ -51,7 +51,7 @@ The deadline for submission is 21th September, 23:59.
 ### Grading
 
 You can earn up to 100 points for the effectiveness of your test cases.
-Therefor, we run your test cases against 196 correct and erroneous syntax definitions of MiniJava.
+Therefore, we run your test cases against 196 correct and erroneous syntax definitions of MiniJava.
 There are two kinds of erroneous syntax definitions:
 
 - Syntax definitions, which are too *liberal*, accept invalid language constructs.
