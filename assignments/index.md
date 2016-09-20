@@ -68,7 +68,7 @@ In Q1 the lab is on Friday, and deadlines are on Wednesdays at 23:59. Each assig
 
 * Milestone 1: Syntax Analysis
    - 21/09: Lab 1: Testing Syntax Analysis 
-   - 28/10: Lab 2: Syntax Definition
+   - 28/09: Lab 2: Syntax Definition
    - 05/10: Lab 3: Simple Term Rewriting
 * Milestone 2: Semantic Analysis
    - 19/10: Lab 4: Testing Name Analysis 

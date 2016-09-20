@@ -35,7 +35,7 @@ For grading, it is required to comply with all constructor names, rule names, an
 You need to submit your MiniJava project with a pull request against branch `assignment3` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submission is October 4th, 23:59.
+The deadline for submission is October 5th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -73,7 +73,7 @@ See the [Git documentation](/documentation/git.html#template) on how to check ou
 
 Until now, you mainly worked on files in the `syntax` folder of your project.
 During this lab you will also edit files in the `trans` folder.
-So this is a good point to talk about the general structure of a Spoofax project.
+So, this is a good point to talk about the general structure of a Spoofax project.
 
 First of all, every Spoofax project is an Eclipse plug-in project.
 This allows you to deploy your editor as a plugin using the Eclipse update site mechanism.
@@ -81,26 +81,26 @@ Users do not need to have Spoofax installed for using your editor.
 
 The actual language definition is spread over three folders:
 
-* `syntax` contains all syntax definition files, including the main file `MiniJava.sdf3`.
+* `syntax` contains all syntax definition files, including the main file `miniava.sdf3`.
 * `trans` contains all transformation files, including the main file `minijava.str`.
 * `editor` contains editor service definition files, including the main file `Main.esv`.
 
 In the `src-gen` folder, you will find files which were generated from your syntax definition.
-For each file `<name>.sdf3`, there are generated files
+For each file `<name>.sdf3`, there are generated files:
 
 * `syntax/<name>.sdf`: an SDF2 definition which is equivalent to the SDF3 definition.
-* `completions/<name>-cp.str`: abstract placeholder expansions derived from SDF3 templates.
-* `completions/colorer/<name>-cc-esv.esv`: instructions to color placeholders in gray.
+* `completions/<name>-cp.str`: abstract placeholder expansions for syntactic code completion derived from SDF3 templates.
+* `completions/colorer/<name>-cc-esv.esv`: instructions to color placeholders for syntactic completions in gray.
 * `pp/<name>-pp.str`: pretty-printing strategies derived from SDF3 templates.
 * `signatures/<name>-sig.str`: signatures derived from SDF3 templates.
 
 You can find more generated files in `src-gen` and `target/metaborg` folders:
 
-* `syntax/MiniJava.def`: your complete syntax definition in SDF2.
-* `syntax/MiniJava-Permissive.def`: a permissive version of the syntax definition, which supports error recovery.
-* `MiniJava.tbl`: the parse table of your language.
-* `pp/MiniJava-parenthesize.str`: strategies to add parentheses to an AST according to the priorities of your language.
-* `stratego.ctree` and/or `stratego.jar`: compiled Stratego code of your language.
+* `src-gen/syntax/MiniJava.def`: your complete syntax definition in SDF2.
+* `src-gen/syntax/MiniJava-Permissive.def`: a permissive version of the syntax definition, which supports error recovery.
+* `target/metaborg/MiniJava.tbl`: the parse table of your language.
+* `src-gen/pp/MiniJava-parenthesize.str`: strategies to add parentheses to an AST according to the priorities of your language.
+* `target/metaborg/stratego.ctree` and/or `target/metaborg/stratego.jar`: compiled Stratego code of your language.
 
 #### Initial Editor Project
 
@@ -109,9 +109,9 @@ This project is a common starting point for all of you.
 It includes:
 
 * a parse table `reference/sdf.tbl` which passes all syntax tests,
-* a corresponding signature `reference/src-gen/signatures/*-sig.str`,
-* a pretty-printing definition `reference/src-gen/pp/*-pp.str`, and a
-* a content-completion definition `reference/src-gen/completion/*-cp.str` (errors in the completion files can be ignored).
+* corresponding signatures `reference/src-gen/signatures/*-sig.str`,
+* pretty-printing definitions `reference/src-gen/pp/*-pp.str`, and a
+* content-completion definitions `reference/src-gen/completion/*-cp.str` (errors in the completion files can be ignored).
 
 
 #### Signature
@@ -119,8 +119,8 @@ It includes:
 Signatures declare sorts and constructors for terms.
 In Spoofax, terms are used to represent abstract syntax trees.
 The corresponding signature is generated from the constructors in a syntax definition.
-You can find a signature for MiniJava in `reference/src-gen/signatures/*-sig.str`.
-It was generated from a syntax definition, which itself is not included in the initial project.
+You can find the signature for MiniJava in the files `reference/src-gen/signatures/*-sig.str`.
+The signature was generated from a syntax definition, which itself is not included in the initial project.
 If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/`.
 
 ### Outline View
