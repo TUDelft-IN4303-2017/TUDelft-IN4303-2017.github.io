@@ -150,7 +150,7 @@ Use the context-free grammar in the *MiniJava Language Reference Manual* as a re
 When you define your syntax definition bottom-up, you start with sorts such as `Type` and `VarDecl`.
 This allows you to run your tests frequently and check your progress.
 
-We recommend to use *template productions* for your context-free syntax definition, since they help when generating other artifacts other than just the parser.
+We recommend to use *template productions* for your context-free syntax definition, since they help when generating artifacts other than just the parser.
 When you use template productions, you need to make sure that templates are correctly tokenised.
 Otherwise, the parser would reject layout in certain positions, for example between `[` and `]` in an array type.
 Check the SDF3 documentation for details.
