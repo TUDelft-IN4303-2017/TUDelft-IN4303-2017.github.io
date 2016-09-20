@@ -27,13 +27,13 @@
   context: lectures
   subcontext: specification
 
-- title: Static Analysis
-  url: /lectures/specification/static-analysis.html
+- title: Term Rewriting
+  url: /lectures/specification/term-rewriting.html
   context: lectures
   subcontext: specification
 
-- title: Term Rewriting
-  url: /lectures/specification/term-rewriting.html
+- title: Static Analysis
+  url: /lectures/specification/static-analysis.html
   context: lectures
   subcontext: specification
 
@@ -44,6 +44,11 @@
 
 # Compiler Techniques
 
+- title: Virtual Machines
+  url: /lectures/techniques/virtual-machines.html
+  context: lectures
+  subcontext: techniques
+  
 - title: Dataflow Analysis
   url: /lectures/techniques/dataflow-analysis.html
   context: lectures
@@ -51,11 +56,6 @@
 
 - title: Register Allocation
   url: /lectures/techniques/register-allocation.html
-  context: lectures
-  subcontext: techniques
-
-- title: Virtual Machines
-  url: /lectures/techniques/virtual-machines.html
   context: lectures
   subcontext: techniques
 
