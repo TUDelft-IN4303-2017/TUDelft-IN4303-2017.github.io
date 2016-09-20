@@ -71,7 +71,7 @@ In Q1 the lab is on Friday, and deadlines are on Wednesdays at 23:59. Each assig
    - 28/10: Lab 2: Syntax Definition
    - 05/10: Lab 3: Simple Term Rewriting
 * Milestone 2: Semantic Analysis
-   - 26/10: Lab 4: Testing Name Analysis 
+   - 19/10: Lab 4: Testing Name Analysis 
    - 26/10: Lab 5: Name Analysis
 
 In Q2 the lab is on Thursday and the deadlines are on Monday at 17:00. Each assignment has a 24 hour deadline extension with a penalty of 2 points.
