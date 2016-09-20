@@ -24,6 +24,10 @@ If you get the error "Unable to access the language under test: 'minijava'", the
 
 There is an error in the JSGLR parser that always parses an empty string (regardless of start symbol). You can ignore this.
 
+##### My tests for start symbols INT and ID fail.
+
+Check that INT and ID are defined as `context-free start symbol` (even though they are part of the lexical syntax).
+
 ##### How can I disable the cygwin warnings about paths when building on Windows?
 
 1. Add a system [environment variable](http://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them)
