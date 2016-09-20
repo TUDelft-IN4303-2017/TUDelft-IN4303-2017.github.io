@@ -250,7 +250,7 @@ Typically, they are less guided and require more investigation or higher program
 
 1. Provide the file name as the root node label.
 
-In `outline.str` import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
+In `outline.str`: import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
 You need to change this strategy in the `minijava.str` file:
@@ -259,7 +259,7 @@ You need to change this strategy in the `minijava.str` file:
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
     ```
 
-    Also import and command/control click `libspoofax/editor/outline` for inspiration.
+    Also import, command/control click, and investigate `libspoofax/editor/outline` for inspiration.
 
 3. Use one of the library strategies for folding to implement `pp-params`. You can find various folding strategies in the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
 
@@ -347,7 +347,7 @@ Annotations can be used for different variants of builders:
 * `(openeditor)` from the Syntax menu ensures that a new editor window is opened for the result.
 * Finally, `(source)` tells Spoofax to run the builder on an unanalysed (and also not desugared) AST.
 
-Note that the `editor-desugar` rule only applies `desugar` rule to a selected node. Thus, first select the node you want to desugar and then select *Show desugared syntax* the builder. 
+Note that the `editor-desugar` rule only applies `desugar` to a selected node. Thus, first select the node you want to desugar and then select the builder *Show desugared syntax*. 
 {: .notice .notice-warning}
 
 
