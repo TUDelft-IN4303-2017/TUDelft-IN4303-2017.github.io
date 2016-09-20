@@ -20,6 +20,10 @@ If you get the error "Unable to access the language under test: 'minijava'", the
 3. Clean and build all projects (through *Project* > *Clean*, *Project* > *Build All*). You can see what's going on by opening the console (*Window* > *Show View* > *Console*).
 4. Finally, close and re-open any test files that were already open.
 
+##### The parser succesfully parses the empty string, even though this is not defined for the given start symbol.
+
+There is an error in the JSGLR parser that always parses an empty string (regardless of start symbol). You can ignore this.
+
 ##### How can I disable the cygwin warnings about paths when building on Windows?
 
 1. Add a system [environment variable](http://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them)
