@@ -45,20 +45,20 @@ You can earn up to 40 points for your outline view:
 * names in labels (8 points)
 * super classes in labels (2 points)
 * types in labels (15 points)
-* challenges (10 points)
-* code quality (5 points)
+* challenges (15 points)
 
 You can earn up to 60 points for your desugarings:
 
 * signature (20 points)
 * rewrite rules (20 points)
 * strategy (10 points)
-* challenge  (5 points)
-* code quality (5 points)
+* challenge  (10 points)
 
+<!-- Do we provide early feedback or not? 
 ### Early Feedback
 
 This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+-->
 
 ## Detailed Instructions
 
@@ -66,57 +66,52 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 
 #### GitHub Repository
 
-We provide you with a template for this assignment in the `assignment4` branch.
+We provide you with a template for this assignment in the `assignment3` branch.
 See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
 ### Anatomy of a Spoofax Project
 
 Until now, you mainly worked on files in the `syntax` folder of your project.
-During this lab you will also edit files in the `editor` and `trans` folders.
+During this lab you will also edit files in the `trans` folder.
 So this is a good point to talk about the general structure of a Spoofax project.
 
 First of all, every Spoofax project is an Eclipse plug-in project.
 This allows you to deploy your editor as a plugin using the Eclipse update site mechanism.
 Users do not need to have Spoofax installed for using your editor.
-You will find the typical administrative boilerplate code for such plug-ins in files
-`plugin.xml`, `build.properties`, `META-INF/MANIFEST.MF`, and `editor/java`.
 
 The actual language definition is spread over three folders:
 
 * `syntax` contains all syntax definition files, including the main file `MiniJava.sdf3`.
 * `trans` contains all transformation files, including the main file `minijava.str`.
-* `editor` contains editor service definition files, including the main file `MiniJava.main.esv`,
-  which you have seen already during the last lab.
+* `editor` contains editor service definition files, including the main file `Main.esv`.
 
 In the `src-gen` folder, you will find files which were generated from your syntax definition.
 For each file `<name>.sdf3`, there are generated files
 
 * `syntax/<name>.sdf`: an SDF2 definition which is equivalent to the SDF3 definition.
-* `completions/<name>-esv.esv`: completion templates derived from SDF3 templates.
+* `completions/<name>-cp.str`: abstract placeholder expansions derived from SDF3 templates.
+* `completions/colorer/<name>-cc-esv.esv`: instructions to color placeholders in gray.
 * `pp/<name>-pp.str`: pretty-printing strategies derived from SDF3 templates.
 * `signatures/<name>-sig.str`: signatures derived from SDF3 templates.
-* `check/<name>-chk.str`: checks for correctness of abstract syntax trees.
 
-You can find more generated files in `editor` and `include` folders:
+You can find more generated files in `src-gen` and `target/metaborg` folders:
 
-* `editor/MiniJava-Folding.generated.esv`: folding patterns derived from your syntax definition.
-* `include/MiniJava.def`: your complete syntax definition in SDF2.
-* `include/MiniJava-Permissive.def`: a permissive version of the syntax definition, which supports error recovery.
-* `include/MiniJava.tbl`: the parse table of your language.
-* `include/MiniJava.str`: the signature for ASTs of your language.
-* `include/MiniJava-parenthesize.str`: strategies to add parentheses to an AST according to the priorities of your language.
-* `include/minijava.ctree` and/or `include/minijava.jar`: compiled Stratego code of your language.
+* `syntax/MiniJava.def`: your complete syntax definition in SDF2.
+* `syntax/MiniJava-Permissive.def`: a permissive version of the syntax definition, which supports error recovery.
+* `MiniJava.tbl`: the parse table of your language.
+* `pp/MiniJava-parenthesize.str`: strategies to add parentheses to an AST according to the priorities of your language.
+* `stratego.ctree` and/or `stratego.jar`: compiled Stratego code of your language.
 
 #### Initial Editor Project
 
-We provide you with an initial MiniJava project in the branch `assignment4`.
+We provide you with an initial MiniJava project in the branch `assignment3`.
 This project is a common starting point for all of you.
 It includes:
 
 * a parse table `reference/sdf.tbl` which passes all syntax tests,
-* a corresponding signature `reference/src-gen/signatures/minijava-sig.str`,
-* a pretty-printing definition `reference/src-gen/pp/minijava-pp.str`, and a
-* a content-completion definition `reference/src-gen/completion/minijava-cp.str` (errors in the completion files can be ignored).
+* a corresponding signature `reference/src-gen/signatures/*-sig.str`,
+* a pretty-printing definition `reference/src-gen/pp/*-pp.str`, and a
+* a content-completion definition `reference/src-gen/completion/*-cp.str` (errors in the completion files can be ignored).
 
 
 #### Signature
@@ -124,7 +119,7 @@ It includes:
 Signatures declare sorts and constructors for terms.
 In Spoofax, terms are used to represent abstract syntax trees.
 The corresponding signature is generated from the constructors in a syntax definition.
-You can find a signature for MiniJava in `reference/src-gen/signatures/minijava-sig.str`.
+You can find a signature for MiniJava in `reference/src-gen/signatures/*-sig.str`.
 It was generated from a syntax definition, which itself is not included in the initial project.
 If you write your own syntax definition, the generated signatures can be found in `src-gen/signatures/`.
 
@@ -254,8 +249,8 @@ Typically, they are less guided and require more investigation or higher program
 {: .notice .notice-success}
 
 1. Provide the file name as the root node label.
-<!-- TODO: This is moved -->
-See `lib/runtime/editor/origins/` for a suitable strategy.
+
+In `outline.str` import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
 You need to change this strategy in the `minijava.str` file:
@@ -264,8 +259,7 @@ You need to change this strategy in the `minijava.str` file:
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
     ```
 
-    <!-- TODO: This is moved -->
-    Visit `lib/runtime/editor/outline-library` for inspiration.
+    Also import and command/control click `libspoofax/editor/outline` for inspiration.
 
 3. Use one of the library strategies for folding to implement `pp-params`. You can find various folding strategies in the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
 
@@ -336,10 +330,10 @@ Both variables are bound in the `where` clause.
 The file name is derived from the path of the current file,
 while the content of the file is a desugared version of the selected AST node.
 You also need to hook your strategy into the editor, making desugaring available in the *Syntax* menu.
-You can do this in `editor/Syntax.esv`:
+You can do this in `editor/Syntax.esv` under the *Show Parsed AST* action:
 
 ```
-action : "Show desugared syntax" = editor-desugar (realtime) (meta) (source)
+action : "Show desugared syntax" = editor-desugar (source)
 ```
 
 This rule defines
@@ -351,10 +345,11 @@ This rule defines
 Annotations can be used for different variants of builders:
 
 * `(openeditor)` from the Syntax menu ensures that a new editor window is opened for the result.
-* `(realtime)` requires this editor to be updated whenever the content in the original editor changes.
-* `(meta)` restricts the builder to be only available to the language engineer, but not to the language user.
-While you can invoke the builder, people who install your MiniJava plugin cannot.
 * Finally, `(source)` tells Spoofax to run the builder on an unanalysed (and also not desugared) AST.
+
+Note that the `editor-desugar` rule only applies `desugar` rule to a selected node. Thus, first select the node you want to desugar and then select *Show desugared syntax* the builder. 
+{: .notice .notice-warning}
+
 
 #### Strategies
 
@@ -390,49 +385,14 @@ Try to understand what is going on and decide for a suitable one.
 You can use the library strategy `debug` to print the currently visited node.
 For example, `innermost(debug; desugar)` will `debug` all nodes before it tries to `desugar` them.
 
-For the submission, you need to provide an explanation (1 paragraph) of
+For the submission, you need to provide an explanation (1 paragraph - also in weblab) of
 1. the choice you made,
 2. why this choice is suitable for this project, and
 3. why other choices would be less suitable.
 
-<!-- TODO: This is outdated -->
-#### Editor Integration Revisited
+Try changing the `editor-desugar` rule to use `desugar-all` instead of `desugar`. If you chose a suitable strategy, the builder should succeed even when no node is selected in the MiniJava program.  
+{: .notice .notice-warning}
 
-With a builder, you can invoke a transformation manually from any of the menus.
-However, desugaring should be an automatic transformation as part of static analysis.
-In Spoofax, static analysis is performed by strategies.
-In the initial project, these strategies are implemented in `trans/minijava.str`:
-
-```
-rules // Analysis
-
-  editor-analyze = analysis-default-editor
-
-  analysis-single-default-interface =
-    analysis-single-default(id, id, id|<language>)
-  analysis-multiple-default-interface =
-    analysis-multiple-default(parse-file <+ !(), id, id, id|<language>, <project-path>)
-```
-
-The strategies `analysis-single-default` and `analysis-multiple-default` require various strategy parameters.
-The first parameter in `analysis-single-default` and
-the second parameter in `analysis-multiple-default` are used for transformations before name analysis.
-This is the place, where you should hook-in your desugaring:
-
-```
-rules // Analysis
-
-  editor-analyze = analysis-default-editor
-
-  analysis-single-default-interface =
-    analysis-single-default(desugar-all, id, id|<language>)
-  analysis-multiple-default-interface =
-    analysis-multiple-default(parse-file <+ !(), desugar-all, id, id|<language>, <project-path>)
-```
-
-To test your implementation, you can use a predefined builder labeled *Show analyzed syntax*.
-Open a MiniJava program and run the builder.
-At this point, you can get rid of your old desugaring builder.
 
 #### Challenge
 
