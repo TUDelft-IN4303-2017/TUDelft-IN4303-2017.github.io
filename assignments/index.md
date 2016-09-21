@@ -33,17 +33,15 @@ We split this task into three milestones of (roughly) weekly individual assignme
 We rely on GitHub for assignment submissions.
 We assign a private GitHub repository to each student and encourage students to commit and push their work frequently.
 To submit your assignment, you need to file a pull request.
-There are two kinds of submissions.
 
 To check your progress on an assignment, you can submit a *preliminary solution*.
 We will provide limited early feedback on preliminary solutions.
 This feedback typically comes with a tentative grade and points out areas where your solution is incomplete or insufficient, without giving any details on the reasons.
-We do not give any feedback on the day of a deadline, since this will not be early at all.
+We do *not give any feedback on the day of a deadline*, since this will not be early at all.
 
-To submit your solution for grading, you need to submit a *final solution*.
-As the name suggests, you cannot submit another final solution for the same assignment.
+We compute your *final grade* based on the last merged PR.
 We will provide a detailed grading report on final solutions.
-To ensure fairness and equal chances for all students, grading reports will not be published before 5 days after the submission deadline.
+To ensure fairness and equal chances for all students, grading reports will not be published before the 1-day deadline extension has expired.
 We do our best to hand out grading reports as quick as possible, but manual grading can be tedious and might result in longer waiting times for some assignments.
 
 Early feedback and most parts of final grading are automated and supported by an AWS in Education Grant award.
