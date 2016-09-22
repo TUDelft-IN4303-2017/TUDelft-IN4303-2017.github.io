@@ -46,7 +46,6 @@ The definition should include:
 
 You need to submit your MiniJava project with a pull request against branch `assignment2` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
-As part of your submission, we ask you to provide a short explanation of the organisation of your syntax definition in `MiniJava/syntax/README.md`.
 
 The deadline for submission is September 28th, 23:59.
 {: .notice .notice-warning}
