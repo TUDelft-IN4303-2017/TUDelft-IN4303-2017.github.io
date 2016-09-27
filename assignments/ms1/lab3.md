@@ -69,6 +69,21 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 We provide you with a template for this assignment in the `assignment3` branch.
 See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
+#### Updating Spoofax
+
+A new version of Spoofax is required for this lab. To update Spoofax in Eclipse:
+
+1. go to **Help -> Install New Software...**
+2. in the **Work with** field, enter `http://download.spoofax.org/update/in4303`
+3. check **Spoofax Eclipse** 
+4. press **Next** twice
+5. agree to the license agreements and press **Finish** to download and install updates
+6. when a security warning pops up, press **OK** to dismiss the warning
+7. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
+
+If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
+{: .notice .notice-warning}
+
 ### Anatomy of a Spoofax Project
 
 Until now, you mainly worked on files in the `syntax` folder of your project.
