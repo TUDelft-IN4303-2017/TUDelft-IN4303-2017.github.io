@@ -40,25 +40,22 @@ The deadline for submission is October 5th, 23:59.
 
 ### Grading
 
-You can earn up to 40 points for your outline view:
+* Outline (55 points)
+  * Class (5 points)
+  * Field (10 points)
+  * Method (20 points)
+  * Variable (10 points)
+  * Challenge (10 points)
+* Desugar (45 points)
+  * Basic (30 points)
+  * Strategy (10 points)
+  * Challenge (5 points)
 
-* names in labels (8 points)
-* super classes in labels (2 points)
-* types in labels (15 points)
-* challenges (15 points)
-
-You can earn up to 60 points for your desugarings:
-
-* signature (20 points)
-* rewrite rules (20 points)
-* strategy (10 points)
-* challenge  (10 points)
-
-<!-- Do we provide early feedback or not? 
 ### Early Feedback
 
-This assignment is graded manually. Thus, we do not provide early feedback for this submission.
--->
+We provide early feedback for the correctness of your outline and desugarings.
+This feedback is a score out of 90 points; the strategy choice (10 points) is graded manually.
+You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
