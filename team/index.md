@@ -17,7 +17,7 @@ You will receive an email with
 
 ## Walk-in Hours 2016-2017
 
-We offer walk-in hours on Wednesday mornings 10:15-11:45 in room HB 08.280.
+We offer walk-in hours on Tuesday mornings 10:15-11:45 in room HB 08.280.
 
 ## Team Members
 
