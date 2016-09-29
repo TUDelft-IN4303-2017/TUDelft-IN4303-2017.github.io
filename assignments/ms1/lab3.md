@@ -329,7 +329,7 @@ editor-desugar:
   (selected, position, ast, path, project-path) -> (filename, text)
   where
     filename := <guarantee-extension(|"desugared.aterm")> path ;
-    text     := <desugar> selected
+    text     := <desugar-all> selected
 ```
 
 This rule follows Spoofax' convention for strategies which implement editor services.
