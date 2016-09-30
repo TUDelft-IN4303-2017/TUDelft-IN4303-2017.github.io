@@ -260,9 +260,8 @@ Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation or higher programming skills.
 {: .notice .notice-success}
 
-1. Provide the file name as the root node label.
 
-In `outline.str`: import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
+1. Provide the file name as the root node label. In `outline.str`: import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
 You need to change this strategy in the `minijava.str` file:
