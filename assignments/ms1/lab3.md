@@ -396,7 +396,7 @@ Try to understand what is going on and decide for a suitable one.
 You can use the library strategy `debug` to print the currently visited node.
 For example, `innermost(debug; desugar)` will `debug` all nodes before it tries to `desugar` them.
 
-For the submission, you need to provide an explanation (1 paragraph - also in weblab) of
+For the submission, you need to provide an explanation (1 paragraph in weblab) of
 1. the choice you made,
 2. why this choice is suitable for this project, and
 3. why other choices would be less suitable.
