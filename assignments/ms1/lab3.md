@@ -264,7 +264,7 @@ Typically, they are less guided and require more investigation or higher program
 1. Provide the file name as the root node label. In `outline.str`: import, command/control click and study `libspoofax/term/origin` for a suitable strategy.
 
 2. Outline the main method as a subnode of the main class.
-You need to change this strategy in the `minijava.str` file:
+You need to change this strategy in the `outline.str` file:
 
     ```
     outline := <custom-label-outline(to-outline-label, to-outline-node)> ast
