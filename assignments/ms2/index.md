@@ -9,6 +9,11 @@ subcontext: ms2
 
 {% include _toc.html %}
 
+The lab descriptions for this milestone are currently being revised.
+**You should not work on these labs until revision is complete**, because
+important aspects will change.
+{: .notice .notice-warning}
+
 In this milestone, the MiniJava editor from the previous milestone is extended with semantic analyses. The extended editor should be able
 
 * to resolve references in a MiniJava program,
