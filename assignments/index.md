@@ -18,15 +18,14 @@ We split this task into three milestones of (roughly) weekly individual assignme
   * [Syntax Definition](ms1/lab2.html)
   * [Simple Term Rewriting](ms1/lab3.html)
 * [Milestone 2: Semantic Analysis](ms2)
-  * [Testing Name Analysis](ms2/lab5.html)
-  * [Name Analysis](ms2/lab6.html)
-  * [Testing Type Analysis](ms2/lab7.html)
-  * [Basic Type Analysis](ms2/lab8.html)
-  * [Inheritance and Subtyping](ms2/lab9.html)
+  * [Testing Name Analysis](ms2/lab4.html)
+  * [Name Analysis](ms2/lab5.html)
+  * [Testing Type Analysis](ms2/lab6.html)
+  * [Type Analysis](ms2/lab7.html)
 * [Milestone 3: Code Generation](ms3)
-  * [Compiling Minimal Programs](ms3/lab10.html)
-  * [Compiling Expressions and Statements](ms3/lab11.html)
-  * [Compiling, Fields, Parameters, and Variables](ms3/lab12.html)
+  * [Compiling Minimal Programs](ms3/lab8.html)
+  * [Compiling Expressions and Statements](ms3/lab9.html)
+  * [Compiling, Fields, Parameters, and Variables](ms3/lab10.html)
 
 ## Submission
 
