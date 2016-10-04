@@ -47,7 +47,7 @@ The deadline for submissions is October 19th, 23:59.
 
 ### Grading
 
-You can earn up to 100 points for the coverage of your test cases. Therefor, we run your test cases
+You can earn up to 100 points for the coverage of your test cases. Therefore, we run your test cases
 against 25 correct and erroneous definitions of MiniJava. The total number of points depends on how
 many test cases you pass in each of the following groups:
 
