@@ -313,12 +313,12 @@ You can add names to your error messages in TS using the following syntax:
 ```
 
 This rule reports errors on unresolved variable references.
-Therefor, it first checks the type of its definition.
+Therefore, it first checks the type of its definition.
 Since all variable declarations have a type, this can only fail if there exists no variable declaration to which the variable reference can be resolved.
 Otherwise, an error is reported.
 
 Similarly, you can report errors on referencing the main class.
-Therefor, you need to assign types to class declarations.
+Therefore, you need to assign types to class declarations.
 You can use the assigned type to distinguish ordinary class declarations from main class declarations.
 That is, you can define a constructor for a special type and associate the main class definition with this type.
 
