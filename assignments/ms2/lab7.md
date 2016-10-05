@@ -394,7 +394,7 @@ If you scored 50 or more points during lab 7, you can also get more feedback for
 ### Grading
 
 You can earn up to 90 points for the correctness of your name and type analysis.
-Therefor, we run several test cases against your implementation.
+Therefore, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 

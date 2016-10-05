@@ -232,6 +232,9 @@ pp-params: // at least two parameters
     ... := <pp-params> [param | params]
 ```
 
+For grading, it is required to define a strategy `pp-params` that always rewrites a list of `Param`s to a *string*.
+{: .notice .notice-warning}
+
 Your current outline view is missing a root node.
 You can add a root node by providing a label for programs.
 
