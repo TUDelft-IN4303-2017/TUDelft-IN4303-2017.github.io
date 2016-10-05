@@ -9,11 +9,6 @@ subcontext: ms2
 
 {% include _toc.html %}
 
-The lab descriptions for this milestone are currently being revised.
-**You should not work on these labs until revision is complete**, because
-important aspects will change.
-{: .notice .notice-warning}
-
 In this milestone, the MiniJava editor from the previous milestone is extended with semantic analyses. The extended editor should be able
 
 * to resolve references in a MiniJava program,
@@ -23,9 +18,10 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 
 ## Initial Projects
 
-We provide you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
-For grading purposes, you are required to use this project as a starting point for milestone 2.
-You should use `MiniJava-tests-names` for assignment 5 and `MiniJava-tests-types` for assignment 7.
+We provide you with a template for this milestone. The template covers the concrete and abstract
+syntax of MiniJava and desugarings.  For grading purposes, you are required to use this project as a
+starting point for milestone 2. You should use `minijava.test.names` for assignment 4, and
+`minijava.test.types` for assignment 6.
 
 ## Resources
 
