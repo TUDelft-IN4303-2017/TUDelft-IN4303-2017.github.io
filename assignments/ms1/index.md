@@ -29,11 +29,11 @@ The generated editors include syntax highlighting, syntax checking, parse error 
 In this lab, we will be using the Spoofax Eclipse plugin.
 You can download an Eclipse installation with the Spoofax Eclipse plugin preinstalled from our build farm:
 
-* [Windows 32-bits](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-win32-x86-jre.zip)
-* [Windows 64-bits](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-win32-x86_64-jre.zip)
-* [Linux 32-bits](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-linux-x86-jre.tar.gz)
-* [Linux 64-bits](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-linux-x86_64-jre.tar.gz)
-* [Mac OS X (Intel only)](http://buildfarm.metaborg.org/job/spoofax-in4303/lastSuccessfulBuild/artifact/dist/eclipse/spoofax-macosx-x86_64-jre.tar.gz)
+* [Windows 32-bits](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-win32-x86-jre.zip)
+* [Windows 64-bits](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-win32-x64-jre.zip)
+* [Linux 32-bits](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-linux-x86-jre.tar.gz)
+* [Linux 64-bits](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-linux-x64-jre.tar.gz)
+* [Mac OS X (Intel only)](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-macosx-x64-jre.tar.gz)
 
 To get started with the absolute basics of Spoofax, follow our [Getting Started guide](http://spoofax.org/en/latest/source/langdev/start.html#unpack), but skip the download step (start at the unpack step) and use the file you downloaded from one of the above links.
 
