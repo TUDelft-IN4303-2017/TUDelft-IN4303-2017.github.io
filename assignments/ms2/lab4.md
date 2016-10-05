@@ -7,11 +7,6 @@ context: assign
 subcontext: ms2
 ---
 
-The description of this lab is currently being revised. **You should
-not work on this lab until revision is complete**, because important aspects
-will change.
-{: .notice .notice-warning}
-
 {% include _toc.html %}
 
 In this lab, you develop a test suite for name analysis. The test suite consists of resolution test
@@ -162,11 +157,11 @@ Do not use start symbols other than `Program`.
 
 ### Testing Error Checking
 
-In test cases for error checking, you need to specify the number of errors, warnings, or notes in a test case
- in `errors`, `warnings`, or `notes` clauses.
-For example, the following test cases specify a correct MiniJava program,
- a program with two errors which are reported on the name of a duplicate class `Foo`,
- and another program with an error which is reported on the name of an unknown class `Bar`:
+In test cases for error checking, you need to specify the number of errors, warnings, or notes in a
+test case in `errors`, `warnings`, or `notes` clauses.  For example, the following test cases
+specify a correct MiniJava program, a program with two errors which are reported on the name of a
+duplicate class `Foo`, and another program with an error which is reported on the name of an unknown
+class `Bar`:
 
 ```
 module resolution
@@ -198,7 +193,7 @@ test error on duplicate class [[
   class Foo {}
 
   class Foo {}
-]] 2 errors
+]] >= 1 errors
 
 test error on unknown class [[
   class Main {
@@ -210,17 +205,19 @@ test error on unknown class [[
   class Foo {
     Bar x;
   }
-]] 1 errors
+]] >= 1 errors
 ```
 
-You can start with test cases for duplicate and missing definitions.
-Similar to your syntax test cases, you can pair up positive (`0 errors`) and negative test cases.
-For duplicate definitions, each definition with the same name should produce an error, which is why the `error on duplicate class` test above expects 2 errors.
+You can start with test cases for duplicate and missing definitions.  Similar to your syntax test
+cases, you can pair up positive (`0 errors`) and negative test cases.  For duplicate definitions, we
+expect errors an the definitions with the same name.
 
-For grading, it is important to specify the exact number of errors. You need to make sure that your program does not contain any other errors. For duplicate definitions, you get an error for every definition of the same name. For missing definitions, you get an error for every unresolved reference.
+The number of errors can be hard to predict, because errors sometimes cascade. Therefore, if you
+expect any errors, you should use the `>= 1 errors` expectation, even if you expect a specific
+number of errors. For example, this expectation was used in the duplicate class test, even though we
+would expect exactly two errors.
 {: .notice .notice-warning}
 
-Next, you should develop test cases for
- fields and variables which hide fields,
- and main class instantiation, subclassing, referencing.
-Again, you should keep in mind that coverage is the main criterion for your grade.
+Next, you should develop test cases for fields and variables which hide fields, and main class
+instantiation, subclassing, referencing.  Again, you should keep in mind that coverage is the main
+criterion for your grade.

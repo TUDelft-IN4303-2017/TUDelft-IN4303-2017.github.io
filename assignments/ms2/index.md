@@ -9,11 +9,6 @@ subcontext: ms2
 
 {% include _toc.html %}
 
-The lab descriptions for this milestone are currently being revised.
-**You should not work on these labs until revision is complete**, because
-important aspects will change.
-{: .notice .notice-warning}
-
 In this milestone, the MiniJava editor from the previous milestone is extended with semantic analyses. The extended editor should be able
 
 * to resolve references in a MiniJava program,
@@ -23,9 +18,10 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 
 ## Initial Projects
 
-We provide you with a fresh MiniJava editor project, which covers the concrete and abstract syntax of MiniJava and desugarings.
-For grading purposes, you are required to use this project as a starting point for milestone 2.
-You should use `MiniJava-tests-names` for assignment 5 and `MiniJava-tests-types` for assignment 7.
+We provide you with a template for this milestone. The template covers the concrete and abstract
+syntax of MiniJava and desugarings.  For grading purposes, you are required to use this project as a
+starting point for milestone 2. You should use `minijava.test.names` for assignment 4, and
+`minijava.test.types` for assignment 6.
 
 ## Resources
 
@@ -40,5 +36,5 @@ and an HTML version of the reference manual.
 The following research papers cover relevant topics of this milestone:
 
 1. L. Kats, R. Vermaas, E. Visser: [Integrated Language Definition Testing: Enabling Test-Driven Language Development](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2011-011.pdf), OOPSLA 2011
-2. G. Konat, L. Kats, G. Wachsmuth, E. Visser: [Declarative Name Binding and Scope Rules](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2012-015.pdf), SLE 2012
-3. G. Wachsmuth, G. Konat, V. Vergu, D. Groenewegen, E. Visser: [A Language Independent Task Engine for Incremental Name and Type Analysis](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2013-014.pdf), SLE 2013
+2. P. Neron, A. Tolmach, E. Visser, G. Wachsmuth: [A Theory of Name Resolution](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2015-001.pdf), ESOP 2015
+3. H. van Antwerpen, P. Neron, A. Tolmach, E. Visser, G. Wachsmuth: [A Constraint Language for Static Semantic Analysis based on Scope Graphs](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2015-012.pdf), PEPM 2016
