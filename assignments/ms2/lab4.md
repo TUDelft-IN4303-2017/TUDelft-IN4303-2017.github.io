@@ -210,7 +210,7 @@ test error on unknown class [[
 
 You can start with test cases for duplicate and missing definitions.  Similar to your syntax test
 cases, you can pair up positive (`0 errors`) and negative test cases.  For duplicate definitions, we
-expect errors an the definitions with the same name.
+expect errors on the definitions with the same name.
 
 The number of errors can be hard to predict, because errors sometimes cascade. Therefore, if you
 expect any errors, you should use the `>= 1 errors` expectation, even if you expect a specific
