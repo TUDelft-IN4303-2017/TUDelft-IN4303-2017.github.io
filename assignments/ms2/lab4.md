@@ -37,6 +37,9 @@ The [Git documentation](/documentation/git.html#submitting-an-assignment) explai
 a request.  We expect to find your Spoofax project `minijava` and your test project
 `minijava.test.names` next to each other in the root of the repository.
 
+For this lab, you should put all your tests in `minijava.test.names`.
+{: .notice .notice-warning}
+
 The deadline for submissions is October 19th, 23:59.
 {: .notice .notice-warning}
 
