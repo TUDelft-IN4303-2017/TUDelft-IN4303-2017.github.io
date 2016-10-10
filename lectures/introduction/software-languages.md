@@ -26,13 +26,14 @@ Finally, we introduce traditional *compiler compilers* and modern *language work
 
 ## Slides
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/9hKNDjA8DRopOX" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-
-## Reader
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/h55o2Qafj6Clr" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/eelcovisser/software-languages" title="Software languages" target="_blank">Software languages</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/eelcovisser">Eelco Visser</a></strong> </div>
 
 [PDF](https://github.com/TUDelft-IN4303-2016/lectures/blob/master/01-software-languages/Software%20Languages.pdf)
+
+## Reader
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/mGYcjfruU8RSJg" width="668" height="714" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/guwac/language-57064678" title="Language" target="_blank">Language</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/guwac">Guido Wachsmuth</a></strong> </div>
 
 ## Further Reading
 
