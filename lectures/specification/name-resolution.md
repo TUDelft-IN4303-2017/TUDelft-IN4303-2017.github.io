@@ -4,7 +4,7 @@ title: "Static Name Resolution"
 excerpt: "Name Resolution"
 tags: ["lecture"]
 context: lectures
-subcontext: techniques
+subcontext: specification
 ---
 
 In this lecture we study the definition of name binding patterns using the scope graph framework.

@@ -4,7 +4,7 @@ title: "Type Checking"
 excerpt: "Type Checking"
 tags: ["lecture"]
 context: lectures
-subcontext: techniques
+subcontext: specification
 ---
 
 ## Slides
