@@ -24,4 +24,4 @@ In this lecture we study the definition of name binding patterns using the scope
 
 ## Examples
 
-1. [Tiger in NaBL2]() [Tiger in Spoofax](https://github.com/MetaBorgCube/metaborg-tiger/tree/master/metaborg-tiger)
+1. [Tiger in Spoofax](https://github.com/MetaBorgCube/metaborg-tiger/tree/master/metaborg-tiger) with name binding rules in NaBL2
