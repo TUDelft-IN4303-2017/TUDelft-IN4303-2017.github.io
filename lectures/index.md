@@ -28,8 +28,8 @@ topic schedule is tentative
 * Tue 20 September, 17:45, EWI Pi: [Term Rewriting](specification/term-rewriting) 
 * Tue 27 September, 17:45, EWI Pi: Introduction [Static Analysis](specification/static-analysis) + [Imperative & Object-Oriented Programming Languages](introduction/imperative-oo-pl)
 * Tue  4 October,   17:45, EWI Pi: [Lexical Analysis](generation/lexical-analysis)
-* Tue 11 October,   17:45, EWI Pi: Name resolution
-* Tue 18 October,   17:45, EWI Pi: Constraint-based static analysis
+* Tue 11 October,   17:45, EWI Pi: [Name Resolution](specification/name-resolution)
+* Tue 18 October,   17:45, EWI Pi: [Constraint-based Type Checking](specification/type-checking)
 * Tue 25 October,   17:45, EWI Pi: back-up
 
 break
