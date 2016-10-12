@@ -37,6 +37,16 @@
   context: lectures
   subcontext: specification
 
+- title: Name Resolution
+  url: /lectures/specification/name-resolution.html
+  context: lectures
+  subcontext: specification
+
+- title: Type Checking
+  url: /lectures/specification/type-checking.html
+  context: lectures
+  subcontext: specification
+
 - title: Dynamic Semantics
   url: /lectures/specification/dynamic-semantics.html
   context: lectures
