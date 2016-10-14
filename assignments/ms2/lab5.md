@@ -9,7 +9,11 @@ subcontext: ms2
 
 {% include _toc.html %}
 
-In this lab, you define name bindings and corresponding constraints for MiniJava in NaBL2.
+In this lab, you define name bindings and corresponding constraints for MiniJava in NaBL2. The
+concepts you are going to use in NaBL2 are described in the following papers:
+
+1. P. Neron, A. Tolmach, E. Visser, G. Wachsmuth: [A Theory of Name Resolution](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2015-001.pdf), ESOP 2015
+2. H. van Antwerpen, P. Neron, A. Tolmach, E. Visser, G. Wachsmuth: [A Constraint Language for Static Semantic Analysis based on Scope Graphs](http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2015-012.pdf), PEPM 2016
 
 The official NaBL2 documentation is not entirely up to date. It is better to only use the lab
 description for now.
@@ -293,14 +297,31 @@ e.g. `trans/analysis.str`.
 
 ### Challenge
 
-Create a reference for every method declaration, that refers to the closest method with the same
-name in a parent class. The hard thing is to make sure that resolution does not fail if there is no
-such method. You can do this, by creating a little bit of scope graph that ensures that the
-reference resolves to a method a the parent class if it exists, but otherwise resolves to the method
-itself. To achieve this you will need to use a custom edge label, extend the label order, update the
-well-formedness.
+In lab 7 we need to test that an overriding method has the same type as the overridden method in the
+parent class. We want to introduce a reference from a method to its overridden method. For example,
+consider the following situation:
 
-By default the parameters for name binding are the following:
+```
+class Foo {
+    public int m() {
+        return 1;
+    }
+}
+class Bar extends Foo {
+    public int m() {
+        return 1;
+    }
+}
+```
+
+The declaration of `Bar.m()` should introduce a reference to `Foo.m()`. Of course just introducing a
+reference in the parent scope is not enough, because this will result in an error for `Foo.m()`
+which does not override any method. The challenge is to create a reference that resolves to the
+overridden method if it exists, and to its own method declaration otherwise.
+
+It is possible to encode this logic in the scope graph by modifying edge labels, the specificity
+order of labels, and the well-formedness regular expression on paths. By default the parameters for
+name binding are the following:
 
 ```
 signature
