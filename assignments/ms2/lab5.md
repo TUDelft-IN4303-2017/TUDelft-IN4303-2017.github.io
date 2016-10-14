@@ -255,7 +255,7 @@ You can write expressions to get the set of names you are interested in, using t
 * and set different `<Nameset> diff <Nameset>`.
 
 Note that sets of names behave like multisets. For example, `X diff Y` where `X` contains two `x`s
-and `Y` contains on `x` will result in a set with one `x`.
+and `Y` contains one `x` will result in a set with one `x`.
 
 Error messages on `subseteq` and `distinct` constraints, can use two special keywords.  The position
 can be `@NAMES`, in which case the error will appear on the relevant names. In a formatted message
