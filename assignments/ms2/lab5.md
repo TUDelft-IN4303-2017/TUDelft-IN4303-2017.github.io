@@ -91,17 +91,10 @@ You have 3 early feedback attempts.
 
 ### Preliminaries
 
-#### Git Repository
+#### GitHub Repository
 
-You continue with your work from the previous assignment.  See the
-[Git documentation](/documentation/git.html#continue-from-previous-assignment)
-on how to create the `assignment5` branch from your previous work.
-
-#### Updating from the initial project
-
-A few changes were made to the initial project. See
-[Git documentation](/documentation/git.html#pulling-in-changes-from-upstream) on how to update your
-initial project to match the latest version.
+We provide you with a template for this assignment in the `assignment5` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
 ### Constraint generation rules
 
