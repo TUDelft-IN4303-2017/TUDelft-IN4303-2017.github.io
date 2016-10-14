@@ -96,6 +96,11 @@ You have 3 early feedback attempts.
 We provide you with a template for this assignment in the `assignment5` branch.
 See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
+#### Updating Spoofax
+
+A new version of Spoofax is required for this lab.
+See the [Spoofax documentation](/documentation/spoofax.html#updating) on how to update Spoofax.
+
 ### Constraint generation rules
 
 Name binding is specified as constraint generation rules in `.nabl2` files. NaBL2 files must go in
