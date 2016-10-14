@@ -14,7 +14,6 @@ In this milestone, the MiniJava editor from the previous milestone is extended w
 * to resolve references in a MiniJava program,
 * to calculate types of MiniJava expressions,
 * to report semantic errors, warnings, and notes, and
-* to provide semantic code completion.
 
 ## Initial Projects
 
