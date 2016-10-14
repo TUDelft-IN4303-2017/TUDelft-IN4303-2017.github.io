@@ -7,28 +7,23 @@ context: assign
 subcontext: ms2
 ---
 
-The description of this lab is currently being revised. **You should
-not work on this lab until revision is complete**, because important aspects
-will change.
-{: .notice .notice-warning}
-
 {% include _toc.html %}
 
-In this lab, you define name bindings and corresponding constraints
-for MiniJava.  From this definition, you generate an Eclipse editor,
-that provides name resolution, content completion, and constraint
-checking.
+In this lab, you define name bindings and corresponding constraints for MiniJava in NaBL2.
+
+The official NaBL2 documentation is not entirely up to date. It is better to only use the lab
+description for now.
+{: .notice .notice-warning}
 
 ## Overview
 
 ### Objectives
 
 Specify name analysis for MiniJava in
-[NaBL](http://metaborg.org/nabl/), [TS](http://metaborg.org/ts/) and
-[Stratego](http://metaborg.org/stratego/), and generate an Eclipse
-editor from it.  The specification should include:
+[NaBL2](http://metaborg.org/en/latest/source/langdev/meta/lang/nabl2/index.html), by specifying a
+scope graph and resolution constraints. The specification should include:
 
-1. Name binding rules for
+1. Scope graph constraints for
   * class declarations
   * class references
   * field declarations
@@ -36,23 +31,17 @@ editor from it.  The specification should include:
   * parameter declarations
   * variable declarations
   * field, parameter, and variable references
-2. Scoping rules for
-  * class declarations
-  * method declarations
-  * parameter declarations
-  * field declarations
-  * variable declarations
-3. Typing rules for
-  * main class declarations
-  * field declarations
-  * parameter declarations
-  * variable declarations
-4. Custom constraint rules in TS for
-  * unresolved references to classes, fields, parameters, and variables
-  * references to the main class
-5. Custom constraint rules in Stratego for
+2. Resolution constraints for
+  * class references
+  * method references
+  * parameter references
+  * field references
+  * variable references
+3. Constraints for
   * duplicate definitions of classes, fields, parameters, and variables
-  * variable declarations which hide local field declarations
+  * variable declarations which hide parameter or field declarations
+4. Properties on
+  * variable declarations to indicate whether they are fields, parameters, or local variables
 
 ### Submission
 
@@ -63,6 +52,9 @@ The deadline for submissions is October 26th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
+
+The point assignment is not up to date yet.
+{: .notice .notice-warning}
 
 You can earn up to 80 points for the correctness of your name analysis.
 Therefore, we run several test cases against your implementation.
@@ -105,340 +97,200 @@ You continue with your work from the previous assignment.  See the
 [Git documentation](/documentation/git.html#continue-from-previous-assignment)
 on how to create the `assignment5` branch from your previous work.
 
-#### Initial Editor Project
+#### Updating from the initial project
 
-The initial editor project from the last assignment contains the desugarings implementation `reference/desugar.rtree`, in addition to implementations of the previous initial project. The desugarings can be used by importing `reference/desugar`.
+A few changes were made to the initial project. See
+[Git documentation](/documentation/git.html#pulling-in-changes-from-upstream) on how to update your
+initial project to match the latest version.
 
-### Name Binding
+### Constraint generation rules
 
-In Spoofax, name bindings are specified in NaBL.
-NaBL stands for *Name Binding Language* and the acronym is pronounced 'enable'.
-Name binding is specified in terms of
-  namespaces,
-  binding instances (name declarations),
-  bound instances (name references),
-  scopes and
-  imports.
-
-To start a new name binding specification,
-  you need to create a `.nab` file in directory `trans` or one of its subdirectories.
+Name binding is specified as constraint generation rules in `.nabl2` files. NaBL2 files must go in
+the `trans/analysis` directory. The module name at the top of the file should match the filename relative to `trans`. For example, the file `trans/analysis/minijava.nabl2` starts as:
 
 ```
-module module-name
-
-imports
-
-  reference/src-gen/signatures/-
-  reference/-
+module analysis/minijava
 ```
 
-The module name has to be the same as the file name and should include the path relative to the `trans` directory.
-For example, a file `foo.nab` in directory `trans/bar` should define a module `bar/foo`.
-When you save an NaBL file, a corresponding Stratego file will be generated from it.
-This file contains implementation strategies for your name analysis.
-You need to import this file into `trans/minijava.str`.
-When you build your project, your name binding rules become effective in your MiniJava editor.
-
-#### Variable Names
-
-We use variable names as an example to get you started with [NaBL](http://metaborg.org/nabl/).
-First, you start a `namespaces` section and define a namespace `Variable`:
-
-```
-namespaces
-
-  Variable
-```
-
-In NaBL, a *namespace* is a collection of names and is not necessarily connected to a specific language concept.
-Different concepts can contribute names to a single namespace.
-For example, in MiniJava variables and parameters contribute to the same namespace.
-
-Once you have defined a namespace,
-you can define name bindings rules in a `binding rules` section:
-
-```
-binding rules
-
-  Var(_, v): defines Variable v
-
-  VarRef(v): refers to Variable v
-```
-
-Each binding rule is of the form `pattern : clause*`,
-  where `pattern` is a term pattern (like in Stratego rewrite rules) and
-  `clause*` is a list of name binding specifications about the language construct that is matched by `pattern`.
-For example, the first rule specifies binding instances of class names.
-Its pattern matches regular MiniJava variable declarations (but not parameter declarations).
-Its `defines` clause states that these variable declarations are definition sites for variable names (i.e. they bind variable names).
-Similarly, the second rule specifies bound instances of variable names.
-Its pattern matches variable references and
-its `refers` clause states that such references are use sites for variable names (i.e. they refer to bound variable names).
-When a name can refer to different namespaces, you can combine refer clauses with `otherwise`, e.g.
-
-```
-VarRef(name) : refers to Namespace1 name otherwise refers to Namespace2 name
-```
-
-When you save the file and build your project,
-  you will get reference resolution for variable names in your MiniJava editor.
-You might recognise that reference resolution works across files in the same Eclipse project.
-Though this is a nice feature, this is incorrect for MiniJava,
- where methods scope their variable declarations.
-You can specify this scoping behaviour in a binding rule:
-
-```
-Method(_, _, _, _, _, _): scopes Variable
-```
-
-The pattern of this rule matches method declarations and its `scopes` clause specifies that this is a scope for variable names.
-
-When using multiple clauses in your patterns, be sure to combine them in a single binding rule. If they are spread across multiple binding rules it can occur that some clauses are ignored. The following is an example of correct usage when using multiple clauses:
-
-```
-Method(_, name, _, _, _, _):
-  defines Bar name
-  scopes Foo, Tux
-```
-
-as compared to incorrect usage:
-
-```
-Method(_, name, _, _, _, _): defines Bar
-Method(_, name, _, _, _, _): scopes Foo, Tux
-```
-
-#### More Name Binding Rules
-
-You are now able to complete the name binding rules for MiniJava. You should come up with:
-
-1. more name binding rules for variable names (there are more definition sites of variable names),
-2. namespaces and name binding rules for class declarations, method declarations and field declarations,
-3. scoping rules for these declarations and
-4. name binding rules for variable and field references.
-
-Build your editor and test your name binding specification with your SPT tests and in the editor.
-
-#### Properties of Binding Instances
-
-You can define certain properties of binding instances.
-`type` is a built-in property and you should define the type of field and variable declarations.
-You can do so in a special `defines` clause:
-
-```
-Var(t, v): defines Variable v of type t
-```
-
-This associates the type `t` with the variable name `v`.
-You can see associated types by hovering over definition or use sites in the editor.
-
-### Custom Constraints
-
-NaBL provides generic checks for duplicate definitions and unresolved references.
-In order to give specific error messages, you need to replace them with your own constraints.
-First, you need to create a new Stratego file in `trans` or one of its subdirectories:
-
-```
-module module-name
-
-imports
-
-  reference/src-gen/signatures/MiniJava-sig
-  reference/desugar
-  lib/runtime/nabl/-
-  lib/runtime/task/-
-  lib/runtime/types/-
-```
-
-Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory. You need to import this file into `trans/minijava.str`.
-Now you can turn off the generic checks, add the following code:
-
-```
-strategies
-
-  nabl-check-disable-duplicate(|uri, ns) = id
-  nabl-check-disable-hiding(|uri, ns) = id
-  nabl-check-disable-unresolved = id
-```
-
-You now need to specify custom constraints in TS and in Stratego.
-
-#### Property-based Constraints in TS
-
-[TS](http://metaborg.org/ts/) is a high-level language for the declarative specification of type analysis that is complementary to the name analysis expressed in NaBL.
-In upcoming labs, we will use TS to specify MiniJava's type system.
-In this lab, we only use it to specify constraints for unresolved references and main class constraints.
-
-To start a new type system specification,
-  you need to create a `.ts` file in directory `trans` or one of its subdirectories.
-
-```
-module module-name
-
-imports
-
-  reference/src-gen/signatures/-
-  reference/-
-```
-
-Again, the module name has to be the same as the file name and should include the path relative to the `trans` directory.
-For example, a file `foo.ts` in directory `trans/bar` should define a module `bar/foo`.
-
-TS will give errors when importing Stratego files, this is a bug and you can safely ignore those errors.
-{: .notice .notice-warning}
-
-When you save a TS file, a corresponding Stratego file will be generated from it.
-You may have to refresh the project (right click project, choose Refresh) to see the new file.
-This file contains implementation strategies for your type analysis.
-You need to import this file into `trans/minijava.str`.
-When you build your project, your name binding rules become effective in your MiniJava editor.
-
-You can define constraints in a `type rules` section:
-
-```
-type rules
-
-VarRef(v) :-
-  where definition of v : t
-    else error "Useful message" on v
-```
-
-Note that `:-` must be a single token, `: -` is not recognized.
-{: .notice .notice-warning}
-
-You can add names to your error messages in TS using the following syntax:
-
-```
- else error $[Useful message with name [v]] on e
-```
-
-This rule reports errors on unresolved variable references.
-Therefore, it first checks the type of its definition.
-Since all variable declarations have a type, this can only fail if there exists no variable declaration to which the variable reference can be resolved.
-Otherwise, an error is reported.
-
-Similarly, you can report errors on referencing the main class.
-Therefore, you need to assign types to class declarations.
-You can use the assigned type to distinguish ordinary class declarations from main class declarations.
-That is, you can define a constructor for a special type and associate the main class definition with this type.
-
-In NaBL, set the type of main class definitions to this special type.
-Then, in TS, you can use this to check if a class reference refers to the main class:
-
-```
-ClassType(c) :-
-  where not(definition of c : YourSpecialTypeConstructor())
-    else error "Another useful message" on c
-```
-
-This rule reports errors on class types which refer to the main class.
-It matches the type of the class declaration against your special type.
-If this match is successful, an error is reported.
-You should define your own special type constructor and provide a meaningful error message.
-Next, you can do similar checks for main class subtyping and main class instantiation.
-
-#### Tasks
-
-Spoofax uses tasks for name and type analysis.
-A task is a unit of computation, which might depend on facts (such as name declarations or properties) or on the results of other tasks.
-Based on your NaBL and TS rules, tasks are collected in a traversal, before they are evaluated.
-Results of evaluated tasks are cached.
-When a file is changed, tasks are only re-collected for this file.
-A task is only re-evaluated, if it is new or if one of its dependencies changed.
-This might include tasks which originated from a different file than the file that changed.
-Tasks provide incremental name and type analysis in Spoofax.
-
-You can also see such associations in the index (try the *Show index > Partition* builder).
-The index stores all definitions and properties of these definitions.
-Search for entries of the form `prop URI -- Type() >> Result`.
-The `URI` specifies the definition by naming its scopes.
-The `Result` refers to a task which has the property as a result.
-You can see tasks and their results with the *Show tasks > Partition* builder.
-Alternatively, you can also use the *Show index > Partition (resolved)* builder, which inlines the results of tasks.
-
-When you change name binding and typing rules, you might actually confuse the incremental analysis, which is designed to handle changing programs, but not changing rules. You can fix this by right-clicking the project containing your example programs and chosing *Spoofax -> Reload analysis data*.
-{: .notice .notice-warning}
-
-#### Constraints in Stratego
-
-Constraints for duplicate definitions and hiding cannot be expressed in the current version of TS.
-These constraints need to be defined in Stratego, add the rest of the constraints to the Stratego file that you created earlier which disables generic checks.
-You can define constraints by providing rewrite rules for `nabl-constraint(|ctx)`.
+The rules match on an AST constructor, and get one or more scopes as an argument. The initial
+project contains an `init` rule that creates the initial global scope. The general schema for these
+rules looks like this:
 
 ```
 rules
 
-  nabl-constraint(|ctx):
-    Var(t, v) -> <fail>
-    where
-      task := <nabl-lookup-local(|ctx)> v
-    ; msg  := "Yet another useful message"
-    ; <task-create-error-on-triggers(|ctx, [Multiple(task)], msg)> v
+    [[ <Pattern> ^ (<{Scope ","}*>) ]] :=
+        <Constraint>.
 ```
 
-This rule matches a language construct on the left-hand side (in this case a variable declaration) and fails on the right-hand side.
-The failure ensures that you can report different errors on the same language construct.
-The shown rule reports an error on duplicate variable names.
-Errors can be reported on failing tasks, succeeding tasks, or tasks with multiple solutions.
-In the current example of duplicate definitions, this needs to be a resolution task with multiple solutions.
-The `where` clause of the rule creates this `task` from the variable name.
-Next, an error message `msg` is created.
-You should replace this with a meaningful message.
-You can use string interpolation to include elements from the matched term in the error message.
-Finally, a library strategy is called to create an error in case of multiple solutions.
-The arguments to this strategy are
+Multiple constraints are separated by commas. The constraint `true` always succeeds.
 
-1. a context variable `ctx`,
-2. a single trigger on `task` which triggers the error message when the task produces multiple results, and
-3. the error message `msg`.
+There can only be **one** rule that matches on a certain constructor. It is possible and recommended
+to split the rules over multiple files.
+{: .notice .notice-warning}
 
-The strategy is applied to the term where the error should be shown (in this case, the variable name).
-You should follow this pattern to provide custom error messages for all kinds of duplicate definitions and for local variable declarations which hide field declarations.
+There is no implicit traversal of the AST. This means the rules should be complete: there must be a
+rule for every constructor you want to visit.
+{: .notice .notice-warning}
 
-The following library strategies might be useful:
+### Name Binding
 
-* `nabl-lookup-local(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the same (local) scope.
-  This strategy needs to be applied to a binding instance of a name.
-* `nabl-lookup-lexical(|ctx)` creates a resolution task that searches for a name, of the same namespace, in the local and surrounding (lexical) scope.
-  This strategy needs to be applied to a binding instance of a name.
-* `nabl-lookup-lexical(|ctx, ns)` does the same as above, but considers only names in namespace `ns`.
-  You need to pass a term for the namespace of interest here. Constructor for such terms are generated from your name binding specification, for example `NablNsClass()`.
-* `<task-create-error-on-triggers(|ctx, triggers, msg)> term` creates an error message on a term when all triggers in the list succeed.
-* `<task-create-warning-on-triggers(|ctx, triggers, msg)> term` creates a warning message on a term when all triggers in the list succeed.
-* `<task-create-note-on-triggers(|ctx, triggers, msg)> term` creates a note on a term when all triggers in the list succeed.
+#### Namespaces
 
-You can use the following triggers:
+Different kinds of names can be kept separate by putting them in a different *namespace*. For
+example, variables live in the `Var` namespace. A name with a namespace and an (implicit) AST
+position is called an *occurrence*, and written as `Var{x}`, where `Var` is the namespace, and `x`
+the name.
 
-* `Success(task)` triggers if `task` succeeds.
-* `Failure(task)` triggers if `task` fails.
-* `Multiple(task)` triggers if `task` succeeds and returns more than one result.
-
-Triggers are combined into a list as follows: `[Success(task), Failure(task)]`.
-Even if you only use a single trigger, it must be enclosed in a list: `[Success(task)]`.
-
-As messages, you can use a simple string like `"Useful message"`, or a list of strings and variables if you'd like to include variables in your message, like `["Fancy message with variable ", v, " and other variable ", t]`.
-
-### Challenges
-
-Challenges are meant to distinguish excellent solutions from good solutions.
-Typically, they are less guided and require more investigation or higher programming skills.
-{: .notice .notice-success}
-
-1. Enhance your error messages with information about scopes.
-   For example, you might want to mention the surrounding method of a variable which hides a field.
-   You can retrieve such information from the annotations of a binding instance.
-   To retrieve annotations, you should use strategies from the [standard library](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
-   To analyse the annotated URIs, you should use strategies from `lib/runtime/nabl/uri`.
-
-2. In a post-analysis desugaring, replace `VarRef(x)` terms which refer to fields and not to variables with a term `FieldRef(x)`. Implement this with a strategy `post-desugar-all` and extend the analysis rules to
+Namespaces are declared as part of the name of the name resolution parameters. Put the following in
+one of your `*.nabl2` files:
 
 ```
-rules // Analysis
+signature
 
-  editor-analyze = analysis-default-editor
-
-  analysis-single-default-interface =
-    analysis-single-default(desugar-all, post-desugar-all, id|<language>)
-  analysis-multiple-default-interface =
-    analysis-multiple-default(parse-file <+ !(), desugar-all, post-desugar-all, id|<language>, <project-path>)
+    name resolution
+        namespaces Var // ... space separated list of namespaces ...
 ```
+
+For this assignment it is required to use the `Var` namespace for fields, method parameters, and
+local variables.
+{: .notice .notice-warning}
+
+#### Declarations and references
+
+References and declarations are specified as occurrences with arrows going to and from scopes
+respectively. Reference resolution can be thought of as finding a path in the scope graph from the
+reference to a declaration with the same name. For example the rules for variable declarations and
+references, both in the current scope, look like this:
+
+```
+rules
+
+    [[ Var(_,x) ^ (s) ]] :=
+        Var{x} <- s.
+
+    [[ VarRef(x) ^ (s) ]] :=
+        Var{x} -> s.
+```
+
+#### Introducing new scopes
+
+New scopes can be created and passed down to children in the AST using `new` and recursive calls to
+the constraint generation rules. The following example creates a new scope `s'`, adds an edge to the
+current scope `s`, and passes it as the current scope in the recursive call for the subterm `e`.
+
+```
+rules
+
+    [[ Method(_, _, _, _, _, e) ^ (s) ]] :=
+        new s',
+        s' ---> s,
+        [[ e ^ (s') ]].
+```
+
+The term in the recursive call **must** be a variable from your match pattern.
+{: .notice .notice-warning}
+
+#### Importing scopes by name
+
+TBD
+
+### Constraints
+
+#### Name resolution
+
+A reference in the scope graph must resolve to a declaration. This is specified with a resolution
+constraint. Usually the right hand side of the constraint is a variable that will get the value of
+the declaration that the reference refers to. In the following example, we capture the declaration
+in the variable `d`. Note that `d` is really a *meta-variable*, that is, it is a variable in the
+rule, not a variable in MiniJava.
+
+```
+rules
+
+    [[ VarRef(x) ^ (s) ]] :=
+        Var{x} -> s,
+        Var{x} |-> d.
+```
+
+#### Custom errors and warnings 
+
+It is possible to control the errors and warnings that are generated if a constraint fails.
+
+```
+rules
+
+    [[ VarRef(x) ^ (s) ]] :=
+        Var{x} -> s,
+        Var{x} |-> d | <Severity> <Message> <Location>.
+```
+
+The severity is one of `error`, `warning`, or `note`. The message is optional and can be 1) a
+literal string `"variable not found"`, or 2) a formatted message `$[Cannot find variable [x]]`.
+The default error location is the matched term, but it can be specified explicitly using `@t`,
+where `t` is a variable from your match pattern.
+
+#### Sets of names
+
+The following constraints can be used to restrict the names that can appear in scopes:
+
+* `distinct <Nameset>`
+* `<Nameset> subseteq <Nameset>`
+
+The constraint `<Nameset> seteq <Nameset>` is desugared to two `subseteq` constraints.
+
+The following sets of names are available (for a given scope `s`):
+
+* all declarations `D(<Scope>)/<Namespace>`,
+* all references `R(<Scope>)/<Namespace>`,
+* all (transitively) visible declarations `V(<Scope>)/<Namespace>`,
+* and all reachable (including shadowed) declarations `W(<Scope>)/<Namespace>`.
+
+For example, `D(s)/Var` would give all variable declarations in `s`.
+
+You can write expressions to get the set of names you are interested in, using the following operators:
+
+* union `<Nameset> union <Nameset>`,
+* intersection `<Nameset> isect <Nameset>`,
+* and set different `<Nameset> diff <Nameset>`.
+
+Note that sets of names behave like multisets. For example, `X diff Y` where `X` contains two `x`s
+and `Y` contains on `x` will result in a set with one `x`.
+
+Error messages on `subseteq` and `distinct` constraints, can use two special keywords.  The position
+can be `@NAMES`, in which case the error will appear on the relevant names. In a formatted message
+`NAME` can be used to insert the name in the message.
+
+Note that if you use set expressions in your constraint, the order in which you do the operations
+can be important to get the error on the right name.
+{: .notice .notice-warning}
+
+#### Origins on variable declarations
+
+Properties can be set on declarations with a constraint `<Namespace>{<Term>}.<NAME> := <Term>`. In
+this lab you must set a property `origin` on `Var` declarations.
+
+* Fields must get an origin `Field()`
+* Parameters must get an origin `Param()`
+* Local variables must get an origin `Local()`
+
+It is important for grading to use these exact property and constructor names.
+{: .notice .notice-warning}
+
+You will need to define these constructors by adding a `signature` section of a Stratego file,
+e.g. `trans/analysis.str`.
+
+### Challenge
+
+TBD
+
+### Debugging
+
+The result of analysis, including the scope graph that was built, the resolved references, and more
+can be shown by selecting the menu `Spoofax > Analysis > Show File Analysis` for a MiniJava program.
+
+At the moment it is not checked if the constructors that you match on actually exist. You can check
+this by opening the generated Stratego file. This is done by selecting `Spoofax > Analysis >
+Generate Stratego` for an NaBL2 file. Make sure that you import your MiniJava signatures in the
+NaBL2 file, or you will also get for constructors that do exist.
+
