@@ -179,9 +179,32 @@ rules
 The term in the recursive call **must** be a variable from your match pattern.
 {: .notice .notice-warning}
 
+There are some default rules to traverse a list of terms. For example to traverse all class
+definition in a program, you can write:
+
+```
+rules
+
+    [[ Program(_,cs) ^ (s) ]] :=
+        // ...
+        Map1 [[ cs ^ (s) ]].
+```
+
+The rule `Map1` takes one scope parameter. There is also a rule `Map2` that takes two
+parameters. These rules are implemented in NaBL2, so it is possible to write such named rules
+yourself as well. See
+[stdlib/map.nabl2](https://github.com/metaborg/nabl/blob/master/org.metaborg.meta.nabl2.runtime/trans/nabl2/runtime/stdlib/map.nabl2)
+for the implementation of these rules.
+
 #### Importing scopes by name
 
-TBD
+Scopes can also be imported by name, instead of using parent edges. Imports always require a pair of
+constraints, one that associates a name with a scope, and one the imports a reference into a
+scope. The constraints are written as:
+
+* `<Decl> ===> <Scope>` associates the scope with the given declaration.
+* `<Ref> <=== <Scope>` imports a reference into the scope. The declarations in the associated scope
+  of the resolved reference are now visible in the importing scope.
 
 ### Constraints
 
@@ -270,7 +293,51 @@ e.g. `trans/analysis.str`.
 
 ### Challenge
 
-TBD
+Create a reference for every method declaration, that refers to the closest method with the same
+name in a parent class. The hard thing is to make sure that resolution does not fail if there is no
+such method. You can do this, by creating a little bit of scope graph that ensures that the
+reference resolves to a method a the parent class if it exists, but otherwise resolves to the method
+itself. To achieve this you will need to use a custom edge label, extend the label order, update the
+well-formedness.
+
+By default the parameters for name binding are the following:
+
+```
+signature
+
+  name resolution
+
+    labels
+      P I
+
+    order
+      D < I,
+      D < P,
+      I < P
+
+    well-formedness
+      P* . I*
+```
+
+The label `P` is the default label for edges between scope. This can be written explicitly with the
+constraint `s' -P-> s`. The label `I` is the default label for imports, and can also be written
+explicitly as `d =I=> s` and `s =I=> r`. *Note that scopes can have multiple outgoing edges, which
+can have different labels.*
+
+The well-formedness is a regular expression on path labels, that rules out paths that do not match
+it. In the default case, it means that after an import, you cannot resolve in a parent scope
+anymore. The regular expressions on labels have the following syntax:
+
+* `e` is the empty string
+* `0` is the empty language (i.e., it matches nothing)
+* `<Label>` is a literal label
+* `~<Regexp>` is the complement (e.g., `~0` matches anything)
+* `<Regexp>*` is the closure (i.e., match zero or more)
+* `<Regexp> . <Regexp>` is concatenation (e.g., `P . I` matches one parent edge followed by an
+  import)
+* `<Regexp> | <Regexp>` is a logical or (e.g., `P | I` matches a parent or an import edge)
+* `<Regexp> & <Regexp>` is a logical and (i.e., both expressions must match)
+* `(<Regexp>)` brackets can be used for grouping
 
 ### Debugging
 
