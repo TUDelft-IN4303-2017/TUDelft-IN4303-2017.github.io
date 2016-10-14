@@ -257,7 +257,7 @@ You can write expressions to get the set of names you are interested in, using t
 Note that sets of names behave like multisets. For example, `X diff Y` where `X` contains two `x`s
 and `Y` contains one `x` will result in a set with one `x`.
 
-Error messages on `subseteq` and `distinct` constraints, can use two special keywords.  The position
+Error messages on `subseteq` and `distinct` constraints can use two special keywords.  The position
 can be `@NAMES`, in which case the error will appear on the relevant names. In a formatted message
 `NAME` can be used to insert the name in the message.
 
@@ -292,5 +292,5 @@ can be shown by selecting the menu `Spoofax > Analysis > Show File Analysis` for
 At the moment it is not checked if the constructors that you match on actually exist. You can check
 this by opening the generated Stratego file. This is done by selecting `Spoofax > Analysis >
 Generate Stratego` for an NaBL2 file. Make sure that you import your MiniJava signatures in the
-NaBL2 file, or you will also get for constructors that do exist.
+NaBL2 file, or you will also get errors for constructors that do exist.
 
