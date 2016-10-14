@@ -510,7 +510,7 @@ $button-size: 1.5rem;
 			border-bottom-width: 0;
 		}
 		a {
-			padding: 10px;
+			padding: 5px 10px 5px 10px;
 			display: block;
 			color: $white;
 			text-decoration: none;
@@ -528,7 +528,7 @@ $button-size: 1.5rem;
 			margin: 1px 0 0;
 			li {
 			  a {
-			    padding: 10px 10px 10px 20px;
+			    padding: 5px 10px 5px 20px;
 			    background: lighten($black, 30);
 			  }
 				code {
@@ -537,7 +537,7 @@ $button-size: 1.5rem;
 			  ul {
 			    li {
 			      a {
-			       padding: 10px 10px 10px 30px;
+			       padding: 5px 10px 5px 30px;
 			       background: lighten($black, 45);
 			      }
 						code {
