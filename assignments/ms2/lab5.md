@@ -53,32 +53,22 @@ The deadline for submissions is October 26th, 23:59.
 
 ### Grading
 
-The point assignment is not up to date yet.
-{: .notice .notice-warning}
-
-You can earn up to 80 points for the correctness of your name analysis.
+You can earn up to 100 points for the correctness of your name analysis.
 Therefore, we run several test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
-* name binding (20 points)
-  * class declarations and references (6 points)
-  * method declarations (2 point)
-  * variable and field declarations (6 points)
-  * variable and field references (6 points)
-* scopes (15 points)
-* constraints (35 points)
-  * duplicate definitions (10 points)
-  * unresolved references (10 points)
+* name binding (45 points)
+  * class declarations and references (7 points)
+  * field declarations (7 points)
+  * parameter declarations (5 points)
+  * variable declarations and references (5 points)
+  * scopes of program, classes, and methods (18 points)
+* constraints (45 points)
+  * unresolved references (20 points)
+  * duplicate definitions (20 points)
   * hiding variables (5 points)
-  * main class references (10 points)
 * challenge (10 points)
-
-You can earn up to 20 points for your messages in errors and warnings.
-We particular focus on
- readability,
- precision,
- and the level of detail in your messages.
 
 ### Early Feedback
 
