@@ -276,7 +276,7 @@ Note that if you use set expressions in your constraint, the order in which you 
 can be important to get the error on the right name.
 {: .notice .notice-warning}
 
-#### Origins on variable declarations
+#### Origin properties on variable declarations
 
 Properties can be set on declarations with a constraint `<Namespace>{<Term>}.<NAME> := <Term>`. In
 this lab you must set a property `origin` on `Var` declarations.
