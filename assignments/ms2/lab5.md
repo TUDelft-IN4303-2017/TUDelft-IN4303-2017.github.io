@@ -165,6 +165,9 @@ rules
         Var{x} -> s.
 ```
 
+Note that specifying declarations and references like this does not imply that references must
+resolve. To ensure this, you must add resolution constraints, described below.
+
 #### Introducing new scopes
 
 New scopes can be created and passed down to children in the AST using `new` and recursive calls to
@@ -217,8 +220,8 @@ scope. The constraints are written as:
 A reference in the scope graph must resolve to a declaration. This is specified with a resolution
 constraint. Usually the right hand side of the constraint is a variable that will get the value of
 the declaration that the reference refers to. In the following example, we capture the declaration
-in the variable `d`. Note that `d` is really a *meta-variable*, that is, it is a variable in the
-rule, not a variable in MiniJava.
+in the variable `d`. Note that `d` here is a *meta-variable*, that is, it is a variable in the rule,
+not a variable in MiniJava.
 
 ```
 rules
