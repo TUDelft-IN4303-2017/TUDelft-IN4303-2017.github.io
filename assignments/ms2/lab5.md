@@ -209,9 +209,13 @@ Scopes can also be imported by name, instead of using parent edges. Imports alwa
 constraints, one that associates a name with a scope, and one the imports a reference into a
 scope. The constraints are written as:
 
-* `<Decl> ===> <Scope>` associates the scope with the given declaration.
-* `<Ref> <=== <Scope>` imports a reference into the scope. The declarations in the associated scope
+* `<Occurrence> ===> <Scope>` associates the scope with the given declaration.
+* `<Occurrence> <=== <Scope>` imports a reference into the scope. The declarations in the associated scope
   of the resolved reference are now visible in the importing scope.
+
+The references and declarations used in the previous two constraints still need to be introduced
+explicitly in the graph.
+{: .notice .notice-warning}
 
 ### Constraints
 
