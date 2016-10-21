@@ -272,9 +272,9 @@ For example, `D(s)/Var` would give all variable declarations in `s`.
 
 You can write expressions to get the set of names you are interested in, using the following operators:
 
-* union `<Nameset> union <Nameset>`,
-* intersection `<Nameset> isect <Nameset>`,
-* and set different `<Nameset> diff <Nameset>`.
+* union `(<Nameset> union <Nameset>)`,
+* intersection `(<Nameset> isect <Nameset>)`,
+* and set different `(<Nameset> diff <Nameset>)`.
 
 Note that sets of names behave like multisets. For example, `X diff Y` where `X` contains two `x`s
 and `Y` contains one `x` will result in a set with one `x`.
