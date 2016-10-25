@@ -300,13 +300,28 @@ It is important for grading to use these exact property and constructor names.
 {: .notice .notice-warning}
 
 You will need to define these constructors by adding a `signature` section of a Stratego file,
-e.g. `trans/analysis.str`.
+e.g. `trans/analysis.str`. Stratego signatures define new constructors that you can use, and are
+written as:
+
+```
+module analysis
+
+// ...
+
+signature
+  constructors
+    <ConstructorName> : <SortName>
+
+// ...
+```
+
+The sort name is not important, but if you do not know what to use, use `Origin`.
 
 ### Challenge
 
 In lab 7 we need to test that an overriding method has the same type as the overridden method in the
-parent class. We want to introduce a reference from a method to its overridden method. For example,
-consider the following situation:
+parent class. For every method declaration, we want to introduce a reference, that resolves to its
+overridden method. For example, consider the following situation:
 
 ```
 class Foo {
@@ -366,14 +381,4 @@ anymore. The regular expressions on labels have the following syntax:
 * `<Regexp> | <Regexp>` is a logical or (e.g., `P | I` matches a parent or an import edge)
 * `<Regexp> & <Regexp>` is a logical and (i.e., both expressions must match)
 * `(<Regexp>)` brackets can be used for grouping
-
-### Debugging
-
-The result of analysis, including the scope graph that was built, the resolved references, and more
-can be shown by selecting the menu `Spoofax > Analysis > Show File Analysis` for a MiniJava program.
-
-At the moment it is not checked if the constructors that you match on actually exist. You can check
-this by opening the generated Stratego file. This is done by selecting `Spoofax > Analysis >
-Generate Stratego` for an NaBL2 file. Make sure that you import your MiniJava signatures in the
-NaBL2 file, or you will also get errors for constructors that do exist.
 
