@@ -227,5 +227,5 @@ Again, keep in mind that coverage is the main criterion for your grade.
 ### Number of errors
 
 Similar to the previous testing lab, you need to be careful about the number of errors, because
-errors sometimes cascade. Foe example, if you expect *2* errors, you should use the `>= 2 errors`
+errors sometimes cascade. For example, if you expect *2* errors, you should use the `>= 2 errors`
 expectation, even if you expect an exact number of errors.
