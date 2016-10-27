@@ -7,11 +7,6 @@ context: assign
 subcontext: ms2
 ---
 
-The description of this lab is currently being revised. **You should
-not work on this lab until revision is complete**, because important aspects
-will change.
-{: .notice .notice-warning}
-
 {% include _toc.html %}
 
 In this lab, you develop a test suite for type analysis.
@@ -27,14 +22,10 @@ The test suite should provide
 1. Test cases for the types of expressions
 1. Test cases for the resolution of method names
 2. Test cases for
-  * errors on duplicate method definitions
-  * errors on missing method definitions
   * errors on overloaded methods
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
-  * warnings on variables hiding fields in a parent class
-  * notes on overriding methods
-  * type errors in expressions (except for new array and array subscript expressions)
+  * type errors in expressions
   * type errors in statements
   * type errors in method definitions
 
@@ -57,16 +48,13 @@ You can earn up to 100 points for the coverage of your test cases. Therefore, we
 against 48 correct and erroneous definitions of MiniJava. The total number of points depends on how
 many erroneous language you detect in each of the following groups:
 
-- Names (30 points)
+- Names (28 points)
   - Classes (2 points)
-  - Methods (25 points)
+  - Methods (23 points)
   - Hiding (3 points)
-- Types (70 points)
-  - Expressions (44 points)
+- Types (72 points)
+  - Expressions (46 points)
   - Statements (26 points)
-
-It is important to name tests in a testsuite uniquely. Tests in different test suites can have the same name, but for grading, we need to be able to distinguish tests in the same test suite by their name.
-{: .notice .notice-warning}
 
 ### Early Feedback
 
@@ -85,15 +73,8 @@ You continue with your work from the previous assignment.  See the
 [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the
 `assignment6` branch from your previous work.
 
-#### Initial Test Project
-
-Import the `MiniJava-tests-types` projects into Eclipse if you have not already done so:
-
-1. right-click into the Package Explorer
-2. select **Import...** from the context menu
-3. choose **General/Existing Projects into Workspace** from the list
-4. select the project to import
-5. press the **Finish** button
+For this lab, you should put all your tests in `minijava.test.types`.
+{: .notice .notice-warning}
 
 ### Testing Types of Expressions
 
@@ -107,7 +88,7 @@ and a variable reference to be of its declared type `Bool()`:
 ```
 module types
 
-language MiniJava
+language minijava
 start symbol Program
 
 test integer literal type [[
@@ -141,10 +122,13 @@ test variable reference type [[
 ]] run get-type to Bool()
 ```
 
-You can use `setup` headers and footers to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/spt/#setup-blocks) for details.
+You can use _fixtures_ to avoid repeating parts in similar test cases. See the
+[SPT documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/spt.html#test-fixtures)
+for details.
 
-When applying `get-type` to objects, the expected `ClassType` constructor also requires annotations.
-These annotations should be added to the constructor using a wild card as done below.
+When applying `get-type` to objects, we expect a `ClassType` constructor, which takes an
+*occurrence* as an argument. Remember that an occurrence was `<Namespace>{<Name>}`, but in our test
+we need to write out the constructor for it, like this:
 
 ```
 test expression id type [[
@@ -154,16 +138,14 @@ test expression id type [[
       return [[x]];
     }
   }
-]] run get-type to ClassType("Foo"{_})
+]] run get-type to ClassType(Occurrence(_,"Foo",_))
 ```
 
-You should come up with test cases for the types of all kinds of expressions.
-Just like previous testing assignments, this assignment is all about the coverage of your test suite.
+You should come up with test cases for the types of all kinds of expressions.  Just like previous
+testing assignments, this assignment is all about the coverage of your test suite.
 
-Array creation and array subscript expressions cannot be tested because of a bug in SPT.
-{: .notice .notice-warning}
-
-Make sure that there are no errors in tests with a `run x to y` clause. These tests are invalid when there are errors.
+Make sure that there are no errors in tests with a `run x to y` clause. These tests are invalid when
+there are errors.
 {: .notice .notice-warning}
 
 Do not use start symbols other than `Program`.
@@ -192,7 +174,7 @@ test method name resolution [[
 ```
 
 The type of the callee expression determines the class in which the method declaration can be found.
-In this example, the expression `new Foo()` is of type `ClassType("Foo"{_})` and
+In this example, the expression `new Foo()` is of type `ClassType(Occurrence(_,"Foo",_))` and
 the corresponding class `Foo` contains a method declaration for `run()`.
 
 You should come up with test cases for the resolution of method names.
@@ -244,17 +226,6 @@ Again, keep in mind that coverage is the main criterion for your grade.
 
 ### Number of errors
 
-Similar to the previous testing lab, it is important to specify the exact number of errors in `x errors` tests for grading to work correctly.
-You need to make sure that your program does not contain any other errors.
-
-For duplicate method definitions, you get an error for every definition of the same name.
-For missing method definitions, you get an error for every unresolved reference.
-For overloaded method definitions, you get an error for every overloaded definition in the same class.
-And for cyclic inheritance, you get an error for every class definition in the cycle.
-
-Interaction between names and types give rise to more complex cases.
-Unresolved references cause an error, but also cascade into the surrounding expression or statement, because the reference is untyped, resulting in 2 errors in total.
-In addition, unresolved method references create an additional error because the arguments cannot be checked, resulting in 3 errors in total.
-For assignments, when the left hand side is unresolved, there is an unresolved error and an additional error because the right hand side cannot be checked, resulting in 2 errors in total.
-
-Literal, unary, and binary expressions do not cascade errors, because their type is always known.
+Similar to the previous testing lab, you need to be careful about the number of errors, because
+errors sometimes cascade. For example, if you expect *2* errors, you should use the `>= 2 errors`
+expectation, even if you expect an exact number of errors.
