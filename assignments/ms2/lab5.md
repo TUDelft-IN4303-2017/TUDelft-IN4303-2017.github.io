@@ -52,7 +52,7 @@ scope graph and resolution constraints. The specification should include:
 You need to submit your MiniJava project with a pull request against branch `assignment5` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is October 26th, 23:59.
+The deadline for submissions is November 11th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
