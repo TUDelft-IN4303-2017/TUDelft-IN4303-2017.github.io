@@ -115,7 +115,8 @@ rules
         <Constraint>.
 ```
 
-Multiple constraints are separated by commas. The constraint `true` always succeeds.
+Multiple constraints are separated by commas. The constraint `true` always succeeds. Inspect the
+signature files in `reference/src-gen/signatures/` for the available constructors.
 
 There can only be **one** rule that matches on a certain constructor. It is possible and recommended
 to split the rules over multiple files.
