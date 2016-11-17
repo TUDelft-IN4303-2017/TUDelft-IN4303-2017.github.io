@@ -32,7 +32,7 @@ In this lab, you extend your code generator to handle expressions, statements, m
 You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is December 19th, 17:00.
+The deadline for submissions is December 21st, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

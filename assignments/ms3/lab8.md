@@ -31,7 +31,7 @@ The code generator should include
 You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submission is December 5th, 17:00.
+The deadline for submission is December 7th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
