@@ -48,13 +48,11 @@ You can earn up to 100 points for the coverage of your test cases. Therefore, we
 against 48 correct and erroneous definitions of MiniJava. The total number of points depends on how
 many erroneous language you detect in each of the following groups:
 
-- Names (28 points)
-  - Classes (2 points)
-  - Methods (23 points)
-  - Hiding (3 points)
-- Types (72 points)
-  - Expressions (46 points)
-  - Statements (26 points)
+- Names (25 points)
+  - Methods (25 points)
+- Types (75 points)
+  - Expressions (45 points)
+  - Statements (30 points)
 
 ### Early Feedback
 
