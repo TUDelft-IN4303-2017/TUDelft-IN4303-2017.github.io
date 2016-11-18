@@ -139,8 +139,15 @@ test expression id type [[
 ]] run get-type on #1 to ClassType(Occurrence(_,"Foo",_))
 ```
 
-You should come up with test cases for the types of all kinds of expressions.  Just like previous
+You should come up with test cases for the types of all kinds of expressions. Just like previous
 testing assignments, this assignment is all about the coverage of your test suite.
+
+The constructors for various types are:
+
+- Integer: `Int()`
+- Boolean: `Bool()`
+- Integer array: `IntArray()`
+- Class with name Foo: `ClassType(Occurrence(_,"Foo",_))`
 
 Make sure that there are no errors in tests with a `run x to y` clause. These tests are invalid when
 there are errors.
