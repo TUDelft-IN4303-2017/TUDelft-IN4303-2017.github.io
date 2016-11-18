@@ -52,7 +52,7 @@ scope graph and resolution constraints. The specification should include:
 You need to submit your MiniJava project with a pull request against branch `assignment5` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is October 26th, 23:59.
+The deadline for submissions is November 11th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
@@ -115,7 +115,8 @@ rules
         <Constraint>.
 ```
 
-Multiple constraints are separated by commas. The constraint `true` always succeeds.
+Multiple constraints are separated by commas. The constraint `true` always succeeds. Inspect the
+signature files in `reference/src-gen/signatures/` for the available constructors.
 
 There can only be **one** rule that matches on a certain constructor. It is possible and recommended
 to split the rules over multiple files.
@@ -274,7 +275,7 @@ You can write expressions to get the set of names you are interested in, using t
 
 * union `(<Nameset> union <Nameset>)`,
 * intersection `(<Nameset> isect <Nameset>)`,
-* and set different `(<Nameset> diff <Nameset>)`.
+* and set different `(<Nameset> minus <Nameset>)`.
 
 Note that sets of names behave like multisets. For example, `X diff Y` where `X` contains two `x`s
 and `Y` contains one `x` will result in a set with one `x`.
