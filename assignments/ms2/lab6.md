@@ -95,7 +95,7 @@ test integer literal type [[
       System.out.println([[1]]);
     }
   }
-]] run get-type to Int()
+]] run get-type on #1 to Int()
 
 test variable reference type [[
   class Main {
@@ -117,7 +117,7 @@ test variable reference type [[
       return y;
     }
   }
-]] run get-type to Bool()
+]] run get-type on #1 to Bool()
 ```
 
 You can use _fixtures_ to avoid repeating parts in similar test cases. See the
@@ -136,7 +136,7 @@ test expression id type [[
       return [[x]];
     }
   }
-]] run get-type to ClassType(Occurrence(_,"Foo",_))
+]] run get-type on #1 to ClassType(Occurrence(_,"Foo",_))
 ```
 
 You should come up with test cases for the types of all kinds of expressions.  Just like previous
