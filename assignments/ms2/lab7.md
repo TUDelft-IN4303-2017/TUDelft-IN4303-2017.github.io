@@ -51,32 +51,24 @@ test cases against your implementation. You earn points, when your implementatio
 cases. The total number of points depends on how many test cases you pass in each of the following
 groups:
 
-The point assignment is not updated yet.
-{: .notice .notice-warning}
-
-* name binding (10 points)
+* name binding (20 points)
   * method declarations
   * method calls
-* typing rules (30 points)
-  * literals (3 points)
+* typing rules (35 points)
+  * literals (4 points)
   * unary expressions (5 points)
-  * binary expressions (10 points)
-  * variable and field references (1 points)
-  * object creation (1 point)
+  * binary expressions (8 points)
+  * variable and field references (4 points)
+  * object creation (4 point)
   * `this` expression (5 points)
   * method call (5 points)
-* constraints (35 points)
-  * expressions (25 points)
+* constraints (45 points)
+  * expressions (10 points)
   * statements (10 points)
-
-* name binding (6 points)
-* constraints (84 points)
-    * cyclic inheritance (12 points)
-    * hiding variables and fields (12 points)
-    * method overloading and method overriding (24 points)
-    * subtyping in assignments, return expressions, method calls (36 points)
-
-Finally, you can earn up to 5 points with a challenge.
+  * subtyping in assignments, return expressions, method calls (10 points)
+  * cyclic inheritance (2 points)
+  * method overloading and method overriding (10 points)
+  * main class usage (3 points)
 
 ### Early Feedback
 
