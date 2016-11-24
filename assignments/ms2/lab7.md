@@ -222,9 +222,9 @@ the declaration it resolves to.
 
 ### Type-dependent Name Resolution
 
-If you everything described above, your expressions all have types. Now we can implement name
-resolution of method names. In lab 5 you wrote rules to create a scope graph which probably look
-like this:
+If you have done everything described above, your expressions all have types. Now we can implement
+name resolution of method names. In lab 5 you wrote rules to create a scope graph which probably
+look like this:
 
     [[ Class(x,_,_,_) ^ (s) ]] :=
         // ...
