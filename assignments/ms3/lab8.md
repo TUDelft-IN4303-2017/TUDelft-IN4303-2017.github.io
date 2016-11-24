@@ -55,6 +55,13 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 
 ### Preliminaries
 
+#### Update Jasmin
+
+If you downloaded Spoofax per the instructions, your installation comes pre-
+configurd with the Jasmin update site. Use Help > Check for updates to install
+the latest version. Otherwise, see [Jasmin documentation](/documentation/jasmin.html#updating)
+on how to update.
+
 #### GitHub Repository
 
 We provide you with a template for this assignment in the `assignment10` branch.
