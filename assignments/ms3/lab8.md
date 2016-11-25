@@ -30,6 +30,8 @@ The code generator should include
 You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
+Also, you need to paste the contents of `simple.j` in the WebLab assignment _Jasmin Code_.
+
 The deadline for submission is December 7th, 23:59.
 {: .notice .notice-warning}
 
@@ -98,9 +100,6 @@ class Simple {
 Write a Jasmin program `simple.j` which you expect to be the result of a MiniJava-to-Jasmin
 compiler. Generate a Java class file from it and run it. Improve your program until it runs without
 errors.
-
-For grading, it is required to name this file `simple.j`.
-{: .notice .notice-warning}
 
 ### Implement a Code Generation Strategy
 
