@@ -24,3 +24,5 @@ subcontext: techniques
   It further explains how to monitor the garbage collection process using Visual VM,
   and which garabage collectors are available in the Java SE 7 Hotspot JVM.
   
+3. Apple. [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html) in [The Swift Programming Language (Swift 3.0.1)](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/index.html#//apple_ref/doc/uid/TP40014097-CH3-ID0)
+  
