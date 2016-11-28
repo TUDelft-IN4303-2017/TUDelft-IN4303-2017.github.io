@@ -30,21 +30,20 @@ The code generator should include
 You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-Also, you need to paste the contents of `simple.j` in the WebLab assignment _Jasmin Code_.
+Also, you need to paste the contents of `simple.j` in the WebLab assignment [Jasmin Code](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9076/view).
+If you participate in the challenge, you need to paste your optimisation in the WebLab assignment [Java Bytecode Optimisation](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9079/view).
 
 The deadline for submission is December 7th, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
 
-You can earn up to 40 points for your Jasmin program, up to 40 points for your code generator, and
-up to 20 points for the challege.
+You can earn up to 40 points for your _Jasmin program_, up to 40 points for your _code generator_, and
+up to 20 points for the _challege_.
 
 ### Early Feedback
 
-We provide early feedback for your language implementation. This feedback gives you an indication
-which parts of your name and type analysis might still be wrong. It includes a summary on how many
-tests you pass and how many points you earn by passing them. You have 3 early feedback attempts.
+We provide early feedback only for the _code generator_. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
