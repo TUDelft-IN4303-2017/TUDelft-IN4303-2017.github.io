@@ -46,6 +46,6 @@ We consider the following material to be useful for this milestone.
 
 3. Stratego documentation
 
-    The Stratego language is described in the [Stratego language manual](http://hydra.nixos.org/job/strategoxt-docs/strategoxt-manual/html/latest/download/1/manual/chunk-chapter/stratego-language.html).
-    Useful strategies in the Stratego standard library are described with examples in [Stratego library manual](http://hydra.nixos.org/job/strategoxt-docs/strategoxt-manual/html/latest/download/1/manual/chunk-chapter/stratego-library.html).
+    The Stratego language is described in the [Stratego language manual](http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html).
     A complete listing of all strategies in the Stratego standard library can be found in the [API documentation](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/).
+    There is also an experimental [search engine](http://xdoc.martkolthof.nl/) for the Stratego standard library.
