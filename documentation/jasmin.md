@@ -20,7 +20,7 @@ editor which was built with Spoofax.
 To update the Spoofax plugin in Eclipse, perform the following steps:
 
 1. go to **Help -> Install New Software...**
-2. in the **Work with** field, enter `http://buildfarm.metaborg.org/job/metaborgcube/job/spoofax-jasmin/job/master/lastSuccessfulBuild/artifact/jasmin.eclipse.updatesite/target/site/`
+2. in the **Work with** field, enter `http://buildfarm.metaborg.org/job/metaborgcube/job/spoofax-jasmin/job/in4303/lastSuccessfulBuild/artifact/jasmin.eclipse.updatesite/target/site/`
 3. press enter and wait for the update site to load
 4. press **Select All**
 5. press **Next** and wait for Eclipse to calculate what to install and update
@@ -28,8 +28,5 @@ To update the Spoofax plugin in Eclipse, perform the following steps:
 7. when a security warning pops up, press **OK** to dismiss the warning
 8. when Eclipse has installed all updates, it will ask for a restart, press **Yes** to restart Eclipse
 
-If installation fails with errors indicating that "updates are not permitted",
-it means that your Eclipse installation is in a location that requires admin
-rights to write files. This is the case on Windows if you've copied Eclipse to
-Program Files. Move it to a directory where you have write access, such as the
-desktop, to solve the problem. {: .notice .notice-warning}
+If installation fails with errors indicating that "updates are not permitted", it means that your Eclipse installation is in a location that requires admin rights to write files. This is the case on Windows if you've copied Eclipse to Program Files. Move it to a directory where you have write access, such as the desktop, to solve the problem.
+{: .notice .notice-warning}

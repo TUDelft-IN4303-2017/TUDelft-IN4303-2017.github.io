@@ -85,15 +85,15 @@ You have 3 early feedback attempts.
 
 ### Preliminaries
 
-#### GitHub Repository
-
-We provide you with a template for this assignment in the `assignment5` branch.
-See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
-
 #### Updating Spoofax
 
 A new version of Spoofax is required for this lab.
 See the [Spoofax documentation](/documentation/spoofax.html#updating) on how to update Spoofax.
+
+#### GitHub Repository
+
+We provide you with a template for this assignment in the `assignment5` branch.
+See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
 
 ### Constraint generation rules
 
@@ -236,7 +236,7 @@ rules
         Var{x} |-> d.
 ```
 
-#### Custom errors and warnings 
+#### Custom errors and warnings
 
 It is possible to control the errors and warnings that are generated if a constraint fails.
 
@@ -382,4 +382,3 @@ anymore. The regular expressions on labels have the following syntax:
 * `<Regexp> | <Regexp>` is a logical or (e.g., `P | I` matches a parent or an import edge)
 * `<Regexp> & <Regexp>` is a logical and (i.e., both expressions must match)
 * `(<Regexp>)` brackets can be used for grouping
-
