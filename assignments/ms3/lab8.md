@@ -154,15 +154,17 @@ In general, there are three different approaches to this in Stratego:
 Stratego does not have a debugger, so debugging is done by printing terms at various places in your Stratego code.
 
 You can use the `debug` strategy to print the current term.
-There is also an overloaded version `debug(|t)` that prefixes the output by the result of `t`.
+There is also an overloaded version `debug(|t)` that prefixes the output by `t`.
 For example, `<debug(|"1: ")> SomeTerm()` prints `1: SomeTerm()`
 This allows you to print some text without changing the current term.
 
 There are several useful shorthand versions of the debug strategy in the `libspoofax/stratego/debug` file, which is imported into `codegen/classes.str`.
 You can view this library file by Ctrl/Cmd clicking the import, or by having a look at the [online version](https://github.com/metaborg/spoofax/blob/in4303/meta.lib.spoofax/trans/libspoofax/stratego/debug.str).
-It contains shorthands for `debug(|t)` that prefix the message with 0-9 and a-z.
-Furthermore, the `ppdebug(|t)` strategy and shorthands pretty-print the term before printing, so that the term is not on one very long line.
-Finally, `ppdebugna(|t)` and shorthands pretty-print and strip annotations (`term{annotations}`) from terms, to provide more readable terms when the annotations are not needed.
+It contains the following three debugging strategies:
+
+* `debug(|t)` and shorthands (`debug0`-`debug9`, `debuga`-`debugz`) that prefix the message with 0-9 and a-z.
+* `ppdebug(|t)` and shorthands that pretty-print the term before printing, so that the term is not on one very long line.
+* `ppdebugna(|t)` and shorthands that pretty-print and remove annotations (`term{annotations}`) from terms, to provide more readable terms when the annotations are not needed.
 
 
 ## Challenge
