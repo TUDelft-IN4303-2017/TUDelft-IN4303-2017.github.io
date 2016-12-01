@@ -137,9 +137,14 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 
 ### Interaction with Analysis
 
-The name of the class containing the method is available as a property `cname` on the occurrence of the method declaration.
-Variables and parametes have a property `origin` with the value `Local()`, fields have a property `origin` with the value `Field()`.
-In addition, methods will have a the type `MethodType(rty, ptys)`.
+To make code generation easier, we have made some information available during
+analysis:
+
+- The occurrence of a method declaration has a property `cname` with the name of its surrounding class.
+- The occurrence of a variable/paramter declaration has a property `origin` with the value `Local()`.
+- The occurrence of a field declaration has a property `origin` with the value `Field()`.
+- The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
+
 The following strategies can be used to query the analysis result:
 
   * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
@@ -148,12 +153,11 @@ The following strategies can be used to query the analysis result:
     * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property prop. The term parameter a is the analysis result.
     * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter a is the analysis result.
 
-For example, the following example rewrites a `VarRef(n)` to `(kind, type, name)`,
-where `kind` is either `Local()` or `Field()` depending on whether the variable
-resolves to a local variable or a field.
+The following example shows how to use these strategies. It matches a `VarRef(n)`,
+resolves the reference to a declaration, and computes its `kind`, `type`, and `name`.
 
 ```
-VarRef(n) -> (kind, type, name)
+VarRef(n) -> <fail>
 where
   a       := <nabl2-get-ast-analysis> n
 ; ref-occ := <nabl2-mk-occurrence(|"Var")> n
