@@ -40,7 +40,7 @@ The deadline for submissions is December 23rd, 23:59. The extended deadline is J
 
 ### Grading
 
-You can earn up to 20 points for your example MiniJava programs and their corresponding Jasmin programs.
+You can earn up to 30 points for your example MiniJava programs and their corresponding Jasmin programs.
 We will focus on completeness and correctness of your examples.
 Furthermore, you can earn up to 70 points for your code generator:
 
@@ -63,20 +63,16 @@ Furthermore, you can earn up to 70 points for your code generator:
     * reusable method descriptors (3 points)
     * stack limits (10 points)
 
-You can earn up to 10 points for the quality of your code.
-We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
-We will consider the fact that Stratego is new to you.
-
 ### Early Feedback
 
-This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+We provide early feedback only for the _tranformation_. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
 ### Git Repository
 
 You continue with your work from the previous assignment.
-See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment11` branch from your previous work.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment9` branch from your previous work.
 
 ### Write More Jasmin Code
 
@@ -114,14 +110,15 @@ You now need to extend `stmt-to-jbc` and `exp-to-jbc` to cover all statements ex
    The JVM documentation discusses an efficient translation pattern for `while` loops.
 
    These statements require labels.
-   You can apply `newname` from Stratego's standard library to a string, to obtain a fresh name starting with the given string.
+   You can apply `newname` from Stratego's standard library ([docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/html/term/string.html#area-in-file("term/string.str",area(50,2,50,48,1642,46)))) to a string, to obtain a fresh name starting with the given string.
 
 4. Provide rules for `exp-to-jbc`, which translate unary and binary expressions from MiniJava into sequences of Java bytecode instructions.
    These rules should call `exp-to-jbc` recursively to translate subexpressions to Java bytecode sequences.
    Furthermore, they should call a strategy `op-to-jbc` to translate unary and binary operators to Java bytecode instructions.
    The only exception is the `&&` operator, which needs to be treated differently, due to its lazy evaluation semantics.
 
-You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder.
+<!-- This is no longer possible, right? -->
+<!-- You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder. -->
 
 ### Code Generation for Methods
 
@@ -133,22 +130,27 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 
 3. Provide a rule for `exp-to-jbc`, which translates method calls without arguments from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` recursively to translate subexpressions to Java bytecode sequences.
+
    For this rule, you need to know the name of the class containing the method and the type of the method.
-   You can extract the class name from the URI of the method name.
-   The following strategies might be useful:
-    * `nabl-uri` extracts the URI from an annotated name.
-    * `nabl-uri-parent` rewrites an URI to the URI of the enclosing scope.
-    * `nabl-uri-name` rewrites an URI to the name of the definition it identifies.
-
-   You can query the type associated with the method name with `get-type`.
-   This requires access to the index and the task engine, which needs to be setup.
-   You should do this in your builder strategies by adding the following strategy calls:
-
-        index-setup(|<language>, project-path); task-setup(|project-path)
+   This information is available from the analysis.
+   Read along for instructions on how to interact with the analysis.
 
 4. Extend the rule for `class-to-jbc`, which handles empty classes, in order to include code generation for methods.
 
 5. Provide a rule for `exp-to-jbc`, which translates object creation expressions into sequences of Java bytecode instructions.
+
+### Interaction with Analysis
+
+The name of the class containing the method is available as a property `cname` on the occurrence of the method declaration.
+In addition, methods will have a the type `MethodType(rty, ptys)`.
+The following strategies can be used to query the analysis result:
+
+  - `nabl2-get-ast-analysis` applied to any AST term yields the analysis result.
+  - `nabl2-mk-occurrence(|ns)` applied to a name `n` yields an occurrence `ns{n}`.
+  - `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple `(occurrence, path)`. The term parameter `a` is the analysis result.
+  - `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
+  - `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
+
 
 ## Challenges
 
