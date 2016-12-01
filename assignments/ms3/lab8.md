@@ -166,7 +166,7 @@ Therefore, we list the most common problems and ways to fix them.
 
 #### Step 1: Stratego failure
 
-In step 1, the most common error is your MiniJava to Jasmin compiler, which is a Stratego program, failing.
+In step 1, the most common error is a Stratego failure in your MiniJava to Jasmin compiler.
 A failure in Stratego occurs if matching a term fails.
 Sometimes the failure of a match is intentional, and alternatives are tried.
 However, sometimes there are no alternatives, the failure unwinds to the top of the Stratego program, and the entire program fails.
@@ -189,10 +189,10 @@ This shows up as an exception stack trace in the console of Eclipse, which looks
 org.metaborg.core.transform.TransformException: Invoking Stratego strategy transform-decl failed at term:
   Entity("e", [])
 Stratego trace:
-	transform_decl_0_0
-	...
-	at org.metaborg.spoofax.core.transform.StrategoTransformer.transform(StrategoTransformer.java:144)
-	...
+  transform_decl_0_0
+  ...
+  at org.metaborg.spoofax.core.transform.StrategoTransformer.transform(StrategoTransformer.java:144)
+  ...
 ```
 
 If the Eclipse console is not visible, open it with *Window -> Show View -> Console*.
@@ -226,12 +226,12 @@ These kind of errors also show up as an exception in the Eclipse console, but ha
 org.metaborg.core.transform.TransformException: Invoking Stratego strategy run-jc failed at term:
   ..
 Stratego trace:
-	run_jc_0_0
-	with_1_1 <==
-	map_1_0
-	jasmin_generate_0_1
-	call_in_language_0_2
-	at org.metaborg.spoofax.core.transform.StrategoTransformer.transform(StrategoTransformer.java:144)
+  run_jc_0_0
+  with_1_1 <==
+  map_1_0
+  jasmin_generate_0_1
+  call_in_language_0_2
+  at org.metaborg.spoofax.core.transform.StrategoTransformer.transform(StrategoTransformer.java:144)
   ...
 ```
 
