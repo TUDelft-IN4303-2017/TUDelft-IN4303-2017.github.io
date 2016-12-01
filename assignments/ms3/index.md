@@ -41,7 +41,7 @@ We consider the following material to be useful for this milestone.
 
 [JVM]: http://docs.oracle.com/javase/specs/jvms/se8/html/
 [JVMch3]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-3.html
-[JVMch6]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-3.html
+[JVMch6]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html
 [JBCInstructions]: https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
 
 3. Stratego documentation
