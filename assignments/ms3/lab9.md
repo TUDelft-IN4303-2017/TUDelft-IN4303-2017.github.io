@@ -56,8 +56,7 @@ Furthermore, you can earn up to 70 points for your code generator:
         * `this` expressions (1 point)
         * method calls (5 points)
 * challenges (15 points)
-    * overlays (2 points)
-    * reusable method descriptors (3 points)
+    * overlays (5 points)
     * stack limits (10 points)
 
 ### Early Feedback
@@ -209,68 +208,6 @@ You can use overlays like terms in your rules, both for matching and building:
        where ...
 
 Identify AST patterns in your code generation rules and come up with overlays to improve the readability of these rules.
-
-### Reusable Method Descriptors
-
-In Java bytecode, method declarations and method calls include a method descriptor.
-You can construct such an descriptor from the type associated with a method name.
-In the current setup, you do this construction once for a method declaration and once for each method call.
-However, the descriptor for a call is the same as for the declaration the call refers to.
-You can avoid the reconstruction by storing a custom property on the method name.
-There are two variants to achieve this.
-In the first variant, you store method descriptors (`MethodDescriptor`).
-In the second variant, you store method references (`MethodRef`).
-
-#### Variant 1: Storing Method Descriptors
-
-First, you need to declare a property `descriptor` for namespace `Method` in a NaBL file:
-
-    properties
-
-      descriptor of Method: MethodDescriptor
-
-Next, you need to store the property at a method declaration by defining a Stratego rewrite rule for `nabl-prop-site`:
-
-    nabl-prop-site(|lang, ctx, uris, states, implicits):
-      Method(ty, mname, param*, var*, stmt*, exp) -> <fail>
-      where
-        descr := ... // create descriptor
-      ; <store-descriptor(|ctx, descr)> mname
-
-Finally, you can access the descriptor in your code generation rules with `get-descriptor`:
-
-    method-to-jbc:
-      Method(ty, mname, param*, var*, stmt*, exp) -> ...
-      where
-        descr := <get-descriptor> mname
-      ; ...
-
-    exp-to-jbc:
-      Call(e, mname, e*) -> ...
-      where
-        descr := <get-descriptor> mname
-      ; ...
-
-#### Variant 2: Storing Method References
-
-In an alternative approach, you can store complete method references instead of just method descriptors.
-The property declaration in NaBL and the rewrite rule to store the property are similar to the first variant.
-But this variant will require you to extract descriptors from method references at definition sites:
-
-    method-to-jbc:
-      Method(ty, mname, param*, var*, stmt*, exp) -> ...
-      where
-        ref   := <get-reference> mname
-      ; descr := ... // extract descriptor from ref
-      ; ...
-
-As a benefit, the rule for method calls becomes simpler:
-
-    exp-to-jbc:
-      Call(e, mname, e*) -> ...
-      where
-        ref := <get-reference> mname
-      ; ...
 
 ### Precise Stack Limit Directives
 

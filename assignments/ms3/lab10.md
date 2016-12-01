@@ -49,9 +49,7 @@ Furthermore, you can earn up to 65 points for your code generator:
     * variables (10 points)
     * assignments (15 points)
 * challenges (10 points)
-    * reusable field descriptors (2 points)
-    * reusable variable accessors (2 points)
-    * debug information (6 points)
+    * debug information (10 points)
 
 You can earn up to 10 points for the quality of your code.
 We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
@@ -145,16 +143,6 @@ Finally, you need to extend your code generator to cover parameters, local varia
 
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation and programming skills.
-
-#### Reusable Field Descriptors
-
-Store and retrieve field descriptors or field references instead of re-generating them in different places.
-See the challenges from last week to get an idea how this can be achieved.
-
-#### Reusable Variable Accessors
-
-In your current implementation, you generate load and store instructions for parameters and local variables over and over again.
-Avoid this by storing and retrieving these instructions instead of storing their index.
 
 #### Generate Debug Information
 
