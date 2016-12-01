@@ -149,9 +149,9 @@ The following strategies can be used to query the analysis result:
 
   * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
   * `nabl2-get-ast-analysis` applied to any AST term yields the analysis result, which can be used with the following strategies to extract information:
-    * `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple (occurrence, path). The term parameter a is the analysis result.
-    * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property prop. The term parameter a is the analysis result.
-    * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter a is the analysis result.
+    * `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple `(occurrence, path)`. The term parameter `a` is the analysis result.
+    * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
+    * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
 
 The following example shows how to use these strategies. It matches a `VarRef(n)`,
 resolves the reference to a declaration, and computes its `kind`, `type`, and `name`.
