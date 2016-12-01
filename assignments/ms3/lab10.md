@@ -40,10 +40,11 @@ The deadline for submissions is January 18th, 23:59.
 
 You can earn up to 25 points for your example MiniJava programs and their corresponding Jasmin programs.
 We will focus on completeness and correctness of your examples.
-Furthermore, you can earn up to 65 points for your code generator:
+Furthermore, you can earn up to 75 points for your code generator:
 
-* transformation (55 points)
-    * types (5 points)
+<!-- TODO: Transformation also includes lab9 partly -->
+* transformation (65 points)
+    * types (15 points)
     * fields (10 points)
     * methods (15 points)
     * variables (10 points)
@@ -51,18 +52,16 @@ Furthermore, you can earn up to 65 points for your code generator:
 * challenges (10 points)
     * debug information (10 points)
 
-You can earn up to 10 points for the quality of your code.
-We focus on readability in general, meaningful variable names and the consistent use of Stratego paradigms.
-We will consider the fact that Stratego is new to you.
-
 In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
 
+<!-- TODO: JBCSource has changed this year -->
 To make automated grading possible, you should make sure the _Run main class_ builder from the _Generate_ menu works! If this does not work, check if you are using `JBCSource` (see lab 10).
 {: .notice .notice-danger}
 
 ### Early Feedback
 
+<!-- TODO: We can provide some feedback -->
 This assignment is graded manually. Thus, we do not provide early feedback for this submission.
 
 ## Detailed Instructions
@@ -70,7 +69,7 @@ This assignment is graded manually. Thus, we do not provide early feedback for t
 ### Git Repository
 
 You continue with your work from the previous assignment.
-See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment12` branch from your previous work.
+See the [Git documentation](/documentation/git.html#continue-from-previous-assignment) on how to create the `assignment10` branch from your previous work.
 
 ### Write Even More Jasmin Code
 
@@ -106,6 +105,7 @@ Similar to methods, you can query the type associated with the field name with `
 
 You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder.
 
+<!-- TODO: This is changed in NaBL2 -->
 ### Generate Code for Local Variables and Variable Access
 
 Finally, you need to extend your code generator to cover parameters, local variables, and access to them.
