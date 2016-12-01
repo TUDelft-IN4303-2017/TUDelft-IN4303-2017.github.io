@@ -9,9 +9,6 @@ subcontext: ms3
 
 {% include _toc.html %}
 
-This lab is currently being revised.
-{: .notice .notice-warning}
-
 In this lab, you extend your code generator to handle expressions, statements, methods without local parameters, and classes without fields.
 
 ## Overview
