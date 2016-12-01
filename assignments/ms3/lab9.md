@@ -138,15 +138,30 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 ### Interaction with Analysis
 
 The name of the class containing the method is available as a property `cname` on the occurrence of the method declaration.
+Variables and parametes have a property `origin` with the value `Local()`, fields have a property `origin` with the value `Field()`.
 In addition, methods will have a the type `MethodType(rty, ptys)`.
 The following strategies can be used to query the analysis result:
 
-  - `nabl2-get-ast-analysis` applied to any AST term yields the analysis result.
-  - `nabl2-mk-occurrence(|ns)` applied to a name `n` yields an occurrence `ns{n}`.
-  - `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple `(occurrence, path)`. The term parameter `a` is the analysis result.
-  - `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
-  - `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
+  * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
+  * `nabl2-get-ast-analysis` applied to any AST term yields the analysis result, which can be used with the following strategies to extract information:
+    * `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple (occurrence, path). The term parameter a is the analysis result.
+    * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property prop. The term parameter a is the analysis result.
+    * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter a is the analysis result.
 
+For example, the following example rewrites a `VarRef(n)` to `(kind, type, name)`,
+where `kind` is either `Local()` or `Field()` depending on whether the variable
+resolves to a local variable or a field.
+
+```
+VarRef(n) -> (kind, type, name)
+where
+  a       := <nabl2-get-ast-analysis> n
+; ref-occ := <nabl2-mk-occurrence(|"Var")> n
+; dec-occ := <nabl2-get-resolved-name(|a); Fst> ref-occ
+; kind    := <nabl2-get-property(|a, "origin")> dec-occ
+; type    := <nabl2-get-type(|a)> dec-occ
+; name    := <nabl2-get-occurrence-name> dec-occ
+```
 
 ## Challenges
 
