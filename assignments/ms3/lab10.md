@@ -9,6 +9,9 @@ subcontext: ms3
 
 {% include _toc.html %}
 
+This lab is currently being revised.
+{: .notice .notice-warning}
+
 In this lab, you complete your code generator to handle arbitrary MiniJava programs.
 
 ## Overview

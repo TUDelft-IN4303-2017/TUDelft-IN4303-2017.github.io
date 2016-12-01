@@ -9,6 +9,9 @@ subcontext: ms3
 
 {% include _toc.html %}
 
+This lab is currently being revised.
+{: .notice .notice-warning}
+
 In this lab, you extend your code generator to handle expressions, statements, methods without local parameters, and classes without fields.
 
 ## Overview
@@ -32,7 +35,7 @@ In this lab, you extend your code generator to handle expressions, statements, m
 You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submissions is December 21st, 23:59.
+The deadline for submissions is December 23rd, 23:59. The extended deadline is January 13th, 23:59, for a penalty of 1 point.
 {: .notice .notice-warning}
 
 ### Grading

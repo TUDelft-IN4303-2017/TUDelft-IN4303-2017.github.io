@@ -61,7 +61,7 @@ These rules allow you to compensate for lower grades in single assignments, but 
 
 ## Deadlines 2016-2017
 
-In Q1 and Q2 the lab is on Friday and deadlines are on Wednesdays at 23:59. Each assignment has a 24 hour deadline extension with a penalty of 2 points.
+In Q1 and Q2 the lab is on Friday and deadlines are on Wednesdays at 23:59. All assignments except lab 9 have a 24 hour deadline extension with a penalty of 2 points. Lab 9 has an extension until 13/01 with a penalty of 1 point.
 
 * Milestone 1: Syntax Analysis
    - 21/09: Lab 1: Testing Syntax Analysis 
@@ -72,10 +72,10 @@ In Q1 and Q2 the lab is on Friday and deadlines are on Wednesdays at 23:59. Each
    - 26/10: Lab 5: Name Analysis
 * Milestone 2: Semantic Analysis (continued)
    - 23/11: Lab 6: Testing Type Analysis
-   - 30/11: Lab 7: Type Analysis 
+   - 07/12: Lab 7: Type Analysis 
 * Milestone 3: Code Generation
-   - 7/12: Lab 8: Compiling Minimal Programs
-   - 21/12: Lab 9: Compiling Expressions and Statements
+   - 14/12: Lab 8: Compiling Minimal Programs
+   - 23/12: Lab 9: Compiling Expressions and Statements
    - 18/01: Lab 10: Compiling, Fields, Parameters, and Variables
 
 ## Academic Misconduct
