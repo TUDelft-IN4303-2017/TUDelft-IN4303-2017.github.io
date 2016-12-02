@@ -61,8 +61,7 @@ To make automated grading possible, you should make sure the _Run main class_ bu
 
 ### Early Feedback
 
-<!-- TODO: We can provide some feedback -->
-This assignment is graded manually. Thus, we do not provide early feedback for this submission.
+We provide early feedback only for the _lab 9 functionality_ and _tranformation_. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
