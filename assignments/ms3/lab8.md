@@ -126,6 +126,10 @@ This rule should call `class-to-jbc` to translate the main class of the program.
 While in this lab your compiler should only support a single main class, in subsequent labs you must handle MiniJava programs with multiple classes.
 Therefore, a program is translated into a **list** of Jasmin class files.
 
+The second argument to the `JBCHeader` constructor must be `JBCSource("")` exactly for your solution to work.
+We make sure that the source is set to the correct path.
+{: .notice .notice-warning}
+
 2. Provide a rule for `class-to-jbc`, which translates a _main class from MiniJava_ into a _Jasmin class file_.
 This rule should call `stmt-to-jbc` to translate the statement inside the main method.
 Make sure that the class and method are `public`, and that the class has a standard initializer.
