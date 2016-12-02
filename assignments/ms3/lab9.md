@@ -141,7 +141,7 @@ To make code generation easier, we have made some information available during
 analysis:
 
 - The occurrence of a method declaration has a property `cname` with the name of its surrounding class.
-- The occurrence of a variable/paramter declaration has a property `origin` with the value `Local()`.
+- The occurrence of a variable/parameter declaration has a property `origin` with the value `Local()`.
 - The occurrence of a field declaration has a property `origin` with the value `Field()`.
 - The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
 
