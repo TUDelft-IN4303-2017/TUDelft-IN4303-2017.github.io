@@ -42,8 +42,8 @@ You can earn up to 25 points for your example MiniJava programs and their corres
 We will focus on completeness and correctness of your examples.
 Furthermore, you can earn up to 75 points for your code generator:
 
-<!-- TODO: Transformation also includes lab9 partly -->
-* transformation (65 points)
+* lab 9 functionality (20 points)
+* transformation (55 points)
     * types (15 points)
     * fields (10 points)
     * methods (15 points)
