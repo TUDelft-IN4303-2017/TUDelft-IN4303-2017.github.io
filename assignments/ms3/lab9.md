@@ -37,9 +37,7 @@ The deadline for submissions is December 23rd, 23:59. The extended deadline is J
 
 ### Grading
 
-You can earn up to 30 points for your example MiniJava programs and their corresponding Jasmin programs.
-We will focus on completeness and correctness of your examples.
-Furthermore, you can earn up to 70 points for your code generator:
+You can earn up to 70 points for your code generator:
 
 * transformation (55 points)
     * classes (8 points)
