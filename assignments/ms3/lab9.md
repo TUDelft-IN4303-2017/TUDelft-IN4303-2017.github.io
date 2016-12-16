@@ -137,12 +137,15 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 ### Interaction with Analysis
 
 To make code generation easier, we have made some information available during
-analysis:
+desugaring and analysis:
 
 - The occurrence of a method declaration has a property `cname` with the name of its surrounding class.
 - The occurrence of a variable/parameter declaration has a property `origin` with the value `Local()`.
 - The occurrence of a field declaration has a property `origin` with the value `Field()`.
 - The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
+
+- We desugared `Param(t,n)` to `(i, Param(t,n))` and `Var(t,n)` to `(i, Var(t,n))`.
+- The occurrence of variable/parameter declaration has a property `index`, where parameters have index 0, ..., n and fields have index n+1, ..., m.
 
 The following strategies can be used to query the analysis result:
 
