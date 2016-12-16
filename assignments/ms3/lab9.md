@@ -37,7 +37,7 @@ The deadline for submissions is December 23rd, 23:59. The extended deadline is J
 
 ### Grading
 
-You can earn up to 70 points for your code generator:
+You can earn up to 75 points for your code generator:
 
 * transformation (55 points)
     * classes (8 points)
@@ -54,13 +54,13 @@ You can earn up to 70 points for your code generator:
         * `this` expressions (1 point)
         * method calls (5 points)
     * inheritance (5 points)
-* challenges (15 points)
+* challenges (20 points)
     * overlays (5 points)
-    * stack limits (10 points)
+    * stack limits (15 points)
 
 ### Early Feedback
 
-We provide early feedback only for the _tranformation_. You have 3 early feedback attempts.
+We provide early feedback only for the _tranformation_ and the _stack limits_ challenge (the _overlays_ are graded manually). You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
