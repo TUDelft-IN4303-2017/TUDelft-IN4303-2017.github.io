@@ -251,3 +251,6 @@ The following strategies might be useful:
 
 For grading it is important that your strategy `stack-limit` does not take any parameters. You are free to use parameters in strategies that you call yourself.
 {: .notice .notice-info}
+
+For grading it is important that your strategy `stack-limit` operates on expressions, statements, and lists of statements.
+{: .notice .notice-info}
