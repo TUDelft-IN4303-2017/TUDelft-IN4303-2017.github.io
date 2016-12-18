@@ -41,7 +41,8 @@ break
 * Tue 13 December,  17:45, EWI Pi: [Dataflow Analysis](techniques/dataflow-analysis)
 * Tue 20 December,  17:45, EWI Pi: [LL Parsing](generation/ll-parsing)
 * Tue 10 January,   17:45, EWI Pi: [LR Parsing](generation/lr-parsing)
-* Tue 17 January,   17:45, EWI Pi: exam preparation
+* Tue 17 January,   17:45, EWI Pi: no lecture
+* Tue 24 January,   17:45, EWI Pi: What is a compiler? and Exam preparation
 
 <!--
 ## Schedule 2015/16
