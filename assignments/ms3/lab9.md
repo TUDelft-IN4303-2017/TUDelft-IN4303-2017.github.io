@@ -136,6 +136,9 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
 
 5. Provide a rule for `exp-to-jbc`, which translates object creation expressions into sequences of Java bytecode instructions.
 
+For grading, if you decide not to participate in the challenge, use a fixed stack size of 99 for both static and non-static methods.
+{: .notice .notice-info}
+
 ### Interaction with Analysis
 
 To make code generation easier, we have made some information available during
