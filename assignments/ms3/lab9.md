@@ -159,6 +159,8 @@ The following strategies can be used to query the analysis result:
     * `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple `(occurrence, path)`. The term parameter `a` is the analysis result.
     * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
     * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
+  * `nabl2-get-occurrence-name` applied to an occurrence yields the name of the occurrence.
+  * `nabl2-get-ast-type` applied to an AST node with a type (i.e., an expression), yields its type. The resulting type can contain occurrences if it is a class type.
 
 The following example shows how to use these strategies. It matches a `VarRef(n)`,
 resolves the reference to a declaration, and computes its `kind`, `type`, and `name`.
