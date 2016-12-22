@@ -104,38 +104,30 @@ Similar to methods, you can query the type associated with the field name with `
 
 You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder.
 
-<!-- TODO: This is changed in NaBL2 -->
 ### Generate Code for Local Variables and Variable Access
 
-Finally, you need to extend your code generator to cover parameters, local variables, and access to them.
+To make code generation easier, we have made some information available during
+desugaring and analysis:
 
-1. Declare a custom property `var-index` of type `Int` for the namespace `Variable` in an NaBL file.
-   See the challenges from last week on how to declare such a property.
+- We desugared `Param(t,n)` to `(i, Param(t,n))` and `Var(t,n)` to `(i, Var(t,n))`.
+- The occurrence of variable/parameter declaration has a property `index`, where parameters have index `0`, ..., `n` and fields have index `n+1`, ..., `m`.
 
-2. Store the index `i` of each parameter and local variable on its name by applying `store-var-index(|ctx, i)` to its name.
-   See the [challenges from last week on how to store properties on names](lab11.html#variant-1-storing-method-descriptors).
-   In order to calculate indices, you need to match the method declaration, not the parameter or variable declarations.
-   The following strategies might be useful:
-    * `map-with-index(s)` works like `map(s)`, but applies `s` to pairs `(i, e)` where `e` is an element of the list and `i` is the index of this element in the list.
-    * `nmap(s|i)` maps `s` over a list where the strategy `s` takes the index `i` as a term argument and increments `i` after each element.
+See the [interaction with analysis](lab9.html#interaction-with-analysis) section from last week how to retrieve these properties.
 
-   Parameters are indexed from left to right, starting with `1`.
-   Local variables can be indexed in arbitrary order, starting with the next available index.
-
-3. Extend your rule for `method-to-jbc`, which handles method declarations.
+1. Extend your rule for `method-to-jbc`, which handles method declarations.
    Support parameters by generating variable declarations, which map variable numbers in generated Java bytecode to variable names in the original MiniJava program.
    Do the same for local variables.
-   To get the variable number associated with a parameter or local variable, apply `get-var-index` to its name.
+   To get the variable number associated with a parameter or local variable, get the `index` property.
 
-3. Extend your rule for `exp-to-jbc`, which handles method calls.
+2. Extend your rule for `exp-to-jbc`, which handles method calls.
    Support calls with arguments by calling `exp-to-jbc` recursively to translate argument expressions.
 
-4. Provide a rule for `exp-to-jbc`, which translates variable access expressions from MiniJava into sequences of Java bytecode instructions.
+3. Provide a rule for `exp-to-jbc`, which translates variable access expressions from MiniJava into sequences of Java bytecode instructions.
 
-5. Provide a rule for `stmt-to-jbc`, which translates assignments to variables from MiniJava into sequences of Java bytecode instructions.
+4. Provide a rule for `stmt-to-jbc`, which translates assignments to variables from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
 
-6. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
+5. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
 
 ### Challenges

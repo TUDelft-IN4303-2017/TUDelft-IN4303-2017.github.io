@@ -149,9 +149,6 @@ desugaring and analysis:
 - The occurrence of a field declaration has a property `origin` with the value `Field()`.
 - The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
 
-- We desugared `Param(t,n)` to `(i, Param(t,n))` and `Var(t,n)` to `(i, Var(t,n))`.
-- The occurrence of variable/parameter declaration has a property `index`, where parameters have index 0, ..., n and fields have index n+1, ..., m.
-
 The following strategies can be used to query the analysis result:
 
   * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
