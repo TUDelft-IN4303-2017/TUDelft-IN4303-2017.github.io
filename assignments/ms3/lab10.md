@@ -9,9 +9,6 @@ subcontext: ms3
 
 {% include _toc.html %}
 
-This lab is currently being revised.
-{: .notice .notice-warning}
-
 In this lab, you complete your code generator to handle arbitrary MiniJava programs.
 
 ## Overview
@@ -38,8 +35,6 @@ The deadline for submissions is January 18th, 23:59.
 
 ### Grading
 
-You can earn up to 25 points for your example MiniJava programs and their corresponding Jasmin programs.
-We will focus on completeness and correctness of your examples.
 Furthermore, you can earn up to 75 points for your code generator:
 
 * lab 9 functionality (20 points)
@@ -54,10 +49,6 @@ Furthermore, you can earn up to 75 points for your code generator:
 
 In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
-
-<!-- TODO: JBCSource has changed this year -->
-To make automated grading possible, you should make sure the _Run main class_ builder from the _Generate_ menu works! If this does not work, check if you are using `JBCSource` (see lab 10).
-{: .notice .notice-danger}
 
 ### Early Feedback
 
@@ -110,9 +101,9 @@ To make code generation easier, we have made some information available during
 desugaring and analysis:
 
 - We desugared `Param(t,n)` to `(i, Param(t,n))` and `Var(t,n)` to `(i, Var(t,n))`.
-- The occurrence of variable/parameter declaration has a property `index`, where parameters have index `0`, ..., `n` and fields have index `n+1`, ..., `m`.
+- The occurrence of parameter/variable declaration has a property `index`, where parameters have index `0`, ..., `n` and variables have index `n+1`, ..., `m`.
 
-See the [interaction with analysis](lab9.html#interaction-with-analysis) section from last week how to retrieve these properties.
+See the [interaction with analysis](lab9.html#interaction-with-analysis) section from last week for instructions on how to retrieve these properties.
 
 1. Extend your rule for `method-to-jbc`, which handles method declarations.
    Support parameters by generating variable declarations, which map variable numbers in generated Java bytecode to variable names in the original MiniJava program.
