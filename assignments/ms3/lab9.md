@@ -253,8 +253,20 @@ The following strategies might be useful:
 * `foldr(s1, s2, f)` right-folds a list.
   `s1` yields the starting point of the folding, `s2` is the folding strategy, and `f` is applied to each element just before each folding step.
 
-For grading it is important that your strategy `stack-limit` does not take any parameters. You are free to use parameters in strategies that you call yourself.
-{: .notice .notice-info}
+You should test your stack limit implementation by writing SPT tests as follows:
 
-For grading it is important that your strategy `stack-limit` operates on expressions, statements, and lists of statements.
-{: .notice .notice-info}
+```spt
+test stack limit [[
+  class Main {
+    public static void main(String[] args) {
+      System.out.println([[1]]);
+    }
+  }
+]] run stack-limit on #1 to ??
+```
+
+For grading it is important that your strategy `stack-limit` does not take any parameters. You are free to use parameters in strategies that you call yourself.
+{: .notice .notice-warn}
+
+For grading it is important that your strategy `stack-limit` operates on *expressions*, *statements*, and *lists of statements*.
+{: .notice .notice-warn}
