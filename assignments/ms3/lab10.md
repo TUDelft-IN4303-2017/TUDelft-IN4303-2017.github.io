@@ -44,8 +44,6 @@ Furthermore, you can earn up to 75 points for your code generator:
     * methods (15 points)
     * variables (10 points)
     * assignments (15 points)
-* challenges (10 points)
-    * debug information (10 points)
 
 In this assignment, we also give you the chance to earn up to 10 bonus points.
 This works like a challenge, but it gives you extra points on top of the total points of your assignment.
@@ -120,36 +118,6 @@ See the [interaction with analysis](lab9.html#interaction-with-analysis) section
 
 5. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
-
-### Challenges
-
-Challenges are meant to distinguish excellent solutions from good solutions.
-Typically, they are less guided and require more investigation and programming skills.
-
-#### Generate Debug Information
-
-Real-life compilers add debug information to generated code.
-This information is used by debuggers, but also in runtime error messages.
-
-Write a MiniJava program that causes a runtime exception, e.g. by accessing an array out of bound.
-When you compile this program to Java classes and run it in the virtual machine, you expect the runtime error to report you the position of the expression causing the error in the source code.
-To achieve this behaviour, you need to add source file and line number directives.
-
-1. Extend your `class-to-jbc` rules for classes, to include a source file directive pointing to the MiniJava file you compile.
-
-2. When compiling expressions and statements, you can add line number directives in front of the resulting Java Bytecode instructions.
-   To find out the line number of an AST element, you can apply the strategy `origin-line` from the `editor/origins` library.
-   Instead of adding code for line numbers to every rule of `exp-to-jbc` and `stmt-to-jbc`, you should define new strategies `exp-to-jbc-ln` and `stmt-to-jbc-ln` which generates just  the line number directive and calls your original code generation strategies `exp-to-jbc` or `stmt-to-jbc`, respectively.
-Next, replace applications of `exp-to-jbc` and `stmt-to-jbc` by `exp-to-jbc-ln` and `stmt-to-jbc-ln` wherever you need to generate line numbers.
-
-3. It is pretty common, that several expression occur in the same line.
-   In this case, you should generate only a single line number directive.
-   To achieve this, you have various options:
-
-    1. Remove redundant line number directives in a post-processing step.
-    2. Keep track of already used line numbers by passing a state as a term argument to strategy invocations.
-    3. Maintain a state using [dynamic rules](http://eelcovisser.org/post/268/dynamic-rewrite-rules---the-good-parts).
-    4. Maintain a state in the index.
 
 ### Bonus
 
