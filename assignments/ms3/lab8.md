@@ -156,9 +156,22 @@ In general, there are three different approaches to this in Stratego:
 
 ### Testing and Debugging
 
-Test your compiler by running the *Spoofax -> Generation -> Generate Java (.class files) and run* builder on a MiniJava program, for example the `lab08.mjv` file in `minijava.example`.
+Test your compiler by writing SPT tests as follows:
+
+```spt
+test compiler test [[
+  class Main {
+    public static void main(String[] args) {
+      System.out.println(42);
+    }
+  }
+]] run run-jc-trim to "42"
+```
+
+You can also your compiler by running the *Spoofax -> Generation -> Generate Java (.class files) and run* builder on a MiniJava program, for example the `lab08.mjv` file in `minijava.example`.
 If everything goes right, this produces a `txt` file containing the result (i.e., values printed to stdout) of running your MiniJava program.
-Internally, this will:
+
+Internally, running the compiler will:
 
 1. Execute `program-to-jbc` on the MiniJava program, to turn it into a Jasmin program.
 2. Execute the Jasmin compiler on that Jasmin program, to turn it into a Java class file.
