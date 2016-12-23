@@ -266,7 +266,7 @@ test stack limit [[
 ```
 
 For grading it is important that your strategy `stack-limit` does not take any parameters. You are free to use parameters in strategies that you call yourself.
-{: .notice .notice-warn}
+{: .notice .notice-warning}
 
 For grading it is important that your strategy `stack-limit` operates on *expressions*, *statements*, and *lists of statements*.
-{: .notice .notice-warn}
+{: .notice .notice-warning}
