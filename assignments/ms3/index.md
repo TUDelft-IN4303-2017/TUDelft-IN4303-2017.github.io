@@ -13,10 +13,11 @@ In this milestone, you extend the MiniJava editor from the previous milestone to
 
 ## Jasmin Editor
 
-Jasmin is an assembler for the Java Virtual Machine.
+[Jasmin](http://jasmin.sourceforge.net/) is an assembler for the Java Virtual Machine.
 It takes ASCII descriptions of Java classes, written in a simple assembler-like syntax using the Java Virtual Machine instruction set.
 It converts them into binary Java class files, suitable for loading by a Java runtime system.
 Basically, Jasmin is a nice syntax for Java bytecode, with a compiler to actual Java bytecode in class files.
+A Spoofax implementation of Jasmin is available on [GitHub](https://github.com/MetaBorgCube/spoofax-jasmin/).
 
 ### Usage
 
