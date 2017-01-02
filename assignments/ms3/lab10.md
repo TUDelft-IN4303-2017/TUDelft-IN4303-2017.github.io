@@ -97,8 +97,8 @@ You can test each rule by selecting a code fragment in the MiniJava editor and r
 To make code generation easier, we have made some information available during
 desugaring and analysis:
 
-- We desugared `Param(t,n)` to `(i, Param(t,n))` and `Var(t,n)` to `(i, Var(t,n))`.
-- The occurrence of parameter/variable declaration has a property `index`, where parameters have index `0`, ..., `n` and variables have index `n+1`, ..., `m`.
+- We desugared `Param(t,n)` to `Bind(i, Param(t,n))` and `Var(t,n)` to `Bind(i, Var(t,n))`.
+- The occurrence of a parameter/variable declaration has a property `index`, where parameters have index `0`, ..., `n` and variables have index `n+1`, ..., `m`.
 
 See the [interaction with analysis](lab9.html#interaction-with-analysis) section from last week for instructions on how to retrieve these properties.
 
