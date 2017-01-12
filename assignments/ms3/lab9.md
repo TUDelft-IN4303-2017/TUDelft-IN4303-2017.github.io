@@ -144,7 +144,7 @@ For grading, if you decide not to participate in the challenge, use a fixed stac
 To make code generation easier, we have made some information available during
 desugaring and analysis:
 
-- The occurrence of a method declaration has a property `cname` with the name of its surrounding class.
+- The occurrence of a method declaration has a property `cname` with the name of its surrounding class (same for the occurrence of a field declaration).
 - The occurrence of a variable/parameter declaration has a property `origin` with the value `Local()`.
 - The occurrence of a field declaration has a property `origin` with the value `Field()`.
 - The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
