@@ -36,7 +36,7 @@ The deadline for submission is December 14th, 23:59.
 
 ### Grading
 
-You can earn up to 40 points for your _Jasmin program_, up to 40 points for your _code generator_, and up to 20 points for the _challege_.
+You can earn up to 40 points for your _Jasmin program_, up to 40 points for your _code generator_, and up to 20 points for the _challenge_.
 
 ### Early Feedback
 
