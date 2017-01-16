@@ -13,6 +13,7 @@ subcontext: generation
 
 [PDF](https://github.com/TUDelft-IN4303-2016/lectures/blob/master/15-LR-parsing/cc-lr-parsing.pdf)
 
+## Further Reading
 
 LR parsing
 
@@ -20,7 +21,7 @@ LR parsing
 
 * Alfred V. Aho, Ravi Sethi, Jeffrey D. Ullman, Monica S. Lam: Compilers: Principles, Techniques, and Tools, 2nd edition. 2006
 
-Generalised LR parsing
+Scannerless Generalised LR parsing
 
 * Eelco Visser: Syntax Definition for Language Prototyping. PhD thesis 1997
 
