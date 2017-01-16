@@ -13,7 +13,9 @@ subcontext: specification
 
 ## Slides
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/8SsQzEvMPSsJ7" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/hlNOErz0HfwzS0" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/eelcovisser/term-rewriting" title="Term Rewriting" target="_blank">Term Rewriting</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/eelcovisser">Eelco Visser</a></strong> </div>
+
+[PDF](https://github.com/TUDelft-IN4303-2016/lectures/blob/master/04-term-rewriting/Term%20Rewriting.pdf)
 
 ## Further Reading
 
