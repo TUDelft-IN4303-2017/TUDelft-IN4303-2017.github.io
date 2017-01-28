@@ -191,3 +191,7 @@ Finally, you can focus on layout.
 Think about places where whitespace is not optional but mandatory and define corresponding positive and negative test cases.
 Finish with test cases for single-line comments, standard block comments, and nested block comments.
 Single-line comments cannot only end with a newline character, but also at the end of file.
+
+Contrary to some grammers on the web, we allow whitespace around the dots in `System.out.println`.
+{: .notice .notice-warning}
+
