@@ -9,6 +9,9 @@ subcontext: ms2
 
 {% include _toc.html %}
 
+This lab is under construction. Proceed at own risk.
+{: .notice .notice-warning}
+
 In this lab, you define name bindings and corresponding constraints for MiniJava in NaBL2. The
 concepts you are going to use in NaBL2 are described in the following papers:
 

@@ -9,6 +9,9 @@ subcontext: ms1
 
 {% include _toc.html %}
 
+This lab is under construction. Proceed at own risk.
+{: .notice .notice-warning}
+
 In this lab, you define the concrete and abstract syntax of MiniJava in Spoofax.
 From this definition, you generate an Eclipse editor, that provides syntax checking, error recovery and syntax highlighting.
 

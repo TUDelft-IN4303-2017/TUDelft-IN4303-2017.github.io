@@ -63,6 +63,9 @@ These rules allow you to compensate for lower grades in single assignments, but 
 
 In Q1 and Q2 the lab is on Friday and deadlines are on Wednesdays at 23:59. All assignments except lab 9 have a 24 hour deadline extension with a penalty of 2 points. Lab 9 has an extension until 13/01 with a penalty of 1 point.
 
+These dates are subject to change.
+{: .notice .notice-warning}
+
 * Milestone 1: Syntax Analysis
    - 21/09: Lab 1: Testing Syntax Analysis 
    - 28/09: Lab 2: Syntax Definition

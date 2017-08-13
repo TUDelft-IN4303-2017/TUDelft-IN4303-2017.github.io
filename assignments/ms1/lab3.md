@@ -9,6 +9,9 @@ subcontext: ms1
 
 {% include _toc.html %}
 
+This lab is under construction. Proceed at own risk.
+{: .notice .notice-warning}
+
 This lab is your first encounter with [Stratego](http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html).
 You add an outline view and a desugaring transformation to an initial editor provided by us.
 
