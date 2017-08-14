@@ -154,7 +154,7 @@ test backward class name resolution [[
 
 After copying this into an SPT file Spoofax will add the error *"Reference resolution failed"* and *"No constraint generation rule for ..."*. This is expected, since your project is missing an implementation for reference resolution (this is part of the next lab).
 
-You can use _fixtures_ to avoid repeating parts in similar test cases. See the [SPT documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/spt.html#test-fixtures) for details.
+You can use _fixtures_ to avoid repeating parts in similar test cases. See the [SPT documentation](http://www.metaborg.org/en/latest/source/langdev/meta/lang/spt/test-suites.html#test-fixtures) for details.
 
 You should come up with test cases for the resolution of class names, field names, parameter names, and variable names.
 Start with simple test cases, but keep in mind that coverage is the main criterion for your grade.

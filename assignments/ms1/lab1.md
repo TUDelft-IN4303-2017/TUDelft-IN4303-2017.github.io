@@ -140,7 +140,7 @@ Each test case consists of
 You get instant feedback while editing a test suite.
 Since you have not yet implemented the MiniJava editor, all your positive test cases fail.
 You will work on this during the next lab.
-To read more on SPT, visit the [documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/spt.html).
+To read more on SPT, visit the [documentation](http://www.metaborg.org/en/latest/source/langdev/meta/lang/spt/index.html).
 
 ### MiniJava Syntax Definition
 

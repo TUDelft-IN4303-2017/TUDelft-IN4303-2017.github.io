@@ -52,7 +52,7 @@ We consider the following material to be useful for this milestone.
     * A complete listing of all strategies in the Stratego standard library can be found in the [API documentation][StrLibRef].
     * There is also an experimental [search engine][StrLibSearch] for the Stratego standard library.
 
-[StrLang]: http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html
+[StrLang]: http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html 
 [StrLib]: http://metaborg.org/en/latest/source/langdev/meta/libraries/stratego/index.html
 [StrLibRef]: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
 [StrLibSearch]: http://xdoc.martkolthof.nl/

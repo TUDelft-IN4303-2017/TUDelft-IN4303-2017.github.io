@@ -126,7 +126,7 @@ This is because Spoofax editors support syntactic error recovery.
 
 ### Syntax Definition
 
-You should define your syntax in [SDF3](http://metaborg.org/en/latest/source/langdev/meta/lang/sdf3.html).
+You should define your syntax in [SDF3](http://www.metaborg.org/en/latest/source/langdev/meta/lang/sdf3/index.html).
 You can start by opening the file `syntax/minijava.sdf3` in your minijava project.
 When you save this file, you should get a corresponding file `src-gen/syntax/minijava.sdf`.
 You can also split your syntax definition over several modules in `syntax/` and import modules into module `minijava`.
@@ -158,7 +158,7 @@ Check the SDF3 documentation for details.
 In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
 
 You need disambiguation constructs to disambiguate your syntax definition.
-You can specify the associativity with attributes `left`, `right`, or `non-assoc` (See [documentation](http://metaborg.org/en/latest/source/langdev/meta/lang/sdf3.html#attributes)). 
+You can specify the associativity with attributes `left`, `right`, or `non-assoc` (See [documentation](http://www.metaborg.org/en/latest/source/langdev/meta/lang/sdf3/reference.html#attributes)). 
 These attributes are added to the end of a rule:
 
 ```
