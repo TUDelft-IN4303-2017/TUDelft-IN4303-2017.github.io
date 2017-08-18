@@ -30,8 +30,8 @@ Q1
 Q2
 
 * Tue Nov 14, 17:45-19:30, EWI Pi: Dynamic Semantics
-* Tue Nov 21, 17:45-19:30, EWI Pi: Interpreters & Partial Evaluation
-* Tue Nov 28, 17:45-19:30, EWI Pi: Virtual Machines & Code Generation
+* Tue Nov 21, 17:45-19:30, EWI Pi: Virtual Machines & Code Generation
+* Tue Nov 28, 17:45-19:30, EWI Pi: Just-in-Time Compilation (Interpreters & Partial Evaluation)
 * Tue Dec 5, 17:45-19:30, EWI Pi: Data-Flow Analysis
 * Tue Dec 12, 17:45-19:30, EWI Pi: Garbage Collection
 * Tue Dec 19, 17:45-19:30, EWI Pi: Advanced Parsing
@@ -43,11 +43,11 @@ Q2
 ## Schedule 2016-2017
 
 
-Lectures are organised in two introduction lectures and three general topics. The introduction lectures introduce software languages in general and imperative and object-oriented languages in particular.
+Lectures are organized in two introduction lectures and three general topics. The introduction lectures introduce software languages in general and imperative and object-oriented languages in particular.
 
 The first topic focuses on declarative specification of compiler components as supported by state-of-the-art tools for compiler construction, including lexical syntax, context-free syntax, static semantics, and code generation.
 
-In the second topic, we address techniques for the compilation and runtime environments of imperative and object-oriented languages, including dataflow analysis, register allocation, virtual machines, and memory management in detail.
+In the second topic, we address techniques for the compilation and runtime environments of imperative and object-oriented languages, including data-flow analysis, register allocation, virtual machines, and memory management in detail.
 
 In the final topic, we take a closer look on the inside working of compiler components and their generators. In particular, we study parsing algorithms and parser generation.
 
