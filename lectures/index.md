@@ -4,11 +4,44 @@ title: "Lectures"
 excerpt: "Lectures"
 tags: ["lectures"]
 context: lectures
-image: 
+image:
    feature: "lecture.jpg"
    credit: Delft University of Technology
    creditlink: http://repository.tudelft.nl/view/MMP/uuid%3Aa2f25709-c56e-453e-9394-4a05acf603a4/
 ---
+
+The lectures will be renewed this year; the schedule will be updated as we go. For your information, last year's schedule is included below.
+
+## Schedule 2017-2018
+
+topic schedule is tentative
+
+Q1
+
+* Fri Sep 8, 13:45-15:30, 3mE - IZ G: What is a compiler? (Introduction)
+* Tue Sep 12, 17:45-19:30, EWI Pi: Syntax Definition
+* Tue Sep 19, 17:45-19:30, EWI Pi: Basic Parsing
+* Tue Sep 26, 17:45-19:30, EWI Pi: Term Rewriting
+* Tue Oct 3, 17:45-19:30, EWI Pi: Static Semantics & Name Resolution
+* Tue Oct 10, 17:45-19:30, EWI Pi: Type Constraints
+* Tue Oct 17, 17:45-19:30, EWI Pi: Constraint Resolution
+* Tue Oct 24, 17:45-19:30, EWI Pi: (overflow)
+
+Q2
+
+* Tue Nov 14, 17:45-19:30, EWI Pi: Dynamic Semantics
+* Tue Nov 21, 17:45-19:30, EWI Pi: Interpreters & Partial Evaluation
+* Tue Nov 28, 17:45-19:30, EWI Pi: Virtual Machines & Code Generation
+* Tue Dec 5, 17:45-19:30, EWI Pi: Data-Flow Analysis
+* Tue Dec 12, 17:45-19:30, EWI Pi: Garbage Collection
+* Tue Dec 19, 17:45-19:30, EWI Pi: Advanced Parsing
+* Tue Jan 9, 17:45-19:30, EWI Pi: Overview
+* Tue Jan 16, 17:45-19:30, EWI Pi: (overflow)
+* Tue Jan 23, 17:45-19:30, EWI Pi: (overflow)
+
+
+## Schedule 2016-2017
+
 
 Lectures are organised in two introduction lectures and three general topics. The introduction lectures introduce software languages in general and imperative and object-oriented languages in particular.
 
@@ -18,14 +51,11 @@ In the second topic, we address techniques for the compilation and runtime envir
 
 In the final topic, we take a closer look on the inside working of compiler components and their generators. In particular, we study parsing algorithms and parser generation.
 
-## Schedule 2016-2017
-
-topic schedule is tentative
 
 * Tue  9 September, 8:45,  Aula CZ A:  [Software Languages](introduction/software-languages)
 * Tue  9 September, 10:45, Aula CZ A:  [Formal Grammars](specification/formal-grammars)
 * Tue 13 September, 17:45, EWI Pi: [Syntax Definition](specification/syntax-definition)
-* Tue 20 September, 17:45, EWI Pi: [Term Rewriting](specification/term-rewriting) 
+* Tue 20 September, 17:45, EWI Pi: [Term Rewriting](specification/term-rewriting)
 * Tue 27 September, 17:45, EWI Pi: Introduction [Static Analysis](specification/static-analysis) + [Imperative & Object-Oriented Programming Languages](introduction/imperative-oo-pl)
 * Tue  4 October,   17:45, EWI Pi: [Lexical Analysis](generation/lexical-analysis)
 * Tue 11 October,   17:45, EWI Pi: [Name Resolution](specification/name-resolution)
@@ -52,7 +82,7 @@ break
 * Wed  9 September, 17:45, EWI Chip: [Syntax Definition](specification/syntax-definition)
 * Wed 16 September, 17:45, EWI Chip: [Imperative & Object-Oriented Programming Languages](introduction/imperative-oo-pl)
 * Wed 23 September, 17:45, EWI Chip: [Static Analysis](specification/static-analysis)
-* Wed 30 September, 17:45, EWI Chip: [Term Rewriting](specification/term-rewriting) 
+* Wed 30 September, 17:45, EWI Chip: [Term Rewriting](specification/term-rewriting)
 * Wed  7 October,   17:45, EWI Chip: [Dataflow Analysis](techniques/dataflow-analysis)
 * Wed 14 October,   17:45, EWI Chip: [Register Allocation](techniques/register-allocation)
 * Wed 21 October,   17:45, EWI Chip: [Garbage Collection](techniques/garbage-collection)

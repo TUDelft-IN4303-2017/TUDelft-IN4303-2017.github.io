@@ -45,7 +45,7 @@ We do our best to hand out grading reports as quick as possible, but manual grad
 
 Early feedback and most parts of final grading are automated and supported by an AWS in Education Grant award.
 Each pull request triggers the launch of an Amazon EC2 instance which runs automated feedback and grading for your solution.
-Be aware that feedback might be delayed due to submissions by other students, instance limits, server problems, etc. 
+Be aware that feedback might be delayed due to submissions by other students, instance limits, server problems, etc.
 
 ## Grades
 
@@ -59,27 +59,27 @@ To pass the practical part of the course, you need to meet all of the following 
 
 These rules allow you to compensate for lower grades in single assignments, but ensure a minimal quality in all your milestones as well as in your overall practical work.
 
-## Deadlines 2016-2017
+## Deadlines 2017-2018
 
-In Q1 and Q2 the lab is on Friday and deadlines are on Wednesdays at 23:59. All assignments except lab 9 have a 24 hour deadline extension with a penalty of 2 points. Lab 9 has an extension until 13/01 with a penalty of 1 point.
+In Q1 and Q2 the lab is on Friday. The deadlines for the assignments (labs) are listed below and are at 23:59 on that date. All assignments except lab 9 have a 24 hour deadline extension with a penalty of 2 points. Lab 9 has an extension until 12/01 with a penalty of 1 point.
 
 These dates are subject to change.
 {: .notice .notice-warning}
 
 * Milestone 1: Syntax Analysis
-   - 21/09: Lab 1: Testing Syntax Analysis 
-   - 28/09: Lab 2: Syntax Definition
-   - 05/10: Lab 3: Simple Term Rewriting
+   - 20/09: Lab 1: Testing Syntax Analysis
+   - 27/09: Lab 2: Syntax Definition
+   - 04/10: Lab 3: Simple Term Rewriting
 * Milestone 2: Semantic Analysis
-   - 19/10: Lab 4: Testing Name Analysis 
-   - 26/10: Lab 5: Name Analysis
+   - 18/10: Lab 4: Testing Name Analysis
+   - 27/10: Lab 5: Name Analysis
 * Milestone 2: Semantic Analysis (continued)
-   - 23/11: Lab 6: Testing Type Analysis
-   - 07/12: Lab 7: Type Analysis 
+   - 22/11: Lab 6: Testing Type Analysis
+   - 06/12: Lab 7: Type Analysis
 * Milestone 3: Code Generation
-   - 14/12: Lab 8: Compiling Minimal Programs
-   - 23/12: Lab 9: Compiling Expressions and Statements
-   - 18/01: Lab 10: Compiling, Fields, Parameters, and Variables
+   - 13/12: Lab 8: Compiling Minimal Programs
+   - 22/12: Lab 9: Compiling Expressions and Statements
+   - 19/01: Lab 10: Compiling, Fields, Parameters, and Variables
 
 ## Academic Misconduct
 
