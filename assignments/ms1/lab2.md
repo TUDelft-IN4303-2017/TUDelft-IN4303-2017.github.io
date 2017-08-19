@@ -50,7 +50,7 @@ The definition should include:
 You need to submit your MiniJava project with a pull request against branch `assignment2` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-The deadline for submission is September 28th, 23:59.
+The deadline for submission is September 27th 2017, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

@@ -37,7 +37,7 @@ The [Git documentation](/documentation/git.html#submitting-an-assignment) explai
 
 If you participate in the challenge, please let us know in the WebLab assignment [Challenges (overlays)](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9085/view).
 
-The deadline for submissions is December 23rd, 23:59. The extended deadline is January 13th, 23:59, for a penalty of 1 point.
+The deadline for submissions is December 22nd 2017, 23:59. The extended deadline is January 12th 2018, 23:59, for a penalty of 1 point.
 {: .notice .notice-warning}
 
 ### Grading

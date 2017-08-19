@@ -42,7 +42,7 @@ a request.  We expect to find your Spoofax project `minijava` and your test proj
 For this lab, you should put all your tests in `minijava.test.types`.
 {: .notice .notice-warning}
 
-The deadline for submissions is November 23rd, 23:59.
+The deadline for submissions is November 22nd 2017, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

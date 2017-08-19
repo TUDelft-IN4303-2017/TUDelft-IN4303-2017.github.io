@@ -48,7 +48,7 @@ You need to submit your test project with a pull request against branch `assignm
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 We expect to find your Spoofax project `minijava` and your test project `minijava.test.syntax` next to each other in the root of the repository.
 
-The deadline for submission is 21th September, 23:59.
+The deadline for submission is 20th September 2017, 23:59.
 {: .notice .notice-warning}
 
 ### Grading

@@ -34,7 +34,7 @@ The [Git documentation](/documentation/git.html#submitting-an-assignment) explai
 Also, you need to **paste the contents** of `simple.j` in the WebLab assignment [Jasmin Code](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9076/view).
 If you participate in the challenge, you need to paste your optimisation in the WebLab assignment [Java Bytecode Optimisation](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9079/view).
 
-The deadline for submission is December 14th, 23:59.
+The deadline for submission is December 13th 2017, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
