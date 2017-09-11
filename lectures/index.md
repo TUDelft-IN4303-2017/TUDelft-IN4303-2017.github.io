@@ -10,7 +10,11 @@ image:
    creditlink: http://repository.tudelft.nl/view/MMP/uuid%3Aa2f25709-c56e-453e-9394-4a05acf603a4/
 ---
 
-The lectures will be renewed this year; the schedule will be updated as we go. For your information, last year's schedule is included below.
+The lectures will be renewed this year; the schedule will be updated as we go.
+
+The lecture notes and slides will be published at http://www.declare-your-language.org
+
+For your information, last year's schedule and lecture pages are still included below.
 
 ## Schedule 2017-2018
 
@@ -18,7 +22,7 @@ topic schedule is tentative
 
 Q1
 
-* Fri Sep 8, 13:45-15:30, 3mE - IZ G: What is a compiler? (Introduction)
+* Fri Sep 8, 13:45-15:30, 3mE - IZ G: [What is a compiler? (Introduction)](http://www.declare-your-language.org/en/latest/source/introduction/index.html)
 * Tue Sep 12, 17:45-19:30, EWI Pi: Syntax Definition
 * Tue Sep 19, 17:45-19:30, EWI Pi: Basic Parsing
 * Tue Sep 26, 17:45-19:30, EWI Pi: Term Rewriting
@@ -31,9 +35,9 @@ Q2
 
 * Tue Nov 14, 17:45-19:30, EWI Pi: Dynamic Semantics
 * Tue Nov 21, 17:45-19:30, EWI Pi: Virtual Machines & Code Generation
-* Tue Nov 28, 17:45-19:30, EWI Pi: Just-in-Time Compilation (Interpreters & Partial Evaluation)
-* Tue Dec 5, 17:45-19:30, EWI Pi: Data-Flow Analysis
-* Tue Dec 12, 17:45-19:30, EWI Pi: Garbage Collection
+* Tue Nov 28, 17:45-19:30, EWI Pi: Data-Flow Analysis
+* Tue Dec 5, 17:45-19:30, EWI Pi: Garbage Collection
+* Tue Dec 12, 17:45-19:30, EWI Pi: Just-in-Time Compilation (Interpreters & Partial Evaluation)
 * Tue Dec 19, 17:45-19:30, EWI Pi: Advanced Parsing
 * Tue Jan 9, 17:45-19:30, EWI Pi: Overview
 * Tue Jan 16, 17:45-19:30, EWI Pi: (overflow)
