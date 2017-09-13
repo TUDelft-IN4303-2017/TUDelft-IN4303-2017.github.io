@@ -11,11 +11,12 @@ subcontext: doc
 
 We use the Git version control system with [github.com](https://github.com) to manage submissions and grade assignments.
 
+
 ## Setup
 
 If you don't already have a GitHub account, [sign up](https://github.com/signup) first!
 
-Once you have a GitHub account, set up Git on your computer by following [this guide](https://help.github.com/articles/set-up-git/). Be sure to select your operating system at the top of that guide. Also open the `Input` informational box for information on how to use git from the command-line, because we will be using that in this guide.
+Once you have a GitHub account, download and install Git from [this page](https://git-scm.com/downloads). We will be using the Git command-line, since it is more powerful and easier to troubleshoot than GUI clients. On Linux and macOS, installing Git should provide a `git` command on your shell. On Windows, Git installs `Git BASH` to provide a command-line shell, which you need to start to use Git from the command-line.
 
 We will explain the steps needed to work on and submit assignments in this guide. To learn the basics of git, read [git - the simple guide](http://rogerdudler.github.io/git-guide/) and [try out the Git command-line](https://try.github.io/). If you'd like to learn more, [have a look at these resources](https://help.github.com/articles/good-resources-for-learning-git-and-github/).
 
@@ -26,12 +27,12 @@ Let's look at the repository structure first.
 
 On GitHub, we will create a private git repository for you, which is owned by us, and is only visible to you and the compiler construction team. This repository will host assignment templates and your submissions. Note that you do **not** have write access to this repository, you can only read from it and submit assignments to it. This is to ensure that you cannot mess with submitted assignments after the deadline.
 
-You create your own private Git repository by making a *fork* of our private repository. This repository will be used by you to work on assignments. You have write access to this repository since you create it. Our repository on GitHub is called *upstream* in git terms, because your repository is a fork of it. Your repository on GitHub is called *origin*. If you'd like to learn more about forking, [read this GitHub guide](https://help.github.com/articles/fork-a-repo/).
+You create your own private Git repository by making a *fork* of our private repository. This repository will be used by you to work on assignments. You have write access to this repository since you create it. Our repository on GitHub is called *upstream* in git terms, because your repository is a fork (clone) of ours. Your repository on GitHub is called *origin*. If you'd like to learn more about forking, [read this GitHub guide](https://help.github.com/articles/fork-a-repo/).
 
 
 ## Getting started
 
-First, find your private repository in the [TUDelft-IN4303-2015](https://github.com/orgs/TUDelft-IN4303-2015) organization on GitHub, it should be called `student-id` where `id` is your student id. Remember your id, as it is used later. Go to the repository and press the fork button to fork the repository into your account.
+First, find your private repository in the [TUDelft-IN4303-2017](https://github.com/orgs/TUDelft-IN4303-2017) organization on GitHub, it should be called `student-id` where `id` is your student id. Remember your id, as it is used later. Go to the repository and press the fork button to fork the repository into your account.
 
 ![Fork](https://camo.githubusercontent.com/a67a2699e627d522bfb0da1537a79a5546ded10c/68747470733a2f2f6769746875622d696d616765732e73332e616d617a6f6e6177732e636f6d2f68656c702f7265706f7369746f72792f666f726b5f627574746f6e2e6a7067)
 
@@ -63,7 +64,7 @@ nothing to commit, working directory clean
 To make a connection with the upstream repository we forked off, we need to add another remote to the local repository. Use the following command with your id:
 
 ```shell
-git remote add upstream https://github.com/tudelft-in4303-2015/student-id.git
+git remote add upstream https://github.com/tudelft-in4303-2017/student-id.git
 ```
 
 Confirm that it works by fetching commits from upstream:
@@ -75,7 +76,7 @@ git fetch upstream
 which should output something like:
 
 ```shell
-From https://github.com/tudelft-in4303-2015/student-id.git
+From https://github.com/tudelft-in4303-2017/student-id.git
  * [new branch]      master     -> upstream/master
 ```
 
@@ -110,7 +111,7 @@ git checkout -b assignment3
 git push -u origin assignment3
 ```
 
-The new `assignment3` branch will be in an identical state to the `assignment2` branch, but changes will only be comitted to the `assignment3` branch, leaving the `assignment2` branch as is.
+The new `assignment3` branch will be in an identical state to the `assignment2` branch, but changes will only be committed to the `assignment3` branch, leaving the `assignment2` branch as is.
 
 Now you have the assignment branch checked out in your local repository and can start working.
 

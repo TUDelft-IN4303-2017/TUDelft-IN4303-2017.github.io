@@ -9,9 +9,6 @@ subcontext: ms1
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab, you develop a test suite for syntax analysis.
 The test suite consists of positive and negative test cases.
 
@@ -195,6 +192,6 @@ Think about places where whitespace is not optional but mandatory and define cor
 Finish with test cases for single-line comments, standard block comments, and nested block comments.
 Single-line comments cannot only end with a newline character, but also at the end of file.
 
-Contrary to some grammers on the web, we allow whitespace around the dots in `System.out.println`.
+Contrary to some grammars on the web, we allow whitespace around the dots in `System.out.println`.
 {: .notice .notice-warning}
 

@@ -26,12 +26,13 @@ You can download an Eclipse installation with the Spoofax Eclipse plugin preinst
 * [Linux 64-bits](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-linux-x64-jre.tar.gz)
 * [Mac OS X (Intel only)](http://buildfarm.metaborg.org/job/metaborg/job/spoofax-releng/job/in4303/lastSuccessfulBuild/artifact/dist/spoofax/eclipse/spoofax-macosx-x64-jre.tar.gz)
 
-To install Spoofax, unpack the downloaded archive into a location with write access. To run Spoofax, just start Eclipse.
+These are specifically tagged versions of Spoofax, suited for the lab assignments. Please use these versions of Spoofax, instead of the ones found on the Spoofax website.
+{: .notice .notice-warning}
+
+To install and run Spoofax, read the [Installing Spoofax](http://www.metaborg.org/en/latest/source/install.html#unpack) instructions, starting from the Unpack section.
 
 On Windows, do **not** unpack the Eclipse installation into Program Files, because no write access is granted there, breaking Spoofax.
 {: .notice .notice-warning}
-
-Fore more detailed instructions on installing and running Spoofax, follow our [Getting Started guide](http://spoofax.org/en/latest/source/langdev/start.html#unpack), but skip the download step (start at the unpack step) and use the file you downloaded from one of the above links.
 
 ## Updating
 
@@ -51,10 +52,11 @@ If installation fails with errors indicating that "updates are not permitted", i
 
 ## Documentation
 
-We host documentation for Spoofax and its meta-languages at [metaborg.org](http://metaborg.org):
+We host documentation for Spoofax and its meta-languages at [spoofax.org](http://spoofax.org):
 
-* [Getting Started with Language Development](http://metaborg.org/en/latest/source/langdev/start.html)
-* [The SPT Testing Language](http://metaborg.org/en/latest/source/langdev/meta/lang/spt/index.html)
-* [The Syntax Definition Formalism SDF3](http://metaborg.org/en/latest/source/langdev/meta/lang/sdf3/index.html)
-* [The NaBL2 Name Binding Language](http://metaborg.org/en/latest/source/langdev/meta/lang/nabl2/index.html)
-* [The Stratego Transformation Language](http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html)
+* [Creating a Language Project](http://www.metaborg.org/en/latest/source/langdev/start.html)
+* [Language Definition with Spoofax](http://www.metaborg.org/en/latest/source/langdev/meta/lang/tour/index.html)
+* [Language Testing with SPT](http://www.metaborg.org/en/latest/source/langdev/meta/lang/spt/index.html)
+* [Syntax Definition with SDF3](http://www.metaborg.org/en/latest/source/langdev/meta/lang/sdf3/index.html)
+* [Static Semantics Definition with NaBL2](http://www.metaborg.org/en/latest/source/langdev/meta/lang/nabl2/index.html)
+* [Transformation with Stratego](http://www.metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html)
