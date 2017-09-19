@@ -23,9 +23,9 @@ topic schedule is tentative
 Q1
 
 * Fri Sep 8, 13:45-15:30, 3mE - IZ G: [What is a compiler? (Introduction)](http://www.declare-your-language.org/en/latest/source/introduction/index.html)
-* Tue Sep 12, 17:45-19:30, EWI Pi: Syntax Definition
-* Tue Sep 19, 17:45-19:30, EWI Pi: Basic Parsing
-* Tue Sep 26, 17:45-19:30, EWI Pi: Term Rewriting
+* Tue Sep 12, 17:45-19:30, EWI Pi: [Syntax Definition](http://www.declare-your-language.org/en/latest/source/syntax/syntax-definition.html#slides)
+* Tue Sep 19, 17:45-19:30, EWI Pi: [Syntactic (Editor) Services](http://www.declare-your-language.org/en/latest/source/syntax/syntax-definition.html#slides)
+* Tue Sep 26, 17:45-19:30, EWI Pi: Transformation by Term Rewriting
 * Tue Oct 3, 17:45-19:30, EWI Pi: Static Semantics & Name Resolution
 * Tue Oct 10, 17:45-19:30, EWI Pi: Type Constraints
 * Tue Oct 17, 17:45-19:30, EWI Pi: Constraint Resolution
