@@ -111,7 +111,7 @@ This requires you to specify the start symbol that is used by the editor
 Of course, this should also be a start symbol in your syntax definition.
 You can test the editor by first building your project and opening a MiniJava program.  
 
-To get feedback on the building progress, open the console on Eclipse by accessing *Window*, *Show View*, and select *Console*. In some cases, it is necessary to select *Other* and then type *Console*.
+To get feedback on the building progress, open the console on Eclipse by accessing *Window*, *Show View*, and selecting *Console*. In some cases, it is necessary to select *Other* and then type *Console*.
 {: .notice .notice-warning}
 
 In Eclipse, you build a project by choosing *Build Project* from the *Project* menu or by pressing the corresponding keyboard shortcut (OS X: Cmd + Alt + B, Enter).
