@@ -9,9 +9,6 @@ subcontext: ms1
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab, you define the concrete and abstract syntax of MiniJava in Spoofax.
 From this definition, you generate an Eclipse editor, that provides syntax checking, error recovery and syntax highlighting.
 
@@ -114,11 +111,14 @@ This requires you to specify the start symbol that is used by the editor
 Of course, this should also be a start symbol in your syntax definition.
 You can test the editor by first building your project and opening a MiniJava program.  
 
+To get feedback on the building progress, open the console on Eclipse by accessing *Window*, *Show View*, and select *Console*. In some cases, it is necessary to select *Other* and then type *Console*.
+{: .notice .notice-warning}
+
 In Eclipse, you build a project by choosing *Build Project* from the *Project* menu or by pressing the corresponding keyboard shortcut (OS X: Cmd + Alt + B, Enter).
 When you later rebuild your project, any open MiniJava editor is updated to the new version you just built.
 
 You can also use *Show parsed AST* in the editor's *Spoofax* -> *Syntax* menu to test your abstract syntax definition interactively.
-While you change a MiniJava program in the editor, its corresponding AST is updated automatically.
+When you change a MiniJava program in the editor, it is necessary to select *Show parsed AST* again to visualize its corresponding AST.
 You might notice that the editor will give you an AST even for syntactically incorrect programs.
 This is because Spoofax editors support syntactic error recovery.
 
@@ -158,7 +158,7 @@ Check the SDF3 documentation for details.
 In case you want to use `<` or `>` as symbols inside a template, you can use alternate template brackets `[...]`.
 
 You need disambiguation constructs to disambiguate your syntax definition.
-You can specify the associativity with attributes `left`, `right`, or `non-assoc` (See [documentation](http://www.metaborg.org/en/latest/source/langdev/meta/lang/sdf3/reference.html#attributes)). 
+You can specify the associativity with attributes `left`, `right`, or `non-assoc` (See [documentation](http://www.metaborg.org/en/latest/source/langdev/meta/lang/sdf3/reference.html#attributes)).
 These attributes are added to the end of a rule:
 
 ```
@@ -238,7 +238,7 @@ Do not forget to define follow restrictions.
 
 ### Editor Services
 
-When developing a language in Spoofax, the syntax definition written in SDF3 does not produce only a parser but other editor services as well. 
+When developing a language in Spoofax, the syntax definition written in SDF3 does not produce only a parser but other editor services as well.
 
 #### Pretty Printing
 
@@ -266,7 +266,7 @@ Make sure that your altered syntax definition is still correct and can be used t
 #### Syntactic Code Completion
 
 Together with a pretty-printer, Spoofax also automatically derives syntactic code completion from the syntax definition. This feature allows for example, for new users to discover the language's syntax while editing the program. To know more details about syntactic code completion in Spoofax, check the [documentation](http://metaborg.org/en/latest/source/release/migrate/new_completions_framework.html).
- 
+
 
 ### Challenge
 
