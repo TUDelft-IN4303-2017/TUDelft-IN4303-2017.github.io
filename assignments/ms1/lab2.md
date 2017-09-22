@@ -143,7 +143,7 @@ imports
 The module already imports a module `common`, which you can find in any initial Spoofax editor project.
 This module provides syntax definitions for common lexical sorts such as identifiers, integers, strings, and whitespace, including single line and block comments.
 
-For more information on how to write SDF3 syntax definitions, also check the documentation on [how to define a language in Spoofax](http://www.metaborg.org/en/latest/source/langdev/meta/lang/tour/syntax.html)
+For more information on how to write SDF3 syntax definitions, also check the documentation on how to define a language in [Spoofax](http://www.metaborg.org/en/latest/source/langdev/meta/lang/tour/syntax.html).
 {: .notice .notice-warning}
 
 #### Context-free Syntax
