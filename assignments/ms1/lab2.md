@@ -53,7 +53,7 @@ The deadline for submission is September 27th 2017, 23:59.
 ### Grading
 
 You can earn up to 100 points for your concrete syntax definition.
-Therefore, we run 333 test cases against your implementation.
+Therefore, we run 355 test cases against your implementation.
 You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
