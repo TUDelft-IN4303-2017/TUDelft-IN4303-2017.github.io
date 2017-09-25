@@ -9,9 +9,6 @@ subcontext: ms1
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 This lab is your first encounter with [Stratego](http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html).
 You add an outline view and a desugaring transformation to an initial editor provided by us.
 
@@ -68,11 +65,6 @@ You have 3 early feedback attempts.
 
 We provide you with a template for this assignment in the `assignment3` branch.
 See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
-
-#### Updating Spoofax
-
-A new version of Spoofax is required for this lab.
-See the [Spoofax documentation](/documentation/spoofax.html#updating) on how to update Spoofax.
 
 ### Anatomy of a Spoofax Project
 
@@ -354,7 +346,7 @@ Annotations can be used for different variants of builders:
 * `(openeditor)` from the Syntax menu ensures that a new editor window is opened for the result.
 * Finally, `(source)` tells Spoofax to run the builder on an unanalysed (and also not desugared) AST.
 
-Note that the `editor-desugar` rule only applies `desugar` to a selected node. Thus, first select the node you want to desugar and then select the builder *Show desugared syntax*.
+Note that the `editor-desugar` rule only applies `desugar` to a specific node. Thus, first select the part of the program that corresponds to the node you want to desugar and then select the builder *Show desugared syntax*.
 {: .notice .notice-warning}
 
 
