@@ -72,7 +72,7 @@ Until now, you mainly worked on files in the `syntax` folder of your project.
 During this lab you will also edit files in the `trans` folder.
 So, this is a good point to talk about the general structure of a Spoofax project.
 
-First of all, every Spoofax project is an Eclipse plug-in project.
+First of all, every Spoofax project may be part of an Eclipse plug-in project.
 This allows you to deploy your editor as a plugin using the Eclipse update site mechanism.
 Users do not need to have Spoofax installed for using your editor.
 
