@@ -405,5 +405,5 @@ Try changing the `editor-desugar` rule to use `desugar-all` instead of `desugar`
 
 Define a desugaring for octal numbers.
 In Java, octal numbers start with leading zeros.
-Define a rewrite rule which matches such numbers and transforms them to decimal integers.
+Define a rewrite rule which matches such numbers and transforms them to decimal integers. If the number with leading zero is not octal, do not transform it. 
 See the [API docs](http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/) for useful helper strategies.
