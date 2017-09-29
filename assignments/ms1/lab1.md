@@ -161,6 +161,9 @@ Try to focus on corner cases such as
 * mixings of letters and digits (Which kinds of mixing are allowed? Which are not?),
 * underscores in identifiers.
 
+The content for the tests for lexical symbols should no be surrounded by layout.
+{: .notice .notice-warning}
+
 Next, you should walk through the whole syntax definition.
 Keep thinking of valid and invalid code fragments.
 Identify interesting corner cases and turn them into positive and negative test cases.
@@ -173,6 +176,12 @@ The name of a test case should reflect the aspect it addresses.
 You can organise test cases which focus on similar aspects in test modules.
 Again, the name of a test module should reflect these aspects.
 Finally, you can organise test suites in folders.
+
+When writing tests that target the differences between Java and MiniJava, only consider
+the syntactic differences. For example, identifiers in Java are limited to a certain size.
+This is **should not** be checked by your tests as this limitation is not specified in
+the context-free grammar of Java.
+{: .notice .notice-warning}
 
 #### Disambiguation
 
@@ -194,4 +203,3 @@ Single-line comments cannot only end with a newline character, but also at the e
 
 Contrary to some grammars on the web, we allow whitespace around the dots in `System.out.println`.
 {: .notice .notice-warning}
-
