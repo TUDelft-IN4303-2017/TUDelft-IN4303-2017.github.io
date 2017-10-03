@@ -310,17 +310,16 @@ This is done similar to the builder for pretty-printing. Add the following rewri
 
 ```
 editor-desugar:
-  (selected, position, ast, path, project-path) -> (filename, text)
+  (_, _, ast, path, project-path) -> (filename, text)
   where
     filename := <guarantee-extension(|"desugared.aterm")> path ;
-    text     := <desugar-all> selected
+    text     := <desugar-all> ast
 ```
 
 This rule follows Spoofax' convention for strategies which implement editor services.
 On the left-hand site, it matches a tuple of
 
-* the `selected` node,
-* its `position` in the `ast`,
+* the first two parts are ignored
 * the `path` of the current file and
 * the `project path`.
 
@@ -346,7 +345,7 @@ Annotations can be used for different variants of builders:
 * `(openeditor)` from the Syntax menu ensures that a new editor window is opened for the result.
 * Finally, `(source)` tells Spoofax to run the builder on an unanalysed (and also not desugared) AST.
 
-Note that the `editor-desugar` rule only applies `desugar` to a specific node. Thus, first select the part of the program that corresponds to the node you want to desugar and then select the builder *Show desugared syntax*.
+Note that the `editor-desugar` rule uses `desugar-all`. You should implement this strategy as explained in the next section. Until you do, the menu option will not work. 
 {: .notice .notice-warning}
 
 
