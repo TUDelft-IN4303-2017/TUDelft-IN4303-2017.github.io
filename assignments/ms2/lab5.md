@@ -66,15 +66,16 @@ You earn points, when your implementation passes test cases.
 The total number of points depends on how many test cases you pass in each of the following groups:
 
 * name binding (45 points)
-  * class declarations and references (7 points)
-  * field declarations (7 points)
-  * parameter declarations (5 points)
-  * variable declarations and references (5 points)
-  * scopes of program, classes, and methods (18 points)
+  * class declarations and references (6 points)
+  * field declarations (6 points)
+  * parameter declarations (6 points)
+  * variable declarations and references (6 points)
+  * scopes of program, classes, and methods (12 points)
+  * variable origins (3 points)
 * constraints (45 points)
-  * unresolved references (20 points)
+  * unresolved references (16 points)
   * duplicate definitions (20 points)
-  * hiding variables (5 points)
+  * hiding variables (9 points)
 * challenge (10 points)
 
 ### Early Feedback
