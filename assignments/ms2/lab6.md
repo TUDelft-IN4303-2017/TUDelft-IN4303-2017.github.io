@@ -23,8 +23,10 @@ Develop a test suite for type analysis.
 The test suite should provide
 
 1. Test cases for the types of expressions
-1. Test cases for the resolution of method names
-2. Test cases for
+1. Test cases for name resolution
+  * resolving of method names
+  * errors on instantiating, subclassing, or referencing the main class
+1. Test cases for types
   * errors on overloaded methods
   * errors on cyclic inheritance
   * errors on fields hiding fields in a parent class
@@ -51,11 +53,12 @@ You can earn up to 100 points for the coverage of your test cases. Therefore, we
 against 48 correct and erroneous definitions of MiniJava. The total number of points depends on how
 many erroneous language you detect in each of the following groups:
 
-- Names (25 points)
+- Names (40 points)
   - Methods (25 points)
-- Types (75 points)
-  - Expressions (45 points)
-  - Statements (30 points)
+  - Main class (15 points)
+- Types (60 points)
+  - Expressions (40 points)
+  - Statements (20 points)
 
 ### Early Feedback
 
