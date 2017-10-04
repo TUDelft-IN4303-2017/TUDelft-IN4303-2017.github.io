@@ -31,7 +31,6 @@ The test suite should provide
   * errors on duplicate definitions of classes, fields, parameters, and variables,
   * errors on missing definitions of classes, fields, parameters, and variables,
   * warnings on variables hiding fields,
-  * errors on instantiating, subclassing, or referencing the main class.
 
 ### Submission
 
@@ -52,15 +51,14 @@ You can earn up to 100 points for the coverage of your test cases. Therefore, we
 against 25 correct and erroneous definitions of MiniJava. The total number of points depends on how
 many test cases you pass in each of the following groups:
 
-- resolution (40 points)
+- resolution (44 points)
   - classes (20 points)
-  - fields (8 points)
+  - fields (12 points)
   - variables & parameters (12 points)
-- constraints (60 points)
+- constraints (56 points)
   - duplicate definitions (20 points)
   - missing definitions (16 points)
-  - hiding (9 points)
-  - main class (15 points)
+  - hiding (20 points)
 
 ### Early Feedback
 
