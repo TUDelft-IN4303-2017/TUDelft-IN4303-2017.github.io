@@ -28,8 +28,8 @@ Q1
 * Tue Sep 26, 17:45-19:30, EWI Pi: [Transformation by Strategic Term Rewriting](http://www.declare-your-language.org/en/latest/source/transformation/index.html)
 * Tue Oct 3, 17:45-19:30, EWI Pi: [Name Resolution](http://www.declare-your-language.org/en/latest/source/statics/index.html)
 * Tue Oct 10, 17:45-19:30, EWI Pi: [Type Constraints](http://www.declare-your-language.org/en/latest/source/statics/index.html)
-* Tue Oct 17, 17:45-19:30, EWI Pi: [Constraint Resolution](http://www.declare-your-language.org/en/latest/source/statics/index.html)
-* Tue Oct 24, 17:45-19:30, EWI Pi: (overflow)
+* Tue Oct 17, 17:45-19:30, EWI Pi: [Constraint Resolution I](http://www.declare-your-language.org/en/latest/source/statics/index.html)
+* Tue Oct 24, 17:45-19:30, EWI Pi: [Constraint Resolution II](http://www.declare-your-language.org/en/latest/source/statics/index.html)
 
 Q2
 
