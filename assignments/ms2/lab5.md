@@ -93,15 +93,11 @@ You have 3 early feedback attempts.
 
 ### Preliminaries
 
-#### Updating Spoofax
-
-A new version of Spoofax is required for this lab.
-See the [Spoofax documentation](/documentation/spoofax.html#updating) on how to update Spoofax.
-
 #### GitHub Repository
 
-We provide you with a template for this assignment in the `assignment5` branch.
-See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+You continue with your work from the previous assignment. See the
+[Git documentation](/documentation/git.html#continue-from-previous-assignment) on
+how to create the `assignment5` branch from your previous work.
 
 ### Constraint generation rules
 
@@ -265,8 +261,8 @@ where `t` is a variable from your match pattern.
 
 The following constraints can be used to restrict the names that can appear in scopes:
 
-* `distinct <Nameset>`
-* `<Nameset> subseteq <Nameset>`
+* `distinct <Nameset>` and `distinct/name <Nameset>`
+* `<Nameset> subseteq <Nameset>` and `<Nameset> subseteq/name <Nameset>`
 
 The constraint `<Nameset> seteq <Nameset>` is desugared to two `subseteq` constraints.
 
@@ -291,6 +287,10 @@ and `Y` contains one `x` will result in a set with one `x`.
 Error messages on `subseteq` and `distinct` constraints can use two special keywords.  The position
 can be `@NAMES`, in which case the error will appear on the relevant names. In a formatted message
 `NAME` can be used to insert the name in the message.
+
+See the reference documentation for a more complete description of
+these constraints.
+{: .notice .notice-info}
 
 Note that if you use set expressions in your constraint, the order in which you do the operations
 can be important to get the error on the right name.
