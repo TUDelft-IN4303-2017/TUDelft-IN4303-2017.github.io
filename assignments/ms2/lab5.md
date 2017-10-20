@@ -79,7 +79,7 @@ The total number of points depends on how many test cases you pass in each of th
 * constraints (45 points)
   * unresolved references (16 points)
   * duplicate definitions (20 points)
-  * hiding variables (9 points)
+  * hiding variables and fields (9 points)
 * challenge (10 points)
 
 ### Early Feedback
@@ -258,6 +258,10 @@ The default error location is the matched term, but it can be specified explicit
 where `t` is a variable from your match pattern.
 
 #### Sets of names
+
+MiniJava requires errors and warnings in a few cases where hiding
+occurs. Fields are not allowed to hide fields in super classes. Local
+variables and parameters are allowed to hide, but get a warning if they do.
 
 The following constraints can be used to restrict the names that can appear in scopes:
 
