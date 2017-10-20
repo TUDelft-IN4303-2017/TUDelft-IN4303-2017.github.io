@@ -106,6 +106,9 @@ figcaption {
   background-color: $info;
   border-color: $info;
   color: $white;
+    a {
+	    color: $notice-link;
+    }
 	code {
 	  background-color: $info-code;
 	  border-color: $info-code;
@@ -116,6 +119,9 @@ figcaption {
   background-color: $success;
   border-color: $success;
   color: $white;
+    a {
+	    color: $notice-link;
+    }
 	code {
 	  background-color: $success-code;
 	  border-color: $success-code;
@@ -126,6 +132,9 @@ figcaption {
   background-color: $warning;
   border-color: $warning;
   color: $white;
+    a {
+	    color: $notice-link;
+    }
 	code {
 	  background-color: $warning-code;
 	  border-color: $warning-code;
@@ -136,6 +145,9 @@ figcaption {
   background-color: $danger;
   border-color: $danger;
   color: $white;
+    a {
+	    color: $notice-link;
+    }
 	code {
 	  background-color: $danger-code;
 	  border-color: $danger-code;
