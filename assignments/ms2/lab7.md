@@ -61,7 +61,7 @@ groups:
 
 * name binding (20 points)
   * method declarations
-  * method calls
+  * method references
 * typing rules (35 points)
   * literals (4 points)
   * unary expressions (5 points)

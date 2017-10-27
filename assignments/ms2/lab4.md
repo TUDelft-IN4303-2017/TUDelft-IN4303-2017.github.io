@@ -28,7 +28,7 @@ The test suite should provide
   * errors on duplicate definitions of classes, fields, parameters, and variables,
   * errors on missing definitions of classes, fields, parameters, and variables,
   * warnings on variables hiding fields,
-  * errors on variables hiding fields.
+  * errors on fields hiding fields in a parent class.
 
 ### Submission
 

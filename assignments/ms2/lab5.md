@@ -9,9 +9,6 @@ subcontext: ms2
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab, you define name bindings and corresponding constraints for MiniJava in NaBL2. The
 concepts you are going to use in NaBL2 are described in the following papers:
 
@@ -38,13 +35,11 @@ scope graph and resolution constraints. The specification should include:
   * class declarations
   * class references
   * field declarations
-  * method declarations
   * parameter declarations
   * variable declarations
   * field, parameter, and variable references
 2. Resolution constraints for
   * class references
-  * method references
   * parameter references
   * field references
   * variable references

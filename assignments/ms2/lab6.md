@@ -29,7 +29,6 @@ The test suite should provide
 1. Test cases for types
   * errors on overloaded methods
   * errors on cyclic inheritance
-  * errors on fields hiding fields in a parent class
   * type errors in expressions
   * type errors in statements
   * type errors in method definitions
