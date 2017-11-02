@@ -9,9 +9,6 @@ subcontext: ms2
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab, you develop a test suite for type analysis.
 The test suite consists of type projection test cases, resolution test cases and constraint test cases.
 
