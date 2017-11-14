@@ -99,8 +99,8 @@ constructors were already given in the previous lab. Types are declared in the s
 an NaBL2 file. As an example, we show the type declaration for class types:
 
     signature
-      types
-        ClassType(occurrence)
+      constructors
+        ClassType : occurrence -> Type
         // ... more constructors ...
 
 We identify classes by the *declaration* from the class definition. For example, assume a `class A
