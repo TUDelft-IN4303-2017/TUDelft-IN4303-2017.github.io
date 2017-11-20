@@ -25,6 +25,7 @@ The test suite should provide
   * errors on instantiating, subclassing, or referencing the main class
 1. Test cases for types
   * errors on overloaded methods
+  * notes on overridden methods
   * errors on cyclic inheritance
   * type errors in expressions
   * type errors in statements
