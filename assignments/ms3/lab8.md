@@ -31,67 +31,49 @@ The code generator should include a transformation from MiniJava ASTs to Jasmin 
 You need to submit your MiniJava project with a pull request against branch `assignment8` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
 
-Also, you need to **paste the contents** of `simple.j` in the WebLab assignment [Jasmin Code](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9076/view).
-If you participate in the challenge, you need to paste your optimisation in the WebLab assignment [Java Bytecode Optimisation](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9079/view).
-
 The deadline for submission is December 13th 2017, 23:59.
 {: .notice .notice-warning}
 
 ### Grading
 
-You can earn up to 40 points for your _Jasmin program_, up to 40 points for your _code generator_, and up to 20 points for the _challenge_.
+You can earn up to 100 points for your _code generator_.
 
 ### Early Feedback
 
-We provide early feedback only for the _code generator_. You have 3 early feedback attempts.
+We provide early feedback for the _code generator_. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
 ### Preliminaries
 
-#### Updating Spoofax and Jasmin
-
-New version of Spoofax and Jasmin are required for this lab.
-See the [Spoofax documentation](/documentation/spoofax.html#updating) on how to update Spoofax, and the [Jasmin documentation](/documentation/jasmin.html#updating) on how to update Jasmin.
-
-You can also [download a fresh Eclipse](/documentation/spoofax.html#downloading), which includes an up to date version of both Spoofax and Jasmin.
-You should reuse your old workspace with the new Eclipse to retain your settings.
-
 #### GitHub Repository
 
-We provide you with a template for this assignment in the `assignment8` branch.
-See the [Git documentation](/documentation/git.html#template) on how to check out this branch.
+We provide you with a template for this assignment in the `assignment8` branch. See the
+[Git documentation](/documentation/git.html#template) on how to check out this branch.
 
-#### Initial Editor Project
+The template contains 4 Maven projects:
 
-The template provides you with a fresh MiniJava editor project, which covers the syntax and analysis of MiniJava.
-For grading purposes, you are required to use this project as a starting point for milestone 3.
-You should import and build the new project, following these steps:
+* `minijava`: an initial MiniJava project that covers concrete and abstract syntax, desugarings, and name and type analysis,
+* `minijava.example`: a project for your example MiniJava programs,
+* `minijava.test.trans`: a project for your MiniJava name transformation tests,
+* `jasmin.example`: a project for your example Jasmin programs.
 
-1. Import the projects into your workspace:
-    1. right-click into the Package Explorer
-    2. select **Import...** from the context menu
-    3. choose **Maven/Existing Maven Projects** from the list
-    4. select the _minijava_, _minijava.example_, _minijava.test.trans_, and _jasmin.examples_ projects
-    5. press the **Finish** button
-2. Build the project:
-    1. select the project folder
-    2. select **Build Project** from the **Project** menu
-    3. the console will report success or failure
+#### Importing projects into Eclipse
 
-The `reference` directory of the `minijava` project contains MiniJava's signatures, pretty-printer, syntactic completions, desugaring signatures, and analysis implementation, as well as Jasmin signatures.
-These implementations are already imported into the initial project.
+The projects from the template have to be imported into Eclipse:
 
-The `jasmin.examples` project contains several Jasmin examples.
-You can try to run them by opening a `.j` file and using the builders from the Spoofax menu.
-Put your own Jasmin programs in this project.
-
-The `minijava.example` project contains example programs for this and following labs.
-Put your own example programs in this project.
-
-The `minijava.test.trans` project contains tests for this and following labs.
-Put your own tests in this project.
-
+1. Start Eclipse.
+2. Select your workspace.
+3. Import the projects into your workspace:
+    1. Click the **File** menu
+    2. Select **Import...** from the context menu
+    3. Choose **Maven/Existing Maven Projects** from the list
+    4. Select the _minijava_, _minijava.example_, _minijava.test.trans_, and _jasmin.example_ projects
+    5. Press the **Finish** button
+4. Build the _minijava_ project:
+    1. Select the _minijava_ project
+    2. Select **Build Project** from the **Project** menu
+    3. The console will report success or failure
 
 ### Write Jasmin Code
 
@@ -108,7 +90,6 @@ class Simple {
 As a first step, write a Jasmin program `simple.j` in project `jasmin.example` which you expect to be the result of a MiniJava-to-Jasmin compiler applied on the above program.
 Generate a Java class file from `simple.j` and run it with the *Spoofax -> JVM -> Generate class file on disk and execute* builder.
 Improve your program until it executes without errors.
-The contents if your Jasmin program should be pasted into WebLab, see the submission info for more details.
 
 
 ### Implement a Code Generation Strategy
@@ -306,16 +287,3 @@ b = a[10];
 
 To fix these kind of errors, first inspect the MiniJava program to see if the error is intentional.
 If not, use the *Spoofax -> Generation -> Generate Jasmin (.j files)* builder to inspect the bytecode (see previous subsection for details).
-
-## Challenge
-
-Challenges are meant to distinguish excellent solutions from good solutions.
-Typically, they are less guided and require more investigation or higher programming skills.
-{: .notice .notice-success}
-
-The JVM provides different Java bytecode instructions to load integer constants, which differ in memory consumption both in the constant pool and in the actual bytecode.
-As explained in the lecture, generated code can be optimised after code generation.
-This keeps code generation and optimisation separated, and allows reuse of optimisations in different compiler backends.
-
-Implement an optimisation strategy `optimize-jbc`, which optimises a sequence of Java bytecode instructions by replacing instructions to load integer constants with more efficient variants.
-Integrate this strategy into your code generation by applying it in `class-to-jbc` to the sequence of generated Java bytecode instructions.
