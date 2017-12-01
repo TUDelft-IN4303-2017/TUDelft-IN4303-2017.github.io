@@ -25,7 +25,6 @@ The test suite should provide
   * errors on instantiating, subclassing, or referencing the main class
 1. Test cases for types
   * errors on overloaded methods
-  * notes on overridden methods
   * errors on cyclic inheritance
   * type errors in expressions
   * type errors in statements
@@ -193,19 +192,10 @@ It is important to think about forward and backward references,
  and the influence of class hierarchies on resolution.
 
 You should also come up with test cases for error checking on method names.
-This should include test cases for errors on duplicate definitions, missing definitions, and method overloading
- as well as for notes on method overriding.
+This should include test cases for errors on duplicate definitions, missing definitions, and method overloading.
 Similar to previous test cases, you can pair up positive (`0 errors`) and negative test cases.
 
 Make sure that there are no errors in tests with a `resolve x to y` clause. These tests are invalid when there are errors.
-{: .notice .notice-warning}
-
-### Testing notes
-
-Notes are notices that display some information.
-Testing notes is similar to testing errors, add a `x notes` clause to a test to expect notes in the test fragment.
-
-Make sure that there are no errors in tests with a `x notes` clause. These tests are invalid when there are errors.
 {: .notice .notice-warning}
 
 ### Testing Type Error Checking

@@ -275,5 +275,4 @@ subtypes of the expected type.
 Finally, write constraints to check if overriding is done correctly. Use the reference introduced
 for method declarations, that refers to the super method, or itself. Check that the argument types
 are the same. Also check that the return type is correct. Be careful, it does not have to be the
-same, but it needs to be co-variant! Overloading or incorrect overrides should result in an error,
-correct overrides should get a note.
+same, but it needs to be co-variant! Overloading or incorrect overrides should result in an error.
