@@ -87,8 +87,8 @@ class Simple {
 }
 ```
 
-As a first step, write a Jasmin program `simple.j` in project `jasmin.example` which you expect to be the result of a MiniJava-to-Jasmin compiler applied on the above program.
-Generate a Java class file from `simple.j` and run it with the *Spoofax -> JVM -> Generate class file on disk and execute* builder.
+As a first step, write a Jasmin program `Simple.j` (case sensitive) in project `jasmin.example` which you expect to be the result of a MiniJava-to-Jasmin compiler applied on the above program.
+Generate a Java class file from `Simple.j` and run it with the *Spoofax -> JVM -> Generate class file on disk and execute* builder.
 Improve your program until it executes without errors.
 
 
