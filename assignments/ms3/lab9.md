@@ -59,7 +59,7 @@ You can earn up to 65 points for your code generator:
 
 ### Early Feedback
 
-We provide early feedback for the _tranformation_ part and the _stack limits_ challenge. You have 3 early feedback attempts.
+We provide early feedback for the _transformation_ part and the _stack limits_ challenge. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
