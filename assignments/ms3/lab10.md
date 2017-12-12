@@ -107,10 +107,10 @@ It matches a variable reference, gets the analysis result, creates and resolves 
 exp-to-jbc:
   VarRef(n) -> ...
   where
-    a       := <nabl2-get-ast-analysis>
-  ; ref-occ := <nabl2-mk-occurrence(|"Var")> n
-  ; dec-occ := <nabl2-get-resolved-name(|a); Fst> ref-occ
-  ; kind    := <nabl2-get-property(|a, "origin")> dec-occ
+    a            := <nabl2-get-ast-analysis>
+  ; ref-occ      := <nabl2-mk-occurrence(|"Var")> n
+  ; (dec-occ, _) := <nabl2-get-resolved-name(|a)> ref-occ
+  ; kind         := <nabl2-get-property(|a, "origin")> dec-occ
   ; <?Param() + ?Local()> kind
     ...
 ```
@@ -156,5 +156,5 @@ You now need to extend your code generator to handle method parameters and local
 
 ### Testing and Debugging
 
-Testing and debugging your compiler is the same as the previous lab.
+Testing and debugging your compiler is the same as previous labs.
 Refer to the section on [Testing and Debugging from assignment 8](lab8.html#testing-and-debugging).
