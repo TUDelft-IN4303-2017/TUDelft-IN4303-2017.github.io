@@ -70,7 +70,7 @@ Write corresponding Jasmin programs, which you expect to be the result of a Mini
 Generate Java class files from them and run them.
 Improve your programs until they run without errors.
 
-### Interaction with Analysis
+### Interaction with Name and Type Information
 
 To ease code generation of parameters and local variables, we have desugared MiniJava programs and made additional name and type information available:
 

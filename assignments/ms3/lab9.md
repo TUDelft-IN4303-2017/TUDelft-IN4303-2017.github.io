@@ -111,7 +111,7 @@ You now need to extend `stmt-to-jbc` and `exp-to-jbc` to cover all statements ex
    Furthermore, they should call a strategy `op-to-jbc` to translate unary and binary operators to Java bytecode instructions.
    The only exception is the `&&` operator, which needs to be treated differently, due to its lazy evaluation semantics.
 
-### Interaction with Analysis
+### Interaction with Name and Type Information
 
 To ease code generation, we have made the following name and type information available to your compiler:
 
@@ -163,10 +163,9 @@ Now you need to define a strategy `method-to-jbc` to handle methods without loca
    This rule should call `exp-to-jbc` recursively to translate subexpressions to Java bytecode sequences.
 
    For this rule, you need to know the name of the class containing the method and the type of the method.
-   This information is available from the analysis.
-   Read along for instructions on how to interact with the analysis.
+   Read the instructions above on how to use name and type information.
 
-4. Extend the rule for `class-to-jbc`, which handles empty classes, in order to include code generation for methods.
+4. Extend the rule for `class-to-jbc`, which handles classes, in order to include code generation for methods.
 
 5. Provide a rule for `exp-to-jbc`, which translates object creation expressions into sequences of Java bytecode instructions.
 
