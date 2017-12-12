@@ -47,7 +47,7 @@ You can earn up to 75 points for your code generator:
 
 ### Early Feedback
 
-We provide early feedback only for the _lab 9 functionality_ and _tranformation_. You have 3 early feedback attempts.
+We provide early feedback only for the _lab 9 functionality_ and _transformation_. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
