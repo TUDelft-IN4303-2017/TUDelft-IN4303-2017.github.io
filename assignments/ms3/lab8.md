@@ -9,9 +9,6 @@ subcontext: ms3
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab you develop a simple code generator that generates Java bytecode for simple MiniJava programs.
 After finishing this lab your compiler will compile MiniJava programs with a main method that contains a print statement that prints an integer.
 

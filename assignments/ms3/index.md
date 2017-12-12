@@ -40,11 +40,6 @@ We consider the following material to be useful for this milestone.
     * [Chapter 3][JVMch3] and [Chapter 6][JVMch6] are particularly helpful for this milestone.
     * Furthermore, you can find a comprehensive list of [Java Bytecode instructions][JBCInstructions] in the English Wikipedia.
 
-[JVM]: http://docs.oracle.com/javase/specs/jvms/se8/html/
-[JVMch3]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-3.html
-[JVMch6]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html
-[JBCInstructions]: https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
-
 3. Stratego documentation
 
     * The Stratego language is described in the [Stratego language manual][StrLang].
@@ -52,7 +47,12 @@ We consider the following material to be useful for this milestone.
     * A complete listing of all strategies in the Stratego standard library can be found in the [API documentation][StrLibRef].
     * There is also an experimental [search engine][StrLibSearch] for the Stratego standard library.
 
-[StrLang]: http://metaborg.org/en/latest/source/langdev/meta/lang/stratego/index.html 
-[StrLib]: http://metaborg.org/en/latest/source/langdev/meta/libraries/stratego/index.html
+[JVM]: http://docs.oracle.com/javase/specs/jvms/se8/html/
+[JVMch3]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-3.html
+[JVMch6]: http://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html
+[JBCInstructions]: https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings
+
+[StrLang]: http://www.metaborg.org/en/latest/source/langdev/meta/lang/stratego/strategoxt/index.html
+[StrLib]: http://www.metaborg.org/en/latest/source/langdev/meta/lang/stratego/lib/index.html
 [StrLibRef]: http://releases.strategoxt.org/docs/api/libstratego-lib/stable/docs/
 [StrLibSearch]: http://xdoc.martkolthof.nl/
