@@ -122,7 +122,7 @@ You now need to extend your code generator to handle field declarations and fiel
 
 3. Extend your rules for `class-to-jbc` to handle field declarations.
 
-4. Provide a rule for `exp-to-jbc`, which translates field access expressions from MiniJava into sequences of Java bytecode instructions. See the next section on how to figure out if a variable refers to field or a local variable.
+4. Provide a rule for `exp-to-jbc`, which translates field access expressions from MiniJava into sequences of Java bytecode instructions. See the previous section on how to figure out if a variable refers to field or a local variable.
 
 5. Provide a rule for `stmt-to-jbc`, which translates assignments to fields from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
