@@ -73,58 +73,20 @@ Write corresponding Jasmin programs, which you expect to be the result of a Mini
 Generate Java class files from them and run them.
 Improve your programs until they run without errors.
 
-### Generate Code for Fields and Field Access
+### Interaction with Analysis
 
-You now need to extend your code generator to handle field declarations and field access.
-
-1. Provide rules for `type-to-jbc`, which translate MiniJava types into Jasmin types as used in field and method descriptors.
-
-2. Provide a rule for `field-to-jbc`, which translates field declarations from MiniJava into Jasmin field declarations.
-
-3. Extend your rules for `class-to-jbc` to handle field declarations.
-
-4. Provide a rule for `exp-to-jbc`, which translates field access expressions from MiniJava into sequences of Java bytecode instructions. See the next section on how to figure out if a variable refers to field or a local variable.
-
-5. Provide a rule for `stmt-to-jbc`, which translates assignments to fields from MiniJava into sequences of Java bytecode instructions.
-   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
-
-6. Provide a rule for `stmt-to-jbc`, which translates array assignments to fields from MiniJava into sequences of Java bytecode instructions.
-
-You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder.
-
-### Generate Code for Local Variables and Variable Access
-
-To make code generation easier, we have made some information available during
-desugaring and analysis:
+To ease code generation of parameters and local variables, we have desugared MiniJava programs and made additional name and type information available:
 
 - We desugared `Param(t,n)` to `Bind(i, Param(t,n))` and `Var(t,n)` to `Bind(i, Var(t,n))`.
 - The occurrence of a parameter/variable declaration has a property `index`, where parameters have index `0`, ..., `n` and variables have index `n+1`, ..., `m`.
-
-See the [interaction with analysis](lab9.html#interaction-with-analysis) section from last week for instructions on how to retrieve these properties.
-
-1. Extend your rule for `method-to-jbc`, which handles method declarations.
-   Support parameters by generating variable declarations, which map variable numbers in generated Java bytecode to variable names in the original MiniJava program.
-   Do the same for local variables.
-   To get the variable number associated with a parameter or local variable, get the `index` property.
-
-2. Extend your rule for `exp-to-jbc`, which handles method calls.
-   Support calls with arguments by calling `exp-to-jbc` recursively to translate argument expressions.
-
-3. Provide a rule for `exp-to-jbc`, which translates variable access expressions from MiniJava into sequences of Java bytecode instructions.
-
-4. Provide a rule for `stmt-to-jbc`, which translates assignments to variables from MiniJava into sequences of Java bytecode instructions.
-   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
-
-5. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
-   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
-
-### Interaction with Analysis
-
-Additional name and type information is available for your compiler in this assignment:
-
 - The occurrence of a variable declaration has a property `origin` with the value `Local()`.
 - The occurrence of a parameter declaration has a property `origin` with the value `Param()`.
 - The occurrence of a field declaration has a property `origin` with the value `Field()`.
+
+The information from the previous assignment is also still available:
+
+- The occurrence of a method declaration has a property `cname` with the name of its surrounding class (same for the occurrence of a field declaration).
+- The occurrence of a method declaration has the type `MethodType(return-type, parameter-types)`.
 
 The following strategies are useful to query the analysis result:
 
@@ -152,3 +114,47 @@ exp-to-jbc:
   ; <?Param() + ?Local()> kind
     ...
 ```
+
+### Generate Code for Fields and Field Access
+
+You now need to extend your code generator to handle field declarations and field access.
+
+1. Provide rules for `type-to-jbc`, which translate MiniJava types into Jasmin types as used in field and method descriptors.
+
+2. Provide a rule for `field-to-jbc`, which translates field declarations from MiniJava into Jasmin field declarations.
+
+3. Extend your rules for `class-to-jbc` to handle field declarations.
+
+4. Provide a rule for `exp-to-jbc`, which translates field access expressions from MiniJava into sequences of Java bytecode instructions. See the next section on how to figure out if a variable refers to field or a local variable.
+
+5. Provide a rule for `stmt-to-jbc`, which translates assignments to fields from MiniJava into sequences of Java bytecode instructions.
+   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
+
+6. Provide a rule for `stmt-to-jbc`, which translates array assignments to fields from MiniJava into sequences of Java bytecode instructions.
+
+You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder.
+
+### Generate Code for Local Variables and Variable Access
+
+You now need to extend your code generator to handle method parameters and local variable declarations, method call arguments, variable references, and assignments.
+
+1. Extend your rule for `method-to-jbc`, which handles method declarations.
+   Support parameters by generating variable declarations, which map variable numbers in generated Java bytecode to variable names in the original MiniJava program.
+   Do the same for local variables.
+   To get the variable number associated with a parameter or local variable, get the `index` property.
+
+2. Extend your rule for `exp-to-jbc`, which handles method calls.
+   Support calls with arguments by calling `exp-to-jbc` recursively to translate argument expressions.
+
+3. Provide a rule for `exp-to-jbc`, which translates variable reference expressions from MiniJava into sequences of Java bytecode instructions.
+
+4. Provide a rule for `stmt-to-jbc`, which translates assignments to variables from MiniJava into sequences of Java bytecode instructions.
+   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
+
+5. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
+   This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
+
+### Testing and Debugging
+
+Testing and debugging your compiler is the same as the previous lab.
+Refer to the section on [Testing and Debugging from assignment 8](lab8.html#testing-and-debugging).

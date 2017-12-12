@@ -19,20 +19,18 @@ In this lab, you extend your code generator to handle expressions, statements, m
     * all kinds of unary and binary expressions,
     * object and array creation,
     * `this` expressions,
-    * method calls *without arguments*,
+    * method calls _without arguments_,
     * block statements,
     * `if` statements,
     * `while` statements,
-    * methods *without parameters and local variables*,
-    * classes *without fields*.
+    * methods _without parameters and local variables_,
+    * classes _without fields_.
 2. Extend your code generator to handle these constructs.
 
 ### Submission
 
 You need to submit your MiniJava project with a pull request against branch `assignment9` on GitHub.
 The [Git documentation](/documentation/git.html#submitting-an-assignment) explains how to file such a request.
-
-If you participate in the challenge, please let us know in the WebLab assignment [Challenges (overlays)](https://weblab.tudelft.nl/in4303/2016-2017/assignment/9085/view).
 
 The deadline for submissions is December 22nd 2017, 23:59. The extended deadline is January 12th 2018, 23:59, for a penalty of 1 point.
 {: .notice .notice-warning}
@@ -113,34 +111,12 @@ You now need to extend `stmt-to-jbc` and `exp-to-jbc` to cover all statements ex
    Furthermore, they should call a strategy `op-to-jbc` to translate unary and binary operators to Java bytecode instructions.
    The only exception is the `&&` operator, which needs to be treated differently, due to its lazy evaluation semantics.
 
-### Code Generation for Methods
-
-Now you need to define a strategy `method-to-jbc` to handle methods without local variables.
-
-1. Provide a rule for `method-to-jbc`, which translates a method without parameters and local variables from MiniJava into a Jasmin method. This rule should call `stmt-to-jbc` to translate the statements of the method to a Java bytecode sequence.
-
-2. Provide a rule for `exp-to-jbc`, which translates `this` expressions from MiniJava into sequences of Java bytecode instructions.
-
-3. Provide a rule for `exp-to-jbc`, which translates method calls without arguments from MiniJava into sequences of Java bytecode instructions.
-   This rule should call `exp-to-jbc` recursively to translate subexpressions to Java bytecode sequences.
-
-   For this rule, you need to know the name of the class containing the method and the type of the method.
-   This information is available from the analysis.
-   Read along for instructions on how to interact with the analysis.
-
-4. Extend the rule for `class-to-jbc`, which handles empty classes, in order to include code generation for methods.
-
-5. Provide a rule for `exp-to-jbc`, which translates object creation expressions into sequences of Java bytecode instructions.
-
-For grading, if you decide not to participate in the challenge, use a fixed stack size of 99 for both static and non-static methods.
-{: .notice .notice-info}
-
 ### Interaction with Analysis
 
 To ease code generation, we have made the following name and type information available to your compiler:
 
 - The occurrence of a method declaration has a property `cname` with the name of its surrounding class (same for the occurrence of a field declaration).
-- The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
+- The occurrence of a method declaration has the type `MethodType(return-type, parameter-types)`.
 
 The following strategies are useful to query the analysis result:
 
@@ -174,6 +150,33 @@ exp-to-jbc:
   ; (dec-occ, _) := <nabl2-get-resolved-name(|a)> ref-occ
     ...
 ```
+
+### Code Generation for Methods
+
+Now you need to define a strategy `method-to-jbc` to handle methods without local variables.
+
+1. Provide a rule for `method-to-jbc`, which translates a method without parameters and local variables from MiniJava into a Jasmin method. This rule should call `stmt-to-jbc` to translate the statements of the method to a Java bytecode sequence.
+
+2. Provide a rule for `exp-to-jbc`, which translates `this` expressions from MiniJava into sequences of Java bytecode instructions.
+
+3. Provide a rule for `exp-to-jbc`, which translates method calls without arguments from MiniJava into sequences of Java bytecode instructions.
+   This rule should call `exp-to-jbc` recursively to translate subexpressions to Java bytecode sequences.
+
+   For this rule, you need to know the name of the class containing the method and the type of the method.
+   This information is available from the analysis.
+   Read along for instructions on how to interact with the analysis.
+
+4. Extend the rule for `class-to-jbc`, which handles empty classes, in order to include code generation for methods.
+
+5. Provide a rule for `exp-to-jbc`, which translates object creation expressions into sequences of Java bytecode instructions.
+
+For grading, if you decide not to participate in the challenge, use a fixed stack size of 99 for both static and non-static methods.
+{: .notice .notice-info}
+
+### Testing and Debugging
+
+Testing and debugging your compiler is the same as the previous lab.
+Refer to the section on [Testing and Debugging from assignment 8](lab8.html#testing-and-debugging).
 
 ## Challenges
 
