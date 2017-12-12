@@ -9,9 +9,6 @@ subcontext: ms3
 
 {% include _toc.html %}
 
-This lab is under construction. Proceed at own risk.
-{: .notice .notice-warning}
-
 In this lab, you extend your code generator to handle expressions, statements, methods without local parameters, and classes without fields.
 
 ## Overview
@@ -22,12 +19,12 @@ In this lab, you extend your code generator to handle expressions, statements, m
     * all kinds of unary and binary expressions,
     * object and array creation,
     * `this` expressions,
-    * method calls without arguments,
+    * method calls *without arguments*,
     * block statements,
     * `if` statements,
     * `while` statements,
-    * methods without parameters and local variables,
-    * classes without fields.
+    * methods *without parameters and local variables*,
+    * classes *without fields*.
 2. Extend your code generator to handle these constructs.
 
 ### Submission
@@ -42,7 +39,7 @@ The deadline for submissions is December 22nd 2017, 23:59. The extended deadline
 
 ### Grading
 
-You can earn up to 75 points for your code generator:
+You can earn up to 65 points for your code generator:
 
 * transformation (55 points)
     * classes (8 points)
@@ -59,13 +56,12 @@ You can earn up to 75 points for your code generator:
         * `this` expressions (1 point)
         * method calls (5 points)
     * inheritance (5 points)
-* challenges (20 points)
-    * overlays (5 points)
-    * stack limits (15 points)
+* challenge (10 points)
+    * stack limits (10 points)
 
 ### Early Feedback
 
-We provide early feedback only for the _tranformation_ and the _stack limits_ challenge (the _overlays_ are graded manually). You have 3 early feedback attempts.
+We provide early feedback for the _tranformation_ part and the _stack limits_ challenge. You have 3 early feedback attempts.
 
 ## Detailed Instructions
 
@@ -117,9 +113,6 @@ You now need to extend `stmt-to-jbc` and `exp-to-jbc` to cover all statements ex
    Furthermore, they should call a strategy `op-to-jbc` to translate unary and binary operators to Java bytecode instructions.
    The only exception is the `&&` operator, which needs to be treated differently, due to its lazy evaluation semantics.
 
-<!-- This is no longer possible, right? -->
-<!-- You can test each rule by selecting a code fragment in the MiniJava editor and running your code generation builder. -->
-
 ### Code Generation for Methods
 
 Now you need to define a strategy `method-to-jbc` to handle methods without local variables.
@@ -144,15 +137,12 @@ For grading, if you decide not to participate in the challenge, use a fixed stac
 
 ### Interaction with Analysis
 
-To make code generation easier, we have made some information available during
-desugaring and analysis:
+To ease code generation, we have made the following name and type information available to your compiler:
 
 - The occurrence of a method declaration has a property `cname` with the name of its surrounding class (same for the occurrence of a field declaration).
-- The occurrence of a variable/parameter declaration has a property `origin` with the value `Local()`.
-- The occurrence of a field declaration has a property `origin` with the value `Field()`.
 - The occurrence of a method declaration has the type `MethodType(rty, ptys)`.
 
-The following strategies can be used to query the analysis result:
+The following strategies are useful to query the analysis result:
 
   * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
   * `nabl2-get-ast-analysis` applied to any AST term yields the analysis result, which can be used with the following strategies to extract information:
@@ -160,20 +150,29 @@ The following strategies can be used to query the analysis result:
     * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
     * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
   * `nabl2-get-occurrence-name` applied to an occurrence yields the name of the occurrence.
-  * `nabl2-get-ast-type` applied to an AST node with a type (i.e., an expression), yields its type. The resulting type can contain occurrences if it is a class type.
 
-The following example shows how to use these strategies. It matches a `VarRef(n)`,
-resolves the reference to a declaration, and computes its `kind`, `type`, and `name`.
+For more information about these strategies, Ctrl/Cmd-click the `nabl2/api` import in your Stratego file.
+
+The following example shows how to use these strategies.
+The first rule matches method declarations, gets the analysis result, creates an occurrence from the method declaration name, and retrieves the `cname` property of the method.
+The second rule matches method calls, gets the analysis result, creates an occurrence from the method reference name, and resolves this to an occurrence of the method declaration which can be used in other query strategies.
 
 ```
-VarRef(n) -> <fail>
-where
-  a       := <nabl2-get-ast-analysis> n
-; ref-occ := <nabl2-mk-occurrence(|"Var")> n
-; dec-occ := <nabl2-get-resolved-name(|a); Fst> ref-occ
-; kind    := <nabl2-get-property(|a, "origin")> dec-occ
-; type    := <nabl2-get-type(|a)> dec-occ
-; name    := <nabl2-get-occurrence-name> dec-occ
+method-to-jbc:
+  Method(t, m, _, _, stms, e) -> ...
+  with
+    a       := <nabl2-get-ast-analysis>
+  ; dec-occ := <nabl2-mk-occurrence(|"Method")> m
+  ; cname   := <nabl2-get-property(|a, "cname")> dec-occ
+    ...
+
+exp-to-jbc:
+  Call(e, m, _) -> ...
+  with
+    a            := <nabl2-get-ast-analysis>
+  ; ref-occ      := <nabl2-mk-occurrence(|"Method")> m
+  ; (dec-occ, _) := <nabl2-get-resolved-name(|a)> ref-occ
+    ...
 ```
 
 ## Challenges
@@ -181,61 +180,6 @@ where
 Challenges are meant to distinguish excellent solutions from good solutions.
 Typically, they are less guided and require more investigation and programming skills.
 {: .notice .notice-success}
-
-### Overlays
-
-Code generation rules become hard to read, when you construct large ASTs.
-Often, these rules inject only small parts into a skeleton AST.
-For example, the only variable parts in the default constructor of a class are its name `c` and the name of its super class `p`:
-
-    JBCMethod(
-      [PUBLIC()]
-    , Init()
-    , JBCMethodDesc([], Void())
-    , [ JBCLimitStack("1"), JBCLimitLocals("1")
-      , JBCVarDecl("0", "this", Reference(CRef(c)), LabelRef("start"), LabelRef("end"))
-      , JBCLabel("start")
-      , ALOAD_0()
-      , INVOKESPECIAL(JBCMethodRef(CRef(p), MRef(Init()), JBCMethodDesc([], Void())))
-      , RETURN()
-      , JBCLabel("end")
-      ]
-    )
-
-Furthermore, you might use the same pattern in different rules, e.g. in code generation rules for the main class and for ordinary classes.
-One way to avoid code duplication, are helper strategies.
-For example, you can have a strategy `to-jbc-constructor` which rewrites a pair of class and super class names to the default constructor.
-Alternatively, you can use _overlays_, which allow the specification of pattern abstractions.
-
-Overlays are specified in their own section.
-They are named, can be parametrised, and can be nested:
-
-    overlays
-
-      DEFAULT-CONSTRUCTOR(c, p) =
-        JBCMethod(
-          [PUBLIC()]
-        , Init()
-        , JBCMethodDesc([], Void())
-        , [ JBCLimitStack("1"), JBCLimitLocals("1")
-          , THIS-DECLARATION(c)
-          , JBCLabel("start")
-          , ALOAD_0()
-          , INVOKE-CONSTRUCTOR(p)
-          , RETURN()
-          , JBCLabel("end")
-          ]
-        )
-
-You can use overlays like terms in your rules, both for matching and building:
-
-    rules
-
-      class-to-jbc:
-       Class(c, e, fs, ms) -> JBCFile(header, jbc-fs, [ DEFAULT-CONSTRUCTOR(c, p) | jbc-ms ])
-       where ...
-
-Identify AST patterns in your code generation rules and come up with overlays to improve the readability of these rules.
 
 ### Precise Stack Limit Directives
 

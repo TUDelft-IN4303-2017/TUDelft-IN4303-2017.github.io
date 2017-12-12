@@ -38,18 +38,15 @@ The deadline for submissions is January 19th 2018, 23:59.
 
 ### Grading
 
-Furthermore, you can earn up to 75 points for your code generator:
+You can earn up to 75 points for your code generator:
 
-* lab 9 functionality (20 points)
+* lab 9 functionality keeps working (20 points)
 * transformation (55 points)
     * types (15 points)
     * fields (10 points)
     * methods (15 points)
     * variables (10 points)
     * assignments (15 points)
-
-In this assignment, we also give you the chance to earn up to 10 bonus points.
-This works like a challenge, but it gives you extra points on top of the total points of your assignment.
 
 ### Early Feedback
 
@@ -121,15 +118,37 @@ See the [interaction with analysis](lab9.html#interaction-with-analysis) section
 5. Provide a rule for `stmt-to-jbc`, which translates array assignments to variables from MiniJava into sequences of Java bytecode instructions.
    This rule should call `exp-to-jbc` to translate expressions to Java bytecode sequences.
 
-### Bonus
+### Interaction with Analysis
 
-#### Generate Precise Ranges for Local Variables
+Additional name and type information is available for your compiler in this assignment:
 
-A precise range of a local variable covers only the parts in the code where the variable is defined and used:
+- The occurrence of a variable declaration has a property `origin` with the value `Local()`.
+- The occurrence of a parameter declaration has a property `origin` with the value `Param()`.
+- The occurrence of a field declaration has a property `origin` with the value `Field()`.
 
-* There is only one continuous range for each variable (in contrast, variable liveness as discussed in the lecture can be fragmented).
-* The range should cover at least all instructions between the first and last load or store (whatever comes first/last) of a local variable.
-* Loops might extend the range, since they might require a variable to survive.
+The following strategies are useful to query the analysis result:
 
-You should extend your code generator to generate precise ranges.
-Similar to the stack limit challenge from last week, the analysis should be performed on the MiniJava code, not on the Java bytecode.
+  * `nabl2-mk-occurrence(|Ns)` applied to a name `n` yields an occurrence `Ns{n}`.
+  * `nabl2-get-ast-analysis` applied to any AST term yields the analysis result, which can be used with the following strategies to extract information:
+    * `nabl2-get-resolved-name(|a)` applied to a reference occurrence yields a tuple `(occurrence, path)`. The term parameter `a` is the analysis result.
+    * `nabl2-get-property(|a, prop)` applied to an occurrence yields the value of property `prop`. The term parameter `a` is the analysis result.
+    * `nabl2-get-type(|a)` applied to an occurrence yields the type of the occurrence. The term parameter `a` is the analysis result.
+  * `nabl2-get-occurrence-name` applied to an occurrence yields the name of the occurrence.
+  * `nabl2-get-ast-type` applied to an AST node with a type (i.e., an expression), yields its type. The resulting type can contain occurrences if it is a class type.
+
+For more information about these strategies, Ctrl/Cmd-click the `nabl2/api` import in your Stratego file.
+
+The following example shows how to use these strategies.
+It matches a variable reference, gets the analysis result, creates and resolves its occurrence, retrieves the `kind` property, and checks if kind is a parameter or local variable.
+
+```
+exp-to-jbc:
+  VarRef(n) -> ...
+  where
+    a       := <nabl2-get-ast-analysis>
+  ; ref-occ := <nabl2-mk-occurrence(|"Var")> n
+  ; dec-occ := <nabl2-get-resolved-name(|a); Fst> ref-occ
+  ; kind    := <nabl2-get-property(|a, "origin")> dec-occ
+  ; <?Param() + ?Local()> kind
+    ...
+```
