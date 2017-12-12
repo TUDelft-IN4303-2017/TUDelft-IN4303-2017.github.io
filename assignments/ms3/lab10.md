@@ -98,7 +98,7 @@ The following strategies are useful to query the analysis result:
 For more information about these strategies, Ctrl/Cmd-click the `nabl2/api` import in your Stratego file.
 
 The following example shows how to use these strategies.
-It matches a variable reference, gets the analysis result, creates and resolves its occurrence, retrieves the `kind` property, and checks if kind is a parameter or local variable.
+It matches a variable reference, gets the analysis result, creates and resolves its occurrence, retrieves the `origin` property, and checks if kind is a parameter or local variable.
 
 ```
 exp-to-jbc:
@@ -107,8 +107,8 @@ exp-to-jbc:
     a            := <nabl2-get-ast-analysis>
   ; ref-occ      := <nabl2-mk-occurrence(|"Var")> n
   ; (dec-occ, _) := <nabl2-get-resolved-name(|a)> ref-occ
-  ; kind         := <nabl2-get-property(|a, "origin")> dec-occ
-  ; <?Param() + ?Local()> kind
+  ; origin       := <nabl2-get-property(|a, "origin")> dec-occ
+  ; <?Param() + ?Local()> origin
     ...
 ```
 
