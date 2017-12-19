@@ -33,17 +33,17 @@ Q1
 
 Q2
 
-* Tue Nov 14, 17:45-19:30, EWI Pi: Dynamic Semantics
-* Tue Nov 21, 17:45-19:30, EWI Pi: Virtual Machines & Code Generation
-* Tue Nov 28, 17:45-19:30, EWI Pi: Data-Flow Analysis
-* Tue Dec 5, 17:45-19:30, EWI Pi: Garbage Collection
+* Tue Nov 14, 17:45-19:30, EWI Pi: [Dynamic Semantics](specification/dynamic-semantics)
+* Tue Nov 21, 17:45-19:30, EWI Pi: [Virtual Machines & Code Generation](techniques/virtual-machines)
+* Tue Nov 28, 17:45-19:30, EWI Pi: [Dataflow Analysis](techniques/dataflow-analysis)
+* Tue Dec 5, 17:45-19:30, EWI Pi: [Garbage Collection](techniques/garbage-collection)
 * Tue Dec 12, 17:45-19:30, EWI Pi: Just-in-Time Compilation (Interpreters & Partial Evaluation)
-* Tue Dec 19, 17:45-19:30, EWI Pi: Advanced Parsing
-* Tue Jan 9, 17:45-19:30, EWI Pi: Overview
-* Tue Jan 16, 17:45-19:30, EWI Pi: (overflow)
-* Tue Jan 23, 17:45-19:30, EWI Pi: (overflow)
+* Tue Dec 19, 17:45-19:30, EWI Pi: Parsing
+* Tue Jan 9, 17:45-19:30, EWI Pi: Disambiguation
+* Tue Jan 16, 17:45-19:30, EWI Pi: (no lecture)
+* Tue Jan 23, 17:45-19:30, EWI Pi: Overview
 
-
+<!--
 ## Schedule 2016-2017
 
 
@@ -78,7 +78,7 @@ break
 * Tue 17 January,   17:45, EWI Pi: no lecture
 * Tue 24 January,   17:45, EWI Pi: What is a compiler? and Exam preparation
 
-<!--
+
 ## Schedule 2015/16
 
 * Tue  8 September, 13:45, CT-CZ F:  [Software Languages](introduction/software-languages)
