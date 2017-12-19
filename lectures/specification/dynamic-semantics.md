@@ -17,9 +17,9 @@ In this lecture we study the specification of the dynamic semantics of a source 
 
 ## Slides
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/9fPJPWzMm3W0tl" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/eelcovisser/dynamic-semantics" title="Dynamic Semantics" target="_blank">Dynamic Semantics</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/eelcovisser">Eelco Visser</a></strong> </div>
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/tOI3vWaXwVEEHa" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/eelcovisser/declare-your-language-dynamic-semantics" title="Declare Your Language: Dynamic Semantics" target="_blank">Declare Your Language: Dynamic Semantics</a> </strong> from <strong><a href="https://www.slideshare.net/eelcovisser" target="_blank">Eelco Visser</a></strong> </div>
 
-[PDF](https://github.com/TUDelft-IN4303-2016/lectures/blob/master/09-dynamic-semantics/Dynamic%20Semantics.pdf)
+[PDF](https://github.com/metaborg/declare-your-language/blob/master/source/dynamics/dyl-9-dynamic-semantics.pdf)
 
 
 ## Further Reading
