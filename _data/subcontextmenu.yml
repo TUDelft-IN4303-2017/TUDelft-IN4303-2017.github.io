@@ -103,11 +103,6 @@
   context: assign
   subcontext: ms1
 
-- title: lab 3
-  url: /assignments/ms1/lab3.html
-  context: assign
-  subcontext: ms1
-
 - title: FAQ
   url: /assignments/ms1/faq.html
   context: assign

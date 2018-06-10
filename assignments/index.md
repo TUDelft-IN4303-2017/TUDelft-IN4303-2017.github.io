@@ -14,9 +14,8 @@ In the practical part of the course, you build an IDE for MiniJava, a small subs
 We split this task into three milestones of (roughly) weekly individual assignments:
 
 * [Milestone 1: Syntax Analysis](ms1)
-  * [Testing Syntax Analysis](ms1/lab1.html)
-  * [Syntax Definition](ms1/lab2.html)
-  * [Simple Term Rewriting](ms1/lab3.html)
+  * [Syntax Definitions and Testing](ms1/lab1.html)
+  * [Simple Term Rewriting](ms1/lab2.html)
 * [Milestone 2: Semantic Analysis](ms2)
   * [Testing Name Analysis](ms2/lab4.html)
   * [Name Analysis](ms2/lab5.html)
@@ -67,15 +66,12 @@ These dates are subject to change.
 {: .notice .notice-warning}
 
 * Milestone 1: Syntax Analysis
-   - 20/09: Lab 1: Testing Syntax Analysis
-   - 27/09: Lab 2: Syntax Definition
-   - 04/10: Lab 3: Simple Term Rewriting
+   - 27/09: Lab 1: Syntax Definition and Testing
+   - 04/10: Lab 2: Simple Term Rewriting
 * Milestone 2: Semantic Analysis
-   - 18/10: Lab 4: Testing Name Analysis
-   - 27/10: Lab 5: Name Analysis
+   - 27/10: Lab 3: Name Analysis and Testing
 * Milestone 2: Semantic Analysis (continued)
-   - 22/11: Lab 6: Testing Type Analysis
-   - 06/12: Lab 7: Type Analysis
+   - 06/12: Lab 4: Type Analysis and Testing
 * Milestone 3: Code Generation
    - 13/12: Lab 8: Compiling Minimal Programs
    - 22/12: Lab 9: Compiling Expressions and Statements
